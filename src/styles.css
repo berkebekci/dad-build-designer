@@ -217,6 +217,106 @@ body {
   color: var(--neg);
 }
 
+.columns--four {
+  grid-template-columns: 1.1fr 1.1fr 1.1fr 0.9fr;
+}
+
+@media (max-width: 1300px) {
+  .columns--four {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .columns--four {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gearpanel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.gearpanel h2 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.gear-slot {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gear-slot-label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.gear-note {
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--gold);
+}
+
+.gear-slot select,
+.enchant-row select {
+  width: 100%;
+  background: var(--panel-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 13px;
+}
+
+.gear-slot select:disabled {
+  opacity: 0.4;
+}
+
+.item-summary {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.item-rarity {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.enchant-row {
+  display: flex;
+  gap: 6px;
+  margin-left: 12px;
+}
+
+.enchant-row input {
+  width: 76px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  padding: 5px 6px;
+  font-size: 13px;
+}
+
+.enchant-row input:focus,
+.gear-slot select:focus,
+.enchant-row select:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
 .gearpreview .hint {
   margin: 0 0 10px;
   font-size: 12px;

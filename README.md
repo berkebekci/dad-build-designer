@@ -31,9 +31,11 @@ docs/          ← kaynaklar, kararlar, doğrulama notları
 - [x] **Faz 0 — Veri keşfi:** kaynaklar bulundu (wiki aynası + darkerdb API), Fighter verisi çekildi
 - [x] **Faz 1 — Veri modeli (ilk taslak):** stat eğrileri, Fighter, rarity kuralları JSON'da
 - [x] **Faz 2 — Hesap motoru:** `computeStats` saf fonksiyonu + 24 birim testi (`npm test`)
-- [x] **Faz 3 — MVP arayüz:** Vite+React; perk/skill seçici (slot limitli), Gear Preview
-      oyun alanı, canlı stat paneli (`npm run dev` → localhost:5173)
-- [ ] **Faz 4 — Enchantment sistemi:** roll aralıkları, slot uygunluk matrisi, darkerdb item entegrasyonu
+- [x] **Faz 3 — MVP arayüz:** Vite+React; perk/skill seçici (slot limitli), canlı stat paneli
+      (`npm run dev` → localhost:5173)
+- [x] **Faz 4 — Gear & Enchantment:** darkerdb'den 1639 item (`scripts/fetch-items.mjs`),
+      11 ekipman slotu, sınıf+perk bazlı yasallık (Weapon Mastery/Slayer), rarity→enchantment
+      slotları, item-başına havuz ve roll aralıkları (min/max kelepçeli)
 - [ ] **Faz 5 — Genişleme:** diğer sınıflar, build kaydet/paylaş (URL kodlama), türetilmiş metrikler (DPS, efektif HP)
 
 ## Veri güncelliği

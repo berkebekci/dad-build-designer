@@ -33,13 +33,25 @@ hazır sonuç fırlatma; kararları gerekçeleriyle anlat. Açıklamalar Türkç
   `computeStats.ts` (saf fonksiyon; ExternalModifiers ile gear girdilerine hazır),
   `validateBuild.ts` (slot/duplicate/id kuralları), `data.ts` (JSON bağlayıcı).
   24 birim testi: `npm test` (vitest), typecheck: `npm run typecheck`.
-- Faz 3 tamam: MVP UI — `src/App.tsx` + `src/ui/` (PickList generic perk/skill
-  seçici, StatPanel, GearPreview oyun alanı). `npm run dev` → localhost:5173.
-  Doğrulandı: slot limiti (4/4'te kalanlar kilitli), +10 STR → PP bonus +%10 /
-  HP 129.38, AR 115 → PDR +%18.55.
-- Sıradaki: **Faz 4 — Enchantment/gear sistemi** (darkerdb API'den item verisi,
-  rarity→enchantment slotları, roll aralıkları; GearPreview'un yerini alır).
+- Faz 3 tamam: MVP UI — `src/App.tsx` + `src/ui/` (PickList, StatPanel).
+- Faz 4 tamam: **gear & enchantment sistemi.**
+  - `scripts/fetch-items.mjs`: darkerdb'den 1639 ekipman → `data/items/items.json` (1.5 MB).
+    API tuzakları: sayfa 1 dar şema (detay çağrısı gerekir), sayfa 2+ geniş şema (tüm
+    attribute'lar satırda); detay ucu effect_* adları + yüzdeleri ONDA-BİR olarak tutar,
+    geniş satırlar düz ad + gerçek yüzde. items.json GENİŞ ada + gerçek yüzdeye normalize.
+  - `src/engine/itemStats.ts`: ATTR_RULES (attribute/flat/percent), gearTotals (perfect-roll
+    base + seçilen enchant rollleri). `gearRules.ts`: slot yasallığı — Fighter silah listesi
+    fighter.json'dan; Weapon Mastery → tüm silahlar, Slayer → plate yasak; 2H → off-hand kilit.
+  - UI: `GearPanel.tsx` (11 slot, item seçici, rarity→N enchant satırı, havuzdan seçim,
+    min/max kelepçeli roll input). GearPreview kaldırıldı.
+  - Tarayıcıda doğrulandı: Legendary Longsword → WD 41, MS 270, 4 enchant slotu, off-hand
+    kilitli; Action Speed enchant +3% statlara yansıyor. 40 birim testi yeşil.
+- Sıradaki: **Faz 5** — (a) build kaydet/paylaş (localStorage + URL hash), (b) diğer 9 sınıf
+  (`data/api/classes.json` çekildi — base attribute içeriyor mu bak; yoksa wiki aynasından).
 - TODO'lar JSON dosyalarının `_todo` alanlarında ve docs/kaynaklar.md'de.
+- **required_class bit maskesi hâlâ çözülmedi** (Fighter için gerek yoktu — isim listesi
+  kullanılıyor). Yeni sınıflar eklerken ya maskeyi ampirik çöz ya da sınıf başına silah
+  listesi kur.
 
 ## Oyun kuralları özeti
 

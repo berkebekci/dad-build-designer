@@ -1,0 +1,2858 @@
+[
+ {
+  "id": "id.class.barbarian",
+  "name": "Barbarian",
+  "perks": [
+   {
+    "id": "id.perk.robust",
+    "name": "Robust",
+    "perk_tag": null,
+    "icon": "96e659cc7ecf6e4c96311aef2b6a245ac9721c47fcca1bd59f59993399f4c8ab",
+    "icon_url": "https://cdn.darkerdb.com/codex/96e659cc7ecf6e4c96311aef2b6a245ac9721c47fcca1bd59f59993399f4c8ab",
+    "abilities": [],
+    "description": "Gain max health bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.robust",
+      "max_health_mod": 80
+     }
+    ],
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ]
+   },
+   {
+    "id": "id.perk.crush",
+    "name": "Crush",
+    "perk_tag": null,
+    "icon": "60c6d9724b96fcc518a0b432e8d393b006e8d4ae612878d0a10cf72306759469",
+    "icon_url": "https://cdn.darkerdb.com/codex/60c6d9724b96fcc518a0b432e8d393b006e8d4ae612878d0a10cf72306759469",
+    "abilities": [],
+    "description": "While equipped with a two-handed weapon, gain the ability to destroy unreinforced containers. Also gain impact power on your two-handed weapon attacks, making it easier to break blocks and parries.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.crush",
+      "impact_power": 1
+     }
+    ],
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ]
+   },
+   {
+    "id": "id.perk.berserker",
+    "name": "Berserker",
+    "perk_tag": null,
+    "icon": "2727ef23e7057c6af402911c4f8ca6fc4c53c4dc1806991b1382892596c76daa",
+    "icon_url": "https://cdn.darkerdb.com/codex/2727ef23e7057c6af402911c4f8ca6fc4c53c4dc1806991b1382892596c76daa",
+    "abilities": [],
+    "description": "Gain 2% physical damage bonus and 0.5% move speed bonus for every 10% of your maximum health missing, up to 20% and 5% respectively.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.berserker"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ]
+   },
+   {
+    "id": "id.perk.iron_will",
+    "name": "Iron Will",
+    "perk_tag": null,
+    "icon": "6f5ca3ce7fb01cd18d43f623bb55a7274e7f5347fd553a3ed3321b1f11d501a1",
+    "icon_url": "https://cdn.darkerdb.com/codex/6f5ca3ce7fb01cd18d43f623bb55a7274e7f5347fd553a3ed3321b1f11d501a1",
+    "abilities": [],
+    "description": "Gain magic resistance and ignore knockback effects. The maximum magical damage reduction limit is increased to.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.iron_will",
+      "magic_resistance": 75
+     }
+    ],
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ]
+   }
+  ],
+  "icon": "4640ee63e73bb67a7c3c07a6f953b62c1b91bf71041ed4553582fa5769e470b3",
+  "icon_url": "https://cdn.darkerdb.com/codex/4640ee63e73bb67a7c3c07a6f953b62c1b91bf71041ed4553582fa5769e470b3",
+  "flavor": "The Barbarian is known for his hardy nature, fiery temper, and ability to endure immense pain. His rage and reckless abandon allow him to lead the charge into battle.",
+  "skills": [
+   {
+    "id": "id.skill.achilles_strike",
+    "name": "Achilles Strike",
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "icon": "192a6bd855a9f46829d021cb2fc8cc7af0f0b810680456bef88f08a69d0c63ce",
+    "icon_url": "https://cdn.darkerdb.com/codex/192a6bd855a9f46829d021cb2fc8cc7af0f0b810680456bef88f08a69d0c63ce",
+    "abilities": [
+     {
+      "id": "id.skill_ability.achilles_strike",
+      "effects": [
+       {
+        "duration": 8000
+       },
+       {
+        "duration": 2000,
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "move_speed_mod": -300
+       }
+      ]
+     },
+     {
+      "id": "id.skill_ability.achilles_strike_damage_on_move",
+      "effects": [
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_physical_damage_base": 1,
+        "exec_attribute_bonus_ratio": 500
+       }
+      ]
+     }
+    ],
+    "description": "Strike a target, reducing their move speed bonus by for seconds. While debuffed, each time the target moves they receive physical damage. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.blood_exchange",
+    "name": "Blood Exchange",
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "icon": "fe1543a06a0e3e869444ea59294ebd922fabfebdebc9a9a3ca61aedd938861fd",
+    "icon_url": "https://cdn.darkerdb.com/codex/fe1543a06a0e3e869444ea59294ebd922fabfebdebc9a9a3ca61aedd938861fd",
+    "abilities": [
+     {
+      "id": "id.skill_ability.blood_exchange",
+      "effects": [
+       {
+        "duration": 8000,
+        "action_speed": 150
+       },
+       {
+        "exec_add_health_by_max_health_ratio": -100
+       }
+      ]
+     }
+    ],
+    "description": "Lose of maximum health, but gain action speed for seconds and heal for of damage dealt while active. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.finishing_blow",
+    "name": "Finishing Blow",
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "icon": "ec33a5869dd363fa40c335b1e61649c3fdb6a0963b9afc57ceefe05bde88f730",
+    "icon_url": "https://cdn.darkerdb.com/codex/ec33a5869dd363fa40c335b1e61649c3fdb6a0963b9afc57ceefe05bde88f730",
+    "abilities": [
+     {
+      "id": "id.skill_ability.finishing_blow",
+      "effects": [
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_physical_damage_true": 5,
+        "exec_execution_health_ratio_threshold": 100
+       }
+      ]
+     }
+    ],
+    "description": "Your next attack deals an additional true physical damage. If the target’s health is or lower after the attack, they are instantly killed. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.grappling_hook",
+    "name": "Grappling Hook",
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "icon": "4d5c712ddc1c1588b0d77790140ec437d3ebc2766c758ef01ff5c0700947f95e",
+    "icon_url": "https://cdn.darkerdb.com/codex/4d5c712ddc1c1588b0d77790140ec437d3ebc2766c758ef01ff5c0700947f95e",
+    "abilities": [
+     {
+      "id": "id.skill_ability.grappling_hook",
+      "effects": []
+     },
+     {
+      "id": "id.skill_ability.grappling_hook_ranged_attack",
+      "effects": [
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_knockback_vertical": 400,
+        "exec_knockback_horizontal": -600
+       },
+       {
+        "duration": 1500,
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "move_speed_mod": -500
+       }
+      ]
+     }
+    ],
+    "description": "Throws a grappling rope at a target up to 4m away, pulling them toward you. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.hurl_weapon",
+    "name": "Hurl Weapon",
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "icon": "37d5e36822b85d3462ae30937ab51bcf813379802e857d3b36f663463e8379a9",
+    "icon_url": "https://cdn.darkerdb.com/codex/37d5e36822b85d3462ae30937ab51bcf813379802e857d3b36f663463e8379a9",
+    "abilities": [
+     {
+      "id": "id.skill_ability.hurl_weapon",
+      "effects": []
+     }
+    ],
+    "description": "Throws an axe to deal weapon damage. Can only be used when an axe is equipped as your primary weapon. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.rage",
+    "name": "Rage",
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "icon": "9ae89aee72743d8e812fb8601250631d8dc34cf98280e1d54341bfbe4fa698f3",
+    "icon_url": "https://cdn.darkerdb.com/codex/9ae89aee72743d8e812fb8601250631d8dc34cf98280e1d54341bfbe4fa698f3",
+    "abilities": [
+     {
+      "id": "id.skill_ability.rage",
+      "effects": [
+       {
+        "duration": 6000,
+        "strength_base": 10,
+        "move_speed_mod": 70,
+        "physical_reduction": -50
+       }
+      ]
+     }
+    ],
+    "description": "Gain strength, move speed bonus. While active, lose physical damage reduction for seconds. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.reckless_attack",
+    "name": "Reckless Attack",
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "icon": "673dd415c3771623e40dc06a01099cac62da03f73545726a69b8879cca0fff71",
+    "icon_url": "https://cdn.darkerdb.com/codex/673dd415c3771623e40dc06a01099cac62da03f73545726a69b8879cca0fff71",
+    "abilities": [
+     {
+      "id": "id.skill_ability.reckless_attack",
+      "effects": [
+       {
+        "armor_penetration": 500
+       },
+       {
+        "duration": 8000,
+        "armor_rating": -100
+       }
+      ]
+     }
+    ],
+    "description": "Grants an additional armor penetration on your next attack, but reduces your armor rating by while active. The effect is consumed when you hit a target or object with a melee attack. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.savage_roar",
+    "name": "Savage Roar",
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "icon": "36b6c2612efb80605ecc44387cef80681f364351cd6db3a104653e9a4e495447",
+    "icon_url": "https://cdn.darkerdb.com/codex/36b6c2612efb80605ecc44387cef80681f364351cd6db3a104653e9a4e495447",
+    "abilities": [
+     {
+      "id": "id.skill_ability.savage_roar",
+      "effects": [
+       {
+        "duration": 6000,
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "move_speed_mod": -25,
+        "physical_damage_mod": -300
+       },
+       {
+        "duration": 3000,
+        "target_type": "EGameplayEffectTargetType::EventData"
+       }
+      ]
+     }
+    ],
+    "description": "Frightens all enemies within a 7.5m range radius for seconds reducing their physical damage bonus by and move speed bonus by. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.war_cry",
+    "name": "War Cry",
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "icon": "c12c5cdfcaf24bb19bcc1f267988cbf68078ef8b577d3ef3b14f398f2bdf3294",
+    "icon_url": "https://cdn.darkerdb.com/codex/c12c5cdfcaf24bb19bcc1f267988cbf68078ef8b577d3ef3b14f398f2bdf3294",
+    "abilities": [
+     {
+      "id": "id.skill_ability.war_cry",
+      "effects": [
+       {
+        "duration": 10000,
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "max_health_mod": 200
+       }
+      ]
+     }
+    ],
+    "description": "Gain max health bonus for seconds. This effect applies to yourself and allies within a 7.5m radius. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.war_sacrifice",
+    "name": "War Sacrifice",
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "icon": "223344649296f8c9d81219aa8955c47b028f2fa38443bd2001c0751f45059817",
+    "icon_url": "https://cdn.darkerdb.com/codex/223344649296f8c9d81219aa8955c47b028f2fa38443bd2001c0751f45059817",
+    "abilities": [
+     {
+      "id": "id.skill_ability.war_sacrifice",
+      "effects": [
+       {
+        "duration": 8000,
+        "will_base": 8,
+        "vigor_base": 8,
+        "agility_base": 8,
+        "strength_base": 8,
+        "dexterity_base": 8,
+        "knowledge_base": 8,
+        "resourcefulness_base": 8
+       },
+       {
+        "duration": 8000,
+        "exec_attribute_bonus_ratio": 1000,
+        "exec_add_health_by_max_health_ratio": -100
+       }
+      ]
+     }
+    ],
+    "description": "While active, gain all attributes. In exchange, lose of your maximum health over seconds. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.whirlwind",
+    "name": "Whirlwind",
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "icon": "21e15495e2adbf1242df738ecc2c7a67102b4a2a0ce19943ce8e2d7611da3f3d",
+    "icon_url": "https://cdn.darkerdb.com/codex/21e15495e2adbf1242df738ecc2c7a67102b4a2a0ce19943ce8e2d7611da3f3d",
+    "abilities": [
+     {
+      "id": "id.skill_ability.whirlwind",
+      "effects": []
+     }
+    ],
+    "description": "Spin rapidly with a two-handed weapon, dealing of weapon damage to all nearby enemies. While spinning, your weapon cannot be interrupted by any impact. Cooldown: seconds"
+   }
+  ],
+  "stats": {
+   "will": 18,
+   "vigor": 25,
+   "agility": 13,
+   "strength": 20,
+   "dexterity": 12,
+   "knowledge": 5,
+   "move_speed": 300,
+   "max_health_add": 25,
+   "resourcefulness": 12
+  },
+  "spell_count": 0,
+  "song_count": 0,
+  "shapeshift_count": 0
+ },
+ {
+  "id": "id.class.bard",
+  "name": "Bard",
+  "perks": [
+   {
+    "id": "id.perk.rapier_mastery",
+    "name": "Rapier Mastery",
+    "perk_tag": null,
+    "icon": "be06fcfbd9855745cfb6690940f3b4a89d6ca1e2f7eed1fa3720223e3c2802db",
+    "icon_url": "https://cdn.darkerdb.com/codex/be06fcfbd9855745cfb6690940f3b4a89d6ca1e2f7eed1fa3720223e3c2802db",
+    "abilities": [],
+    "description": "While using a Rapier, gain weapon damage and action speed.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.rapier_mastery",
+      "action_speed": 50,
+      "physical_damage_weapon": 3
+     },
+     {
+      "id": "id.actor_status_effect.rapier_mastery_demons_glee",
+      "action_speed": 50,
+      "physical_damage_weapon": 3
+     }
+    ],
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ]
+   },
+   {
+    "id": "id.perk.charismatic_performance",
+    "name": "Charismatic Performance",
+    "perk_tag": null,
+    "icon": "d13f69dd01859c03d5edcb8e3a5de843e2b80f19e3deaf1a142d7896f5fdcbfd",
+    "icon_url": "https://cdn.darkerdb.com/codex/d13f69dd01859c03d5edcb8e3a5de843e2b80f19e3deaf1a142d7896f5fdcbfd",
+    "abilities": [],
+    "description": "Upgrades a ‘good’ performance into a ‘perfect’ performance.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.charismatic_performance"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ]
+   },
+   {
+    "id": "id.perk.superior_dexterity",
+    "name": "Superior Dexterity",
+    "perk_tag": null,
+    "icon": "b473143116649a8338883b8cec8b98962dfa2d719c2497e10a0beb29488af0e7",
+    "icon_url": "https://cdn.darkerdb.com/codex/b473143116649a8338883b8cec8b98962dfa2d719c2497e10a0beb29488af0e7",
+    "abilities": [],
+    "description": "faster switching time when switching between weapons utility items.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.superior_dexterity"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ]
+   },
+   {
+    "id": "id.perk.wanderers_luck",
+    "name": "Wanderer's Luck",
+    "perk_tag": null,
+    "icon": "6322d0c08aa47355a75ad3359f0b2ffb16202f125b190cd1f60273fcaa5e7a1c",
+    "icon_url": "https://cdn.darkerdb.com/codex/6322d0c08aa47355a75ad3359f0b2ffb16202f125b190cd1f60273fcaa5e7a1c",
+    "abilities": [],
+    "description": "Gain luck and increases the chance of finding high-quality items when opening treasure chests.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.wanderers_luck",
+      "luck": 100
+     }
+    ],
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ]
+   }
+  ],
+  "icon": "4b126408445bb87b7ea1b803b08d254a9990a2dc5d0fb0b9f822a7d48ca24aa8",
+  "icon_url": "https://cdn.darkerdb.com/codex/4b126408445bb87b7ea1b803b08d254a9990a2dc5d0fb0b9f822a7d48ca24aa8",
+  "flavor": "The Bard is a weaver of moving melodies and fantastic tales. They manage to get out of the stickiest of situations using their uncanny ability to mysteriously control the mood of crowds and creatures.",
+  "skills": [
+   {
+    "id": "id.skill.dissonance",
+    "name": "Dissonance",
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ],
+    "icon": "56cf3bfdfec2dc315609fd60312fd6ee91b78e29f9423fcc6dcb025647c5b62a",
+    "icon_url": "https://cdn.darkerdb.com/codex/56cf3bfdfec2dc315609fd60312fd6ee91b78e29f9423fcc6dcb025647c5b62a",
+    "abilities": [
+     {
+      "id": "id.skill_ability.dissonance",
+      "effects": []
+     }
+    ],
+    "description": "Plays an instrument to make an unpleasant noise that silences all enemy targets for seconds.\nSilence: Disables skills spells performance abilities."
+   },
+   {
+    "id": "id.skill.encore",
+    "name": "Encore",
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ],
+    "icon": "754299ccf0604b729e9589a906db95292ada8789d2f16bde6ecdfad6522a79ff",
+    "icon_url": "https://cdn.darkerdb.com/codex/754299ccf0604b729e9589a906db95292ada8789d2f16bde6ecdfad6522a79ff",
+    "abilities": [
+     {
+      "id": "id.skill_ability.encore",
+      "effects": [
+       {
+        "manual_dexterity": 1500
+       }
+      ]
+     }
+    ],
+    "description": "Resets the duration of all active music buffs on nearby party members. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.music_memory1",
+    "name": "Music Memory",
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ],
+    "icon": "614ab5470b1f6c0fdc9507aaad9eee3aab90f5bd4a4e9778f6d981d839aa1ff8",
+    "icon_url": "https://cdn.darkerdb.com/codex/614ab5470b1f6c0fdc9507aaad9eee3aab90f5bd4a4e9778f6d981d839aa1ff8",
+    "abilities": [
+     {
+      "id": "id.skill_ability.music_memory1",
+      "effects": []
+     }
+    ],
+    "description": "Gain the ability to store up to 5 sheets of music."
+   },
+   {
+    "id": "id.skill.music_memory2",
+    "name": "Music Memory II",
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ],
+    "icon": "614ab5470b1f6c0fdc9507aaad9eee3aab90f5bd4a4e9778f6d981d839aa1ff8",
+    "icon_url": "https://cdn.darkerdb.com/codex/614ab5470b1f6c0fdc9507aaad9eee3aab90f5bd4a4e9778f6d981d839aa1ff8",
+    "abilities": [
+     {
+      "id": "id.skill_ability.music_memory2",
+      "effects": []
+     }
+    ],
+    "description": "Gain the ability to store up to 5 sheets of music."
+   },
+   {
+    "id": "id.skill.party_maker",
+    "name": "Party Maker",
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ],
+    "icon": "84e50070cfe3083655db023a09f80d9d0b2cf6bc24731afe9a5990a732a1d02f",
+    "icon_url": "https://cdn.darkerdb.com/codex/84e50070cfe3083655db023a09f80d9d0b2cf6bc24731afe9a5990a732a1d02f",
+    "abilities": [
+     {
+      "id": "id.skill_ability.party_maker",
+      "effects": [
+       {
+        "duration": 15000,
+        "target_type": "EGameplayEffectTargetType::EventData"
+       }
+      ]
+     }
+    ],
+    "description": "Play an instrument to grant all nearby allies immunity to drunkenness for seconds. While immune, drinking alcohol restores health. Cooldown: seconds"
+   }
+  ],
+  "stats": {
+   "will": 11,
+   "vigor": 13,
+   "agility": 13,
+   "strength": 13,
+   "dexterity": 20,
+   "knowledge": 20,
+   "move_speed": 300,
+   "max_health_add": 25,
+   "resourcefulness": 15
+  },
+  "spell_count": 0,
+  "song_count": 19,
+  "shapeshift_count": 0
+ },
+ {
+  "id": "id.class.cleric",
+  "name": "Cleric",
+  "perks": [
+   {
+    "id": "id.perk.blunt_weapon_mastery",
+    "name": "Blunt Weapon Mastery",
+    "perk_tag": null,
+    "icon": "48975ec3ebeacad1c21cc770f9164873161705096d6d32e4ec1e1ff33c3ec245",
+    "icon_url": "https://cdn.darkerdb.com/codex/48975ec3ebeacad1c21cc770f9164873161705096d6d32e4ec1e1ff33c3ec245",
+    "abilities": [],
+    "description": "While using a blunt weapon, gain physical damage bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.blunt_weapon_mastery",
+      "physical_damage_mod": 100
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ]
+   },
+   {
+    "id": "id.perk.advanced_healer",
+    "name": "Advanced Healer",
+    "perk_tag": null,
+    "icon": "0755fc9f9cca8eba30ea39bee497a23c54f604e888355b4d4cb3aaba9a2249f2",
+    "icon_url": "https://cdn.darkerdb.com/codex/0755fc9f9cca8eba30ea39bee497a23c54f604e888355b4d4cb3aaba9a2249f2",
+    "abilities": [],
+    "description": "Gain magical healing.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.advanced_healer",
+      "magical_heal_base": 5
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ]
+   },
+   {
+    "id": "id.perk.perseverance",
+    "name": "Perseverance",
+    "perk_tag": null,
+    "icon": "959b25119a477272e37644352726d75a3d62a67cd59d26989d2079d3d02e9aca",
+    "icon_url": "https://cdn.darkerdb.com/codex/959b25119a477272e37644352726d75a3d62a67cd59d26989d2079d3d02e9aca",
+    "abilities": [],
+    "description": "Reduces all types of incoming damage by.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.perseverance",
+      "magical_absolute_reduction": 2,
+      "physical_absolute_reduction": 2
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ]
+   },
+   {
+    "id": "id.perk.overhealing",
+    "name": "Over Healing",
+    "perk_tag": null,
+    "icon": "4537d15e3fbc8b2fd816c51b5d4290f664f18d3ac188f9430414d02902ceae60",
+    "icon_url": "https://cdn.darkerdb.com/codex/4537d15e3fbc8b2fd816c51b5d4290f664f18d3ac188f9430414d02902ceae60",
+    "abilities": [
+     {
+      "id": "id.perk_ability.overhealing",
+      "effects": [
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_add_health_by_max_health_ratio": -20
+       }
+      ]
+     }
+    ],
+    "description": "Even if the target's health is at full health, additional healing can be done by of the target's maximum health. ^ degenerates at per second.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.overhealing"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ]
+   }
+  ],
+  "icon": "2d0b28103e26824b6d5cdf6ac3ef9f2c12ac2f82dc22a83779d31f28b2965f65",
+  "icon_url": "https://cdn.darkerdb.com/codex/2d0b28103e26824b6d5cdf6ac3ef9f2c12ac2f82dc22a83779d31f28b2965f65",
+  "flavor": "The Cleric is a soldier of immense faith. The Cleric uses his sacred bonds to his gods to call forth the protective powers of light and to vanquish the forces of dark.",
+  "skills": [
+   {
+    "id": "id.skill.divine_protection",
+    "name": "Divine Protection",
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "icon": "633c0a15ff8def5f3c5660f90710605e08fdb1319d04eb68585678b6a927cfba",
+    "icon_url": "https://cdn.darkerdb.com/codex/633c0a15ff8def5f3c5660f90710605e08fdb1319d04eb68585678b6a927cfba",
+    "abilities": [
+     {
+      "id": "id.skill_ability.divine_protection",
+      "effects": [
+       {
+        "duration": 6000,
+        "physical_reduction": 300
+       }
+      ]
+     }
+    ],
+    "description": "Gain physical damage reduction for seconds. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.holy_purification",
+    "name": "Holy Purification",
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "icon": "bc72cb341c91f506abda72523a93d082bf2702d6672d75bba8d9ad608021849f",
+    "icon_url": "https://cdn.darkerdb.com/codex/bc72cb341c91f506abda72523a93d082bf2702d6672d75bba8d9ad608021849f",
+    "abilities": [
+     {
+      "id": "id.skill_ability.holy_purification",
+      "effects": [
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_magical_damage_base": 100,
+        "exec_attribute_bonus_ratio": 1000
+       }
+      ]
+     }
+    ],
+    "description": "After channeling for 1.5 seconds, deal divine magical damage to all undead monsters within a 7.5m radius around you. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.judgement",
+    "name": "Judgement",
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "icon": "e71962ed65522474da3a8962ecbddb71cae4d8090ec429e78bac4e93ca3743fc",
+    "icon_url": "https://cdn.darkerdb.com/codex/e71962ed65522474da3a8962ecbddb71cae4d8090ec429e78bac4e93ca3743fc",
+    "abilities": [
+     {
+      "id": "id.skill_ability.judgement",
+      "effects": [
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_magical_damage_base": 25,
+        "exec_attribute_bonus_ratio": 1000
+       },
+       {
+        "duration": 2000,
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "move_speed_mod": -300
+       }
+      ]
+     }
+    ],
+    "description": "After channeling for 1 seconds, deal divine magical damage to a target and reduce their move speed bonus by for seconds. Once the channel begins on a target, crosshair targeting is no longer required. This spell has a 5m range and will fail if the target goes out of range. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.smite",
+    "name": "Smite",
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "icon": "b305133a91cea054a3008fff3c6fcc7c1c6bfbb4289cceb1113cabfb3566f1a3",
+    "icon_url": "https://cdn.darkerdb.com/codex/b305133a91cea054a3008fff3c6fcc7c1c6bfbb4289cceb1113cabfb3566f1a3",
+    "abilities": [
+     {
+      "id": "id.skill_ability.smite",
+      "effects": [
+       {
+        "duration": 7000
+       },
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_magical_damage_base": 10,
+        "exec_attribute_bonus_ratio": 1000
+       }
+      ]
+     }
+    ],
+    "description": "Deal an additional divine magical damage to all enemies you hit within seconds. Only when melee attacking. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.spell_memory1",
+    "name": "Spell Memory I",
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric",
+     "id.class.wizard",
+     "id.class.grand_master_wizard",
+     "id.class.warlock",
+     "id.class.grand_master_warlock",
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "icon": "e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "icon_url": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "abilities": [
+     {
+      "id": "id.skill_ability.spell_memory1",
+      "effects": []
+     }
+    ],
+    "description": "Gain the ability to memorize spells to use in the dungeon."
+   },
+   {
+    "id": "id.skill.spell_memory2",
+    "name": "Spell Memory II",
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric",
+     "id.class.wizard",
+     "id.class.grand_master_wizard",
+     "id.class.warlock",
+     "id.class.grand_master_warlock",
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "icon": "e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "icon_url": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "abilities": [
+     {
+      "id": "id.skill_ability.spell_memory2",
+      "effects": []
+     }
+    ],
+    "description": "Gain the ability to memorize additional spells to use in the dungeon."
+   }
+  ],
+  "stats": {
+   "will": 23,
+   "vigor": 13,
+   "agility": 12,
+   "strength": 11,
+   "dexterity": 14,
+   "knowledge": 20,
+   "move_speed": 300,
+   "max_health_add": 25,
+   "resourcefulness": 12
+  },
+  "spell_count": 12,
+  "song_count": 0,
+  "shapeshift_count": 0
+ },
+ {
+  "id": "id.class.druid",
+  "name": "Druid",
+  "perks": [
+   {
+    "id": "id.perk.natural_healing",
+    "name": "Natural Healing",
+    "perk_tag": null,
+    "icon": "34bdb63ea32c8d3c1268fe14901b2d4e4e82384377001bbf1abc776730bef3e6",
+    "icon_url": "https://cdn.darkerdb.com/codex/34bdb63ea32c8d3c1268fe14901b2d4e4e82384377001bbf1abc776730bef3e6",
+    "abilities": [
+     {
+      "id": "id.perk_ability.natural_healing",
+      "effects": [
+       {
+        "target_type": "EGameplayEffectTargetType::EventData"
+       }
+      ]
+     },
+     {
+      "id": "id.perk_ability.natural_healing_granted",
+      "effects": []
+     }
+    ],
+    "description": "Recover yourself and nearby allies health every 3 seconds.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.natural_healing"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ]
+   },
+   {
+    "id": "id.perk.sun_and_moon",
+    "name": "Sun and Moon",
+    "perk_tag": null,
+    "icon": "b94b7deb6d1e530c11e8201749d5f15dc527e411655cd0b1b05b0935fd3a9ad0",
+    "icon_url": "https://cdn.darkerdb.com/codex/b94b7deb6d1e530c11e8201749d5f15dc527e411655cd0b1b05b0935fd3a9ad0",
+    "abilities": [
+     {
+      "id": "id.perk_ability.sun_and_moon",
+      "effects": [
+       {
+        "target_type": "EGameplayEffectTargetType::EventData"
+       }
+      ]
+     },
+     {
+      "id": "id.perk_ability.sun_and_moon_granted",
+      "effects": [
+       {
+        "vigor_base": 3,
+        "magical_power": 5
+       }
+      ]
+     }
+    ],
+    "description": "Nearby allies gain vigor and magical power.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.sun_and_moon"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ]
+   },
+   {
+    "id": "id.perk.enhanced_wildness",
+    "name": "Enhanced Wildness",
+    "perk_tag": null,
+    "icon": "d5bf9dd30404ee5f137e7964f74f5b043b35c69d53764d0f019780f4f5a15eee",
+    "icon_url": "https://cdn.darkerdb.com/codex/d5bf9dd30404ee5f137e7964f74f5b043b35c69d53764d0f019780f4f5a15eee",
+    "abilities": [],
+    "description": "While you are in animal form, you gain physical damage bonus and armor rating.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.enhanced_wildness",
+      "armor_rating": 20,
+      "physical_damage_mod": 50
+     }
+    ],
+    "allowed_classes": [
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ]
+   },
+   {
+    "id": "id.perk.dreamwalk",
+    "name": "Dreamwalk",
+    "perk_tag": null,
+    "icon": "8f3c1ffb0c6617cc30b6dc07fdadd8a4a14bd76cc1406552960632aa00203127",
+    "icon_url": "https://cdn.darkerdb.com/codex/8f3c1ffb0c6617cc30b6dc07fdadd8a4a14bd76cc1406552960632aa00203127",
+    "abilities": [
+     {
+      "id": "id.perk_ability.dreamwalk",
+      "effects": [
+       {
+        "duration": 2000,
+        "magical_power": 5
+       },
+       {
+        "duration": 12000
+       }
+      ]
+     }
+    ],
+    "description": "When you take damage, your magical power increases by for seconds and you become spiritual. The player does not collide with other targets and cannot attack or use skills, but can cast spells. This ability triggers once every seconds. Cooldown: seconds",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.dreamwalk"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ]
+   }
+  ],
+  "icon": "b6bad4091add2896c8a2837ecb71db09c60433036ab7b992e6b9c579da0ecb09",
+  "icon_url": "https://cdn.darkerdb.com/codex/b6bad4091add2896c8a2837ecb71db09c60433036ab7b992e6b9c579da0ecb09",
+  "flavor": "The Druid is a spirit mage with a deep connection to nature. Able to wield the powers of the wilderness, they can even transform their bodies to mimic the powers of beasts.",
+  "skills": [
+   {
+    "id": "id.skill.shape_shift_memory1",
+    "name": "Shapeshift Memory",
+    "allowed_classes": [
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "icon": "7870c42b1edc33026e87d84844917736b16c6bbb113bf66cc520052dcfce2ea6",
+    "icon_url": "https://cdn.darkerdb.com/codex/7870c42b1edc33026e87d84844917736b16c6bbb113bf66cc520052dcfce2ea6",
+    "abilities": [
+     {
+      "id": "id.skill_ability.shape_shift_memory1",
+      "effects": []
+     },
+     {
+      "id": "id.player_character_ability.shape_shift_cast",
+      "effects": []
+     }
+    ],
+    "description": "Transforms into the selected creature. Tools cannot be used in a non-human state."
+   },
+   {
+    "id": "id.skill.shape_shift_memory2",
+    "name": "Shapeshift Memory II",
+    "allowed_classes": [
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "icon": "7870c42b1edc33026e87d84844917736b16c6bbb113bf66cc520052dcfce2ea6",
+    "icon_url": "https://cdn.darkerdb.com/codex/7870c42b1edc33026e87d84844917736b16c6bbb113bf66cc520052dcfce2ea6",
+    "abilities": [
+     {
+      "id": "id.skill_ability.shape_shift_memory2",
+      "effects": []
+     },
+     {
+      "id": "id.player_character_ability.shape_shift_cast",
+      "effects": []
+     }
+    ],
+    "description": "Transforms into the selected creature. Tools cannot be used in a non-human state."
+   },
+   {
+    "id": "id.skill.spell_memory1",
+    "name": "Spell Memory I",
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric",
+     "id.class.wizard",
+     "id.class.grand_master_wizard",
+     "id.class.warlock",
+     "id.class.grand_master_warlock",
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "icon": "e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "icon_url": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "abilities": [
+     {
+      "id": "id.skill_ability.spell_memory1",
+      "effects": []
+     }
+    ],
+    "description": "Gain the ability to memorize spells to use in the dungeon."
+   },
+   {
+    "id": "id.skill.spell_memory2",
+    "name": "Spell Memory II",
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric",
+     "id.class.wizard",
+     "id.class.grand_master_wizard",
+     "id.class.warlock",
+     "id.class.grand_master_warlock",
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "icon": "e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "icon_url": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "abilities": [
+     {
+      "id": "id.skill_ability.spell_memory2",
+      "effects": []
+     }
+    ],
+    "description": "Gain the ability to memorize additional spells to use in the dungeon."
+   }
+  ],
+  "stats": {
+   "will": 18,
+   "vigor": 13,
+   "agility": 12,
+   "strength": 12,
+   "dexterity": 12,
+   "knowledge": 20,
+   "move_speed": 300,
+   "max_health_add": 25,
+   "resourcefulness": 18
+  },
+  "spell_count": 10,
+  "song_count": 0,
+  "shapeshift_count": 5
+ },
+ {
+  "id": "id.class.fighter",
+  "name": "Fighter",
+  "perks": [
+   {
+    "id": "id.perk.sword_mastery",
+    "name": "Sword Mastery",
+    "perk_tag": null,
+    "icon": "5bc10fa7d29fcded618d86119cd3ad982be20d410c792733b9c8351253c79792",
+    "icon_url": "https://cdn.darkerdb.com/codex/5bc10fa7d29fcded618d86119cd3ad982be20d410c792733b9c8351253c79792",
+    "abilities": [],
+    "description": "When using a sword-type weapon, gain weapon damage and action speed. Also gain additional move speed when taking a defensive stance with your sword.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.sword_mastery_passive",
+      "action_speed": 50,
+      "physical_damage_weapon": 2
+     },
+     {
+      "id": "id.actor_status_effect.sword_mastery_activate",
+      "move_speed_add": 10
+     }
+    ],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ]
+   },
+   {
+    "id": "id.perk.defense_mastery",
+    "name": "Defense Mastery",
+    "perk_tag": null,
+    "icon": "0588c88991fabed3545376f575052a01fa43289b52bc2e46a76a23ebd561d4b0",
+    "icon_url": "https://cdn.darkerdb.com/codex/0588c88991fabed3545376f575052a01fa43289b52bc2e46a76a23ebd561d4b0",
+    "abilities": [],
+    "description": "Gain an additional armor rating bonus from equipped armor. The maximum physical damage reduction limit is Increased to.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.defense_mastery",
+      "item_armor_rating_mod": 150
+     }
+    ],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ]
+   },
+   {
+    "id": "id.perk.veteran_instinct",
+    "name": "Veteran Instinct",
+    "perk_tag": null,
+    "icon": "e95a6ffd6144c5fb47f6adfcf1f763a3e89a6a6ab46b4417bdf39917bfe99beb",
+    "icon_url": "https://cdn.darkerdb.com/codex/e95a6ffd6144c5fb47f6adfcf1f763a3e89a6a6ab46b4417bdf39917bfe99beb",
+    "abilities": [
+     {
+      "id": "id.perk_ability.veteran_instinct",
+      "effects": [
+       {
+        "duration": 4000,
+        "physical_damage_mod": 100,
+        "physical_reduction_mod": 100
+       }
+      ]
+     }
+    ],
+    "description": "When you enter combat, physical damage reduction is increased by of its current value and physical damage bonus is increased by for seconds.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ]
+   },
+   {
+    "id": "id.perk.weapon_mastery",
+    "name": "Weapon Mastery",
+    "perk_tag": null,
+    "icon": "5eb6ef38ac7828e1704f44910febd15d4738f0a43a4925447bafe84a8927242b",
+    "icon_url": "https://cdn.darkerdb.com/codex/5eb6ef38ac7828e1704f44910febd15d4738f0a43a4925447bafe84a8927242b",
+    "abilities": [],
+    "description": "Gain the ability to use any weapon.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.weapon_mastery"
+     },
+     {
+      "id": "id.actor_status_effect.weapon_mastery_debuff"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ]
+   }
+  ],
+  "icon": "2dd6283bb5784ddbef7dccc27d10837862c441cdee7a897e64081004e13560b0",
+  "icon_url": "https://cdn.darkerdb.com/codex/2dd6283bb5784ddbef7dccc27d10837862c441cdee7a897e64081004e13560b0",
+  "flavor": "The Fighter is a jack of all trades when it comes to combat. Well-versed with a multitude of weapons and armaments, the Fighter can hold his own against anyone.",
+  "skills": [
+   {
+    "id": "id.skill.adrenaline_rush",
+    "name": "Adrenaline Rush",
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "icon": "7a8d95317fc72a73fa7f0dc836786f847299aa2547b3faf481875995bb704860",
+    "icon_url": "https://cdn.darkerdb.com/codex/7a8d95317fc72a73fa7f0dc836786f847299aa2547b3faf481875995bb704860",
+    "abilities": [
+     {
+      "id": "id.skill_ability.adrenaline_rush",
+      "effects": [
+       {
+        "duration": 8000,
+        "action_speed": 150,
+        "move_speed_mod": 50
+       },
+       {
+        "duration": 2000,
+        "action_speed": -80,
+        "move_speed_mod": -40
+       }
+      ]
+     }
+    ],
+    "description": "Gain action speed, move speed bonus for seconds. After the duration ends, lose action speed and move speed bonus for seconds. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.breakthrough",
+    "name": "Breakthrough",
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "icon": "b8dff5ffd03f6152491b12bd09fb45c6ae72036368a81db4de2a19219b20d13f",
+    "icon_url": "https://cdn.darkerdb.com/codex/b8dff5ffd03f6152491b12bd09fb45c6ae72036368a81db4de2a19219b20d13f",
+    "abilities": [
+     {
+      "id": "id.skill_ability.breakthrough",
+      "effects": [
+       {
+        "duration": 8000,
+        "move_speed_add": 7
+       }
+      ]
+     }
+    ],
+    "description": "Removes debuffs that slow move speed, grants a additional move speed, and ignores all move speed debuff effects for seconds. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.disarm",
+    "name": "Disarm",
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "icon": "967fa9a917bde098921d28ed3faa573530e09b288df95c6f2872fdbd0424d13c",
+    "icon_url": "https://cdn.darkerdb.com/codex/967fa9a917bde098921d28ed3faa573530e09b288df95c6f2872fdbd0424d13c",
+    "abilities": [
+     {
+      "id": "id.skill_ability.disarm",
+      "effects": [
+       {
+        "duration": 8000
+       },
+       {
+        "duration": 1000,
+        "target_type": "EGameplayEffectTargetType::EventData"
+       }
+      ]
+     }
+    ],
+    "description": "If you block a melee attack with your weapon within seconds, you disarm the attacker for seconds. Disarmed targets cannot use weapons. This effect can only be applied once and is consumed when you block a melee attack. Can only be used while a weapon is equipped. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.fortified_ground",
+    "name": "Fortified Ground",
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "icon": "2a0cdede329ec21015c65f0a110d295025f09399bf5c7b658566e39eb1308096",
+    "icon_url": "https://cdn.darkerdb.com/codex/2a0cdede329ec21015c65f0a110d295025f09399bf5c7b658566e39eb1308096",
+    "abilities": [
+     {
+      "id": "id.skill_ability.fortified_ground",
+      "effects": [
+       {
+        "will_base": 3,
+        "vigor_base": 3,
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "agility_base": 3,
+        "strength_base": 3,
+        "dexterity_base": 3,
+        "knowledge_base": 3,
+        "resourcefulness_base": 3
+       },
+       {
+        "target_type": "EGameplayEffectTargetType::EventData"
+       }
+      ]
+     }
+    ],
+    "description": "Deploys a rallying banner for seconds. Allies within 33m of the banner have all attributes increased by. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.perfect_block",
+    "name": "Perfect Block",
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "icon": "9c906557e8f6baad5b019c03af50a1161cc10767928a465a90fbdee15ab26584",
+    "icon_url": "https://cdn.darkerdb.com/codex/9c906557e8f6baad5b019c03af50a1161cc10767928a465a90fbdee15ab26584",
+    "abilities": [
+     {
+      "id": "id.skill_ability.perfect_block",
+      "effects": [
+       {
+        "duration": 8000,
+        "impact_resistance": 5
+       }
+      ]
+     }
+    ],
+    "description": "Gain impact resistance for seconds. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.pommel_strike",
+    "name": "Pommel Strike",
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "icon": "e7596291913ab6a7f1df6394ca40f41c71488cfa3896ec9bd2b3b50136e5bc25",
+    "icon_url": "https://cdn.darkerdb.com/codex/e7596291913ab6a7f1df6394ca40f41c71488cfa3896ec9bd2b3b50136e5bc25",
+    "abilities": [
+     {
+      "id": "id.skill_ability.pommel_strike",
+      "effects": []
+     }
+    ],
+    "description": "When attacking with the hilt while a one-handed weapon is equipped as your main weapon, it deals an additional physical damage and silences the target. If the silence interrupts the enemy’s action, it deals an additional physical damage and reduces move speed bonus by for seconds. Silence: Disables skills spells performance abilities. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.second_wind",
+    "name": "Second Wind",
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "icon": "4d43f1d56aebe9250f7f4039c0af103440df40dab5495d275753b8ce15ee6137",
+    "icon_url": "https://cdn.darkerdb.com/codex/4d43f1d56aebe9250f7f4039c0af103440df40dab5495d275753b8ce15ee6137",
+    "abilities": [
+     {
+      "id": "id.skill_ability.second_wind",
+      "effects": [
+       {
+        "duration": 12000,
+        "exec_add_health_by_max_health_ratio": 400
+       }
+      ]
+     }
+    ],
+    "description": "Recover maximum health over seconds. Additionally, Second Wind removes the negative effects of Adrenaline Rush. Recharge: Campfire"
+   },
+   {
+    "id": "id.skill.shield_slam",
+    "name": "Shield Slam",
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "icon": "e3f90615275a2e98ebc378787e7a2ba5f1d9c580f4bba82fab9c4c509da6fd50",
+    "icon_url": "https://cdn.darkerdb.com/codex/e3f90615275a2e98ebc378787e7a2ba5f1d9c580f4bba82fab9c4c509da6fd50",
+    "abilities": [
+     {
+      "id": "id.skill_ability.shield_slam",
+      "effects": []
+     }
+    ],
+    "description": "Inflicts physical damage on the target, and reduces the targets move speed bonus by for seconds. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.spell_reflection",
+    "name": "Spell Reflection",
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "icon": "26aa867b46404a50c3a01a0e8af06c0a2ffc67c371b593fdcac33c62fb912dc1",
+    "icon_url": "https://cdn.darkerdb.com/codex/26aa867b46404a50c3a01a0e8af06c0a2ffc67c371b593fdcac33c62fb912dc1",
+    "abilities": [
+     {
+      "id": "id.skill_ability.spell_reflection",
+      "effects": [
+       {
+        "magical_reduction": 150
+       },
+       {
+        "duration": 5000
+       }
+      ]
+     }
+    ],
+    "description": "While blocking, gain the ability to reflect spells. This buff persists until triggered, lasting seconds. Before activation, gain magical damage reduction. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.sprint",
+    "name": "Sprint",
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "icon": "f3715f4694decda2e695661a2c0c4601d4bc21626ae8818843f98d17eeff4e2b",
+    "icon_url": "https://cdn.darkerdb.com/codex/f3715f4694decda2e695661a2c0c4601d4bc21626ae8818843f98d17eeff4e2b",
+    "abilities": [
+     {
+      "id": "id.skill_ability.sprint",
+      "effects": [
+       {
+        "duration": 2000,
+        "move_speed_add": 10
+       }
+      ]
+     }
+    ],
+    "description": "Gain 3 stacks of Momentum, granting additional move speed per stack. Lose 1 stack every seconds. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.taunt",
+    "name": "Taunt",
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "icon": "05efc2bad90c32e81b7f30f76e9637a548436ad874f48b48179e0c9756c68d31",
+    "icon_url": "https://cdn.darkerdb.com/codex/05efc2bad90c32e81b7f30f76e9637a548436ad874f48b48179e0c9756c68d31",
+    "abilities": [
+     {
+      "id": "id.skill_ability.taunt",
+      "effects": [
+       {
+        "duration": 8000,
+        "magical_reduction": 120,
+        "physical_reduction": 120
+       }
+      ]
+     }
+    ],
+    "description": "Increases the aggro value to all monsters within a 7.5m area by 200%. Gain physical damage reduction and magical damage reduction for seconds Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.victory_strike",
+    "name": "Victory Strike",
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "icon": "54e226d2edb1b3de4a0e18b7a4616031882e553a0b1f9568718e31f27ad06535",
+    "icon_url": "https://cdn.darkerdb.com/codex/54e226d2edb1b3de4a0e18b7a4616031882e553a0b1f9568718e31f27ad06535",
+    "abilities": [
+     {
+      "id": "id.skill_ability.victory_strike",
+      "effects": [
+       {
+        "duration": 10000
+       },
+       {
+        "physical_damage_mod": 400
+       }
+      ]
+     }
+    ],
+    "description": "Your next attack deals an additional physical damage bonus. If this attack kills a player, the skill triggers again with no cooldown. Cooldown: seconds"
+   }
+  ],
+  "stats": {
+   "will": 15,
+   "vigor": 15,
+   "agility": 15,
+   "strength": 15,
+   "dexterity": 15,
+   "knowledge": 15,
+   "move_speed": 300,
+   "max_health_add": 25,
+   "resourcefulness": 15
+  },
+  "spell_count": 0,
+  "song_count": 0,
+  "shapeshift_count": 0
+ },
+ {
+  "id": "id.class.ranger",
+  "name": "Ranger",
+  "perks": [
+   {
+    "id": "id.perk.quick_reload",
+    "name": "Quick Reload",
+    "perk_tag": null,
+    "icon": "a5901b7e750058de6c825d5a2ccefd8cc685ac7df216ab5efa3600f1fa937acb",
+    "icon_url": "https://cdn.darkerdb.com/codex/a5901b7e750058de6c825d5a2ccefd8cc685ac7df216ab5efa3600f1fa937acb",
+    "abilities": [],
+    "description": "When reloading a bow-type or firearm-type weapon, gain action speed.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.quick_reload",
+      "action_speed": 500
+     }
+    ],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ]
+   },
+   {
+    "id": "id.perk.nimble_hands",
+    "name": "Nimble Hands",
+    "perk_tag": null,
+    "icon": "7f85032022c9b9d5428dbc99bceb5f4008a44555718adadf3ee3562dd38a332d",
+    "icon_url": "https://cdn.darkerdb.com/codex/7f85032022c9b9d5428dbc99bceb5f4008a44555718adadf3ee3562dd38a332d",
+    "abilities": [],
+    "description": "When using a bow, increases your draw speed by 15%.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.nimble_hands"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ]
+   },
+   {
+    "id": "id.perk.chase",
+    "name": "Chase",
+    "perk_tag": null,
+    "icon": "342ce855a4d3764178f4076285f150b3828c4e46058a1356cd612edacde34e3a",
+    "icon_url": "https://cdn.darkerdb.com/codex/342ce855a4d3764178f4076285f150b3828c4e46058a1356cd612edacde34e3a",
+    "abilities": [
+     {
+      "id": "id.perk_ability.chase",
+      "effects": []
+     }
+    ],
+    "description": "Detect recent enemy footsteps and can hear enemy footstep sounds from farther away.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.chase"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ]
+   },
+   {
+    "id": "id.perk.ranged_weapons_mastery",
+    "name": "Ranged Weapons Mastery",
+    "perk_tag": null,
+    "icon": "cb5b6b0692aa76f3ad15560101f91da346651bd4d0fe58a2812f17fd0256ba85",
+    "icon_url": "https://cdn.darkerdb.com/codex/cb5b6b0692aa76f3ad15560101f91da346651bd4d0fe58a2812f17fd0256ba85",
+    "abilities": [],
+    "description": "When attacking with a ranged weapon, gain physical damage bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.ranged_weapons_mastery",
+      "physical_damage_mod": 50
+     }
+    ],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ]
+   }
+  ],
+  "icon": "3d01ff84ab494d3d3981df28ef67a661d6a759ff873653bff0212d956ef3aac2",
+  "icon_url": "https://cdn.darkerdb.com/codex/3d01ff84ab494d3d3981df28ef67a661d6a759ff873653bff0212d956ef3aac2",
+  "flavor": "The Ranger is an excellent survivalist. With a keen eye and quick hands, the Ranger tracks his enemies, sets traps and ambushes unsuspecting prey.",
+  "skills": [
+   {
+    "id": "id.skill.backstep",
+    "name": "Backstep",
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "icon": "35171b44d1599f0d2a20eb0c520662846a1fdb6d037dbb0bad366f858f85e0e9",
+    "icon_url": "https://cdn.darkerdb.com/codex/35171b44d1599f0d2a20eb0c520662846a1fdb6d037dbb0bad366f858f85e0e9",
+    "abilities": [
+     {
+      "id": "id.skill_ability.backstep",
+      "effects": [
+       {
+        "duration": 200
+       }
+      ]
+     }
+    ],
+    "description": "Quickly retreats a short distance. It can also be used in the air. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.explosive_shot",
+    "name": "Explosive Shot",
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "icon": "5299ca8ea0c68c9fccb91f986c0a19b707ec184b8e3a1571adfdaa313bc68995",
+    "icon_url": "https://cdn.darkerdb.com/codex/5299ca8ea0c68c9fccb91f986c0a19b707ec184b8e3a1571adfdaa313bc68995",
+    "abilities": [
+     {
+      "id": "id.skill_ability.explosive_shot",
+      "effects": [
+       {
+        "duration": 8000
+       },
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_impact_power": 6,
+        "exec_magical_damage_base": 7,
+        "exec_attribute_bonus_ratio": 1000
+       },
+       {
+        "duration": 1000,
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_magical_damage_base": 3,
+        "exec_attribute_bonus_ratio": 500
+       }
+      ]
+     }
+    ],
+    "description": "For seconds, attacks made with bows or crossbows cause fired projectiles to explode after 3 seconds, dealing fire magical damage to nearby enemies and applying Burn for second. Burn: The target takes fire magical damage. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.field_ration",
+    "name": "Field Ration",
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "icon": "32a9672e44b681702c12e3731ce9aca933d3e7151fd9b8a405ad9ec99b16f0e4",
+    "icon_url": "https://cdn.darkerdb.com/codex/32a9672e44b681702c12e3731ce9aca933d3e7151fd9b8a405ad9ec99b16f0e4",
+    "abilities": [
+     {
+      "id": "id.skill_ability.field_ration",
+      "effects": [
+       {
+        "exec_physical_heal_base": 40,
+        "exec_attribute_bonus_ratio": 1000
+       }
+      ]
+     }
+    ],
+    "description": "Forage food and recover health. Cooldown: seconds\nRecharge: Campfire"
+   },
+   {
+    "id": "id.skill.forceful_shot",
+    "name": "Forceful Shot",
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "icon": "b781ed6ce11b55bcd76e6cc3e9dc521aaabb1fd56a48668c8d47907dd688dfe6",
+    "icon_url": "https://cdn.darkerdb.com/codex/b781ed6ce11b55bcd76e6cc3e9dc521aaabb1fd56a48668c8d47907dd688dfe6",
+    "abilities": [
+     {
+      "id": "id.skill_ability.forceful_shot",
+      "effects": [
+       {
+        "duration": 10000
+       },
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_knockback_vertical": 250,
+        "exec_knockback_horizontal": 250
+       }
+      ]
+     }
+    ],
+    "description": "When using a bow-type weapon, gain the ability to knock targets back for seconds. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.multi_shot",
+    "name": "Multishot",
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "icon": "72211d235b3cc00ac4caa586c91ef89212858ec820bcdf6cafdb3a20c7e65325",
+    "icon_url": "https://cdn.darkerdb.com/codex/72211d235b3cc00ac4caa586c91ef89212858ec820bcdf6cafdb3a20c7e65325",
+    "abilities": [
+     {
+      "id": "id.skill_ability.multi_shot",
+      "effects": []
+     }
+    ],
+    "description": "Fire 5 arrows at once in a cone shaped dispersion. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.overdraw",
+    "name": "Overdraw",
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "icon": "3e49274c353cd28e37890243b324e72619afbe88b6c6d4376cb8924d100c7ce4",
+    "icon_url": "https://cdn.darkerdb.com/codex/3e49274c353cd28e37890243b324e72619afbe88b6c6d4376cb8924d100c7ce4",
+    "abilities": [
+     {
+      "id": "id.skill_ability.overdraw",
+      "effects": [
+       {
+        "physical_damage_weapon_mod": 300
+       }
+      ]
+     }
+    ],
+    "description": "When using bow-type weapons, maintaining a fully drawn bow increases weapon damage by per second, stacking for up to 3 seconds."
+   },
+   {
+    "id": "id.skill.penetrating_shot",
+    "name": "Penetrating Shot",
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "icon": "8b843e63b6836b69619cece9b1457ef82f44e7e659c19c5251fcf8f25ef0903b",
+    "icon_url": "https://cdn.darkerdb.com/codex/8b843e63b6836b69619cece9b1457ef82f44e7e659c19c5251fcf8f25ef0903b",
+    "abilities": [
+     {
+      "id": "id.skill_ability.penetrating_shot",
+      "effects": [
+       {
+        "duration": 8000,
+        "armor_penetration": 250,
+        "headshot_penetration": 500
+       }
+      ]
+     }
+    ],
+    "description": "Gain headshot penetration and armor penetration for seconds. Bow and crossbow attacks pierce targets. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.quick_fire",
+    "name": "Quick Fire",
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "icon": "06f054675324801913bbdfb83ba176b1fc43e0be18f1f75a24974d19044d2061",
+    "icon_url": "https://cdn.darkerdb.com/codex/06f054675324801913bbdfb83ba176b1fc43e0be18f1f75a24974d19044d2061",
+    "abilities": [
+     {
+      "id": "id.skill_ability.quick_fire",
+      "effects": [
+       {
+        "duration": 8000
+       },
+       {
+        "action_speed": 500
+       }
+      ]
+     }
+    ],
+    "description": "Gain an additional action speed for seconds while using bow-type weapons. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.quick_shot",
+    "name": "Quickshot",
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "icon": "754c9ab07b645fb9eb58541a82d35191b55593ec4bacd73f54e655926b8a4a86",
+    "icon_url": "https://cdn.darkerdb.com/codex/754c9ab07b645fb9eb58541a82d35191b55593ec4bacd73f54e655926b8a4a86",
+    "abilities": [
+     {
+      "id": "id.skill_ability.quick_shot",
+      "effects": []
+     }
+    ],
+    "description": "Fire arrows in a quick succession. Each bow-type will fire a different amount of arrows. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.true_shot",
+    "name": "True Shot",
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "icon": "d62c39ecb997bf2df4cd2833d87e80192d0da05e4af73b19c6ef95e3e046e49e",
+    "icon_url": "https://cdn.darkerdb.com/codex/d62c39ecb997bf2df4cd2833d87e80192d0da05e4af73b19c6ef95e3e046e49e",
+    "abilities": [
+     {
+      "id": "id.skill_ability.true_shot",
+      "effects": [
+       {
+        "duration": 8000,
+        "physical_damage_mod": 80
+       }
+      ]
+     }
+    ],
+    "description": "Projectile flight speed is greatly increased, also increasing physical damage bonus by for seconds."
+   }
+  ],
+  "stats": {
+   "will": 10,
+   "vigor": 10,
+   "agility": 20,
+   "strength": 12,
+   "dexterity": 18,
+   "knowledge": 12,
+   "move_speed": 300,
+   "max_health_add": 25,
+   "resourcefulness": 23
+  },
+  "spell_count": 0,
+  "song_count": 0,
+  "shapeshift_count": 0
+ },
+ {
+  "id": "id.class.rogue",
+  "name": "Rogue",
+  "perks": [
+   {
+    "id": "id.perk.jokester",
+    "name": "Jokester",
+    "perk_tag": null,
+    "icon": "1a27a6f2a9492416e735b313f5ae8f8af87f046ba0a096a84b56563051df295d",
+    "icon_url": "https://cdn.darkerdb.com/codex/1a27a6f2a9492416e735b313f5ae8f8af87f046ba0a096a84b56563051df295d",
+    "abilities": [
+     {
+      "id": "id.perk_ability.jokester",
+      "effects": [
+       {
+        "target_type": "EGameplayEffectTargetType::EventData"
+       }
+      ]
+     },
+     {
+      "id": "id.perk_ability.jokester_granted",
+      "effects": [
+       {
+        "will_base": 2,
+        "vigor_base": 2,
+        "agility_base": 2,
+        "strength_base": 2,
+        "dexterity_base": 2,
+        "knowledge_base": 2,
+        "resourcefulness_base": 2
+       }
+      ]
+     }
+    ],
+    "description": "Give all party members all attributes.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.jokester"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ]
+   },
+   {
+    "id": "id.perk.stealth",
+    "name": "Stealth",
+    "perk_tag": null,
+    "icon": "3c6b58c678f3052100ae446df83b28e8b3b8bf19ffa08ae60349fd9baae806ad",
+    "icon_url": "https://cdn.darkerdb.com/codex/3c6b58c678f3052100ae446df83b28e8b3b8bf19ffa08ae60349fd9baae806ad",
+    "abilities": [
+     {
+      "id": "id.perk_ability.stealth",
+      "effects": [
+       {
+        "move_speed_add": 3
+       }
+      ]
+     }
+    ],
+    "description": "While hiding, gain the ability to move 10 steps while crouching or slow walking. Also gain additional move speed per remaining step.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ]
+   },
+   {
+    "id": "id.perk.ambush",
+    "name": "Ambush",
+    "perk_tag": null,
+    "icon": "0afd36c7989c9bfdaf0d21ac33a6a256fc2d8ea770c2c0a34636c544a5d8a770",
+    "icon_url": "https://cdn.darkerdb.com/codex/0afd36c7989c9bfdaf0d21ac33a6a256fc2d8ea770c2c0a34636c544a5d8a770",
+    "abilities": [
+     {
+      "id": "id.perk_ability.ambush",
+      "effects": [
+       {
+        "duration": 3000,
+        "move_speed_mod": 100
+       },
+       {
+        "physical_damage_mod": 250
+       }
+      ]
+     }
+    ],
+    "description": "When coming out of hide, you gain an additional move speed bonus and physical damage bonus for seconds. If the melee attack is successful, the effect disappears.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ]
+   },
+   {
+    "id": "id.perk.dagger_mastery",
+    "name": "Dagger Mastery",
+    "perk_tag": null,
+    "icon": "f5e2bc242ed30748f6bc89737eb1941cbcd2c1cb22fd30e50d695399ad5508cb",
+    "icon_url": "https://cdn.darkerdb.com/codex/f5e2bc242ed30748f6bc89737eb1941cbcd2c1cb22fd30e50d695399ad5508cb",
+    "abilities": [],
+    "description": "While using a dagger or throwing knives, gain physical damage bonus and true physical damage.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.dagger_mastery_melee",
+      "physical_damage_mod": 100,
+      "physical_damage_true": 1
+     },
+     {
+      "id": "id.actor_status_effect.dagger_mastery_ranged",
+      "physical_damage_mod": 100,
+      "physical_damage_true": 1
+     }
+    ],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ]
+   }
+  ],
+  "icon": "d5dda4d03df7ae05d060ad0f4b1467ac9dae61abfc4cae5a1002c3724406e6bd",
+  "icon_url": "https://cdn.darkerdb.com/codex/d5dda4d03df7ae05d060ad0f4b1467ac9dae61abfc4cae5a1002c3724406e6bd",
+  "flavor": "The Rogue is a master of deception able to silently slip between the shadows to work his dastardly deeds. His dexterous hands enable him to quickly loot riches, pick locks, and disable various traps.",
+  "skills": [
+   {
+    "id": "id.skill.caltrop",
+    "name": "Caltrops",
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "icon": "cd19958075f499ea47d0ad93ca17e427e0942758462b211b7bf3074db0bcebd0",
+    "icon_url": "https://cdn.darkerdb.com/codex/cd19958075f499ea47d0ad93ca17e427e0942758462b211b7bf3074db0bcebd0",
+    "abilities": [
+     {
+      "id": "id.skill_ability.caltrop",
+      "effects": [
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_physical_damage_base": 10,
+        "exec_attribute_bonus_ratio": 1000
+       },
+       {
+        "duration": 3000,
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "move_speed_mod": -500
+       }
+      ]
+     }
+    ],
+    "description": "Drops Caltrops at your feet that deal physical damage and slows the move speed bonus by of anything that steps on them for seconds. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.cut_throat",
+    "name": "Cut Throat",
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "icon": "315826c206c881ef43afa15386e9fcf018093292e19ab881797085b064e8469a",
+    "icon_url": "https://cdn.darkerdb.com/codex/315826c206c881ef43afa15386e9fcf018093292e19ab881797085b064e8469a",
+    "abilities": [
+     {
+      "id": "id.skill_ability.cut_throat",
+      "effects": [
+       {
+        "duration": 2000,
+        "target_type": "EGameplayEffectTargetType::EventData"
+       }
+      ]
+     }
+    ],
+    "description": "When you successfully hit a target, silence them for seconds, disabling the targets skills spells performance abilities. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.dual_strike",
+    "name": "Dual Strike",
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "icon": "262e432fdd141c6999be8961c415d9be7710ec351f43a73d8490ee3e1e0bb3b0",
+    "icon_url": "https://cdn.darkerdb.com/codex/262e432fdd141c6999be8961c415d9be7710ec351f43a73d8490ee3e1e0bb3b0",
+    "abilities": [
+     {
+      "id": "id.skill_ability.dual_strike",
+      "effects": []
+     },
+     {
+      "id": "id.skill_ability.dual_strike_item_ability",
+      "effects": []
+     }
+    ],
+    "description": "Strike simultaneously with both daggers, delivering a powerful blow that combines the damage of both weapons. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.hide",
+    "name": "Hide",
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "icon": "33be63d396925c258c75d5d15fa94ffd34cadfc3b48148b1e9ff4c7fda14ec37",
+    "icon_url": "https://cdn.darkerdb.com/codex/33be63d396925c258c75d5d15fa94ffd34cadfc3b48148b1e9ff4c7fda14ec37",
+    "abilities": [
+     {
+      "id": "id.skill_ability.hide",
+      "effects": [
+       {
+        "duration": 8000
+       }
+      ]
+     }
+    ],
+    "description": "Become invisible for seconds. It is possible to change your equipment in this state. You are revealed when you attempt an action, such as moving, attacking, or using a skill. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.rupture",
+    "name": "Rupture",
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "icon": "9c19c7784d496eace270629de42625e9349193a274fdb50ec6b2ff43599034e0",
+    "icon_url": "https://cdn.darkerdb.com/codex/9c19c7784d496eace270629de42625e9349193a274fdb50ec6b2ff43599034e0",
+    "abilities": [
+     {
+      "id": "id.skill_ability.rupture",
+      "effects": [
+       {
+        "duration": 5000,
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_physical_damage_base": 20,
+        "exec_attribute_bonus_ratio": 500
+       }
+      ]
+     }
+    ],
+    "description": "The next successful attack causes the target to bleed for physical damage over seconds. The buff is consumed when an attack hits an object or target. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.shadowstep",
+    "name": "Shadowstep",
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "icon": "86f665fbf141c873b1f01e8f020449b20c3e570fbc06e7a328b9eaf506ce987f",
+    "icon_url": "https://cdn.darkerdb.com/codex/86f665fbf141c873b1f01e8f020449b20c3e570fbc06e7a328b9eaf506ce987f",
+    "abilities": [
+     {
+      "id": "id.skill_ability.shadowstep",
+      "effects": []
+     }
+    ],
+    "description": "While using a dagger or throwing knives, your next attack instantly moves you behind the target on hit. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.smoke_pot",
+    "name": "Smoke Pot",
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "icon": "bc00b2c91b413080442abc94584e2997b3ab11b28b6b1a0fab249e418f15df55",
+    "icon_url": "https://cdn.darkerdb.com/codex/bc00b2c91b413080442abc94584e2997b3ab11b28b6b1a0fab249e418f15df55",
+    "abilities": [
+     {
+      "id": "id.skill_ability.smoke_pot",
+      "effects": [
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "move_speed_mod": -50
+       }
+      ]
+     }
+    ],
+    "description": "A smoke pot is deployed creating a smoke screen. The smoke screen lasts seconds and covers a 6m area.When an enemy target enters the smoke screen, reduces their move speed bonus by."
+   },
+   {
+    "id": "id.skill.sneak_attack",
+    "name": "Sneak Attack",
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "icon": "0f5563c7fb6f028f02110d0eff39fab081fb8d0d44ca368464bf4aa9fc4e3b2e",
+    "icon_url": "https://cdn.darkerdb.com/codex/0f5563c7fb6f028f02110d0eff39fab081fb8d0d44ca368464bf4aa9fc4e3b2e",
+    "abilities": [
+     {
+      "id": "id.skill_ability.sneak_attack",
+      "effects": [
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_physical_damage_base": 10
+       },
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_physical_damage_base": 20
+       }
+      ]
+     }
+    ],
+    "description": "Your next melee attack deals an additional physical damage. If the target is not in combat, it deals an additional physical damage. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.tumbling",
+    "name": "Tumbling",
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "icon": "b475b1d5aa8c54608eecc9ef3476de5362742e2806faa1e281b12af9eb34655f",
+    "icon_url": "https://cdn.darkerdb.com/codex/b475b1d5aa8c54608eecc9ef3476de5362742e2806faa1e281b12af9eb34655f",
+    "abilities": [
+     {
+      "id": "id.skill_ability.tumbling",
+      "effects": []
+     }
+    ],
+    "description": "When used, backtumbles in the opposite direction the player is facing. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.weakpoint_attack",
+    "name": "Weakpoint Attack",
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "icon": "376078aa3408b0ad7942da4d84ae64fb47622e5ff57495912140dbf056a18770",
+    "icon_url": "https://cdn.darkerdb.com/codex/376078aa3408b0ad7942da4d84ae64fb47622e5ff57495912140dbf056a18770",
+    "abilities": [
+     {
+      "id": "id.skill_ability.weakpoint_attack",
+      "effects": [
+       {
+        "duration": 3000,
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "item_armor_rating_mod": -400
+       }
+      ]
+     }
+    ],
+    "description": "When you successfully hit a target, reduce their armor rating bonus by for seconds. Only when melee attacking. Cooldown: seconds"
+   }
+  ],
+  "stats": {
+   "will": 10,
+   "vigor": 6,
+   "agility": 25,
+   "strength": 9,
+   "dexterity": 20,
+   "knowledge": 10,
+   "move_speed": 300,
+   "max_health_add": 25,
+   "resourcefulness": 25
+  },
+  "spell_count": 0,
+  "song_count": 0,
+  "shapeshift_count": 0
+ },
+ {
+  "id": "id.class.sorcerer",
+  "name": "Sorcerer",
+  "perks": [
+   {
+    "id": "id.perk.mana_flow",
+    "name": "Mana Flow",
+    "perk_tag": null,
+    "icon": "f9c663b6f17bb0d8e3879c6c7257f15cdb248f608997a5a084a0b35d72d0a3f0",
+    "icon_url": "https://cdn.darkerdb.com/codex/f9c663b6f17bb0d8e3879c6c7257f15cdb248f608997a5a084a0b35d72d0a3f0",
+    "abilities": [
+     {
+      "id": "id.perk_ability.mana_flow",
+      "effects": [
+       {
+        "magical_damage_mod": 50
+       }
+      ]
+     }
+    ],
+    "description": "For each successful spell cast, gain magical damage bonus. This effect stacks up to 3 times and resets on the next successful cast.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.mana_flow"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.sorcerer"
+    ]
+   },
+   {
+    "id": "id.perk.mana_fold",
+    "name": "Mana Fold",
+    "perk_tag": null,
+    "icon": "ad32ffd0e0440aa9fa9a0e8d33153740abbc2ddee432387a78b5d92c9997f775",
+    "icon_url": "https://cdn.darkerdb.com/codex/ad32ffd0e0440aa9fa9a0e8d33153740abbc2ddee432387a78b5d92c9997f775",
+    "abilities": [
+     {
+      "id": "id.perk_ability.mana_fold",
+      "effects": []
+     }
+    ],
+    "description": "Reduce all spell cooldowns by, but lose spell casting speed.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.mana_fold",
+      "spell_casting_speed": -150
+     }
+    ],
+    "allowed_classes": [
+     "id.class.sorcerer"
+    ]
+   },
+   {
+    "id": "id.perk.spell_stride",
+    "name": "Spell Stride",
+    "perk_tag": null,
+    "icon": "98e15b1c5cddce8ec76b30dd3b9c3a5417f874d2b427f308852d34ccce8f5f2a",
+    "icon_url": "https://cdn.darkerdb.com/codex/98e15b1c5cddce8ec76b30dd3b9c3a5417f874d2b427f308852d34ccce8f5f2a",
+    "abilities": [],
+    "description": "Gain move speed bonus while casting two spells simultaneously.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.spell_stride",
+      "move_speed_mod": 300
+     }
+    ],
+    "allowed_classes": [
+     "id.class.sorcerer"
+    ]
+   },
+   {
+    "id": "id.perk.spell_sculpting",
+    "name": "Spell Sculpting",
+    "perk_tag": null,
+    "icon": "c0e430744575d3c7832e746510902f8237299733e7937d22158f763b443dbe83",
+    "icon_url": "https://cdn.darkerdb.com/codex/c0e430744575d3c7832e746510902f8237299733e7937d22158f763b443dbe83",
+    "abilities": [
+     {
+      "id": "id.perk_ability.spell_sculpting",
+      "effects": []
+     }
+    ],
+    "description": "Increases the range of all spells by and the area of ​​effect by, but increases the cooldown time by.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.spell_sculpting"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.sorcerer"
+    ]
+   }
+  ],
+  "icon": "fa8166808b163144facd695504b612a8e6009893d1e94c62423ae5e562f8de7e",
+  "icon_url": "https://cdn.darkerdb.com/codex/fa8166808b163144facd695504b612a8e6009893d1e94c62423ae5e562f8de7e",
+  "flavor": "The Sorcerer is a master of the elements and can weave together multiple spells to devastating results. With an innate aptitude for magic, they can cast spells using their bare hands.",
+  "skills": [
+   {
+    "id": "id.skill.sorcery1",
+    "name": "Sorcery I",
+    "allowed_classes": [
+     "id.class.sorcerer"
+    ],
+    "icon": "e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "icon_url": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "abilities": [
+     {
+      "id": "id.skill_ability.sorcery1",
+      "effects": []
+     },
+     {
+      "id": "id.player_character_ability.spell_dual_cast_primary",
+      "effects": []
+     },
+     {
+      "id": "id.player_character_ability.spell_dual_cast_secondary",
+      "effects": []
+     }
+    ],
+    "description": "Gain the ability to use sorcery in the dungeon."
+   },
+   {
+    "id": "id.skill.sorcery2",
+    "name": "Sorcery II",
+    "allowed_classes": [
+     "id.class.sorcerer"
+    ],
+    "icon": "e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "icon_url": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "abilities": [
+     {
+      "id": "id.skill_ability.sorcery2",
+      "effects": []
+     },
+     {
+      "id": "id.player_character_ability.spell_dual_cast_primary",
+      "effects": []
+     },
+     {
+      "id": "id.player_character_ability.spell_dual_cast_secondary",
+      "effects": []
+     }
+    ],
+    "description": "Gain the ability to use sorcery in the dungeon."
+   }
+  ],
+  "stats": {
+   "will": 25,
+   "vigor": 10,
+   "agility": 10,
+   "strength": 10,
+   "dexterity": 18,
+   "knowledge": 20,
+   "move_speed": 300,
+   "max_health_add": 25,
+   "resourcefulness": 12
+  },
+  "spell_count": 14,
+  "song_count": 0,
+  "shapeshift_count": 0
+ },
+ {
+  "id": "id.class.warlock",
+  "name": "Warlock",
+  "perks": [
+   {
+    "id": "id.perk.torture_mastery",
+    "name": "Torture Mastery",
+    "perk_tag": null,
+    "icon": "45fb50348b72805b3c350e62976ef95e950359d0ec9491ec7fcaa2eb0e3eadcd",
+    "icon_url": "https://cdn.darkerdb.com/codex/45fb50348b72805b3c350e62976ef95e950359d0ec9491ec7fcaa2eb0e3eadcd",
+    "abilities": [
+     {
+      "id": "id.perk_ability.torture_mastery",
+      "effects": [
+       {
+        "exec_recovery_heal_base": 2,
+        "exec_attribute_bonus_ratio": 150
+       }
+      ]
+     }
+    ],
+    "description": "All curses inflicted upon enemies restores recoverable health to the caster with each instance of damage dealt. All Warlock spell costs are doubled when this perk is equipped.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.torture_mastery"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ]
+   },
+   {
+    "id": "id.perk.vampirism",
+    "name": "Vampirism",
+    "perk_tag": null,
+    "icon": "4a1c49327dd1976b303996810f8b31d61f1cd511defbcb6e6efb424e024685e0",
+    "icon_url": "https://cdn.darkerdb.com/codex/4a1c49327dd1976b303996810f8b31d61f1cd511defbcb6e6efb424e024685e0",
+    "abilities": [],
+    "description": "Gain magical healing bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.vampirism",
+      "magical_heal_mod": 200
+     }
+    ],
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ]
+   },
+   {
+    "id": "id.perk.soul_collector",
+    "name": "Soul Collector",
+    "perk_tag": null,
+    "icon": "814ac50169e90d2453582c134c219d9b2c5bc7b4b7e58288708db1aaa975e371",
+    "icon_url": "https://cdn.darkerdb.com/codex/814ac50169e90d2453582c134c219d9b2c5bc7b4b7e58288708db1aaa975e371",
+    "abilities": [
+     {
+      "id": "id.perk_ability.soul_collector",
+      "effects": [
+       {
+        "will_base": 1,
+        "vigor_base": 1,
+        "agility_base": 1,
+        "strength_base": 1,
+        "dexterity_base": 1,
+        "knowledge_base": 1,
+        "resourcefulness_base": 1,
+        "magical_dark_damage_mod": 330
+       }
+      ]
+     }
+    ],
+    "description": "When you deal the final blow to an enemy, one darkness shard is collected. Gain all attributes, dark magical damage bonus for each shard collected, up to a maximum of shards. When you deal dark magic damage, consume all collected shards.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.soul_collector"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ]
+   },
+   {
+    "id": "id.perk.antimagic",
+    "name": "Antimagic",
+    "perk_tag": null,
+    "icon": "6412df3b7476a7a892e076828ba5d9ce466919bebb3ce624a569cd709d8b0153",
+    "icon_url": "https://cdn.darkerdb.com/codex/6412df3b7476a7a892e076828ba5d9ce466919bebb3ce624a569cd709d8b0153",
+    "abilities": [],
+    "description": "Gain magical damage reduction except against divine magic.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.antimagic",
+      "air_magical_reduction": 200,
+      "ice_magical_reduction": 200,
+      "dark_magical_reduction": 200,
+      "evil_magical_reduction": 200,
+      "fire_magical_reduction": 200,
+      "earth_magical_reduction": 200,
+      "light_magical_reduction": 200,
+      "arcane_magical_reduction": 200,
+      "spirit_magical_reduction": 200,
+      "lightning_magical_reduction": 200
+     }
+    ],
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ]
+   }
+  ],
+  "icon": "d43388b136b784c7dd48dea23e178d3ae48588df08bc9ef3978a1a80493ccba1",
+  "icon_url": "https://cdn.darkerdb.com/codex/d43388b136b784c7dd48dea23e178d3ae48588df08bc9ef3978a1a80493ccba1",
+  "flavor": "The Warlock is a brooding manipulator of dark magic. They sacrifice their life force to call upon unknown forces of pain and evil. A worthy adversary proficient in both magic and weapons.",
+  "skills": [
+   {
+    "id": "id.skill.blood_pact",
+    "name": "Blood Pact",
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ],
+    "icon": "42a8400b1dd6fc3d56a29b404d6261846319b3094ab8ba89ffb2b76e01d2cffa",
+    "icon_url": "https://cdn.darkerdb.com/codex/42a8400b1dd6fc3d56a29b404d6261846319b3094ab8ba89ffb2b76e01d2cffa",
+    "abilities": [
+     {
+      "id": "id.skill_ability.blood_pact",
+      "effects": []
+     },
+     {
+      "id": "id.shape_shift_ability.blood_pact",
+      "effects": [
+       {
+        "armor_rating": 50,
+        "max_health_add": 30,
+        "magic_resistance": 50
+       },
+       {
+        "will_base": 1,
+        "vigor_base": 1,
+        "agility_base": 1,
+        "strength_base": 1,
+        "dexterity_base": 1,
+        "knowledge_base": 1,
+        "resourcefulness_base": 1,
+        "magical_dark_damage_mod": 330
+       }
+      ]
+     }
+    ],
+    "description": "Take the form of your contracted demon, gaining an additional max health, armor rating, and magic resistance. Your entire body is covered in Abyssal Flame, taking damage per second and dealing magical damage per second to nearby characters. Once activated, the effect cannot be stopped until the contract is complete. Additionally, by consuming Darkness Shards, you gain all attributes, dark magical damage bonus for each Darkness Shard consumed. When you become a demon your skills change to demon-only skills. Left-Click: Use equipped item. If no item is equipped, then performs bare-handed attack. Perform up to 4 combo attacks using both hands. Right-Click: Use equipped item. If no item is equipped, then fires a bolt of darkness."
+   },
+   {
+    "id": "id.skill.blow_of_corruption",
+    "name": "Blow of Corruption",
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ],
+    "icon": "009f869082945b5dde75a73f8dd08e44e12bddcee43024fbd61978fa8af1eb3b",
+    "icon_url": "https://cdn.darkerdb.com/codex/009f869082945b5dde75a73f8dd08e44e12bddcee43024fbd61978fa8af1eb3b",
+    "abilities": [
+     {
+      "id": "id.skill_ability.blow_of_corruption",
+      "effects": [
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_magical_damage_base": 12,
+        "exec_attribute_bonus_ratio": 1000
+       },
+       {
+        "duration": 8000
+       },
+       {
+        "duration": 12000,
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "magical_healing_receive_mod": -800,
+        "physical_healing_receive_mod": -800
+       }
+      ]
+     }
+    ],
+    "description": "Your next physical attack deals evil magical damage to the target and reduces their incoming physical healing by and incoming magical healing by for seconds. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.dark_offering",
+    "name": "Dark Offering",
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ],
+    "icon": "bedd83f081e83a5fa96aa1873c9479c017291b68f9a9f58fe7dd82cf2c91b4cf",
+    "icon_url": "https://cdn.darkerdb.com/codex/bedd83f081e83a5fa96aa1873c9479c017291b68f9a9f58fe7dd82cf2c91b4cf",
+    "abilities": [
+     {
+      "id": "id.skill_ability.dark_offering",
+      "effects": [
+       {
+        "exec_add_health_by_max_health_ratio": -100
+       },
+       {
+        "duration": 60000,
+        "magical_damage_mod": 50,
+        "physical_damage_mod": 50
+       }
+      ]
+     }
+    ],
+    "description": "Channel your mind, sacrificing of your max health per second to gain magical damage bonus and physical damage bonus. This bonus lasts for seconds. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.phantomize",
+    "name": "Phantomize",
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ],
+    "icon": "0041802f79e4734577f401c9da519d10f3e2462ecc409fac218604a59ad1a1fc",
+    "icon_url": "https://cdn.darkerdb.com/codex/0041802f79e4734577f401c9da519d10f3e2462ecc409fac218604a59ad1a1fc",
+    "abilities": [
+     {
+      "id": "id.skill_ability.phantomize",
+      "effects": [
+       {
+        "duration": 4000,
+        "move_speed_mod": 50,
+        "magical_reduction": -500
+       }
+      ]
+     }
+    ],
+    "description": "Phase through melee attacks and projectiles for seconds. While active, gain move speed bonus and lose magical damage reduction. During this period you can only move and do not collide with other players or monsters. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.spell_memory1",
+    "name": "Spell Memory I",
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric",
+     "id.class.wizard",
+     "id.class.grand_master_wizard",
+     "id.class.warlock",
+     "id.class.grand_master_warlock",
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "icon": "e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "icon_url": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "abilities": [
+     {
+      "id": "id.skill_ability.spell_memory1",
+      "effects": []
+     }
+    ],
+    "description": "Gain the ability to memorize spells to use in the dungeon."
+   },
+   {
+    "id": "id.skill.spell_memory2",
+    "name": "Spell Memory II",
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric",
+     "id.class.wizard",
+     "id.class.grand_master_wizard",
+     "id.class.warlock",
+     "id.class.grand_master_warlock",
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "icon": "e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "icon_url": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "abilities": [
+     {
+      "id": "id.skill_ability.spell_memory2",
+      "effects": []
+     }
+    ],
+    "description": "Gain the ability to memorize additional spells to use in the dungeon."
+   }
+  ],
+  "stats": {
+   "will": 22,
+   "vigor": 14,
+   "agility": 14,
+   "strength": 11,
+   "dexterity": 15,
+   "knowledge": 15,
+   "move_speed": 300,
+   "max_health_add": 25,
+   "resourcefulness": 14
+  },
+  "spell_count": 13,
+  "song_count": 0,
+  "shapeshift_count": 1
+ },
+ {
+  "id": "id.class.wizard",
+  "name": "Wizard",
+  "perks": [
+   {
+    "id": "id.perk.sage",
+    "name": "Sage",
+    "perk_tag": null,
+    "icon": "173ea09538f50d52d4b55ff7584a37713c634cf316367cd4bec45f52a897d3e3",
+    "icon_url": "https://cdn.darkerdb.com/codex/173ea09538f50d52d4b55ff7584a37713c634cf316367cd4bec45f52a897d3e3",
+    "abilities": [],
+    "description": "Gain knowledge bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.sage",
+      "knowledge_mod": 150
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ]
+   },
+   {
+    "id": "id.perk.reactive_shield",
+    "name": "Reactive Shield",
+    "perk_tag": null,
+    "icon": "04ad0b7f4e275158a5267bd8a7306d216300e7afeb93cfbe3aa0e13f54ceee26",
+    "icon_url": "https://cdn.darkerdb.com/codex/04ad0b7f4e275158a5267bd8a7306d216300e7afeb93cfbe3aa0e13f54ceee26",
+    "abilities": [
+     {
+      "id": "id.perk_ability.reactive_shield",
+      "effects": [
+       {
+        "duration": 3000,
+        "max_total_shield": 15
+       },
+       {
+        "duration": 12000
+       }
+      ]
+     }
+    ],
+    "description": "When you take damage, gain an arcane shield that lasts for seconds. The shield can absorb total damage and will only reactivate after a cooldown period. Cooldown: seconds",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ]
+   },
+   {
+    "id": "id.perk.quick_chant",
+    "name": "Quick Chant",
+    "perk_tag": null,
+    "icon": "11897dd717b54a2b322475bde8848e112c6c0408d437a056f4fe1eff19eb34b9",
+    "icon_url": "https://cdn.darkerdb.com/codex/11897dd717b54a2b322475bde8848e112c6c0408d437a056f4fe1eff19eb34b9",
+    "abilities": [],
+    "description": "Gain spell casting speed.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.quick_chant",
+      "spell_casting_speed": 150
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ]
+   },
+   {
+    "id": "id.perk.ice_shield",
+    "name": "Ice Shield",
+    "perk_tag": null,
+    "icon": "011ee6e554fcbe7333b60c4081f2104a71e1b76a29d6140990b82b063bc8ef81",
+    "icon_url": "https://cdn.darkerdb.com/codex/011ee6e554fcbe7333b60c4081f2104a71e1b76a29d6140990b82b063bc8ef81",
+    "abilities": [
+     {
+      "id": "id.perk_ability.ice_shield",
+      "effects": [
+       {
+        "duration": 5000
+       },
+       {
+        "duration": 500,
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "action_speed": -200,
+        "move_speed_mod": -200
+       }
+      ]
+     }
+    ],
+    "description": "Gain armor rating. Inflict frostbite for seconds on melee attacker. Does not inflict while on cooldown. Frostbite: The target loses move speed bonus and action speed. Cooldown: seconds",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.ice_shield"
+     },
+     {
+      "id": "id.actor_status_effect.ice_shield_buff",
+      "armor_rating": 20
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ]
+   }
+  ],
+  "icon": "1c9d4e81d1e09cc62d8403138d6de52407aeb1dfe2e971f4bac7ea1767478839",
+  "icon_url": "https://cdn.darkerdb.com/codex/1c9d4e81d1e09cc62d8403138d6de52407aeb1dfe2e971f4bac7ea1767478839",
+  "flavor": "The Wizard calls forth the immense powers of magic to suit his needs. Whether that means summoning a powerful fireball to cast asunder his foes or to temporarily vanishing into thin air, his incantations are a sight to behold.",
+  "skills": [
+   {
+    "id": "id.skill.arcane_shield",
+    "name": "Arcane Shield",
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "icon": "3815dca99f5c1fbd3ece3f4785c41ea39f510c3e499fa6a666ffbaf950a0a606",
+    "icon_url": "https://cdn.darkerdb.com/codex/3815dca99f5c1fbd3ece3f4785c41ea39f510c3e499fa6a666ffbaf950a0a606",
+    "abilities": [
+     {
+      "id": "id.skill_ability.arcane_shield",
+      "effects": [
+       {
+        "duration": 12000,
+        "max_total_shield": 15,
+        "exec_attribute_bonus_ratio": 500
+       },
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_magical_damage_base": 5,
+        "exec_attribute_bonus_ratio": 1000
+       }
+      ]
+     }
+    ],
+    "description": "Gain a shield around you that absorbs damage from all damage sources for seconds. When the maximum amount of absorb has been reached, the shield unleashes an Arcane Explosion, dealing magical damage to enemy targets in a 2m radius around you. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.intense_focus",
+    "name": "Intense Focus",
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "icon": "00afc99951b409d1c2621edbda9a8b2ac978ef29c1266290069abe0d322779f9",
+    "icon_url": "https://cdn.darkerdb.com/codex/00afc99951b409d1c2621edbda9a8b2ac978ef29c1266290069abe0d322779f9",
+    "abilities": [
+     {
+      "id": "id.skill_ability.intense_focus",
+      "effects": []
+     }
+    ],
+    "description": "Reduce the cast time of your next spell to seconds. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.meditation",
+    "name": "Meditation",
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "icon": "02cd326047abd7832ca1e7c314fab2f252d7ff5bb99463bafae467b2c128b30d",
+    "icon_url": "https://cdn.darkerdb.com/codex/02cd326047abd7832ca1e7c314fab2f252d7ff5bb99463bafae467b2c128b30d",
+    "abilities": [
+     {
+      "id": "id.skill_ability.meditation",
+      "effects": [
+       {
+        "exec_recovery_heal_base": 1,
+        "exec_attribute_bonus_ratio": 1500
+       },
+       {
+        "exec_physical_heal_base": 3,
+        "exec_attribute_bonus_ratio": 1000
+       }
+      ]
+     }
+    ],
+    "description": "Enter a meditative state and recover spells at a rate of spells costs over 24 seconds. Cooldown: seconds"
+   },
+   {
+    "id": "id.skill.spell_memory1",
+    "name": "Spell Memory I",
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric",
+     "id.class.wizard",
+     "id.class.grand_master_wizard",
+     "id.class.warlock",
+     "id.class.grand_master_warlock",
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "icon": "e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "icon_url": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "abilities": [
+     {
+      "id": "id.skill_ability.spell_memory1",
+      "effects": []
+     }
+    ],
+    "description": "Gain the ability to memorize spells to use in the dungeon."
+   },
+   {
+    "id": "id.skill.spell_memory2",
+    "name": "Spell Memory II",
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric",
+     "id.class.wizard",
+     "id.class.grand_master_wizard",
+     "id.class.warlock",
+     "id.class.grand_master_warlock",
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "icon": "e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "icon_url": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105",
+    "abilities": [
+     {
+      "id": "id.skill_ability.spell_memory2",
+      "effects": []
+     }
+    ],
+    "description": "Gain the ability to memorize additional spells to use in the dungeon."
+   }
+  ],
+  "stats": {
+   "will": 20,
+   "vigor": 7,
+   "agility": 15,
+   "strength": 6,
+   "dexterity": 17,
+   "knowledge": 25,
+   "move_speed": 300,
+   "max_health_add": 25,
+   "resourcefulness": 15
+  },
+  "spell_count": 13,
+  "song_count": 0,
+  "shapeshift_count": 0
+ }
+]

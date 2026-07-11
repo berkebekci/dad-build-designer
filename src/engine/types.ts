@@ -32,6 +32,12 @@ export interface ClassData {
   skill_slots: number;
   perks: PerkData[];
   skills: SkillData[];
+  /** Wiki-verified weapon rights by hand; used by gearRules. */
+  weapons?: {
+    two_handed: string[];
+    one_handed_main: string[];
+    off_hand: string[];
+  };
 }
 
 /** The player's perk/skill choices for a build. */
@@ -40,18 +46,22 @@ export interface BuildSelection {
   skillIds: string[];
 }
 
+import type { GearTotals, PercentStat } from './itemStats';
+
 /**
- * External inputs that will come from gear/enchantments in Phase 4.
- * Kept as a separate input so the engine API doesn't change later:
- * gear resolution will simply produce one of these.
+ * External inputs to the stat engine. The manual fields (attribute bonuses,
+ * armor rating, move speed) predate the gear system and remain for tests and
+ * quick experiments; `gear` carries the aggregated loadout from itemStats.
  */
 export interface ExternalModifiers {
-  /** Flat attribute points added by gear/enchantments (e.g. +3 Strength). */
+  /** Flat attribute points added manually (e.g. +3 Strength). */
   attributeBonuses?: Partial<Attributes>;
-  /** Total armor rating from equipped gear. Naked = 0. */
+  /** Manually specified armor rating (adds to gear's). Naked = 0. */
   armorRating?: number;
-  /** Flat move speed add from gear/enchantments/skills. */
+  /** Flat move speed add (adds to gear's). */
   bonusMoveSpeed?: number;
+  /** Aggregated equipment + enchantments (see gearTotals). */
+  gear?: GearTotals;
 }
 
 /** Everything the character sheet shows, derived from attributes via curves. */
@@ -75,7 +85,19 @@ export interface DerivedStats {
   healthRecoveryPct: number;
   magicResistance: number;
   physicalDamageReductionPct: number;
+  /** Gear additions only until the MR->MDR curve lands (see stat_curves _todo). */
+  magicalDamageReductionPct: number;
   cooldownReductionPct: number;
   buffDurationPct: number;
   persuasiveness: number;
+
+  /** Total armor rating that fed the PDR curve. */
+  armorRating: number;
+  weaponDamage: number;
+  magicWeaponDamage: number;
+  physicalDamageAdd: number;
+  magicalDamageAdd: number;
+  luck: number;
+  /** Situational gear-only percentages, shown when nonzero. */
+  percentExtras: Partial<Record<PercentStat, number>>;
 }
