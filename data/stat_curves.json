@@ -1,10 +1,10 @@
 {
   "_meta": {
-    "description": "Dark and Darker türetilmiş stat eğrileri. Her eğri parçalı-doğrusal (piecewise-linear) çapa noktalarıyla tanımlanır: points = [[girdi, çıktı], ...]. Ara değerler doğrusal interpolasyonla bulunur.",
-    "source": "darkanddarker.wiki.spellsandguns.com/Stats (wiki.gg aynası)",
+    "description": "Dark and Darker derived stat curves. Each curve is defined as piecewise-linear anchor points: points = [[input, output], ...]. Intermediate values are found by linear interpolation.",
+    "source": "darkanddarker.wiki.spellsandguns.com/Stats (wiki.gg mirror)",
     "fetched_at": "2026-07-11",
-    "game_patch": "Season 8 dönemi (wiki 2026-06-30 güncel)",
-    "notes": "Eğriler topluluk tarafından tersine mühendislikle çıkarılmıştır; patch'lerde değişebilir."
+    "game_patch": "Season 8 era (wiki updated 2026-06-30)",
+    "notes": "Curves are community reverse-engineered; may change with patches."
   },
   "composite_ratings": {
     "base_health_rating": { "strength": 0.25, "vigor": 0.75 },
@@ -29,11 +29,11 @@
       "unit": "HP",
       "points": [[0, 70], [15, 100], [21, 110.5], [44, 145], [48, 150], [64, 166], [100, 184]],
       "flat_add": 25,
-      "check": "Fighter 15/15 -> rating 15 -> 100 + 25 = 125 HP (wiki ile birebir)"
+      "check": "Fighter 15/15 -> rating 15 -> 100 + 25 = 125 HP (matches wiki exactly)"
     },
     "move_speed_add": {
       "input": "agility",
-      "unit": "add (base 300 uzerine)",
+      "unit": "add (on top of base 300)",
       "points": [[0, -10], [10, -5], [15, 0], [75, 36], [100, 43.5]],
       "base_move_speed": 300,
       "hard_cap_total": 330
@@ -42,20 +42,20 @@
       "input": "vigor",
       "unit": "%",
       "points": [[0, -55], [5, -30], [15, 0], [25, 70], [35, 120], [84, 218], [85, 219], [86, 222], [100, 250]],
-      "formula": "tick basina iyilesme = base_recovery * (1 + bonus)"
+      "formula": "health recovered per tick = base_recovery * (1 + bonus)"
     },
     "action_speed": {
       "input": "action_speed_rating",
       "unit": "%",
       "points": [[0, -38], [10, -8], [13, -2], [15, 0], [33, 22.5], [45, 34.5], [49, 37.5], [100, 63]],
-      "formula": "yeni animasyon suresi = base / (1 + action_speed)"
+      "formula": "new animation length = base / (1 + action_speed)"
     },
     "manual_dexterity": {
       "input": "dexterity",
       "unit": "%",
       "points": [[0, -15], [15, 0], [23, 24], [31, 40], [37, 46], [45, 50], [95, 55], [100, 55]],
       "cap": 50,
-      "_verify": "Wiki cap %50 diyor ama egri 55'e cikiyor - dogrulanmali"
+      "_verify": "Wiki states 50% cap but the curve reaches 55 - needs verification"
     },
     "item_equip_speed": {
       "input": "dexterity",
@@ -66,13 +66,13 @@
       "input": "knowledge",
       "unit": "%",
       "points": [[0, -60], [5, -35], [10, -15], [15, 0], [25, 21], [40, 51], [100, 111]],
-      "formula": "cast suresi = base / (1 + spell_casting_speed)"
+      "formula": "cast time = base / (1 + spell_casting_speed)"
     },
     "memory_capacity": {
       "input": "knowledge",
-      "unit": "puan",
+      "unit": "points",
       "points": [[0, 0], [6, 0], [100, 94]],
-      "formula": "toplam = ceil(egri * (1 + bonus%)) + flat_add"
+      "formula": "total = ceil(curve * (1 + bonus%)) + flat_add"
     },
     "memory_recovery": {
       "input": "knowledge",
@@ -94,13 +94,13 @@
       "unit": "%",
       "points": [[0, -30], [20, 10], [50, 40], [100, 65]],
       "cap": 65,
-      "formula": "yeni cooldown = base * (1 - reduction)"
+      "formula": "new cooldown = base * (1 - reduction)"
     },
     "regular_interaction_speed": {
       "input": "regular_interaction_rating",
       "unit": "%",
       "points": [[0, -26], [7, -12], [15, 0], [20, 28], [25, 52], [30, 72], [35, 88], [40, 100], [45, 108], [100, 152]],
-      "formula": "yeni etkilesim suresi = base / (1 + speed)"
+      "formula": "new interaction length = base / (1 + speed)"
     },
     "magical_interaction_speed": {
       "input": "will",
@@ -109,7 +109,7 @@
     },
     "persuasiveness": {
       "input": "resourcefulness",
-      "unit": "puan",
+      "unit": "points",
       "points": [[0, 0], [15, 15], [100, 57.5]]
     },
     "physical_damage_reduction": {
@@ -124,12 +124,12 @@
         [475, 55.45], [495, 56.55], [600, 61.8]
       ],
       "cap": 65,
-      "check": "Tum segment uclari per-point degerlerle aritmetik tutarli (dogrulandi 2026-07-11)"
+      "check": "All segment endpoints arithmetically consistent with per-point values (verified 2026-07-11)"
     }
   },
   "_todo": {
-    "magical_damage_reduction": "MR -> MDR tam tablosu eksik (bilinen: -300 MR'de -595%, cap %65). Wiki Magical_Damage_Reduction sayfasindan cekilecek.",
-    "debuff_duration": "Tam breakpoint tablosu eksik (bilinen: 0 Will'de +400%, 100 Will'de -37.5%, taban -95%).",
-    "luck": "Luck -> loot etkisi dogrusal degil; cap 500. Simulasyon icin gerekmeyebilir."
+    "magical_damage_reduction": "Full MR -> MDR table missing (known: -595% at -300 MR, cap 65%). Fetch from the wiki Magical_Damage_Reduction page.",
+    "debuff_duration": "Full breakpoint table missing (known: +400% at 0 Will, -37.5% at 100 Will, floor -95%).",
+    "luck": "Luck -> loot effect is non-linear; cap 500. May not be needed for the simulator."
   }
 }

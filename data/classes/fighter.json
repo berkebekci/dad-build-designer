@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "source": "darkanddarker.wiki.spellsandguns.com/Fighter (wiki.gg aynası)",
+    "source": "darkanddarker.wiki.spellsandguns.com/Fighter (wiki.gg mirror)",
     "fetched_at": "2026-07-11",
-    "game_patch": "Season 8 dönemi (Veteran Instinct, Weapon Guard, Last Bastion, Pommel Strike dahil)",
-    "_verify": "Perk/skill etkileri wiki'den birebir alındı; oyun içi değerlerle kullanıcı tarafından doğrulanmalı."
+    "game_patch": "Season 8 era (includes Veteran Instinct, Weapon Guard, Last Bastion, Pommel Strike)",
+    "verified_by_user": "2026-07-11 - perk/skill effects confirmed correct"
   },
   "id": "fighter",
   "name": "Fighter",
@@ -18,38 +18,38 @@
   },
   "derived_check": { "health_at_base": 125 },
   "perk_slots": 4,
-  "perk_slot_rule": "1 slot + her 5 seviyede 1 ek slot; level 15'te 4 slot",
+  "perk_slot_rule": "1 slot + 1 additional slot every 5 levels; 4 slots at level 15 (max)",
   "skill_slots": 2,
   "perks": [
-    { "id": "adrenaline_spike", "name": "Adrenaline Spike", "effect": "HP %40'in altindayken: +%15 Action Speed, +%3 Move Speed, +%30 Interaction Speed, 12 sn (24 sn cooldown)" },
-    { "id": "barricade", "name": "Barricade", "effect": "Defensive stance'te +75 Armor Rating ve +75 Magical Resistance" },
-    { "id": "combo_attack", "name": "Combo Attack", "effect": "2 sn icinde ardisik melee vuruslar stack basina +%10 Physical Power (maks 2 stack)" },
-    { "id": "counterattack", "name": "Counterattack", "effect": "Basarili blok sonrasi 3 sn boyunca +%10 Move Speed ve Action Speed" },
-    { "id": "defense_mastery", "name": "Defense Mastery", "effect": "+%15 ek armor rating bonusu; Physical Damage Reduction tavanini %75'e cikarir" },
-    { "id": "dual_wield", "name": "Dual Wield", "effect": "Iki el de doluyken +%10 Action Speed (fener ve kalkan haric)" },
-    { "id": "last_bastion", "name": "Last Bastion", "effect": "HP %33'te: +150 Armor, +50 Magical Resistance, +%30 Projectile Reduction, 8 sn (48 sn cooldown)" },
-    { "id": "projectile_resistance", "name": "Projectile Resistance", "effect": "+%10 Projectile Damage Reduction; defensive stance'te ek +%10" },
-    { "id": "shield_mastery", "name": "Shield Mastery", "effect": "Defensive stance'te +%10 Move Speed; basarili blok 1 sn boyunca +%50 Action Speed ve +%10 Physical Power verir" },
-    { "id": "slayer", "name": "Slayer", "effect": "Cift el silahlarda +5 Physical Buff Weapon Damage ve +10 Move Speed; plate zirh kullanimi kaybedilir" },
-    { "id": "swift", "name": "Swift", "effect": "Armor Speed Penalty -%20 (diger modifiyeler haric)" },
-    { "id": "sword_mastery", "name": "Sword Mastery", "effect": "Kilic tipi silahlarda +2 Physical Buff Damage ve +%5 Action Speed; defensive stance'te +10 Move Speed" },
-    { "id": "veteran_instinct", "name": "Veteran Instinct", "effect": "Savasa girince 4 sn +%10 Physical Damage Reduction ve Physical Power (10 sn savas-disi gerektirir)" },
-    { "id": "weapon_guard", "name": "Weapon Guard", "effect": "Silahla bloklarken +%5 Physical Damage Reduction; basarili blok 2 sn +%10 Physical Power ve +%5 Action Speed verir" },
-    { "id": "weapon_mastery", "name": "Weapon Mastery", "effect": "Oyundaki her silahi kullanabilme" }
+    { "id": "adrenaline_spike", "name": "Adrenaline Spike", "effect": "Below 40% health: +15% Action Speed, +3% Move Speed, +30% Interaction Speed for 12s (24s cooldown)" },
+    { "id": "barricade", "name": "Barricade", "effect": "While in defensive stance: +75 Armor Rating and +75 Magical Resistance" },
+    { "id": "combo_attack", "name": "Combo Attack", "effect": "Consecutive melee attacks within 2s grant +10% Physical Power per stack (max 2 stacks)" },
+    { "id": "counterattack", "name": "Counterattack", "effect": "Successful block grants +10% Move Speed and Action Speed for 3s" },
+    { "id": "defense_mastery", "name": "Defense Mastery", "effect": "+15% additional armor rating bonus; raises Physical Damage Reduction cap to 75%" },
+    { "id": "dual_wield", "name": "Dual Wield", "effect": "While both hands are equipped: +10% Action Speed (excludes lanterns and shields)" },
+    { "id": "last_bastion", "name": "Last Bastion", "effect": "At 33% health: +150 Armor Rating, +50 Magical Resistance, +30% Projectile Reduction for 8s (48s cooldown)" },
+    { "id": "projectile_resistance", "name": "Projectile Resistance", "effect": "+10% Projectile Damage Reduction; additional +10% while in defensive stance" },
+    { "id": "shield_mastery", "name": "Shield Mastery", "effect": "In defensive stance: +10% Move Speed; successful block grants +50% Action Speed and +10% Physical Power for 1s" },
+    { "id": "slayer", "name": "Slayer", "effect": "Dual-wielded weapons grant +5 Physical Buff Weapon Damage and +10 Move Speed; loses plate armor access" },
+    { "id": "swift", "name": "Swift", "effect": "-20% Armor Speed Penalty (excludes other modifiers)" },
+    { "id": "sword_mastery", "name": "Sword Mastery", "effect": "Sword-type weapons grant +2 Physical Buff Damage and +5% Action Speed; +10 Move Speed in defensive stance" },
+    { "id": "veteran_instinct", "name": "Veteran Instinct", "effect": "Upon entering combat: +10% Physical Damage Reduction and Physical Power for 4s (requires 10s out of combat)" },
+    { "id": "weapon_guard", "name": "Weapon Guard", "effect": "While blocking with a weapon: +5% Physical Damage Reduction; successful block grants +10% Physical Power and +5% Action Speed for 2s" },
+    { "id": "weapon_mastery", "name": "Weapon Mastery", "effect": "Gain the ability to use any weapon" }
   ],
   "skills": [
-    { "id": "adrenaline_rush", "name": "Adrenaline Rush", "effect": "8 sn +%15 Action Speed ve +%5 Move Speed; sonrasinda 2 sn -%8 Action Speed ve -%4 Move Speed cezasi (28 sn cooldown)" },
-    { "id": "breakthrough", "name": "Breakthrough", "effect": "Yavaslatma debufflarini ve knockback'i kaldirir/bagisiklik verir; 8 sn +7 Move Speed Add (24 sn cooldown)" },
-    { "id": "disarm", "name": "Disarm", "effect": "8 sn icinde melee saldiri bloklanirsa hedefi 1 sn silahsizlandirir (24 sn cooldown, silah gerekir)" },
-    { "id": "fortified_ground", "name": "Fortified Ground", "effect": "Sancak yerlestirir (suresiz); 33m icindeki muttefiklere +3 All Attributes (18 sn cooldown)" },
-    { "id": "perfect_block", "name": "Perfect Block", "effect": "8 sn +5 Impact Resistance (7 sn cooldown)" },
-    { "id": "pommel_strike", "name": "Pommel Strike", "effect": "Tek elli ana silahin kabzasiyla vurus: 15 Physical Base Damage (%100 scaling), hedefi susturur; kesinti halinde +10 hasar ve 2 sn -%50 Move Speed (18 sn cooldown)" },
-    { "id": "second_wind", "name": "Second Wind", "effect": "12 sn boyunca maks HP'nin %40'ini yeniler; Adrenaline Rush cezalarini kaldirir; tek kullanim, Tier 5 hizinda sarj olur" },
-    { "id": "shield_slam", "name": "Shield Slam", "effect": "Kalkan darbesi: 30 Physical Base Damage (%100 scaling), 3 sn -%20 Move Speed, knockback (8 sn cooldown)" },
-    { "id": "spell_reflection", "name": "Spell Reflection", "effect": "Bloklarken projectile/hitscan buyuleri yansitir; 5 sn veya yansimaya kadar +%15 Magical Damage Reduction (18 sn cooldown)" },
-    { "id": "sprint", "name": "Sprint", "effect": "3 Momentum stack (her biri +10 Move Speed Add); 2 sn'de 1 stack duser (28 sn cooldown)" },
-    { "id": "taunt", "name": "Taunt", "effect": "7.5m alan: canavar aggro'su +%200; 8 sn +%12 Physical ve Magical Damage Reduction (18 sn cooldown)" },
-    { "id": "victory_strike", "name": "Victory Strike", "effect": "10 sn icindeki ilk saldiri +%40 Physical Power; oyuncu oldururse cooldown'suz yenilenir (24 sn cooldown)" }
+    { "id": "adrenaline_rush", "name": "Adrenaline Rush", "effect": "+15% Action Speed and +5% Move Speed for 8s; afterwards -8% Action Speed and -4% Move Speed for 2s (28s cooldown)" },
+    { "id": "breakthrough", "name": "Breakthrough", "effect": "Removes and grants immunity to move-speed slowing debuffs and knockback; +7 Move Speed Add for 8s (24s cooldown)" },
+    { "id": "disarm", "name": "Disarm", "effect": "Blocking a melee attack within 8s disarms the target for 1s (24s cooldown, weapon required)" },
+    { "id": "fortified_ground", "name": "Fortified Ground", "effect": "Deploys a banner (infinite duration); allies within 33m gain +3 All Attributes (18s cooldown)" },
+    { "id": "perfect_block", "name": "Perfect Block", "effect": "+5 Impact Resistance for 8s (7s cooldown)" },
+    { "id": "pommel_strike", "name": "Pommel Strike", "effect": "Hilt strike with one-handed main weapon: 15 Physical Base Damage (100% scaling), silences target; interrupted silence deals +10 damage and -50% Move Speed for 2s (18s cooldown)" },
+    { "id": "second_wind", "name": "Second Wind", "effect": "Recovers 40% of Max Health over 12s; removes Adrenaline Rush penalties; single use, recharges at Tier 5 rate" },
+    { "id": "shield_slam", "name": "Shield Slam", "effect": "Shield bash: 30 Physical Base Damage (100% scaling), -20% Move Speed for 3s, knockback (8s cooldown)" },
+    { "id": "spell_reflection", "name": "Spell Reflection", "effect": "While blocking: reflects projectile/hitscan spells; +15% Magical Damage Reduction for 5s or until reflection (18s cooldown)" },
+    { "id": "sprint", "name": "Sprint", "effect": "Gain 3 Momentum stacks (+10 Move Speed Add each); lose 1 stack every 2s (28s cooldown)" },
+    { "id": "taunt", "name": "Taunt", "effect": "7.5m area: increases monster aggro by 200%; +12% Physical and Magical Damage Reduction for 8s (18s cooldown)" },
+    { "id": "victory_strike", "name": "Victory Strike", "effect": "Next attack within 10s deals +40% additional Physical Power; resets without cooldown if it kills a player (24s cooldown)" }
   ],
   "weapons": {
     "two_handed": ["Battle Axe", "Crossbow", "Halberd", "Hand Cannon", "Longsword", "Pavise", "Spear", "Zweihander"],
@@ -57,5 +57,5 @@
     "off_hand": ["Bloodsap Blade", "Buckler", "Castillon Dagger", "Hatchet", "Heater Shield", "Lantern Shield", "Round Shield", "Short Sword"]
   },
   "armor_slots": ["head", "chest", "legs", "hands", "feet", "back", "necklace", "ring1", "ring2"],
-  "_todo": "Zirh listeleri (14 kask, 20 govde, 13 bacak, 8 el, 16 ayak, 7 pelerin) item veritabanindan (darkerdb API) cekilecek - elle listelemeye gerek yok."
+  "_todo": "Fetch full equipment lists from the darkerdb API instead of listing manually: armor pieces (14 helms, 20 chest, 13 legs, 8 hands, 16 feet, 7 cloaks) AND accessories (necklaces, rings) - accessory data has not been collected yet."
 }

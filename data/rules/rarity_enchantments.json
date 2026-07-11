@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "source": "darkanddarker.wiki.spellsandguns.com/Enchantments (wiki.gg aynası)",
+    "source": "darkanddarker.wiki.spellsandguns.com/Enchantments (wiki.gg mirror)",
     "fetched_at": "2026-07-11",
-    "notes": "Kural: Uncommon 1 enchantment ile baslar, her rarity seviyesi +1. Craftable (zanaat) esyalarda +1 ek slot."
+    "notes": "Rule: Uncommon starts with 1 enchantment, +1 per rarity level above. Crafted items get +1 extra slot."
   },
   "rarity_tiers": [
     { "id": "poor",      "name": "Poor",      "order": 0, "enchantments": 0, "enchantments_crafted": 0, "color": "#9d9d9d" },
@@ -26,8 +26,8 @@
     "misc": ["Luck"]
   },
   "_todo": {
-    "roll_ranges": "Slot bazli min/max roll tablolari (1H silah, kalkan, 2H silah, govde, bacak, ayak, kask, el, pelerin, kolye, yuzuk) wiki'de mevcut ama henuz cekilmedi. Ornekler: Strength silah/zirhta 1-3, Luck 1H silahta 15-30. Faz 4'te tam tablo cekilecek.",
-    "slot_eligibility": "Hangi enchantment'in hangi slotta cikabilecegi tam matrisi de ayni tablodan gelecek.",
-    "socketed": "Soket enchantmentlari yaklasik %60-80 dusuk aralikta - dogrulanacak."
+    "roll_ranges": "Per-slot min/max roll tables (1H weapon, shield, 2H weapon, chest, legs, feet, head, hands, cloak, necklace, ring) exist on the wiki but not fetched yet. Examples: Strength rolls 1-3 on weapons/armor, Luck rolls 15-30 on 1H weapons. Full tables to be fetched in Phase 4.",
+    "slot_eligibility": "The full matrix of which enchantment can roll on which slot comes from the same tables.",
+    "socketed": "Socketed enchantments have reduced ranges (~60-80% of base) - to be verified."
   }
 }

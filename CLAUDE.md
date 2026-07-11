@@ -6,6 +6,10 @@ Dark and Darker için Path of Building benzeri build tasarım aracı. **Kullanı
 uygulama geliştirme projesi — amaç süreçte öğrenmek.** Adımları açıklayarak ilerle,
 hazır sonuç fırlatma; kararları gerekçeleriyle anlat. Açıklamalar Türkçe.
 
+> **DİL KURALI (kullanıcı kararı, 2026-07-11):** Tüm veri dosyaları, kod, yorumlar,
+> UI metinleri ve commit mesajları **İngilizce** — Türkçe karakter ve çeviriyle
+> uğraşılmayacak. Yalnızca kullanıcıyla sohbet Türkçe.
+
 ## Çekirdek tasarım
 
 - **Data-first:** oyun verisi `data/*.json` içinde sürümlenir (patch gelince veri güncellenir, kod değişmez).
