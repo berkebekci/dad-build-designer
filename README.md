@@ -3,6 +3,8 @@
 **Dark and Darker için build tasarım aracı** — Path of Building Community'den ilham alan,
 oyunun gerçek kuralları ve verileriyle çalışan bir teorycraft uygulaması.
 
+🔗 **Canlı:** [dad-build-designer.vercel.app](https://dad-build-designer.vercel.app)
+
 ## Ne yapar?
 
 1. **Sınıf seç** → perk ve skill slotlarını oyundaki kurallarla doldur (4 perk, 2 skill)
