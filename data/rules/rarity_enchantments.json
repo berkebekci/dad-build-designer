@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "source": "darkanddarker.wiki.spellsandguns.com/Enchantments (wiki.gg aynası)",
+    "fetched_at": "2026-07-11",
+    "notes": "Kural: Uncommon 1 enchantment ile baslar, her rarity seviyesi +1. Craftable (zanaat) esyalarda +1 ek slot."
+  },
+  "rarity_tiers": [
+    { "id": "poor",      "name": "Poor",      "order": 0, "enchantments": 0, "enchantments_crafted": 0, "color": "#9d9d9d" },
+    { "id": "common",    "name": "Common",    "order": 1, "enchantments": 0, "enchantments_crafted": 0, "color": "#ffffff" },
+    { "id": "uncommon",  "name": "Uncommon",  "order": 2, "enchantments": 1, "enchantments_crafted": 2, "color": "#1eff00" },
+    { "id": "rare",      "name": "Rare",      "order": 3, "enchantments": 2, "enchantments_crafted": 3, "color": "#0070dd" },
+    { "id": "epic",      "name": "Epic",      "order": 4, "enchantments": 3, "enchantments_crafted": 4, "color": "#a335ee" },
+    { "id": "legendary", "name": "Legendary", "order": 5, "enchantments": 4, "enchantments_crafted": 5, "color": "#ff8000" },
+    { "id": "unique",    "name": "Unique",    "order": 6, "enchantments": 5, "enchantments_crafted": 6, "color": "#e6cc80" }
+  ],
+  "enchantment_categories": {
+    "attributes": ["Strength", "Vigor", "Agility", "Dexterity", "Will", "Knowledge", "Resourcefulness"],
+    "physical_damage": ["Physical Power Bonus", "Physical Power", "Physical Gear Weapon Damage", "Physical Damage Add", "Armor Penetration"],
+    "magical_damage": ["Magical Power Bonus", "Magical Power", "Magical Damage Add", "Magical Penetration"],
+    "neutral_damage": ["Headshot Damage Modifier", "Undead Race Damage Bonus", "Demon Race Damage Bonus"],
+    "reductions": ["Armor Rating Add", "Physical Damage Reduction", "Projectile Damage Reduction", "Magical Damage Reduction", "Magical Resistance", "Cooldown Reduction Bonus", "Undead Race Damage Reduction", "Demon Race Damage Reduction"],
+    "actions": ["Action Speed", "Regular Interaction Speed", "Magical Interaction Speed", "Spell Casting Speed"],
+    "healing": ["Outgoing Physical Healing Add", "Outgoing Magical Healing Add"],
+    "statuses": ["Buff Duration Bonus", "Debuff Duration Bonus"],
+    "memory": ["Memory Capacity Add", "Memory Capacity Bonus"],
+    "misc": ["Luck"]
+  },
+  "_todo": {
+    "roll_ranges": "Slot bazli min/max roll tablolari (1H silah, kalkan, 2H silah, govde, bacak, ayak, kask, el, pelerin, kolye, yuzuk) wiki'de mevcut ama henuz cekilmedi. Ornekler: Strength silah/zirhta 1-3, Luck 1H silahta 15-30. Faz 4'te tam tablo cekilecek.",
+    "slot_eligibility": "Hangi enchantment'in hangi slotta cikabilecegi tam matrisi de ayni tablodan gelecek.",
+    "socketed": "Soket enchantmentlari yaklasik %60-80 dusuk aralikta - dogrulanacak."
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "description": "Dark and Darker türetilmiş stat eğrileri. Her eğri parçalı-doğrusal (piecewise-linear) çapa noktalarıyla tanımlanır: points = [[girdi, çıktı], ...]. Ara değerler doğrusal interpolasyonla bulunur.",
+    "source": "darkanddarker.wiki.spellsandguns.com/Stats (wiki.gg aynası)",
+    "fetched_at": "2026-07-11",
+    "game_patch": "Season 8 dönemi (wiki 2026-06-30 güncel)",
+    "notes": "Eğriler topluluk tarafından tersine mühendislikle çıkarılmıştır; patch'lerde değişebilir."
+  },
+  "composite_ratings": {
+    "base_health_rating": { "strength": 0.25, "vigor": 0.75 },
+    "action_speed_rating": { "agility": 0.25, "dexterity": 0.75 },
+    "regular_interaction_rating": { "dexterity": 0.25, "resourcefulness": 0.75 }
+  },
+  "curves": {
+    "physical_power_bonus": {
+      "input": "physical_power (= strength, 1:1)",
+      "unit": "%",
+      "points": [[0, -80], [5, -30], [7, -20], [11, -8], [15, 0], [50, 35], [60, 40], [100, 50]],
+      "floor": -100
+    },
+    "magical_power_bonus": {
+      "input": "magical_power (= will, 1:1)",
+      "unit": "%",
+      "points": [[0, -80], [5, -30], [7, -20], [11, -8], [15, 0], [50, 35], [60, 40], [100, 50]],
+      "floor": -100
+    },
+    "base_health": {
+      "input": "base_health_rating",
+      "unit": "HP",
+      "points": [[0, 70], [15, 100], [21, 110.5], [44, 145], [48, 150], [64, 166], [100, 184]],
+      "flat_add": 25,
+      "check": "Fighter 15/15 -> rating 15 -> 100 + 25 = 125 HP (wiki ile birebir)"
+    },
+    "move_speed_add": {
+      "input": "agility",
+      "unit": "add (base 300 uzerine)",
+      "points": [[0, -10], [10, -5], [15, 0], [75, 36], [100, 43.5]],
+      "base_move_speed": 300,
+      "hard_cap_total": 330
+    },
+    "health_recovery": {
+      "input": "vigor",
+      "unit": "%",
+      "points": [[0, -55], [5, -30], [15, 0], [25, 70], [35, 120], [84, 218], [85, 219], [86, 222], [100, 250]],
+      "formula": "tick basina iyilesme = base_recovery * (1 + bonus)"
+    },
+    "action_speed": {
+      "input": "action_speed_rating",
+      "unit": "%",
+      "points": [[0, -38], [10, -8], [13, -2], [15, 0], [33, 22.5], [45, 34.5], [49, 37.5], [100, 63]],
+      "formula": "yeni animasyon suresi = base / (1 + action_speed)"
+    },
+    "manual_dexterity": {
+      "input": "dexterity",
+      "unit": "%",
+      "points": [[0, -15], [15, 0], [23, 24], [31, 40], [37, 46], [45, 50], [95, 55], [100, 55]],
+      "cap": 50,
+      "_verify": "Wiki cap %50 diyor ama egri 55'e cikiyor - dogrulanmali"
+    },
+    "item_equip_speed": {
+      "input": "dexterity",
+      "unit": "%",
+      "points": [[0, -95], [1, -95], [2, -91], [15, 0], [35, 100], [70, 170], [100, 200]]
+    },
+    "spell_casting_speed": {
+      "input": "knowledge",
+      "unit": "%",
+      "points": [[0, -60], [5, -35], [10, -15], [15, 0], [25, 21], [40, 51], [100, 111]],
+      "formula": "cast suresi = base / (1 + spell_casting_speed)"
+    },
+    "memory_capacity": {
+      "input": "knowledge",
+      "unit": "puan",
+      "points": [[0, 0], [6, 0], [100, 94]],
+      "formula": "toplam = ceil(egri * (1 + bonus%)) + flat_add"
+    },
+    "memory_recovery": {
+      "input": "knowledge",
+      "unit": "%",
+      "points": [[0, 43], [28, 85], [35, 120], [84, 218], [85, 219], [86, 222], [100, 250]]
+    },
+    "magic_resistance": {
+      "input": "will",
+      "unit": "MR",
+      "points": [[0, -20], [5, 0], [15, 30], [33, 102], [48, 147], [58, 167], [100, 209]]
+    },
+    "buff_duration": {
+      "input": "will",
+      "unit": "%",
+      "points": [[0, -80], [5, -30], [7, -20], [11, -8], [15, 0], [50, 35], [100, 60]]
+    },
+    "cooldown_reduction": {
+      "input": "resourcefulness",
+      "unit": "%",
+      "points": [[0, -30], [20, 10], [50, 40], [100, 65]],
+      "cap": 65,
+      "formula": "yeni cooldown = base * (1 - reduction)"
+    },
+    "regular_interaction_speed": {
+      "input": "regular_interaction_rating",
+      "unit": "%",
+      "points": [[0, -26], [7, -12], [15, 0], [20, 28], [25, 52], [30, 72], [35, 88], [40, 100], [45, 108], [100, 152]],
+      "formula": "yeni etkilesim suresi = base / (1 + speed)"
+    },
+    "magical_interaction_speed": {
+      "input": "will",
+      "unit": "%",
+      "points": [[0, -75], [15, 0], [25, 70], [35, 120], [84, 218], [85, 219], [86, 222], [100, 250]]
+    },
+    "persuasiveness": {
+      "input": "resourcefulness",
+      "unit": "puan",
+      "points": [[0, 0], [15, 15], [100, 57.5]]
+    },
+    "physical_damage_reduction": {
+      "input": "armor_rating",
+      "unit": "%",
+      "points": [
+        [-300, -614.8], [-12, -38.8], [-4, -26.8], [6, -14.8], [12, -7], [20, 4.2],
+        [75, 12.45], [95, 15.55], [115, 18.55], [135, 21.45], [155, 24.25],
+        [175, 26.95], [195, 29.55], [215, 32.05], [235, 34.45], [255, 36.75],
+        [275, 38.95], [295, 41.05], [315, 43.05], [335, 44.95], [355, 46.75],
+        [375, 48.45], [395, 50.05], [415, 51.55], [435, 52.95], [455, 54.25],
+        [475, 55.45], [495, 56.55], [600, 61.8]
+      ],
+      "cap": 65,
+      "check": "Tum segment uclari per-point degerlerle aritmetik tutarli (dogrulandi 2026-07-11)"
+    }
+  },
+  "_todo": {
+    "magical_damage_reduction": "MR -> MDR tam tablosu eksik (bilinen: -300 MR'de -595%, cap %65). Wiki Magical_Damage_Reduction sayfasindan cekilecek.",
+    "debuff_duration": "Tam breakpoint tablosu eksik (bilinen: 0 Will'de +400%, 100 Will'de -37.5%, taban -95%).",
+    "luck": "Luck -> loot etkisi dogrusal degil; cap 500. Simulasyon icin gerekmeyebilir."
+  }
+}
