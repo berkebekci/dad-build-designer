@@ -1,13 +1,15 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { computeStats } from './engine/computeStats';
 import { validateBuild } from './engine/validateBuild';
-import { classes, itemIndex, statCurves } from './engine/data';
+import { classes, enchantSlotCount, itemIndex, items, statCurves } from './engine/data';
 import { gearTotals, type EnchantChoice, type GearSlotId, type Loadout } from './engine/itemStats';
 import { eligibleItems } from './engine/gearRules';
-import { items } from './engine/data';
+import { decodeBuild, encodeBuild, type BuildState } from './engine/buildCodec';
 import { PickList } from './ui/PickList';
 import { StatPanel } from './ui/StatPanel';
 import { GearPanel, type UiLoadout } from './ui/GearPanel';
+
+const STORAGE_KEY = 'dad_build_v1';
 
 /** Strip empty enchant rows for the engine. */
 function toEngineLoadout(ui: UiLoadout): Loadout {
@@ -22,14 +24,64 @@ function toEngineLoadout(ui: UiLoadout): Loadout {
   return out;
 }
 
+/**
+ * Decoded builds come from URLs and old saves — trust nothing. Unknown ids
+ * are dropped, enchant rows are resized to the item's rarity, roll values
+ * are clamped back into the pool's range.
+ */
+function sanitizeBuild(raw: BuildState): BuildState {
+  const classData = classes[raw.classId] ? classes[raw.classId]! : classes['fighter']!;
+  const perkPool = new Set(classData.perks.map((p) => p.id));
+  const skillPool = new Set(classData.skills.map((s) => s.id));
+  const perkIds = [...new Set(raw.perkIds)].filter((id) => perkPool.has(id)).slice(0, classData.perk_slots);
+  const skillIds = [...new Set(raw.skillIds)]
+    .filter((id) => skillPool.has(id))
+    .slice(0, classData.skill_slots);
+
+  const loadout: UiLoadout = {};
+  for (const [slot, eq] of Object.entries(raw.loadout) as [GearSlotId, UiLoadout[GearSlotId]][]) {
+    if (!eq) continue;
+    const item = itemIndex.get(eq.itemId);
+    if (!item) continue;
+    const legal = eligibleItems(items, classData, slot, perkIds).some((i) => i.id === item.id);
+    if (!legal) continue;
+    const slots = enchantSlotCount(item.rarity);
+    const enchants: (EnchantChoice | null)[] = Array(slots).fill(null);
+    const seen = new Set<string>();
+    (eq.enchants ?? []).slice(0, slots).forEach((en, idx) => {
+      if (!en || seen.has(en.attr)) return;
+      const range = (item.pool ?? []).find(([a]) => a === en.attr);
+      if (!range) return;
+      seen.add(en.attr);
+      enchants[idx] = { attr: en.attr, value: Math.min(range[2], Math.max(range[1], en.value)) };
+    });
+    loadout[slot] = { itemId: item.id, enchants };
+  }
+
+  return { classId: classData.id, perkIds, skillIds, loadout };
+}
+
+function loadInitialBuild(): BuildState {
+  const fallback: BuildState = { classId: 'fighter', perkIds: [], skillIds: [], loadout: {} };
+  const hashMatch = window.location.hash.match(/#b=([A-Za-z0-9_-]+)/);
+  const fromHash = hashMatch ? decodeBuild(hashMatch[1]!) : null;
+  if (fromHash) return sanitizeBuild(fromHash);
+  const stored = window.localStorage.getItem(STORAGE_KEY);
+  const fromStore = stored ? decodeBuild(stored) : null;
+  if (fromStore) return sanitizeBuild(fromStore);
+  return fallback;
+}
+
+const initial = loadInitialBuild();
+
 export default function App() {
-  // Only Fighter exists for now; the select is already wired for more classes.
-  const [classId, setClassId] = useState('fighter');
+  const [classId, setClassId] = useState(initial.classId);
   const classData = classes[classId]!;
 
-  const [perkIds, setPerkIds] = useState<string[]>([]);
-  const [skillIds, setSkillIds] = useState<string[]>([]);
-  const [loadout, setLoadout] = useState<UiLoadout>({});
+  const [perkIds, setPerkIds] = useState<string[]>(initial.perkIds);
+  const [skillIds, setSkillIds] = useState<string[]>(initial.skillIds);
+  const [loadout, setLoadout] = useState<UiLoadout>(initial.loadout);
+  const [copied, setCopied] = useState(false);
 
   // The whole app funnels into this one pure engine call.
   const stats = useMemo(() => {
@@ -38,6 +90,12 @@ export default function App() {
   }, [classData, loadout]);
 
   const issues = validateBuild(classData, { perkIds, skillIds });
+
+  // Autosave every change; the URL hash is only written on Share.
+  useEffect(() => {
+    const state: BuildState = { classId, perkIds, skillIds, loadout };
+    window.localStorage.setItem(STORAGE_KEY, encodeBuild(state));
+  }, [classId, perkIds, skillIds, loadout]);
 
   /**
    * Perks can change gear legality (Weapon Mastery off -> caster weapons must
@@ -90,20 +148,49 @@ export default function App() {
     setLoadout({});
   };
 
+  const shareBuild = async () => {
+    const code = encodeBuild({ classId, perkIds, skillIds, loadout });
+    const url = `${window.location.origin}${window.location.pathname}#b=${code}`;
+    window.history.replaceState(null, '', `#b=${code}`);
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // clipboard unavailable (permissions) — the URL is still in the address bar
+    }
+  };
+
+  const resetBuild = () => {
+    setPerkIds([]);
+    setSkillIds([]);
+    setLoadout({});
+    window.history.replaceState(null, '', window.location.pathname);
+    window.localStorage.removeItem(STORAGE_KEY);
+  };
+
   return (
     <div className="app">
       <header className="header">
         <h1>DaD Build Designer</h1>
-        <label className="class-picker">
-          Class
-          <select value={classId} onChange={(e) => switchClass(e.target.value)}>
-            {Object.values(classes).map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.name}
-              </option>
-            ))}
-          </select>
-        </label>
+        <div className="header-actions">
+          <label className="class-picker">
+            Class
+            <select value={classId} onChange={(e) => switchClass(e.target.value)}>
+              {Object.values(classes).map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
+                </option>
+              ))}
+            </select>
+          </label>
+          <button type="button" className="btn" onClick={shareBuild}>
+            {copied ? 'Copied!' : 'Share Build'}
+          </button>
+          <button type="button" className="btn btn--ghost" onClick={resetBuild}>
+            Reset
+          </button>
+        </div>
       </header>
 
       {issues.length > 0 && (

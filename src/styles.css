@@ -47,6 +47,33 @@ body {
   color: var(--gold);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn {
+  background: var(--gold);
+  color: #1a1408;
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--muted);
+  border-color: var(--border);
+}
+
 .class-picker {
   display: flex;
   align-items: center;
