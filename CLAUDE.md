@@ -33,7 +33,12 @@ hazır sonuç fırlatma; kararları gerekçeleriyle anlat. Açıklamalar Türkç
   `computeStats.ts` (saf fonksiyon; ExternalModifiers ile gear girdilerine hazır),
   `validateBuild.ts` (slot/duplicate/id kuralları), `data.ts` (JSON bağlayıcı).
   24 birim testi: `npm test` (vitest), typecheck: `npm run typecheck`.
-- Sıradaki: **Faz 3 — MVP arayüz** (Vite + React; perk/skill seçici + canlı stat paneli).
+- Faz 3 tamam: MVP UI — `src/App.tsx` + `src/ui/` (PickList generic perk/skill
+  seçici, StatPanel, GearPreview oyun alanı). `npm run dev` → localhost:5173.
+  Doğrulandı: slot limiti (4/4'te kalanlar kilitli), +10 STR → PP bonus +%10 /
+  HP 129.38, AR 115 → PDR +%18.55.
+- Sıradaki: **Faz 4 — Enchantment/gear sistemi** (darkerdb API'den item verisi,
+  rarity→enchantment slotları, roll aralıkları; GearPreview'un yerini alır).
 - TODO'lar JSON dosyalarının `_todo` alanlarında ve docs/kaynaklar.md'de.
 
 ## Oyun kuralları özeti
