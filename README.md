@@ -36,7 +36,13 @@ docs/          ← kaynaklar, kararlar, doğrulama notları
 - [x] **Faz 4 — Gear & Enchantment:** darkerdb'den 1639 item (`scripts/fetch-items.mjs`),
       11 ekipman slotu, sınıf+perk bazlı yasallık (Weapon Mastery/Slayer), rarity→enchantment
       slotları, item-başına havuz ve roll aralıkları (min/max kelepçeli)
-- [ ] **Faz 5 — Genişleme:** diğer sınıflar, build kaydet/paylaş (URL kodlama), türetilmiş metrikler (DPS, efektif HP)
+- [x] **Faz 5a — Kaydet/Paylaş:** localStorage otomatik kayıt + URL hash ile build paylaşımı
+      (Share Build düğmesi), güvenli geri yükleme (bilinmeyen id ayıklama, roll kelepçeleme)
+- [x] **Faz 5b — 10 sınıfın tamamı:** tüm sınıflar perk/skill/base-stat/silah haklarıyla;
+      `required_class` bit maskesi çözüldü (fighter=1 ... sorcerer=512) → item-bazında kesin
+      yasallık; perk-gear kancaları (Weapon Mastery, Slayer, Demon Armor, Spear Proficiency)
+- [ ] **Faz 6 — Cila:** DPS/efektif-HP türetilmiş metrikleri, items.json code-split,
+      skill açıklamalarındaki eksik sayılar (API şablon boşlukları), UI iyileştirmeleri
 
 ## Veri güncelliği
 

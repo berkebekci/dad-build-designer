@@ -1,0 +1,148 @@
+{
+  "_meta": {
+    "source": "perks/weapons: darkanddarker.wiki.spellsandguns.com/Wizard; base stats & skills: api.darkerdb.com/v1/classes (merged by scripts/build-classes.mjs)",
+    "fetched_at": "2026-07-11",
+    "note": "Spell system (memory/casting) is out of scope for the stat engine."
+  },
+  "id": "wizard",
+  "name": "Wizard",
+  "base_attributes": {
+    "strength": 6,
+    "vigor": 7,
+    "agility": 15,
+    "dexterity": 17,
+    "will": 20,
+    "knowledge": 25,
+    "resourcefulness": 15
+  },
+  "perk_slots": 4,
+  "perk_slot_rule": "1 slot + 1 additional slot every 5 levels; 4 slots at level 15 (max)",
+  "skill_slots": 2,
+  "armor_types": [
+    "cloth",
+    "leather"
+  ],
+  "perks": [
+    {
+      "id": "arcane_feedback",
+      "name": "Arcane Feedback",
+      "effect": "Stacking +3% Spell Casting Speed and +3% Arcane Power Bonus per stack for 7s (max 5 stacks)"
+    },
+    {
+      "id": "arcane_mastery",
+      "name": "Arcane Mastery",
+      "effect": "+5% Arcane Power Bonus; Arcane spell cast time -0.5s"
+    },
+    {
+      "id": "fire_mastery",
+      "name": "Fire Mastery",
+      "effect": "+5% Fire Power Bonus; burns last +2s and deal +2 base damage"
+    },
+    {
+      "id": "ice_mastery",
+      "name": "Ice Mastery",
+      "effect": "Ice damage freezes the target's feet for 0.5s"
+    },
+    {
+      "id": "ice_shield",
+      "name": "Ice Shield",
+      "effect": "+20 Armor Rating while not on cooldown; melee attackers suffer frostbite (-20% Move Speed Bonus, -20% Action Speed for 0.5s)"
+    },
+    {
+      "id": "mana_surge",
+      "name": "Mana Surge",
+      "effect": "+10% Magical Power Bonus"
+    },
+    {
+      "id": "melt",
+      "name": "Melt",
+      "effect": "Targets suffer -15% Physical Damage Reduction and -5% Projectile Damage Reduction for 2s"
+    },
+    {
+      "id": "quick_chant",
+      "name": "Quick Chant",
+      "effect": "+15% Spell Casting Speed"
+    },
+    {
+      "id": "reactive_shield",
+      "name": "Reactive Shield",
+      "effect": "On taking damage: 15 Base Shield for 3s; reactivates after 12s"
+    },
+    {
+      "id": "sage",
+      "name": "Sage",
+      "effect": "+15% Knowledge Bonus"
+    },
+    {
+      "id": "spell_overload",
+      "name": "Spell Overload",
+      "effect": "-20% Knowledge Bonus, but +60% Max Spell Count Bonus"
+    },
+    {
+      "id": "staff_mastery",
+      "name": "Staff Mastery",
+      "effect": "With staff-type weapons: +2 Buff Magical Damage as base damage"
+    }
+  ],
+  "skills": [
+    {
+      "id": "arcane_shield",
+      "name": "Arcane Shield",
+      "effect": "Gain a shield around you that absorbs damage from all damage sources for seconds. When the maximum amount of absorb has been reached, the shield unleashes an Arcane Explosion, dealing magical damage to enemy targets in a 2m radius around you. Cooldown: seconds"
+    },
+    {
+      "id": "intense_focus",
+      "name": "Intense Focus",
+      "effect": "Reduce the cast time of your next spell to seconds. Cooldown: seconds"
+    },
+    {
+      "id": "meditation",
+      "name": "Meditation",
+      "effect": "Enter a meditative state and recover spells at a rate of spells costs over 24 seconds. Cooldown: seconds"
+    },
+    {
+      "id": "spell_memory1",
+      "name": "Spell Memory I",
+      "effect": "Gain the ability to memorize spells to use in the dungeon."
+    },
+    {
+      "id": "spell_memory2",
+      "name": "Spell Memory II",
+      "effect": "Gain the ability to memorize additional spells to use in the dungeon."
+    }
+  ],
+  "weapons": {
+    "two_handed": [
+      "Ceremonial Staff",
+      "Magic Staff",
+      "Sterling Staff",
+      "Divine Staff",
+      "Frostlight Crystal Sword",
+      "Golden Scripture of Solaris",
+      "Requiem of the Fairy",
+      "Sovereign's Ghostblade",
+      "Staff of Gluttony",
+      "Staff of Righteousness",
+      "Tome of Sheol",
+      "Troll's Bane",
+      "Crossbow",
+      "Crystal Sword",
+      "Quarterstaff",
+      "Spellbook"
+    ],
+    "one_handed_main": [
+      "Haze Blade",
+      "Rondel Dagger",
+      "Dagger of Righteousness",
+      "Divine Dagger",
+      "Sterling Dagger"
+    ],
+    "off_hand": [
+      "Crystal Ball",
+      "Cyclops Vision Crystal",
+      "Mana Sphere",
+      "Tidal Crystal Ball"
+    ]
+  },
+  "class_mask": 16
+}

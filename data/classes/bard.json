@@ -1,0 +1,132 @@
+{
+  "_meta": {
+    "source": "perks/weapons: darkanddarker.wiki.spellsandguns.com/Bard; base stats & skills: api.darkerdb.com/v1/classes (merged by scripts/build-classes.mjs)",
+    "fetched_at": "2026-07-11",
+    "note": "Song system (music minigame) is out of scope for the stat engine; songs appear as skills only."
+  },
+  "id": "bard",
+  "name": "Bard",
+  "base_attributes": {
+    "strength": 13,
+    "vigor": 13,
+    "agility": 13,
+    "dexterity": 20,
+    "will": 11,
+    "knowledge": 20,
+    "resourcefulness": 15
+  },
+  "perk_slots": 4,
+  "perk_slot_rule": "1 slot + 1 additional slot every 5 levels; 4 slots at level 15 (max)",
+  "skill_slots": 2,
+  "armor_types": [
+    "cloth",
+    "leather"
+  ],
+  "perks": [
+    {
+      "id": "charismatic_performance",
+      "name": "Charismatic Performance",
+      "effect": "Upgrades a 'good' performance into a 'perfect' performance"
+    },
+    {
+      "id": "dancing_feet",
+      "name": "Dancing Feet",
+      "effect": "+10 Move Speed while holding an instrument"
+    },
+    {
+      "id": "fermata",
+      "name": "Fermata",
+      "effect": "+5 Resourcefulness"
+    },
+    {
+      "id": "jolly_time",
+      "name": "Jolly Time",
+      "effect": "Drinking ale restores 5 Physical Base Healing and grants +5 Move Speed and +5 Vigor"
+    },
+    {
+      "id": "lore_mastery",
+      "name": "Lore Mastery",
+      "effect": "+30% Regular Interaction Speed and +10 Memory Capacity"
+    },
+    {
+      "id": "melodic_protection",
+      "name": "Melodic Protection",
+      "effect": "+25% Physical and Magical Damage Reduction while playing songs"
+    },
+    {
+      "id": "rapier_mastery",
+      "name": "Rapier Mastery",
+      "effect": "With rapier equipped: +3 Physical Buff Weapon Damage and +5% Action Speed"
+    },
+    {
+      "id": "reinforced_instruments",
+      "name": "Reinforced Instruments",
+      "effect": "+50% Physical Power Bonus when attacking with musical instruments"
+    },
+    {
+      "id": "story_teller",
+      "name": "Story Teller",
+      "effect": "Party members within 6m gain +5 Will and +3 Knowledge"
+    },
+    {
+      "id": "superior_dexterity",
+      "name": "Superior Dexterity",
+      "effect": "+50% Item Equip Speed when switching weapons/utilities"
+    },
+    {
+      "id": "wanderers_luck",
+      "name": "Wanderer's Luck",
+      "effect": "+100 Luck (treasure chest loot quality)"
+    }
+  ],
+  "skills": [
+    {
+      "id": "dissonance",
+      "name": "Dissonance",
+      "effect": "Plays an instrument to make an unpleasant noise that silences all enemy targets for seconds.\nSilence: Disables skills spells performance abilities."
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "effect": "Resets the duration of all active music buffs on nearby party members. Cooldown: seconds"
+    },
+    {
+      "id": "music_memory1",
+      "name": "Music Memory",
+      "effect": "Gain the ability to store up to 5 sheets of music."
+    },
+    {
+      "id": "music_memory2",
+      "name": "Music Memory II",
+      "effect": "Gain the ability to store up to 5 sheets of music."
+    },
+    {
+      "id": "party_maker",
+      "name": "Party Maker",
+      "effect": "Play an instrument to grant all nearby allies immunity to drunkenness for seconds. While immune, drinking alcohol restores health. Cooldown: seconds"
+    }
+  ],
+  "weapons": {
+    "two_handed": [
+      "Crossbow",
+      "Survival Bow"
+    ],
+    "one_handed_main": [
+      "Arming Sword",
+      "Cutlass",
+      "Falchion",
+      "Haze Blade",
+      "Rapier",
+      "Rondel Dagger"
+    ],
+    "off_hand": [
+      "Bloodsap Blade",
+      "Buckler",
+      "Castillon Dagger",
+      "Hand Crossbow",
+      "Lantern Shield",
+      "Short Sword"
+    ]
+  },
+  "class_mask": 64
+}

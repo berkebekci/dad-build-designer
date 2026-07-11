@@ -1,0 +1,140 @@
+{
+  "_meta": {
+    "source": "perks/weapons: darkanddarker.wiki.spellsandguns.com/Cleric; base stats & skills: api.darkerdb.com/v1/classes (merged by scripts/build-classes.mjs)",
+    "fetched_at": "2026-07-11",
+    "note": "Spell system (memory/casting) is out of scope for the stat engine; spell selection skills appear as skills only."
+  },
+  "id": "cleric",
+  "name": "Cleric",
+  "base_attributes": {
+    "strength": 11,
+    "vigor": 13,
+    "agility": 12,
+    "dexterity": 14,
+    "will": 23,
+    "knowledge": 20,
+    "resourcefulness": 12
+  },
+  "perk_slots": 4,
+  "perk_slot_rule": "1 slot + 1 additional slot every 5 levels; 4 slots at level 15 (max)",
+  "skill_slots": 2,
+  "armor_types": [
+    "cloth",
+    "leather",
+    "plate"
+  ],
+  "perks": [
+    {
+      "id": "advanced_healer",
+      "name": "Advanced Healer",
+      "effect": "+5 Outgoing Magical Healing Add"
+    },
+    {
+      "id": "blunt_weapon_mastery",
+      "name": "Blunt Weapon Mastery",
+      "effect": "While using a mace: +10% Physical Power Bonus"
+    },
+    {
+      "id": "brewmaster",
+      "name": "Brewmaster",
+      "effect": "Converts the drunken debuff into a buff; +10 Strength while drunk"
+    },
+    {
+      "id": "faithfulness",
+      "name": "Faithfulness",
+      "effect": "+15% Divine Power Bonus; divine hits slow enemies"
+    },
+    {
+      "id": "holy_aura",
+      "name": "Holy Aura",
+      "effect": "+15 Armor Rating and +15 Magical Resistance to self and allies within 6m"
+    },
+    {
+      "id": "holy_water",
+      "name": "Holy Water",
+      "effect": "Drinking removes curses and harmful effects"
+    },
+    {
+      "id": "kindness",
+      "name": "Kindness",
+      "effect": "Healing another also heals you for 30% of the spell's total heal"
+    },
+    {
+      "id": "over_healing",
+      "name": "Over Healing",
+      "effect": "Excess healing converts to temporary bonus health (up to 20% of max)"
+    },
+    {
+      "id": "perseverance",
+      "name": "Perseverance",
+      "effect": "All incoming damage reduced by 2 Physical and 2 Magical Absolute Reduction"
+    },
+    {
+      "id": "protection_from_evil",
+      "name": "Protection from Evil",
+      "effect": "-30% Debuff Duration on self"
+    },
+    {
+      "id": "requiem",
+      "name": "Requiem",
+      "effect": "Faster resurrection with reduced HP penalty"
+    },
+    {
+      "id": "undead_slaying",
+      "name": "Undead Slaying",
+      "effect": "+20% Undead Race Damage Bonus"
+    }
+  ],
+  "skills": [
+    {
+      "id": "divine_protection",
+      "name": "Divine Protection",
+      "effect": "Gain physical damage reduction for seconds. Cooldown: seconds"
+    },
+    {
+      "id": "holy_purification",
+      "name": "Holy Purification",
+      "effect": "After channeling for 1.5 seconds, deal divine magical damage to all undead monsters within a 7.5m radius around you. Cooldown: seconds"
+    },
+    {
+      "id": "judgement",
+      "name": "Judgement",
+      "effect": "After channeling for 1 seconds, deal divine magical damage to a target and reduce their move speed bonus by for seconds. Once the channel begins on a target, crosshair targeting is no longer required. This spell has a 5m range and will fail if the target goes out of range. Cooldown: seconds"
+    },
+    {
+      "id": "smite",
+      "name": "Smite",
+      "effect": "Deal an additional divine magical damage to all enemies you hit within seconds. Only when melee attacking. Cooldown: seconds"
+    },
+    {
+      "id": "spell_memory1",
+      "name": "Spell Memory I",
+      "effect": "Gain the ability to memorize spells to use in the dungeon."
+    },
+    {
+      "id": "spell_memory2",
+      "name": "Spell Memory II",
+      "effect": "Gain the ability to memorize additional spells to use in the dungeon."
+    }
+  ],
+  "weapons": {
+    "two_handed": [
+      "Ceremonial Staff",
+      "Magic Staff",
+      "Quarterstaff",
+      "War Maul"
+    ],
+    "one_handed_main": [
+      "Club",
+      "Flanged Mace",
+      "Morning Star",
+      "War Hammer"
+    ],
+    "off_hand": [
+      "Buckler",
+      "Heater Shield",
+      "Round Shield"
+    ]
+  },
+  "class_mask": 32
+}

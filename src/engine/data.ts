@@ -5,6 +5,15 @@
  */
 import statCurvesJson from '../../data/stat_curves.json';
 import fighterJson from '../../data/classes/fighter.json';
+import barbarianJson from '../../data/classes/barbarian.json';
+import bardJson from '../../data/classes/bard.json';
+import clericJson from '../../data/classes/cleric.json';
+import druidJson from '../../data/classes/druid.json';
+import rangerJson from '../../data/classes/ranger.json';
+import rogueJson from '../../data/classes/rogue.json';
+import sorcererJson from '../../data/classes/sorcerer.json';
+import warlockJson from '../../data/classes/warlock.json';
+import wizardJson from '../../data/classes/wizard.json';
 import rarityJson from '../../data/rules/rarity_enchantments.json';
 import itemsJson from '../../data/items/items.json';
 import type { CurveSet } from './computeStats';
@@ -15,9 +24,22 @@ export const statCurves = statCurvesJson as unknown as CurveSet;
 
 export const fighter = fighterJson as unknown as ClassData;
 
-export const classes: Record<string, ClassData> = {
-  [fighter.id]: fighter,
-};
+const allClasses = [
+  fighter,
+  barbarianJson as unknown as ClassData,
+  bardJson as unknown as ClassData,
+  clericJson as unknown as ClassData,
+  druidJson as unknown as ClassData,
+  rangerJson as unknown as ClassData,
+  rogueJson as unknown as ClassData,
+  sorcererJson as unknown as ClassData,
+  warlockJson as unknown as ClassData,
+  wizardJson as unknown as ClassData,
+];
+
+export const classes: Record<string, ClassData> = Object.fromEntries(
+  allClasses.map((c) => [c.id, c]),
+);
 
 export interface RarityTier {
   id: string;

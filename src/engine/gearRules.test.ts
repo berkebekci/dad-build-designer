@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { eligibleItems, isTwoHanded } from './gearRules';
-import { fighter, items, itemIndex } from './data';
+import { classes, fighter, items, itemIndex } from './data';
 
 describe('eligibleItems - Fighter with real item DB', () => {
   it('primary weapons match the wiki-verified Fighter list', () => {
@@ -43,5 +43,46 @@ describe('eligibleItems - Fighter with real item DB', () => {
     expect(zwei).toBeDefined();
     expect(isTwoHanded(zwei)).toBe(true);
     expect(isTwoHanded(itemIndex.get('nonexistent'))).toBe(false);
+  });
+});
+
+describe('eligibleItems - all 10 classes via decoded class masks', () => {
+  it('every class has a non-empty primary weapon list and armor lists', () => {
+    for (const cls of Object.values(classes)) {
+      expect(eligibleItems(items, cls, 'primary', []).length, `${cls.id} primary`).toBeGreaterThan(0);
+      expect(eligibleItems(items, cls, 'chest', []).length, `${cls.id} chest`).toBeGreaterThan(0);
+      expect(eligibleItems(items, cls, 'ring1', []).length, `${cls.id} rings`).toBeGreaterThan(0);
+    }
+  });
+
+  it('Wizard cannot wear plate, Cleric can', () => {
+    const wizardChest = eligibleItems(items, classes['wizard']!, 'chest', []);
+    const clericChest = eligibleItems(items, classes['cleric']!, 'chest', []);
+    expect(wizardChest.some((i) => i.armorType === 'plate')).toBe(false);
+    expect(clericChest.some((i) => i.armorType === 'plate')).toBe(true);
+  });
+
+  it('Warlock unlocks plate only with the Demon Armor perk', () => {
+    const without = eligibleItems(items, classes['warlock']!, 'chest', []);
+    const withPerk = eligibleItems(items, classes['warlock']!, 'chest', ['demon_armor']);
+    expect(without.some((i) => i.armorType === 'plate')).toBe(false);
+    expect(withPerk.some((i) => i.armorType === 'plate')).toBe(true);
+  });
+
+  it('Ranger unlocks spears only with Spear Proficiency', () => {
+    const without = eligibleItems(items, classes['ranger']!, 'primary', []);
+    const withPerk = eligibleItems(items, classes['ranger']!, 'primary', ['spear_proficiency']);
+    expect(without.some((i) => i.name === 'Spear')).toBe(false);
+    expect(withPerk.some((i) => i.name === 'Spear')).toBe(true);
+  });
+
+  it('mask-based weapon rights match known cases', () => {
+    const barb = eligibleItems(items, classes['barbarian']!, 'primary', []).map((i) => i.name);
+    expect(barb).toContain('Zweihander');
+    expect(barb).toContain('Bardiche');
+    expect(barb).not.toContain('Longsword');
+    const wiz = eligibleItems(items, classes['wizard']!, 'primary', []).map((i) => i.name);
+    expect(wiz).toContain('Spellbook');
+    expect(wiz).not.toContain('Zweihander');
   });
 });

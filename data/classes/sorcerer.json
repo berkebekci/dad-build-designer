@@ -1,0 +1,132 @@
+{
+  "_meta": {
+    "source": "perks/weapons: darkanddarker.wiki.spellsandguns.com/Sorcerer; base stats & skills: api.darkerdb.com/v1/classes (merged by scripts/build-classes.mjs)",
+    "fetched_at": "2026-07-11",
+    "note": "Spell merge system is out of scope for the stat engine."
+  },
+  "id": "sorcerer",
+  "name": "Sorcerer",
+  "base_attributes": {
+    "strength": 10,
+    "vigor": 10,
+    "agility": 10,
+    "dexterity": 18,
+    "will": 25,
+    "knowledge": 20,
+    "resourcefulness": 12
+  },
+  "perk_slots": 4,
+  "perk_slot_rule": "1 slot + 1 additional slot every 5 levels; 4 slots at level 15 (max)",
+  "skill_slots": 2,
+  "armor_types": [
+    "cloth",
+    "leather"
+  ],
+  "perks": [
+    {
+      "id": "air_mastery",
+      "name": "Air Mastery",
+      "effect": "+15% Air Knockback Bonus and +50% Air Power Bonus"
+    },
+    {
+      "id": "apex_of_sorcery",
+      "name": "Apex of Sorcery",
+      "effect": "Move at 1% move speed, but +50% Magical Power Bonus, +50% Spell Casting Speed, +25% Action Speed"
+    },
+    {
+      "id": "elemental_fury",
+      "name": "Elemental Fury",
+      "effect": "For every 1% health lost: +0.5% Cooldown Reduction and +0.25% Magical Power Bonus"
+    },
+    {
+      "id": "innate_talent",
+      "name": "Innate Talent",
+      "effect": "+5 Memory Capacity Add; +5 Magical Power and +10% Spell Casting Speed when casting with bare hands"
+    },
+    {
+      "id": "lightning_mastery",
+      "name": "Lightning Mastery",
+      "effect": "+25% Lightning Power Bonus; inflict Electric Shock every 2s while dealing Lightning damage"
+    },
+    {
+      "id": "mana_flow",
+      "name": "Mana Flow",
+      "effect": "Successful casts within 3s grant +5% Magical Power Bonus and +5% Magical Penetration, stacks to 3"
+    },
+    {
+      "id": "mana_fold",
+      "name": "Mana Fold",
+      "effect": "Cooldowns 0.75x, but -15% Spell Casting Speed"
+    },
+    {
+      "id": "merged_might",
+      "name": "Merged Might",
+      "effect": "+5 Magical Power when casting a merge spell; +5% Move Speed Bonus for 2s after"
+    },
+    {
+      "id": "spell_sculpting",
+      "name": "Spell Sculpting",
+      "effect": "Spell range 125% and AoE +25%, but radial spell cooldowns 1.25x"
+    },
+    {
+      "id": "spell_stride",
+      "name": "Spell Stride",
+      "effect": "+30% Move Speed Bonus while casting two spells simultaneously"
+    },
+    {
+      "id": "time_distortion",
+      "name": "Time Distortion",
+      "effect": "Cast time -50%, but cooldowns 2x"
+    }
+  ],
+  "skills": [
+    {
+      "id": "sorcery1",
+      "name": "Sorcery I",
+      "effect": "Gain the ability to use sorcery in the dungeon."
+    },
+    {
+      "id": "sorcery2",
+      "name": "Sorcery II",
+      "effect": "Gain the ability to use sorcery in the dungeon."
+    }
+  ],
+  "weapons": {
+    "two_handed": [
+      "Ceremonial Staff",
+      "Crystal Sword",
+      "Longsword",
+      "Magic Staff",
+      "Quarterstaff",
+      "Spellbook",
+      "Blade of Righteousness",
+      "Divine Blade",
+      "Divine Staff",
+      "Frostlight Crystal Sword",
+      "Golden Scripture of Solaris",
+      "Requiem of the Fairy",
+      "Sovereign's Ghostblade",
+      "Spectral Blade",
+      "Staff of Gluttony",
+      "Staff of Righteousness",
+      "Sterling Blade",
+      "Sterling Staff",
+      "Tome of Sheol",
+      "Troll's Bane",
+      "Void Blade"
+    ],
+    "one_handed_main": [
+      "Cutlass",
+      "Falchion",
+      "Falchion of Honor",
+      "Tidal Falchion"
+    ],
+    "off_hand": [
+      "Crystal Ball",
+      "Cyclops Vision Crystal",
+      "Mana Sphere",
+      "Tidal Crystal Ball"
+    ]
+  },
+  "class_mask": 512
+}

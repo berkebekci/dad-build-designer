@@ -1,0 +1,174 @@
+{
+  "_meta": {
+    "source": "perks/weapons: darkanddarker.wiki.spellsandguns.com/Barbarian; base stats & skills: api.darkerdb.com/v1/classes (merged by scripts/build-classes.mjs)",
+    "fetched_at": "2026-07-11"
+  },
+  "id": "barbarian",
+  "name": "Barbarian",
+  "base_attributes": {
+    "strength": 20,
+    "vigor": 25,
+    "agility": 13,
+    "dexterity": 12,
+    "will": 18,
+    "knowledge": 5,
+    "resourcefulness": 12
+  },
+  "perk_slots": 4,
+  "perk_slot_rule": "1 slot + 1 additional slot every 5 levels; 4 slots at level 15 (max)",
+  "skill_slots": 2,
+  "armor_types": [
+    "cloth",
+    "leather"
+  ],
+  "perks": [
+    {
+      "id": "axe_specialization",
+      "name": "Axe Specialization",
+      "effect": "While using axes: +3 Physical Buff Weapon Damage"
+    },
+    {
+      "id": "berserker",
+      "name": "Berserker",
+      "effect": "+2% Physical Power Bonus and +0.5% Move Speed Bonus for every 10% of max health missing (up to 20% / 5%)"
+    },
+    {
+      "id": "carnage",
+      "name": "Carnage",
+      "effect": "After striking 2+ players within 1.5s: +40% Physical Power Bonus for 3s"
+    },
+    {
+      "id": "crush",
+      "name": "Crush",
+      "effect": "Destroy unreinforced containers in one strike with two-handed weapons; +1 Impact Power on two-handed attacks"
+    },
+    {
+      "id": "executioner",
+      "name": "Executioner",
+      "effect": "+20% Headshot Damage Modifier with axes"
+    },
+    {
+      "id": "heavy_swing",
+      "name": "Heavy Swing",
+      "effect": "Targets you hit suffer 2x duration of movement speed reduction effects"
+    },
+    {
+      "id": "iron_will",
+      "name": "Iron Will",
+      "effect": "+75 Magical Resistance and knockback immunity"
+    },
+    {
+      "id": "morale_boost",
+      "name": "Morale Boost",
+      "effect": "25% Max Health healing after killing a player"
+    },
+    {
+      "id": "potion_chugger",
+      "name": "Potion Chugger",
+      "effect": "1.2x healing and shielding potency from potions, with reduced duration"
+    },
+    {
+      "id": "robust",
+      "name": "Robust",
+      "effect": "+10% Max Health Bonus"
+    },
+    {
+      "id": "savage",
+      "name": "Savage",
+      "effect": "Without chest armor: +10% Physical Power Bonus and +1 Impact Power"
+    },
+    {
+      "id": "skull_splitter",
+      "name": "Skull Splitter",
+      "effect": "Headshots inflict Bleed: 12 damage over 4s"
+    },
+    {
+      "id": "treacherous_lungs",
+      "name": "Treacherous Lungs",
+      "effect": "Shout abilities last 1.5x longer"
+    },
+    {
+      "id": "two_hander",
+      "name": "Two-Hander",
+      "effect": "With two-handed weapons: +5% Physical Power Bonus and +10% Armor Penetration"
+    }
+  ],
+  "skills": [
+    {
+      "id": "achilles_strike",
+      "name": "Achilles Strike",
+      "effect": "Strike a target, reducing their move speed bonus by for seconds. While debuffed, each time the target moves they receive physical damage. Cooldown: seconds"
+    },
+    {
+      "id": "blood_exchange",
+      "name": "Blood Exchange",
+      "effect": "Lose of maximum health, but gain action speed for seconds and heal for of damage dealt while active. Cooldown: seconds"
+    },
+    {
+      "id": "finishing_blow",
+      "name": "Finishing Blow",
+      "effect": "Your next attack deals an additional true physical damage. If the target’s health is or lower after the attack, they are instantly killed. Cooldown: seconds"
+    },
+    {
+      "id": "grappling_hook",
+      "name": "Grappling Hook",
+      "effect": "Throws a grappling rope at a target up to 4m away, pulling them toward you. Cooldown: seconds"
+    },
+    {
+      "id": "hurl_weapon",
+      "name": "Hurl Weapon",
+      "effect": "Throws an axe to deal weapon damage. Can only be used when an axe is equipped as your primary weapon. Cooldown: seconds"
+    },
+    {
+      "id": "rage",
+      "name": "Rage",
+      "effect": "Gain strength, move speed bonus. While active, lose physical damage reduction for seconds. Cooldown: seconds"
+    },
+    {
+      "id": "reckless_attack",
+      "name": "Reckless Attack",
+      "effect": "Grants an additional armor penetration on your next attack, but reduces your armor rating by while active. The effect is consumed when you hit a target or object with a melee attack. Cooldown: seconds"
+    },
+    {
+      "id": "savage_roar",
+      "name": "Savage Roar",
+      "effect": "Frightens all enemies within a 7.5m range radius for seconds reducing their physical damage bonus by and move speed bonus by. Cooldown: seconds"
+    },
+    {
+      "id": "war_cry",
+      "name": "War Cry",
+      "effect": "Gain max health bonus for seconds. This effect applies to yourself and allies within a 7.5m radius. Cooldown: seconds"
+    },
+    {
+      "id": "war_sacrifice",
+      "name": "War Sacrifice",
+      "effect": "While active, gain all attributes. In exchange, lose of your maximum health over seconds. Cooldown: seconds"
+    },
+    {
+      "id": "whirlwind",
+      "name": "Whirlwind",
+      "effect": "Spin rapidly with a two-handed weapon, dealing of weapon damage to all nearby enemies. While spinning, your weapon cannot be interrupted by any impact. Cooldown: seconds"
+    }
+  ],
+  "weapons": {
+    "two_handed": [
+      "Bardiche",
+      "Battle Axe",
+      "Double Axe",
+      "Felling Axe",
+      "Quarterstaff",
+      "War Maul",
+      "Zweihander"
+    ],
+    "one_handed_main": [
+      "Club",
+      "Horseman's Axe",
+      "Viking Sword"
+    ],
+    "off_hand": [
+      "Hatchet",
+      "Round Shield"
+    ]
+  },
+  "class_mask": 2
+}

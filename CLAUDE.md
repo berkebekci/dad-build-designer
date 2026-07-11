@@ -46,12 +46,21 @@ hazır sonuç fırlatma; kararları gerekçeleriyle anlat. Açıklamalar Türkç
     min/max kelepçeli roll input). GearPreview kaldırıldı.
   - Tarayıcıda doğrulandı: Legendary Longsword → WD 41, MS 270, 4 enchant slotu, off-hand
     kilitli; Action Speed enchant +3% statlara yansıyor. 40 birim testi yeşil.
-- Sıradaki: **Faz 5** — (a) build kaydet/paylaş (localStorage + URL hash), (b) diğer 9 sınıf
-  (`data/api/classes.json` çekildi — base attribute içeriyor mu bak; yoksa wiki aynasından).
+- Faz 5a tamam: build kaydet/paylaş — `buildCodec.ts` (base64url), localStorage otokayıt,
+  `#b=` hash'ten yükleme, `sanitizeBuild` (güvensiz girdi ayıklama). Tarayıcıda round-trip ✓.
+- Faz 5b tamam: **10 sınıfın tamamı.** `data/classes/*.json` (perk/silah: wiki aynası;
+  base stat + skill: API, `scripts/build-classes.mjs` merge eder — sadece BOŞ alanları doldurur).
+  - **required_class bit maskesi ÇÖZÜLDÜ** (silah listesi × mask kesişimiyle, çıkış sırası):
+    fighter=1, barbarian=2, rogue=4, ranger=8, wizard=16, cleric=32, bard=64, warlock=128,
+    druid=256, sorcerer=512. `class_mask` her sınıf dosyasında.
+  - gearRules maske-öncelikli: item.classMask & class_mask; maskesiz iteme isim-listesi/
+    malzeme fallback. Perk kancaları (`perk_gear_hooks`): weapon_mastery→tüm silahlar,
+    slayer→plate yasak, demon_armor→plate açılır, spear_proficiency→mızraklar.
+  - 48 birim testi yeşil; prod build ✓ (chunk uyarısı: items.json 1.5MB → ileride code-split).
+- Sıradaki fikirler (Faz 6): DPS/efektif-HP metrikleri; skill açıklamalarında API şablon
+  boşlukları ("Cooldown: seconds" — sayılar eksik, wiki'den tamamlanabilir); items.json
+  dynamic import; sınıf ikonları (API icon_url alanları mevcut).
 - TODO'lar JSON dosyalarının `_todo` alanlarında ve docs/kaynaklar.md'de.
-- **required_class bit maskesi hâlâ çözülmedi** (Fighter için gerek yoktu — isim listesi
-  kullanılıyor). Yeni sınıflar eklerken ya maskeyi ampirik çöz ya da sınıf başına silah
-  listesi kur.
 
 ## Oyun kuralları özeti
 

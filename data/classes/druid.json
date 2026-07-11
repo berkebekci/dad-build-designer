@@ -1,0 +1,148 @@
+{
+  "_meta": {
+    "source": "perks/weapons: darkanddarker.wiki.spellsandguns.com/Druid; base stats & skills: api.darkerdb.com/v1/classes (merged by scripts/build-classes.mjs)",
+    "fetched_at": "2026-07-11",
+    "note": "Shapeshift forms and spell system are out of scope for the stat engine."
+  },
+  "id": "druid",
+  "name": "Druid",
+  "base_attributes": {
+    "strength": 12,
+    "vigor": 13,
+    "agility": 12,
+    "dexterity": 12,
+    "will": 18,
+    "knowledge": 20,
+    "resourcefulness": 18
+  },
+  "perk_slots": 4,
+  "perk_slot_rule": "1 slot + 1 additional slot every 5 levels; 4 slots at level 15 (max)",
+  "skill_slots": 2,
+  "armor_types": [
+    "cloth",
+    "leather"
+  ],
+  "perks": [
+    {
+      "id": "dreamwalk",
+      "name": "Dreamwalk",
+      "effect": "+5 Magical Power for 3s and become spiritual: phase through targets, invulnerable"
+    },
+    {
+      "id": "enhanced_wildness",
+      "name": "Enhanced Wildness",
+      "effect": "In animal form: +5% Physical Power Bonus and +20 Armor Rating"
+    },
+    {
+      "id": "force_of_nature",
+      "name": "Force of Nature",
+      "effect": "+5 Physical Power for 3s on each tick of received healing"
+    },
+    {
+      "id": "herbal_sensing",
+      "name": "Herbal Sensing",
+      "effect": "Detect herbs within 8m; +150 Luck when harvesting herbs"
+    },
+    {
+      "id": "lifebloom_aura",
+      "name": "Lifebloom Aura",
+      "effect": "+1 Health per tick to target when healing self or allies within 6m; disables Shapeshifting"
+    },
+    {
+      "id": "natural_healing",
+      "name": "Natural Healing",
+      "effect": "Heal self and allies within 6m for 1 Magical Base Healing every 3s"
+    },
+    {
+      "id": "shapeshift_mastery",
+      "name": "Shapeshift Mastery",
+      "effect": "-25% shapeshift time and -25% Wild skill cooldowns; prevents Spirit spells"
+    },
+    {
+      "id": "spirit_bond",
+      "name": "Spirit Bond",
+      "effect": "Transfer 20% of damage received by a party member within 6m to yourself (up to 20 per instance)"
+    },
+    {
+      "id": "spirit_magic_mastery",
+      "name": "Spirit Magic Mastery",
+      "effect": "+10 Magical Power when casting Spirit magic"
+    },
+    {
+      "id": "sun_and_moon",
+      "name": "Sun and Moon",
+      "effect": "Self and allies within 6m gain +3 Vigor and +5 Magical Power"
+    },
+    {
+      "id": "thorn_coat",
+      "name": "Thorn Coat",
+      "effect": "Return 5 True Physical Base Damage to melee attackers"
+    }
+  ],
+  "skills": [
+    {
+      "id": "shape_shift_memory1",
+      "name": "Shapeshift Memory",
+      "effect": "Transforms into the selected creature. Tools cannot be used in a non-human state."
+    },
+    {
+      "id": "shape_shift_memory2",
+      "name": "Shapeshift Memory II",
+      "effect": "Transforms into the selected creature. Tools cannot be used in a non-human state."
+    },
+    {
+      "id": "spell_memory1",
+      "name": "Spell Memory I",
+      "effect": "Gain the ability to memorize spells to use in the dungeon."
+    },
+    {
+      "id": "spell_memory2",
+      "name": "Spell Memory II",
+      "effect": "Gain the ability to memorize additional spells to use in the dungeon."
+    }
+  ],
+  "weapons": {
+    "two_handed": [
+      "Ceremonial Staff",
+      "Magic Staff",
+      "Quarterstaff",
+      "Spear",
+      "Spellbook",
+      "Divine Staff",
+      "Frostlight Spear",
+      "Golden Scripture of Solaris",
+      "Requiem of the Fairy",
+      "Spear of Rot",
+      "Staff of Gluttony",
+      "Staff of Righteousness",
+      "Sterling Staff",
+      "Tome of Sheol",
+      "Troll's Bane"
+    ],
+    "one_handed_main": [
+      "Club",
+      "Flanged Mace",
+      "Haze Blade",
+      "Morning Star",
+      "Rondel Dagger",
+      "War Hammer",
+      "Boneshaper",
+      "Dagger of Righteousness",
+      "Divine Dagger",
+      "Divine Rod",
+      "Light Bringer",
+      "Rod of Righteousness",
+      "Sterling Dagger",
+      "Sterling Rod"
+    ],
+    "off_hand": [
+      "Castillon Dagger",
+      "Crystal Ball",
+      "Cyclops Vision Crystal",
+      "Icefang",
+      "Mana Sphere",
+      "Tidal Crystal Ball"
+    ]
+  },
+  "class_mask": 256
+}

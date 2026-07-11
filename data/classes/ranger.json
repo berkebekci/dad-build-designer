@@ -1,0 +1,183 @@
+{
+  "_meta": {
+    "source": "perks/weapons: darkanddarker.wiki.spellsandguns.com/Ranger; base stats & skills: api.darkerdb.com/v1/classes (merged by scripts/build-classes.mjs)",
+    "fetched_at": "2026-07-11"
+  },
+  "id": "ranger",
+  "name": "Ranger",
+  "base_attributes": {
+    "strength": 12,
+    "vigor": 10,
+    "agility": 20,
+    "dexterity": 18,
+    "will": 10,
+    "knowledge": 12,
+    "resourcefulness": 23
+  },
+  "perk_slots": 4,
+  "perk_slot_rule": "1 slot + 1 additional slot every 5 levels; 4 slots at level 15 (max)",
+  "skill_slots": 2,
+  "armor_types": [
+    "cloth",
+    "leather"
+  ],
+  "perk_gear_hooks": {
+    "spear_proficiency": {
+      "unlock_weapons": [
+        "Spear",
+        "Frostlight Spear",
+        "Spear of Rot"
+      ]
+    }
+  },
+  "perks": [
+    {
+      "id": "camping_mastery",
+      "name": "Camping Mastery",
+      "effect": "+1500% Regular Interaction Speed while setting up campfires"
+    },
+    {
+      "id": "chase",
+      "name": "Chase",
+      "effect": "Detect recent enemy footsteps within 5.5m"
+    },
+    {
+      "id": "crippling_shot",
+      "name": "Crippling Shot",
+      "effect": "Leg hits inflict -40% Move Speed Bonus for 1s"
+    },
+    {
+      "id": "crossbow_mastery",
+      "name": "Crossbow Mastery",
+      "effect": "+5% Physical Power Bonus with crossbows; +50% Action Speed while reloading"
+    },
+    {
+      "id": "first_aid",
+      "name": "First Aid",
+      "effect": "+150% use speed for Bandages and Surgical Kits"
+    },
+    {
+      "id": "kinesthesia",
+      "name": "Kinesthesia",
+      "effect": "15% movement multiplier while moving with bowstring drawn"
+    },
+    {
+      "id": "longshot_expert",
+      "name": "Longshot Expert",
+      "effect": "Up to +10 Physical Base Damage at 15m distance"
+    },
+    {
+      "id": "nimble_hands",
+      "name": "Nimble Hands",
+      "effect": "+15% bow draw speed"
+    },
+    {
+      "id": "point_blank_expert",
+      "name": "Point-Blank Expert",
+      "effect": "+3 True Physical Base Damage to targets within 6m"
+    },
+    {
+      "id": "purge_shot",
+      "name": "Purge Shot",
+      "effect": "Ranged hits remove a random magical buff and deal 3 Neutral True Magical Base Damage"
+    },
+    {
+      "id": "quick_reload",
+      "name": "Quick Reload",
+      "effect": "+50% Action Speed when reloading bows or firearms"
+    },
+    {
+      "id": "ranged_weapons_mastery",
+      "name": "Ranged Weapons Mastery",
+      "effect": "+5% Physical Power Bonus with bows and crossbows"
+    },
+    {
+      "id": "sharpshooter",
+      "name": "Sharpshooter",
+      "effect": "+15% Headshot Damage Modifier with ranged weapons"
+    },
+    {
+      "id": "spear_proficiency",
+      "name": "Spear Proficiency",
+      "effect": "Gain the ability to equip spears; +0.5% Move Speed Base"
+    },
+    {
+      "id": "windfletch",
+      "name": "Windfletch",
+      "effect": "+15% projectile speed for arrows and bolts"
+    }
+  ],
+  "skills": [
+    {
+      "id": "backstep",
+      "name": "Backstep",
+      "effect": "Quickly retreats a short distance. It can also be used in the air. Cooldown: seconds"
+    },
+    {
+      "id": "explosive_shot",
+      "name": "Explosive Shot",
+      "effect": "For seconds, attacks made with bows or crossbows cause fired projectiles to explode after 3 seconds, dealing fire magical damage to nearby enemies and applying Burn for second. Burn: The target takes fire magical damage. Cooldown: seconds"
+    },
+    {
+      "id": "field_ration",
+      "name": "Field Ration",
+      "effect": "Forage food and recover health. Cooldown: seconds\nRecharge: Campfire"
+    },
+    {
+      "id": "forceful_shot",
+      "name": "Forceful Shot",
+      "effect": "When using a bow-type weapon, gain the ability to knock targets back for seconds. Cooldown: seconds"
+    },
+    {
+      "id": "multi_shot",
+      "name": "Multishot",
+      "effect": "Fire 5 arrows at once in a cone shaped dispersion. Cooldown: seconds"
+    },
+    {
+      "id": "overdraw",
+      "name": "Overdraw",
+      "effect": "When using bow-type weapons, maintaining a fully drawn bow increases weapon damage by per second, stacking for up to 3 seconds."
+    },
+    {
+      "id": "penetrating_shot",
+      "name": "Penetrating Shot",
+      "effect": "Gain headshot penetration and armor penetration for seconds. Bow and crossbow attacks pierce targets. Cooldown: seconds"
+    },
+    {
+      "id": "quick_fire",
+      "name": "Quick Fire",
+      "effect": "Gain an additional action speed for seconds while using bow-type weapons. Cooldown: seconds"
+    },
+    {
+      "id": "quick_shot",
+      "name": "Quickshot",
+      "effect": "Fire arrows in a quick succession. Each bow-type will fire a different amount of arrows. Cooldown: seconds"
+    },
+    {
+      "id": "true_shot",
+      "name": "True Shot",
+      "effect": "Projectile flight speed is greatly increased, also increasing physical damage bonus by for seconds."
+    }
+  ],
+  "weapons": {
+    "two_handed": [
+      "Crossbow",
+      "Hand Cannon",
+      "Longbow",
+      "Pavise",
+      "Recurve Bow",
+      "Survival Bow",
+      "Windlass Crossbow"
+    ],
+    "one_handed_main": [
+      "Arming Sword",
+      "Rapier"
+    ],
+    "off_hand": [
+      "Bloodsap Blade",
+      "Hand Crossbow",
+      "Short Sword"
+    ]
+  },
+  "class_mask": 8
+}

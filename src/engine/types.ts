@@ -38,6 +38,20 @@ export interface ClassData {
     one_handed_main: string[];
     off_hand: string[];
   };
+  /** Decoded required_class bit for this class (see scripts/build-classes.mjs). */
+  class_mask?: number;
+  /** Armor materials the class can natively wear; undefined = all. */
+  armor_types?: string[];
+  /** Perk-driven gear rule overrides, keyed by perk id. */
+  perk_gear_hooks?: Record<
+    string,
+    {
+      unlock_all_weapons?: boolean;
+      unlock_weapons?: string[];
+      unlock_armor_types?: string[];
+      forbid_armor_types?: string[];
+    }
+  >;
 }
 
 /** The player's perk/skill choices for a build. */

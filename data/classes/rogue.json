@@ -1,0 +1,181 @@
+{
+  "_meta": {
+    "source": "perks/weapons: darkanddarker.wiki.spellsandguns.com/Rogue; base stats & skills: api.darkerdb.com/v1/classes (merged by scripts/build-classes.mjs)",
+    "fetched_at": "2026-07-11"
+  },
+  "id": "rogue",
+  "name": "Rogue",
+  "base_attributes": {
+    "strength": 9,
+    "vigor": 6,
+    "agility": 25,
+    "dexterity": 20,
+    "will": 10,
+    "knowledge": 10,
+    "resourcefulness": 25
+  },
+  "perk_slots": 4,
+  "perk_slot_rule": "1 slot + 1 additional slot every 5 levels; 4 slots at level 15 (max)",
+  "skill_slots": 2,
+  "armor_types": [
+    "cloth",
+    "leather"
+  ],
+  "perks": [
+    {
+      "id": "ambush",
+      "name": "Ambush",
+      "effect": "When exiting hide: +10% Move Speed Bonus and +25% Physical Power Bonus for 3s"
+    },
+    {
+      "id": "back_attack",
+      "name": "Back Attack",
+      "effect": "+30% Physical Power Bonus when attacking from behind (120°)"
+    },
+    {
+      "id": "creep",
+      "name": "Creep",
+      "effect": "Quieter footsteps while crouching; +10% Move Speed Bonus crouched; -50% monster detection radius"
+    },
+    {
+      "id": "dagger_mastery",
+      "name": "Dagger Mastery",
+      "effect": "+10% Physical Power Bonus and +1 True Physical Damage with daggers"
+    },
+    {
+      "id": "double_jump",
+      "name": "Double Jump",
+      "effect": "Jump an additional time in the air"
+    },
+    {
+      "id": "hide_mastery",
+      "name": "Hide Mastery",
+      "effect": "Hide duration 1.5x, cooldown 0.7x"
+    },
+    {
+      "id": "jokester",
+      "name": "Jokester",
+      "effect": "Self and party members within 6m gain +2 All Attributes"
+    },
+    {
+      "id": "lethal_mark",
+      "name": "Lethal Mark",
+      "effect": "Throwing knife hits inflict -15% Physical Damage Reduction for 8s"
+    },
+    {
+      "id": "pickpocket",
+      "name": "Pickpocket",
+      "effect": "Steal items from a nearby enemy with the interact key"
+    },
+    {
+      "id": "poisoned_weapon",
+      "name": "Poisoned Weapon",
+      "effect": "Attacks apply poison: 4 Neutral Magical Base Damage over 4s"
+    },
+    {
+      "id": "stealth",
+      "name": "Stealth",
+      "effect": "While hiding, move up to 10 steps crouched/slow-walking; +3 Move Speed Add per remaining step"
+    },
+    {
+      "id": "thrust",
+      "name": "Thrust",
+      "effect": "+15% Armor Penetration with daggers"
+    },
+    {
+      "id": "traps_and_locks",
+      "name": "Traps and Locks",
+      "effect": "Unlock locks without a lockpick; detect traps within 4.5m and disarm them"
+    },
+    {
+      "id": "trickster",
+      "name": "Trickster",
+      "effect": "+20% Action Speed with throwing weapons"
+    },
+    {
+      "id": "veil_of_shadows",
+      "name": "Veil of Shadows",
+      "effect": "Below 30% health: enter stealth for 6s (48s cooldown)"
+    }
+  ],
+  "skills": [
+    {
+      "id": "caltrop",
+      "name": "Caltrops",
+      "effect": "Drops Caltrops at your feet that deal physical damage and slows the move speed bonus by of anything that steps on them for seconds. Cooldown: seconds"
+    },
+    {
+      "id": "cut_throat",
+      "name": "Cut Throat",
+      "effect": "When you successfully hit a target, silence them for seconds, disabling the targets skills spells performance abilities. Cooldown: seconds"
+    },
+    {
+      "id": "dual_strike",
+      "name": "Dual Strike",
+      "effect": "Strike simultaneously with both daggers, delivering a powerful blow that combines the damage of both weapons. Cooldown: seconds"
+    },
+    {
+      "id": "hide",
+      "name": "Hide",
+      "effect": "Become invisible for seconds. It is possible to change your equipment in this state. You are revealed when you attempt an action, such as moving, attacking, or using a skill. Cooldown: seconds"
+    },
+    {
+      "id": "rupture",
+      "name": "Rupture",
+      "effect": "The next successful attack causes the target to bleed for physical damage over seconds. The buff is consumed when an attack hits an object or target. Cooldown: seconds"
+    },
+    {
+      "id": "shadowstep",
+      "name": "Shadowstep",
+      "effect": "While using a dagger or throwing knives, your next attack instantly moves you behind the target on hit. Cooldown: seconds"
+    },
+    {
+      "id": "smoke_pot",
+      "name": "Smoke Pot",
+      "effect": "A smoke pot is deployed creating a smoke screen. The smoke screen lasts seconds and covers a 6m area.When an enemy target enters the smoke screen, reduces their move speed bonus by."
+    },
+    {
+      "id": "sneak_attack",
+      "name": "Sneak Attack",
+      "effect": "Your next melee attack deals an additional physical damage. If the target is not in combat, it deals an additional physical damage. Cooldown: seconds"
+    },
+    {
+      "id": "tumbling",
+      "name": "Tumbling",
+      "effect": "When used, backtumbles in the opposite direction the player is facing. Cooldown: seconds"
+    },
+    {
+      "id": "weakpoint_attack",
+      "name": "Weakpoint Attack",
+      "effect": "When you successfully hit a target, reduce their armor rating bonus by for seconds. Only when melee attacking. Cooldown: seconds"
+    }
+  ],
+  "weapons": {
+    "two_handed": [
+      "Golden Scripture of Solaris"
+    ],
+    "one_handed_main": [
+      "Haze Blade",
+      "Kris Dagger",
+      "Rapier",
+      "Rondel Dagger",
+      "Dagger of Righteousness",
+      "Demon's Glee",
+      "Divine Dagger",
+      "Sterling Dagger",
+      "Tidal Kris Dagger"
+    ],
+    "off_hand": [
+      "Bloodsap Blade",
+      "Castillon Dagger",
+      "Hand Crossbow",
+      "Short Sword",
+      "Stiletto Dagger",
+      "Divine Short Sword",
+      "Icefang",
+      "Short Sword of Righteousness",
+      "Sterling Short Sword"
+    ]
+  },
+  "class_mask": 4
+}
