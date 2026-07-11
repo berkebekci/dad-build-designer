@@ -29,7 +29,11 @@ hazır sonuç fırlatma; kararları gerekçeleriyle anlat. Açıklamalar Türkç
 
 - Faz 0-1 tamam: Fighter (base stat, 15 perk, 12 skill, silah/zırh listeleri),
   stat eğrileri (PP bonus, HP, move/action speed, PDR tablosu...), rarity→enchantment kuralları.
-- Sıradaki: **Faz 2 — hesap motoru** (computeStats + testler, UI'sız).
+- Faz 2 tamam: `src/engine/` — `curves.ts` (parçalı-doğrusal interpolasyon),
+  `computeStats.ts` (saf fonksiyon; ExternalModifiers ile gear girdilerine hazır),
+  `validateBuild.ts` (slot/duplicate/id kuralları), `data.ts` (JSON bağlayıcı).
+  24 birim testi: `npm test` (vitest), typecheck: `npm run typecheck`.
+- Sıradaki: **Faz 3 — MVP arayüz** (Vite + React; perk/skill seçici + canlı stat paneli).
 - TODO'lar JSON dosyalarının `_todo` alanlarında ve docs/kaynaklar.md'de.
 
 ## Oyun kuralları özeti

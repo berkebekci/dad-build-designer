@@ -30,7 +30,7 @@ docs/          ← kaynaklar, kararlar, doğrulama notları
 
 - [x] **Faz 0 — Veri keşfi:** kaynaklar bulundu (wiki aynası + darkerdb API), Fighter verisi çekildi
 - [x] **Faz 1 — Veri modeli (ilk taslak):** stat eğrileri, Fighter, rarity kuralları JSON'da
-- [ ] **Faz 2 — Hesap motoru:** `computeStats` saf fonksiyonu + birim testleri (UI yok)
+- [x] **Faz 2 — Hesap motoru:** `computeStats` saf fonksiyonu + 24 birim testi (`npm test`)
 - [ ] **Faz 3 — MVP arayüz:** tek sınıf, perk/skill seçici, ekipman slotları, canlı stat paneli
 - [ ] **Faz 4 — Enchantment sistemi:** roll aralıkları, slot uygunluk matrisi, darkerdb item entegrasyonu
 - [ ] **Faz 5 — Genişleme:** diğer sınıflar, build kaydet/paylaş (URL kodlama), türetilmiş metrikler (DPS, efektif HP)
