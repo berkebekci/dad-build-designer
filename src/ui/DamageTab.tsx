@@ -4,6 +4,7 @@ import { simulateHits, type DummyTarget, type ZoneId } from '../engine/damage';
 import { simulateSpell, type SpellData } from '../engine/spells';
 import { evalCurve } from '../engine/curves';
 import { combatRules, statCurves, weaponHits } from '../engine/data';
+import { NumberField } from './NumberField';
 
 const SHOWN_ZONES: { id: ZoneId; label: string }[] = [
   { id: 'head', label: 'Head' },
@@ -11,12 +12,6 @@ const SHOWN_ZONES: { id: ZoneId; label: string }[] = [
   { id: 'arms', label: 'Arm' },
   { id: 'legs', label: 'Leg' },
 ];
-
-function clamp(raw: string, min: number, max: number): number {
-  const v = Number(raw);
-  if (!Number.isFinite(v)) return 0;
-  return Math.min(max, Math.max(min, v));
-}
 
 interface DamageTabProps {
   stats: DerivedStats;
@@ -46,12 +41,12 @@ export function DamageTab({ stats, weaponName, selectedSpells }: DamageTabProps)
         <div className="dummy-controls">
           <label className="gear-field">
             Armor Rating
-            <input
-              type="number"
+            <NumberField
+              value={armorRating}
               min={-300}
               max={600}
-              value={armorRating}
-              onChange={(e) => setArmorRating(clamp(e.target.value, -300, 600))}
+              onChange={setArmorRating}
+              ariaLabel="Dummy armor rating"
             />
           </label>
           <label className="gear-field">
@@ -60,22 +55,16 @@ export function DamageTab({ stats, weaponName, selectedSpells }: DamageTabProps)
           </label>
           <label className="gear-field">
             MDR %
-            <input
-              type="number"
-              min={0}
-              max={100}
-              value={mdrPct}
-              onChange={(e) => setMdrPct(clamp(e.target.value, 0, 100))}
-            />
+            <NumberField value={mdrPct} min={0} max={100} onChange={setMdrPct} ariaLabel="Dummy MDR" />
           </label>
           <label className="gear-field">
             Headshot Red. %
-            <input
-              type="number"
+            <NumberField
+              value={headshotReductionPct}
               min={0}
               max={100}
-              value={headshotReductionPct}
-              onChange={(e) => setHeadshotReductionPct(clamp(e.target.value, 0, 100))}
+              onChange={setHeadshotReductionPct}
+              ariaLabel="Dummy headshot reduction"
             />
           </label>
         </div>

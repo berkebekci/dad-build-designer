@@ -51,12 +51,14 @@
     {
       "id": "mana_flow",
       "name": "Mana Flow",
-      "effect": "Successful casts within 3s grant +5% Magical Power Bonus and +5% Magical Penetration, stacks to 3"
+      "effect": "Successful casts within 3s grant +5% Magical Power Bonus and +5% Magical Penetration, stacks to 3",
+      "icon": "https://cdn.darkerdb.com/codex/f9c663b6f17bb0d8e3879c6c7257f15cdb248f608997a5a084a0b35d72d0a3f0"
     },
     {
       "id": "mana_fold",
       "name": "Mana Fold",
-      "effect": "Cooldowns 0.75x, but -15% Spell Casting Speed"
+      "effect": "Cooldowns 0.75x, but -15% Spell Casting Speed",
+      "icon": "https://cdn.darkerdb.com/codex/ad32ffd0e0440aa9fa9a0e8d33153740abbc2ddee432387a78b5d92c9997f775"
     },
     {
       "id": "merged_might",
@@ -66,12 +68,14 @@
     {
       "id": "spell_sculpting",
       "name": "Spell Sculpting",
-      "effect": "Spell range 125% and AoE +25%, but radial spell cooldowns 1.25x"
+      "effect": "Spell range 125% and AoE +25%, but radial spell cooldowns 1.25x",
+      "icon": "https://cdn.darkerdb.com/codex/c0e430744575d3c7832e746510902f8237299733e7937d22158f763b443dbe83"
     },
     {
       "id": "spell_stride",
       "name": "Spell Stride",
-      "effect": "+30% Move Speed Bonus while casting two spells simultaneously"
+      "effect": "+30% Move Speed Bonus while casting two spells simultaneously",
+      "icon": "https://cdn.darkerdb.com/codex/98e15b1c5cddce8ec76b30dd3b9c3a5417f874d2b427f308852d34ccce8f5f2a"
     },
     {
       "id": "time_distortion",
@@ -83,12 +87,14 @@
     {
       "id": "sorcery1",
       "name": "Sorcery I",
-      "effect": "Gain the ability to use sorcery in the dungeon."
+      "effect": "Gain the ability to use sorcery in the dungeon.",
+      "icon": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105"
     },
     {
       "id": "sorcery2",
       "name": "Sorcery II",
-      "effect": "Gain the ability to use sorcery in the dungeon."
+      "effect": "Gain the ability to use sorcery in the dungeon.",
+      "icon": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105"
     }
   ],
   "weapons": {

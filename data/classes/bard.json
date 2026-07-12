@@ -26,84 +26,100 @@
     {
       "id": "charismatic_performance",
       "name": "Charismatic Performance",
-      "effect": "Upgrades a 'good' performance into a 'perfect' performance"
+      "effect": "Upgrades a 'good' performance into a 'perfect' performance",
+      "icon": "https://cdn.darkerdb.com/codex/d13f69dd01859c03d5edcb8e3a5de843e2b80f19e3deaf1a142d7896f5fdcbfd"
     },
     {
       "id": "dancing_feet",
       "name": "Dancing Feet",
-      "effect": "+10 Move Speed while holding an instrument"
+      "effect": "+10 Move Speed while holding an instrument",
+      "icon": "https://www.spellsandguns.com/images/thumb/2/2a/Perk_Dancing_Feet.png/96px-Perk_Dancing_Feet.png"
     },
     {
       "id": "fermata",
       "name": "Fermata",
-      "effect": "+5 Resourcefulness"
+      "effect": "+5 Resourcefulness",
+      "icon": "https://www.spellsandguns.com/images/thumb/a/ac/Perk_Fermata.png/96px-Perk_Fermata.png"
     },
     {
       "id": "jolly_time",
       "name": "Jolly Time",
-      "effect": "Drinking ale restores 5 Physical Base Healing and grants +5 Move Speed and +5 Vigor"
+      "effect": "Drinking ale restores 5 Physical Base Healing and grants +5 Move Speed and +5 Vigor",
+      "icon": "https://www.spellsandguns.com/images/thumb/9/9a/Perk_Jolly_Time.png/96px-Perk_Jolly_Time.png"
     },
     {
       "id": "lore_mastery",
       "name": "Lore Mastery",
-      "effect": "+30% Regular Interaction Speed and +10 Memory Capacity"
+      "effect": "+30% Regular Interaction Speed and +10 Memory Capacity",
+      "icon": "https://www.spellsandguns.com/images/thumb/3/32/Perk_Lore_Mastery.png/96px-Perk_Lore_Mastery.png"
     },
     {
       "id": "melodic_protection",
       "name": "Melodic Protection",
-      "effect": "+25% Physical and Magical Damage Reduction while playing songs"
+      "effect": "+25% Physical and Magical Damage Reduction while playing songs",
+      "icon": "https://www.spellsandguns.com/images/thumb/1/12/Perk_Melodic_Protection.png/96px-Perk_Melodic_Protection.png"
     },
     {
       "id": "rapier_mastery",
       "name": "Rapier Mastery",
-      "effect": "With rapier equipped: +3 Physical Buff Weapon Damage and +5% Action Speed"
+      "effect": "With rapier equipped: +3 Physical Buff Weapon Damage and +5% Action Speed",
+      "icon": "https://cdn.darkerdb.com/codex/be06fcfbd9855745cfb6690940f3b4a89d6ca1e2f7eed1fa3720223e3c2802db"
     },
     {
       "id": "reinforced_instruments",
       "name": "Reinforced Instruments",
-      "effect": "+50% Physical Power Bonus when attacking with musical instruments"
+      "effect": "+50% Physical Power Bonus when attacking with musical instruments",
+      "icon": "https://www.spellsandguns.com/images/thumb/6/61/Perk_Reinforced_Instruments.png/96px-Perk_Reinforced_Instruments.png"
     },
     {
       "id": "story_teller",
       "name": "Story Teller",
-      "effect": "Party members within 6m gain +5 Will and +3 Knowledge"
+      "effect": "Party members within 6m gain +5 Will and +3 Knowledge",
+      "icon": "https://www.spellsandguns.com/images/thumb/d/d6/Perk_Story_Teller.png/96px-Perk_Story_Teller.png"
     },
     {
       "id": "superior_dexterity",
       "name": "Superior Dexterity",
-      "effect": "+50% Item Equip Speed when switching weapons/utilities"
+      "effect": "+50% Item Equip Speed when switching weapons/utilities",
+      "icon": "https://cdn.darkerdb.com/codex/b473143116649a8338883b8cec8b98962dfa2d719c2497e10a0beb29488af0e7"
     },
     {
       "id": "wanderers_luck",
       "name": "Wanderer's Luck",
-      "effect": "+100 Luck (treasure chest loot quality)"
+      "effect": "+100 Luck (treasure chest loot quality)",
+      "icon": "https://cdn.darkerdb.com/codex/6322d0c08aa47355a75ad3359f0b2ffb16202f125b190cd1f60273fcaa5e7a1c"
     }
   ],
   "skills": [
     {
       "id": "dissonance",
       "name": "Dissonance",
-      "effect": "Plays an instrument to make an unpleasant noise that silences all enemy targets for seconds.\nSilence: Disables skills spells performance abilities."
+      "effect": "Plays an instrument to make an unpleasant noise that silences all enemy targets for seconds.\nSilence: Disables skills spells performance abilities.",
+      "icon": "https://cdn.darkerdb.com/codex/56cf3bfdfec2dc315609fd60312fd6ee91b78e29f9423fcc6dcb025647c5b62a"
     },
     {
       "id": "encore",
       "name": "Encore",
-      "effect": "Resets the duration of all active music buffs on nearby party members. Cooldown: seconds"
+      "effect": "Resets the duration of all active music buffs on nearby party members. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/754299ccf0604b729e9589a906db95292ada8789d2f16bde6ecdfad6522a79ff"
     },
     {
       "id": "music_memory1",
       "name": "Music Memory",
-      "effect": "Gain the ability to store up to 5 sheets of music."
+      "effect": "Gain the ability to store up to 5 sheets of music.",
+      "icon": "https://cdn.darkerdb.com/codex/614ab5470b1f6c0fdc9507aaad9eee3aab90f5bd4a4e9778f6d981d839aa1ff8"
     },
     {
       "id": "music_memory2",
       "name": "Music Memory II",
-      "effect": "Gain the ability to store up to 5 sheets of music."
+      "effect": "Gain the ability to store up to 5 sheets of music.",
+      "icon": "https://cdn.darkerdb.com/codex/614ab5470b1f6c0fdc9507aaad9eee3aab90f5bd4a4e9778f6d981d839aa1ff8"
     },
     {
       "id": "party_maker",
       "name": "Party Maker",
-      "effect": "Play an instrument to grant all nearby allies immunity to drunkenness for seconds. While immune, drinking alcohol restores health. Cooldown: seconds"
+      "effect": "Play an instrument to grant all nearby allies immunity to drunkenness for seconds. While immune, drinking alcohol restores health. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/84e50070cfe3083655db023a09f80d9d0b2cf6bc24731afe9a5990a732a1d02f"
     }
   ],
   "weapons": {

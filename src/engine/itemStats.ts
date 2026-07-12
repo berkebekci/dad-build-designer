@@ -173,6 +173,15 @@ export const ATTR_RULES: Record<string, AttrRule> = {
   equip_speed: { kind: 'percent', stat: 'itemEquipSpeedPct' },
 };
 
+/**
+ * Game rule: an enchantment cannot repeat an attribute the item already has
+ * as a base stat (e.g. Chapel de Fer has base Agility -> no Agility enchant).
+ */
+export function enchantablePool(item: ItemRecord): [string, number, number][] {
+  const baseAttrs = new Set((item.base ?? []).map(([a]) => a));
+  return (item.pool ?? []).filter(([a]) => !baseAttrs.has(a));
+}
+
 /** Human-readable label for enchantment pickers and stat rows. */
 export function attrLabel(attr: string): string {
   return attr

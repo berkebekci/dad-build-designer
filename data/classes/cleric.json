@@ -27,94 +27,112 @@
     {
       "id": "advanced_healer",
       "name": "Advanced Healer",
-      "effect": "+5 Outgoing Magical Healing Add"
+      "effect": "+5 Outgoing Magical Healing Add",
+      "icon": "https://cdn.darkerdb.com/codex/0755fc9f9cca8eba30ea39bee497a23c54f604e888355b4d4cb3aaba9a2249f2"
     },
     {
       "id": "blunt_weapon_mastery",
       "name": "Blunt Weapon Mastery",
-      "effect": "While using a mace: +10% Physical Power Bonus"
+      "effect": "While using a mace: +10% Physical Power Bonus",
+      "icon": "https://cdn.darkerdb.com/codex/48975ec3ebeacad1c21cc770f9164873161705096d6d32e4ec1e1ff33c3ec245"
     },
     {
       "id": "brewmaster",
       "name": "Brewmaster",
-      "effect": "Converts the drunken debuff into a buff; +10 Strength while drunk"
+      "effect": "Converts the drunken debuff into a buff; +10 Strength while drunk",
+      "icon": "https://www.spellsandguns.com/images/thumb/5/5d/Perk_Brewmaster.png/96px-Perk_Brewmaster.png"
     },
     {
       "id": "faithfulness",
       "name": "Faithfulness",
-      "effect": "+15% Divine Power Bonus; divine hits slow enemies"
+      "effect": "+15% Divine Power Bonus; divine hits slow enemies",
+      "icon": "https://www.spellsandguns.com/images/thumb/4/4b/Perk_Faithfulness.png/96px-Perk_Faithfulness.png"
     },
     {
       "id": "holy_aura",
       "name": "Holy Aura",
-      "effect": "+15 Armor Rating and +15 Magical Resistance to self and allies within 6m"
+      "effect": "+15 Armor Rating and +15 Magical Resistance to self and allies within 6m",
+      "icon": "https://www.spellsandguns.com/images/thumb/3/32/Perk_Holy_Aura.png/96px-Perk_Holy_Aura.png"
     },
     {
       "id": "holy_water",
       "name": "Holy Water",
-      "effect": "Drinking removes curses and harmful effects"
+      "effect": "Drinking removes curses and harmful effects",
+      "icon": "https://www.spellsandguns.com/images/thumb/3/32/Perk_Holy_Water.png/96px-Perk_Holy_Water.png"
     },
     {
       "id": "kindness",
       "name": "Kindness",
-      "effect": "Healing another also heals you for 30% of the spell's total heal"
+      "effect": "Healing another also heals you for 30% of the spell's total heal",
+      "icon": "https://www.spellsandguns.com/images/thumb/d/d7/Perk_Kindness.png/96px-Perk_Kindness.png"
     },
     {
       "id": "over_healing",
       "name": "Over Healing",
-      "effect": "Excess healing converts to temporary bonus health (up to 20% of max)"
+      "effect": "Excess healing converts to temporary bonus health (up to 20% of max)",
+      "icon": "https://cdn.darkerdb.com/codex/4537d15e3fbc8b2fd816c51b5d4290f664f18d3ac188f9430414d02902ceae60"
     },
     {
       "id": "perseverance",
       "name": "Perseverance",
-      "effect": "All incoming damage reduced by 2 Physical and 2 Magical Absolute Reduction"
+      "effect": "All incoming damage reduced by 2 Physical and 2 Magical Absolute Reduction",
+      "icon": "https://cdn.darkerdb.com/codex/959b25119a477272e37644352726d75a3d62a67cd59d26989d2079d3d02e9aca"
     },
     {
       "id": "protection_from_evil",
       "name": "Protection from Evil",
-      "effect": "-30% Debuff Duration on self"
+      "effect": "-30% Debuff Duration on self",
+      "icon": "https://www.spellsandguns.com/images/thumb/c/c2/Perk_Protection_from_Evil.png/96px-Perk_Protection_from_Evil.png"
     },
     {
       "id": "requiem",
       "name": "Requiem",
-      "effect": "Faster resurrection with reduced HP penalty"
+      "effect": "Faster resurrection with reduced HP penalty",
+      "icon": "https://www.spellsandguns.com/images/thumb/7/73/Perk_Requiem.png/96px-Perk_Requiem.png"
     },
     {
       "id": "undead_slaying",
       "name": "Undead Slaying",
-      "effect": "+20% Undead Race Damage Bonus"
+      "effect": "+20% Undead Race Damage Bonus",
+      "icon": "https://www.spellsandguns.com/images/thumb/2/29/Perk_Undead_Slaying.png/96px-Perk_Undead_Slaying.png"
     }
   ],
   "skills": [
     {
       "id": "divine_protection",
       "name": "Divine Protection",
-      "effect": "Gain physical damage reduction for seconds. Cooldown: seconds"
+      "effect": "Gain physical damage reduction for seconds. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/633c0a15ff8def5f3c5660f90710605e08fdb1319d04eb68585678b6a927cfba"
     },
     {
       "id": "holy_purification",
       "name": "Holy Purification",
-      "effect": "After channeling for 1.5 seconds, deal divine magical damage to all undead monsters within a 7.5m radius around you. Cooldown: seconds"
+      "effect": "After channeling for 1.5 seconds, deal divine magical damage to all undead monsters within a 7.5m radius around you. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/bc72cb341c91f506abda72523a93d082bf2702d6672d75bba8d9ad608021849f"
     },
     {
       "id": "judgement",
       "name": "Judgement",
-      "effect": "After channeling for 1 seconds, deal divine magical damage to a target and reduce their move speed bonus by for seconds. Once the channel begins on a target, crosshair targeting is no longer required. This spell has a 5m range and will fail if the target goes out of range. Cooldown: seconds"
+      "effect": "After channeling for 1 seconds, deal divine magical damage to a target and reduce their move speed bonus by for seconds. Once the channel begins on a target, crosshair targeting is no longer required. This spell has a 5m range and will fail if the target goes out of range. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/e71962ed65522474da3a8962ecbddb71cae4d8090ec429e78bac4e93ca3743fc"
     },
     {
       "id": "smite",
       "name": "Smite",
-      "effect": "Deal an additional divine magical damage to all enemies you hit within seconds. Only when melee attacking. Cooldown: seconds"
+      "effect": "Deal an additional divine magical damage to all enemies you hit within seconds. Only when melee attacking. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/b305133a91cea054a3008fff3c6fcc7c1c6bfbb4289cceb1113cabfb3566f1a3"
     },
     {
       "id": "spell_memory1",
       "name": "Spell Memory I",
-      "effect": "Gain the ability to memorize spells to use in the dungeon."
+      "effect": "Gain the ability to memorize spells to use in the dungeon.",
+      "icon": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105"
     },
     {
       "id": "spell_memory2",
       "name": "Spell Memory II",
-      "effect": "Gain the ability to memorize additional spells to use in the dungeon."
+      "effect": "Gain the ability to memorize additional spells to use in the dungeon.",
+      "icon": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105"
     }
   ],
   "weapons": {

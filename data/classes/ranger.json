@@ -39,17 +39,20 @@
     {
       "id": "chase",
       "name": "Chase",
-      "effect": "Detect recent enemy footsteps within 5.5m"
+      "effect": "Detect recent enemy footsteps within 5.5m",
+      "icon": "https://cdn.darkerdb.com/codex/342ce855a4d3764178f4076285f150b3828c4e46058a1356cd612edacde34e3a"
     },
     {
       "id": "crippling_shot",
       "name": "Crippling Shot",
-      "effect": "Leg hits inflict -40% Move Speed Bonus for 1s"
+      "effect": "Leg hits inflict -40% Move Speed Bonus for 1s",
+      "icon": "https://www.spellsandguns.com/images/thumb/0/01/Perk_Crippling_Shot.png/96px-Perk_Crippling_Shot.png"
     },
     {
       "id": "crossbow_mastery",
       "name": "Crossbow Mastery",
-      "effect": "+5% Physical Power Bonus with crossbows; +50% Action Speed while reloading"
+      "effect": "+5% Physical Power Bonus with crossbows; +50% Action Speed while reloading",
+      "icon": "https://www.spellsandguns.com/images/thumb/a/a3/Perk_Crossbow_Mastery.png/96px-Perk_Crossbow_Mastery.png"
     },
     {
       "id": "first_aid",
@@ -59,7 +62,8 @@
     {
       "id": "kinesthesia",
       "name": "Kinesthesia",
-      "effect": "15% movement multiplier while moving with bowstring drawn"
+      "effect": "15% movement multiplier while moving with bowstring drawn",
+      "icon": "https://www.spellsandguns.com/images/thumb/1/1b/Perk_Kinesthesia.png/96px-Perk_Kinesthesia.png"
     },
     {
       "id": "longshot_expert",
@@ -69,7 +73,8 @@
     {
       "id": "nimble_hands",
       "name": "Nimble Hands",
-      "effect": "+15% bow draw speed"
+      "effect": "+15% bow draw speed",
+      "icon": "https://cdn.darkerdb.com/codex/7f85032022c9b9d5428dbc99bceb5f4008a44555718adadf3ee3562dd38a332d"
     },
     {
       "id": "point_blank_expert",
@@ -84,79 +89,94 @@
     {
       "id": "quick_reload",
       "name": "Quick Reload",
-      "effect": "+50% Action Speed when reloading bows or firearms"
+      "effect": "+50% Action Speed when reloading bows or firearms",
+      "icon": "https://cdn.darkerdb.com/codex/a5901b7e750058de6c825d5a2ccefd8cc685ac7df216ab5efa3600f1fa937acb"
     },
     {
       "id": "ranged_weapons_mastery",
       "name": "Ranged Weapons Mastery",
-      "effect": "+5% Physical Power Bonus with bows and crossbows"
+      "effect": "+5% Physical Power Bonus with bows and crossbows",
+      "icon": "https://cdn.darkerdb.com/codex/cb5b6b0692aa76f3ad15560101f91da346651bd4d0fe58a2812f17fd0256ba85"
     },
     {
       "id": "sharpshooter",
       "name": "Sharpshooter",
-      "effect": "+15% Headshot Damage Modifier with ranged weapons"
+      "effect": "+15% Headshot Damage Modifier with ranged weapons",
+      "icon": "https://www.spellsandguns.com/images/thumb/1/1e/Perk_Sharpshooter.png/96px-Perk_Sharpshooter.png"
     },
     {
       "id": "spear_proficiency",
       "name": "Spear Proficiency",
-      "effect": "Gain the ability to equip spears; +0.5% Move Speed Base"
+      "effect": "Gain the ability to equip spears; +0.5% Move Speed Base",
+      "icon": "https://www.spellsandguns.com/images/thumb/d/d9/Perk_Spear_Proficiency.png/96px-Perk_Spear_Proficiency.png"
     },
     {
       "id": "windfletch",
       "name": "Windfletch",
-      "effect": "+15% projectile speed for arrows and bolts"
+      "effect": "+15% projectile speed for arrows and bolts",
+      "icon": "https://www.spellsandguns.com/images/thumb/4/44/Perk_Windfletch.png/96px-Perk_Windfletch.png"
     }
   ],
   "skills": [
     {
       "id": "backstep",
       "name": "Backstep",
-      "effect": "Quickly retreats a short distance. It can also be used in the air. Cooldown: seconds"
+      "effect": "Quickly retreats a short distance. It can also be used in the air. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/35171b44d1599f0d2a20eb0c520662846a1fdb6d037dbb0bad366f858f85e0e9"
     },
     {
       "id": "explosive_shot",
       "name": "Explosive Shot",
-      "effect": "For seconds, attacks made with bows or crossbows cause fired projectiles to explode after 3 seconds, dealing fire magical damage to nearby enemies and applying Burn for second. Burn: The target takes fire magical damage. Cooldown: seconds"
+      "effect": "For seconds, attacks made with bows or crossbows cause fired projectiles to explode after 3 seconds, dealing fire magical damage to nearby enemies and applying Burn for second. Burn: The target takes fire magical damage. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/5299ca8ea0c68c9fccb91f986c0a19b707ec184b8e3a1571adfdaa313bc68995"
     },
     {
       "id": "field_ration",
       "name": "Field Ration",
-      "effect": "Forage food and recover health. Cooldown: seconds\nRecharge: Campfire"
+      "effect": "Forage food and recover health. Cooldown: seconds\nRecharge: Campfire",
+      "icon": "https://cdn.darkerdb.com/codex/32a9672e44b681702c12e3731ce9aca933d3e7151fd9b8a405ad9ec99b16f0e4"
     },
     {
       "id": "forceful_shot",
       "name": "Forceful Shot",
-      "effect": "When using a bow-type weapon, gain the ability to knock targets back for seconds. Cooldown: seconds"
+      "effect": "When using a bow-type weapon, gain the ability to knock targets back for seconds. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/b781ed6ce11b55bcd76e6cc3e9dc521aaabb1fd56a48668c8d47907dd688dfe6"
     },
     {
       "id": "multi_shot",
       "name": "Multishot",
-      "effect": "Fire 5 arrows at once in a cone shaped dispersion. Cooldown: seconds"
+      "effect": "Fire 5 arrows at once in a cone shaped dispersion. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/72211d235b3cc00ac4caa586c91ef89212858ec820bcdf6cafdb3a20c7e65325"
     },
     {
       "id": "overdraw",
       "name": "Overdraw",
-      "effect": "When using bow-type weapons, maintaining a fully drawn bow increases weapon damage by per second, stacking for up to 3 seconds."
+      "effect": "When using bow-type weapons, maintaining a fully drawn bow increases weapon damage by per second, stacking for up to 3 seconds.",
+      "icon": "https://cdn.darkerdb.com/codex/3e49274c353cd28e37890243b324e72619afbe88b6c6d4376cb8924d100c7ce4"
     },
     {
       "id": "penetrating_shot",
       "name": "Penetrating Shot",
-      "effect": "Gain headshot penetration and armor penetration for seconds. Bow and crossbow attacks pierce targets. Cooldown: seconds"
+      "effect": "Gain headshot penetration and armor penetration for seconds. Bow and crossbow attacks pierce targets. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/8b843e63b6836b69619cece9b1457ef82f44e7e659c19c5251fcf8f25ef0903b"
     },
     {
       "id": "quick_fire",
       "name": "Quick Fire",
-      "effect": "Gain an additional action speed for seconds while using bow-type weapons. Cooldown: seconds"
+      "effect": "Gain an additional action speed for seconds while using bow-type weapons. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/06f054675324801913bbdfb83ba176b1fc43e0be18f1f75a24974d19044d2061"
     },
     {
       "id": "quick_shot",
       "name": "Quickshot",
-      "effect": "Fire arrows in a quick succession. Each bow-type will fire a different amount of arrows. Cooldown: seconds"
+      "effect": "Fire arrows in a quick succession. Each bow-type will fire a different amount of arrows. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/754c9ab07b645fb9eb58541a82d35191b55593ec4bacd73f54e655926b8a4a86"
     },
     {
       "id": "true_shot",
       "name": "True Shot",
-      "effect": "Projectile flight speed is greatly increased, also increasing physical damage bonus by for seconds."
+      "effect": "Projectile flight speed is greatly increased, also increasing physical damage bonus by for seconds.",
+      "icon": "https://cdn.darkerdb.com/codex/d62c39ecb997bf2df4cd2833d87e80192d0da05e4af73b19c6ef95e3e046e49e"
     }
   ],
   "weapons": {

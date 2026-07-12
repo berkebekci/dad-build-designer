@@ -26,89 +26,106 @@
     {
       "id": "arcane_feedback",
       "name": "Arcane Feedback",
-      "effect": "Stacking +3% Spell Casting Speed and +3% Arcane Power Bonus per stack for 7s (max 5 stacks)"
+      "effect": "Stacking +3% Spell Casting Speed and +3% Arcane Power Bonus per stack for 7s (max 5 stacks)",
+      "icon": "https://www.spellsandguns.com/images/thumb/7/79/Perk_Arcane_Feedback.png/96px-Perk_Arcane_Feedback.png"
     },
     {
       "id": "arcane_mastery",
       "name": "Arcane Mastery",
-      "effect": "+5% Arcane Power Bonus; Arcane spell cast time -0.5s"
+      "effect": "+5% Arcane Power Bonus; Arcane spell cast time -0.5s",
+      "icon": "https://www.spellsandguns.com/images/thumb/9/90/Perk_Arcane_Mastery.png/96px-Perk_Arcane_Mastery.png"
     },
     {
       "id": "fire_mastery",
       "name": "Fire Mastery",
-      "effect": "+5% Fire Power Bonus; burns last +2s and deal +2 base damage"
+      "effect": "+5% Fire Power Bonus; burns last +2s and deal +2 base damage",
+      "icon": "https://www.spellsandguns.com/images/thumb/e/e7/Perk_Fire_Mastery.png/96px-Perk_Fire_Mastery.png"
     },
     {
       "id": "ice_mastery",
       "name": "Ice Mastery",
-      "effect": "Ice damage freezes the target's feet for 0.5s"
+      "effect": "Ice damage freezes the target's feet for 0.5s",
+      "icon": "https://www.spellsandguns.com/images/thumb/9/9f/Perk_Ice_Mastery.png/96px-Perk_Ice_Mastery.png"
     },
     {
       "id": "ice_shield",
       "name": "Ice Shield",
-      "effect": "+20 Armor Rating while not on cooldown; melee attackers suffer frostbite (-20% Move Speed Bonus, -20% Action Speed for 0.5s)"
+      "effect": "+20 Armor Rating while not on cooldown; melee attackers suffer frostbite (-20% Move Speed Bonus, -20% Action Speed for 0.5s)",
+      "icon": "https://cdn.darkerdb.com/codex/011ee6e554fcbe7333b60c4081f2104a71e1b76a29d6140990b82b063bc8ef81"
     },
     {
       "id": "mana_surge",
       "name": "Mana Surge",
-      "effect": "+10% Magical Power Bonus"
+      "effect": "+10% Magical Power Bonus",
+      "icon": "https://www.spellsandguns.com/images/thumb/2/24/Perk_Mana_Surge.png/96px-Perk_Mana_Surge.png"
     },
     {
       "id": "melt",
       "name": "Melt",
-      "effect": "Targets suffer -15% Physical Damage Reduction and -5% Projectile Damage Reduction for 2s"
+      "effect": "Targets suffer -15% Physical Damage Reduction and -5% Projectile Damage Reduction for 2s",
+      "icon": "https://www.spellsandguns.com/images/thumb/e/e0/Perk_Melt.png/96px-Perk_Melt.png"
     },
     {
       "id": "quick_chant",
       "name": "Quick Chant",
-      "effect": "+15% Spell Casting Speed"
+      "effect": "+15% Spell Casting Speed",
+      "icon": "https://cdn.darkerdb.com/codex/11897dd717b54a2b322475bde8848e112c6c0408d437a056f4fe1eff19eb34b9"
     },
     {
       "id": "reactive_shield",
       "name": "Reactive Shield",
-      "effect": "On taking damage: 15 Base Shield for 3s; reactivates after 12s"
+      "effect": "On taking damage: 15 Base Shield for 3s; reactivates after 12s",
+      "icon": "https://cdn.darkerdb.com/codex/04ad0b7f4e275158a5267bd8a7306d216300e7afeb93cfbe3aa0e13f54ceee26"
     },
     {
       "id": "sage",
       "name": "Sage",
-      "effect": "+15% Knowledge Bonus"
+      "effect": "+15% Knowledge Bonus",
+      "icon": "https://cdn.darkerdb.com/codex/173ea09538f50d52d4b55ff7584a37713c634cf316367cd4bec45f52a897d3e3"
     },
     {
       "id": "spell_overload",
       "name": "Spell Overload",
-      "effect": "-20% Knowledge Bonus, but +60% Max Spell Count Bonus"
+      "effect": "-20% Knowledge Bonus, but +60% Max Spell Count Bonus",
+      "icon": "https://www.spellsandguns.com/images/thumb/5/51/Perk_Spell_Overload.png/96px-Perk_Spell_Overload.png"
     },
     {
       "id": "staff_mastery",
       "name": "Staff Mastery",
-      "effect": "With staff-type weapons: +2 Buff Magical Damage as base damage"
+      "effect": "With staff-type weapons: +2 Buff Magical Damage as base damage",
+      "icon": "https://www.spellsandguns.com/images/thumb/6/64/Perk_Staff_Mastery.png/96px-Perk_Staff_Mastery.png"
     }
   ],
   "skills": [
     {
       "id": "arcane_shield",
       "name": "Arcane Shield",
-      "effect": "Gain a shield around you that absorbs damage from all damage sources for seconds. When the maximum amount of absorb has been reached, the shield unleashes an Arcane Explosion, dealing magical damage to enemy targets in a 2m radius around you. Cooldown: seconds"
+      "effect": "Gain a shield around you that absorbs damage from all damage sources for seconds. When the maximum amount of absorb has been reached, the shield unleashes an Arcane Explosion, dealing magical damage to enemy targets in a 2m radius around you. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/3815dca99f5c1fbd3ece3f4785c41ea39f510c3e499fa6a666ffbaf950a0a606"
     },
     {
       "id": "intense_focus",
       "name": "Intense Focus",
-      "effect": "Reduce the cast time of your next spell to seconds. Cooldown: seconds"
+      "effect": "Reduce the cast time of your next spell to seconds. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/00afc99951b409d1c2621edbda9a8b2ac978ef29c1266290069abe0d322779f9"
     },
     {
       "id": "meditation",
       "name": "Meditation",
-      "effect": "Enter a meditative state and recover spells at a rate of spells costs over 24 seconds. Cooldown: seconds"
+      "effect": "Enter a meditative state and recover spells at a rate of spells costs over 24 seconds. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/02cd326047abd7832ca1e7c314fab2f252d7ff5bb99463bafae467b2c128b30d"
     },
     {
       "id": "spell_memory1",
       "name": "Spell Memory I",
-      "effect": "Gain the ability to memorize spells to use in the dungeon."
+      "effect": "Gain the ability to memorize spells to use in the dungeon.",
+      "icon": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105"
     },
     {
       "id": "spell_memory2",
       "name": "Spell Memory II",
-      "effect": "Gain the ability to memorize additional spells to use in the dungeon."
+      "effect": "Gain the ability to memorize additional spells to use in the dungeon.",
+      "icon": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105"
     }
   ],
   "weapons": {

@@ -26,12 +26,14 @@
     {
       "id": "dreamwalk",
       "name": "Dreamwalk",
-      "effect": "+5 Magical Power for 3s and become spiritual: phase through targets, invulnerable"
+      "effect": "+5 Magical Power for 3s and become spiritual: phase through targets, invulnerable",
+      "icon": "https://cdn.darkerdb.com/codex/8f3c1ffb0c6617cc30b6dc07fdadd8a4a14bd76cc1406552960632aa00203127"
     },
     {
       "id": "enhanced_wildness",
       "name": "Enhanced Wildness",
-      "effect": "In animal form: +5% Physical Power Bonus and +20 Armor Rating"
+      "effect": "In animal form: +5% Physical Power Bonus and +20 Armor Rating",
+      "icon": "https://cdn.darkerdb.com/codex/d5bf9dd30404ee5f137e7964f74f5b043b35c69d53764d0f019780f4f5a15eee"
     },
     {
       "id": "force_of_nature",
@@ -51,12 +53,14 @@
     {
       "id": "natural_healing",
       "name": "Natural Healing",
-      "effect": "Heal self and allies within 6m for 1 Magical Base Healing every 3s"
+      "effect": "Heal self and allies within 6m for 1 Magical Base Healing every 3s",
+      "icon": "https://cdn.darkerdb.com/codex/34bdb63ea32c8d3c1268fe14901b2d4e4e82384377001bbf1abc776730bef3e6"
     },
     {
       "id": "shapeshift_mastery",
       "name": "Shapeshift Mastery",
-      "effect": "-25% shapeshift time and -25% Wild skill cooldowns; prevents Spirit spells"
+      "effect": "-25% shapeshift time and -25% Wild skill cooldowns; prevents Spirit spells",
+      "icon": "https://www.spellsandguns.com/images/thumb/e/ed/Perk_Shapeshift_Mastery.png/96px-Perk_Shapeshift_Mastery.png"
     },
     {
       "id": "spirit_bond",
@@ -71,7 +75,8 @@
     {
       "id": "sun_and_moon",
       "name": "Sun and Moon",
-      "effect": "Self and allies within 6m gain +3 Vigor and +5 Magical Power"
+      "effect": "Self and allies within 6m gain +3 Vigor and +5 Magical Power",
+      "icon": "https://cdn.darkerdb.com/codex/b94b7deb6d1e530c11e8201749d5f15dc527e411655cd0b1b05b0935fd3a9ad0"
     },
     {
       "id": "thorn_coat",
@@ -83,22 +88,26 @@
     {
       "id": "shape_shift_memory1",
       "name": "Shapeshift Memory",
-      "effect": "Transforms into the selected creature. Tools cannot be used in a non-human state."
+      "effect": "Transforms into the selected creature. Tools cannot be used in a non-human state.",
+      "icon": "https://cdn.darkerdb.com/codex/7870c42b1edc33026e87d84844917736b16c6bbb113bf66cc520052dcfce2ea6"
     },
     {
       "id": "shape_shift_memory2",
       "name": "Shapeshift Memory II",
-      "effect": "Transforms into the selected creature. Tools cannot be used in a non-human state."
+      "effect": "Transforms into the selected creature. Tools cannot be used in a non-human state.",
+      "icon": "https://cdn.darkerdb.com/codex/7870c42b1edc33026e87d84844917736b16c6bbb113bf66cc520052dcfce2ea6"
     },
     {
       "id": "spell_memory1",
       "name": "Spell Memory I",
-      "effect": "Gain the ability to memorize spells to use in the dungeon."
+      "effect": "Gain the ability to memorize spells to use in the dungeon.",
+      "icon": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105"
     },
     {
       "id": "spell_memory2",
       "name": "Spell Memory II",
-      "effect": "Gain the ability to memorize additional spells to use in the dungeon."
+      "effect": "Gain the ability to memorize additional spells to use in the dungeon.",
+      "icon": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105"
     }
   ],
   "weapons": {

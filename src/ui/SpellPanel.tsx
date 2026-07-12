@@ -1,9 +1,11 @@
 import type { SpellData } from '../engine/spells';
-import { selectionCost } from '../engine/spells';
+import { selectionCost, spellSlots, SLOTS_PER_MEMORY_SKILL } from '../engine/spells';
+import { AbilityIcon } from './PickList';
 
 interface SpellPanelProps {
   spells: SpellData[];
   selectedIds: string[];
+  skillIds: string[];
   memoryCapacity: number;
   onToggle: (id: string) => void;
 }
@@ -17,51 +19,71 @@ function summary(spell: SpellData): string {
 }
 
 /**
- * Spell memorization: the sum of selected spell costs must fit in the
- * build's Memory Capacity (Bard songs and Sorcerer merged spells are
- * cost-free and don't count).
+ * Spell memorization, gated like the game:
+ * - requires a memory skill (Spell Memory / Music Memory / Sorcery); each
+ *   grants 5 spell slots
+ * - total memory cost must fit in Memory Capacity
  */
-export function SpellPanel({ spells, selectedIds, memoryCapacity, onToggle }: SpellPanelProps) {
+export function SpellPanel({
+  spells,
+  selectedIds,
+  skillIds,
+  memoryCapacity,
+  onToggle,
+}: SpellPanelProps) {
+  const slots = spellSlots(skillIds);
   const selected = spells.filter((s) => selectedIds.includes(s.id));
   const used = selectionCost(selected);
-  const over = used > memoryCapacity;
+  const overMemory = used > memoryCapacity;
+  const slotsFull = selected.length >= slots;
 
   return (
     <div className="picklist">
       <h2>
         Spells
-        <span className={`slot-counter${over ? ' slot-counter--over' : ''}`}>
-          Memory {used}/{memoryCapacity}
+        <span className="header-badges">
+          <span className={`slot-counter${slotsFull ? ' slot-counter--full' : ''}`}>
+            Slots {selected.length}/{slots}
+          </span>
+          <span className={`slot-counter${overMemory ? ' slot-counter--over' : ''}`}>
+            Memory {used}/{memoryCapacity}
+          </span>
         </span>
       </h2>
-      {over && (
+
+      {slots === 0 && (
+        <p className="memory-warning">
+          Select a memory skill first (Spell Memory / Music Memory / Sorcery) — each grants{' '}
+          {SLOTS_PER_MEMORY_SKILL} spell slots.
+        </p>
+      )}
+      {overMemory && (
         <p className="memory-warning">
           Over memory capacity — remove spells or add Knowledge/Memory gear.
         </p>
       )}
-      <ul>
+
+      <div className="tile-grid">
         {spells.map((spell) => {
           const isSelected = selectedIds.includes(spell.id);
+          const locked = !isSelected && (slots === 0 || slotsFull);
           return (
-            <li key={spell.id}>
-              <button
-                type="button"
-                className={`card${isSelected ? ' card--selected' : ''}`}
-                onClick={() => onToggle(spell.id)}
-                aria-pressed={isSelected}
-              >
-                <span className="card-name">
-                  {spell.name}
-                  <span className="spell-cost">
-                    {spell.cost !== null ? ` · cost ${spell.cost}` : ' · free'}
-                  </span>
-                </span>
-                <span className="card-effect">{summary(spell)}</span>
-              </button>
-            </li>
+            <button
+              key={spell.id}
+              type="button"
+              className={`tile${isSelected ? ' tile--selected' : ''}${locked ? ' tile--locked' : ''}`}
+              onClick={() => onToggle(spell.id)}
+              disabled={locked}
+              aria-pressed={isSelected}
+              title={`${spell.name} — ${summary(spell)}`}
+            >
+              <AbilityIcon name={spell.name} icon={spell.icon} />
+              <span className="tile-name">{spell.name}</span>
+              <span className="tile-badge">{spell.cost !== null ? spell.cost : '★'}</span>
+            </button>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 }

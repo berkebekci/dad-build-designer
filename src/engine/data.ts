@@ -19,6 +19,7 @@ import combatJson from '../../data/rules/combat.json';
 import weaponHitsJson from '../../data/rules/weapon_hits.json';
 import spellsJson from '../../data/spells/spells.json';
 import itemsJson from '../../data/items/items.json';
+import iconsJson from '../../data/items/icons.json';
 import type { CurveSet } from './computeStats';
 import type { ClassData } from './types';
 import type { ItemRecord } from './itemStats';
@@ -80,3 +81,6 @@ export const combatRules = combatJson as unknown as CombatRules;
 export const weaponHits = weaponHitsJson as unknown as WeaponHitsTable;
 
 export const spellBook = (spellsJson as unknown as { classes: SpellBook }).classes;
+
+/** archetype name -> icon URL (wiki mirror thumbnails) */
+export const itemIcons = (iconsJson as unknown as { icons: Record<string, string> }).icons;

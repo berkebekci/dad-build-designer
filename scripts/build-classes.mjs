@@ -73,6 +73,21 @@ async function main() {
       changed = true;
     }
 
+    // Inject icon URLs from the API by name match (skills are complete in the
+    // API; perks only partially — missing ones keep a letter-tile fallback).
+    const iconByName = new Map();
+    for (const p of api.perks ?? []) if (p.icon_url) iconByName.set(p.name, p.icon_url);
+    for (const s of api.skills ?? []) if (s.icon_url) iconByName.set(s.name, s.icon_url);
+    for (const list of [cls.perks ?? [], cls.skills ?? []]) {
+      for (const entry of list) {
+        const url = iconByName.get(entry.name);
+        if (url && entry.icon !== url) {
+          entry.icon = url;
+          changed = true;
+        }
+      }
+    }
+
     if (changed) {
       await writeFile(p, JSON.stringify(cls, null, 2) + '\n');
       console.log(`updated ${file}: attrs=${JSON.stringify(cls.base_attributes)} skills=${cls.skills.length}`);

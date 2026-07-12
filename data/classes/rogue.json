@@ -25,7 +25,8 @@
     {
       "id": "ambush",
       "name": "Ambush",
-      "effect": "When exiting hide: +10% Move Speed Bonus and +25% Physical Power Bonus for 3s"
+      "effect": "When exiting hide: +10% Move Speed Bonus and +25% Physical Power Bonus for 3s",
+      "icon": "https://cdn.darkerdb.com/codex/0afd36c7989c9bfdaf0d21ac33a6a256fc2d8ea770c2c0a34636c544a5d8a770"
     },
     {
       "id": "back_attack",
@@ -35,27 +36,32 @@
     {
       "id": "creep",
       "name": "Creep",
-      "effect": "Quieter footsteps while crouching; +10% Move Speed Bonus crouched; -50% monster detection radius"
+      "effect": "Quieter footsteps while crouching; +10% Move Speed Bonus crouched; -50% monster detection radius",
+      "icon": "https://www.spellsandguns.com/images/thumb/d/d1/Perk_Creep.png/96px-Perk_Creep.png"
     },
     {
       "id": "dagger_mastery",
       "name": "Dagger Mastery",
-      "effect": "+10% Physical Power Bonus and +1 True Physical Damage with daggers"
+      "effect": "+10% Physical Power Bonus and +1 True Physical Damage with daggers",
+      "icon": "https://cdn.darkerdb.com/codex/f5e2bc242ed30748f6bc89737eb1941cbcd2c1cb22fd30e50d695399ad5508cb"
     },
     {
       "id": "double_jump",
       "name": "Double Jump",
-      "effect": "Jump an additional time in the air"
+      "effect": "Jump an additional time in the air",
+      "icon": "https://www.spellsandguns.com/images/thumb/1/13/Perk_Double_Jump.png/96px-Perk_Double_Jump.png"
     },
     {
       "id": "hide_mastery",
       "name": "Hide Mastery",
-      "effect": "Hide duration 1.5x, cooldown 0.7x"
+      "effect": "Hide duration 1.5x, cooldown 0.7x",
+      "icon": "https://www.spellsandguns.com/images/thumb/5/56/Perk_Hide_Mastery.png/96px-Perk_Hide_Mastery.png"
     },
     {
       "id": "jokester",
       "name": "Jokester",
-      "effect": "Self and party members within 6m gain +2 All Attributes"
+      "effect": "Self and party members within 6m gain +2 All Attributes",
+      "icon": "https://cdn.darkerdb.com/codex/1a27a6f2a9492416e735b313f5ae8f8af87f046ba0a096a84b56563051df295d"
     },
     {
       "id": "lethal_mark",
@@ -65,22 +71,26 @@
     {
       "id": "pickpocket",
       "name": "Pickpocket",
-      "effect": "Steal items from a nearby enemy with the interact key"
+      "effect": "Steal items from a nearby enemy with the interact key",
+      "icon": "https://www.spellsandguns.com/images/thumb/c/cb/Perk_Pickpocket.png/96px-Perk_Pickpocket.png"
     },
     {
       "id": "poisoned_weapon",
       "name": "Poisoned Weapon",
-      "effect": "Attacks apply poison: 4 Neutral Magical Base Damage over 4s"
+      "effect": "Attacks apply poison: 4 Neutral Magical Base Damage over 4s",
+      "icon": "https://www.spellsandguns.com/images/thumb/b/b1/Perk_Poisoned_Weapon.png/96px-Perk_Poisoned_Weapon.png"
     },
     {
       "id": "stealth",
       "name": "Stealth",
-      "effect": "While hiding, move up to 10 steps crouched/slow-walking; +3 Move Speed Add per remaining step"
+      "effect": "While hiding, move up to 10 steps crouched/slow-walking; +3 Move Speed Add per remaining step",
+      "icon": "https://cdn.darkerdb.com/codex/3c6b58c678f3052100ae446df83b28e8b3b8bf19ffa08ae60349fd9baae806ad"
     },
     {
       "id": "thrust",
       "name": "Thrust",
-      "effect": "+15% Armor Penetration with daggers"
+      "effect": "+15% Armor Penetration with daggers",
+      "icon": "https://www.spellsandguns.com/images/thumb/4/4e/Perk_Thrust.png/96px-Perk_Thrust.png"
     },
     {
       "id": "traps_and_locks",
@@ -90,64 +100,76 @@
     {
       "id": "trickster",
       "name": "Trickster",
-      "effect": "+20% Action Speed with throwing weapons"
+      "effect": "+20% Action Speed with throwing weapons",
+      "icon": "https://www.spellsandguns.com/images/thumb/d/da/Perk_Trickster.png/96px-Perk_Trickster.png"
     },
     {
       "id": "veil_of_shadows",
       "name": "Veil of Shadows",
-      "effect": "Below 30% health: enter stealth for 6s (48s cooldown)"
+      "effect": "Below 30% health: enter stealth for 6s (48s cooldown)",
+      "icon": "https://www.spellsandguns.com/images/thumb/0/0b/Perk_Veil_Of_Shadows.png/96px-Perk_Veil_Of_Shadows.png"
     }
   ],
   "skills": [
     {
       "id": "caltrop",
       "name": "Caltrops",
-      "effect": "Drops Caltrops at your feet that deal physical damage and slows the move speed bonus by of anything that steps on them for seconds. Cooldown: seconds"
+      "effect": "Drops Caltrops at your feet that deal physical damage and slows the move speed bonus by of anything that steps on them for seconds. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/cd19958075f499ea47d0ad93ca17e427e0942758462b211b7bf3074db0bcebd0"
     },
     {
       "id": "cut_throat",
       "name": "Cut Throat",
-      "effect": "When you successfully hit a target, silence them for seconds, disabling the targets skills spells performance abilities. Cooldown: seconds"
+      "effect": "When you successfully hit a target, silence them for seconds, disabling the targets skills spells performance abilities. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/315826c206c881ef43afa15386e9fcf018093292e19ab881797085b064e8469a"
     },
     {
       "id": "dual_strike",
       "name": "Dual Strike",
-      "effect": "Strike simultaneously with both daggers, delivering a powerful blow that combines the damage of both weapons. Cooldown: seconds"
+      "effect": "Strike simultaneously with both daggers, delivering a powerful blow that combines the damage of both weapons. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/262e432fdd141c6999be8961c415d9be7710ec351f43a73d8490ee3e1e0bb3b0"
     },
     {
       "id": "hide",
       "name": "Hide",
-      "effect": "Become invisible for seconds. It is possible to change your equipment in this state. You are revealed when you attempt an action, such as moving, attacking, or using a skill. Cooldown: seconds"
+      "effect": "Become invisible for seconds. It is possible to change your equipment in this state. You are revealed when you attempt an action, such as moving, attacking, or using a skill. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/33be63d396925c258c75d5d15fa94ffd34cadfc3b48148b1e9ff4c7fda14ec37"
     },
     {
       "id": "rupture",
       "name": "Rupture",
-      "effect": "The next successful attack causes the target to bleed for physical damage over seconds. The buff is consumed when an attack hits an object or target. Cooldown: seconds"
+      "effect": "The next successful attack causes the target to bleed for physical damage over seconds. The buff is consumed when an attack hits an object or target. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/9c19c7784d496eace270629de42625e9349193a274fdb50ec6b2ff43599034e0"
     },
     {
       "id": "shadowstep",
       "name": "Shadowstep",
-      "effect": "While using a dagger or throwing knives, your next attack instantly moves you behind the target on hit. Cooldown: seconds"
+      "effect": "While using a dagger or throwing knives, your next attack instantly moves you behind the target on hit. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/86f665fbf141c873b1f01e8f020449b20c3e570fbc06e7a328b9eaf506ce987f"
     },
     {
       "id": "smoke_pot",
       "name": "Smoke Pot",
-      "effect": "A smoke pot is deployed creating a smoke screen. The smoke screen lasts seconds and covers a 6m area.When an enemy target enters the smoke screen, reduces their move speed bonus by."
+      "effect": "A smoke pot is deployed creating a smoke screen. The smoke screen lasts seconds and covers a 6m area.When an enemy target enters the smoke screen, reduces their move speed bonus by.",
+      "icon": "https://cdn.darkerdb.com/codex/bc00b2c91b413080442abc94584e2997b3ab11b28b6b1a0fab249e418f15df55"
     },
     {
       "id": "sneak_attack",
       "name": "Sneak Attack",
-      "effect": "Your next melee attack deals an additional physical damage. If the target is not in combat, it deals an additional physical damage. Cooldown: seconds"
+      "effect": "Your next melee attack deals an additional physical damage. If the target is not in combat, it deals an additional physical damage. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/0f5563c7fb6f028f02110d0eff39fab081fb8d0d44ca368464bf4aa9fc4e3b2e"
     },
     {
       "id": "tumbling",
       "name": "Tumbling",
-      "effect": "When used, backtumbles in the opposite direction the player is facing. Cooldown: seconds"
+      "effect": "When used, backtumbles in the opposite direction the player is facing. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/b475b1d5aa8c54608eecc9ef3476de5362742e2806faa1e281b12af9eb34655f"
     },
     {
       "id": "weakpoint_attack",
       "name": "Weakpoint Attack",
-      "effect": "When you successfully hit a target, reduce their armor rating bonus by for seconds. Only when melee attacking. Cooldown: seconds"
+      "effect": "When you successfully hit a target, reduce their armor rating bonus by for seconds. Only when melee attacking. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/376078aa3408b0ad7942da4d84ae64fb47622e5ff57495912140dbf056a18770"
     }
   ],
   "weapons": {

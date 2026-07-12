@@ -36,139 +36,166 @@
     {
       "id": "adrenaline_spike",
       "name": "Adrenaline Spike",
-      "effect": "Below 40% health: +15% Action Speed, +3% Move Speed, +30% Interaction Speed for 12s (24s cooldown)"
+      "effect": "Below 40% health: +15% Action Speed, +3% Move Speed, +30% Interaction Speed for 12s (24s cooldown)",
+      "icon": "https://www.spellsandguns.com/images/thumb/b/b6/Perk_Adrenaline_Spike.png/96px-Perk_Adrenaline_Spike.png"
     },
     {
       "id": "barricade",
       "name": "Barricade",
-      "effect": "While in defensive stance: +75 Armor Rating and +75 Magical Resistance"
+      "effect": "While in defensive stance: +75 Armor Rating and +75 Magical Resistance",
+      "icon": "https://www.spellsandguns.com/images/thumb/2/27/Perk_Barricade.png/96px-Perk_Barricade.png"
     },
     {
       "id": "combo_attack",
       "name": "Combo Attack",
-      "effect": "Consecutive melee attacks within 2s grant +10% Physical Power per stack (max 2 stacks)"
+      "effect": "Consecutive melee attacks within 2s grant +10% Physical Power per stack (max 2 stacks)",
+      "icon": "https://www.spellsandguns.com/images/thumb/e/e1/Perk_Combo_Attack.png/96px-Perk_Combo_Attack.png"
     },
     {
       "id": "counterattack",
       "name": "Counterattack",
-      "effect": "Successful block grants +10% Move Speed and Action Speed for 3s"
+      "effect": "Successful block grants +10% Move Speed and Action Speed for 3s",
+      "icon": "https://www.spellsandguns.com/images/thumb/d/d0/Perk_Counterattack.png/96px-Perk_Counterattack.png"
     },
     {
       "id": "defense_mastery",
       "name": "Defense Mastery",
-      "effect": "+15% additional armor rating bonus; raises Physical Damage Reduction cap to 75%"
+      "effect": "+15% additional armor rating bonus; raises Physical Damage Reduction cap to 75%",
+      "icon": "https://cdn.darkerdb.com/codex/0588c88991fabed3545376f575052a01fa43289b52bc2e46a76a23ebd561d4b0"
     },
     {
       "id": "dual_wield",
       "name": "Dual Wield",
-      "effect": "While both hands are equipped: +10% Action Speed (excludes lanterns and shields)"
+      "effect": "While both hands are equipped: +10% Action Speed (excludes lanterns and shields)",
+      "icon": "https://www.spellsandguns.com/images/thumb/f/f4/Perk_Dual_Wield.png/96px-Perk_Dual_Wield.png"
     },
     {
       "id": "last_bastion",
       "name": "Last Bastion",
-      "effect": "At 33% health: +150 Armor Rating, +50 Magical Resistance, +30% Projectile Reduction for 8s (48s cooldown)"
+      "effect": "At 33% health: +150 Armor Rating, +50 Magical Resistance, +30% Projectile Reduction for 8s (48s cooldown)",
+      "icon": "https://www.spellsandguns.com/images/thumb/e/e8/Perk_Last_Bastion.png/96px-Perk_Last_Bastion.png"
     },
     {
       "id": "projectile_resistance",
       "name": "Projectile Resistance",
-      "effect": "+10% Projectile Damage Reduction; additional +10% while in defensive stance"
+      "effect": "+10% Projectile Damage Reduction; additional +10% while in defensive stance",
+      "icon": "https://www.spellsandguns.com/images/thumb/8/8d/Perk_Projectile_Resistance.png/96px-Perk_Projectile_Resistance.png"
     },
     {
       "id": "shield_mastery",
       "name": "Shield Mastery",
-      "effect": "In defensive stance: +10% Move Speed; successful block grants +50% Action Speed and +10% Physical Power for 1s"
+      "effect": "In defensive stance: +10% Move Speed; successful block grants +50% Action Speed and +10% Physical Power for 1s",
+      "icon": "https://www.spellsandguns.com/images/thumb/e/e8/Perk_Shield_Expert.png/96px-Perk_Shield_Expert.png"
     },
     {
       "id": "slayer",
       "name": "Slayer",
-      "effect": "Dual-wielded weapons grant +5 Physical Buff Weapon Damage and +10 Move Speed; loses plate armor access"
+      "effect": "Dual-wielded weapons grant +5 Physical Buff Weapon Damage and +10 Move Speed; loses plate armor access",
+      "icon": "https://www.spellsandguns.com/images/thumb/5/5c/Perk_Slayer.png/96px-Perk_Slayer.png"
     },
     {
       "id": "swift",
       "name": "Swift",
-      "effect": "-20% Armor Speed Penalty (excludes other modifiers)"
+      "effect": "-20% Armor Speed Penalty (excludes other modifiers)",
+      "icon": "https://www.spellsandguns.com/images/thumb/0/06/Perk_Swift.png/96px-Perk_Swift.png"
     },
     {
       "id": "sword_mastery",
       "name": "Sword Mastery",
-      "effect": "Sword-type weapons grant +2 Physical Buff Damage and +5% Action Speed; +10 Move Speed in defensive stance"
+      "effect": "Sword-type weapons grant +2 Physical Buff Damage and +5% Action Speed; +10 Move Speed in defensive stance",
+      "icon": "https://cdn.darkerdb.com/codex/5bc10fa7d29fcded618d86119cd3ad982be20d410c792733b9c8351253c79792"
     },
     {
       "id": "veteran_instinct",
       "name": "Veteran Instinct",
-      "effect": "Upon entering combat: +10% Physical Damage Reduction and Physical Power for 4s (requires 10s out of combat)"
+      "effect": "Upon entering combat: +10% Physical Damage Reduction and Physical Power for 4s (requires 10s out of combat)",
+      "icon": "https://cdn.darkerdb.com/codex/e95a6ffd6144c5fb47f6adfcf1f763a3e89a6a6ab46b4417bdf39917bfe99beb"
     },
     {
       "id": "weapon_guard",
       "name": "Weapon Guard",
-      "effect": "While blocking with a weapon: +5% Physical Damage Reduction; successful block grants +10% Physical Power and +5% Action Speed for 2s"
+      "effect": "While blocking with a weapon: +5% Physical Damage Reduction; successful block grants +10% Physical Power and +5% Action Speed for 2s",
+      "icon": "https://www.spellsandguns.com/images/thumb/9/9e/Perk_Weapon_Guard.png/96px-Perk_Weapon_Guard.png"
     },
     {
       "id": "weapon_mastery",
       "name": "Weapon Mastery",
-      "effect": "Gain the ability to use any weapon"
+      "effect": "Gain the ability to use any weapon",
+      "icon": "https://cdn.darkerdb.com/codex/5eb6ef38ac7828e1704f44910febd15d4738f0a43a4925447bafe84a8927242b"
     }
   ],
   "skills": [
     {
       "id": "adrenaline_rush",
       "name": "Adrenaline Rush",
-      "effect": "+15% Action Speed and +5% Move Speed for 8s; afterwards -8% Action Speed and -4% Move Speed for 2s (28s cooldown)"
+      "effect": "+15% Action Speed and +5% Move Speed for 8s; afterwards -8% Action Speed and -4% Move Speed for 2s (28s cooldown)",
+      "icon": "https://cdn.darkerdb.com/codex/7a8d95317fc72a73fa7f0dc836786f847299aa2547b3faf481875995bb704860"
     },
     {
       "id": "breakthrough",
       "name": "Breakthrough",
-      "effect": "Removes and grants immunity to move-speed slowing debuffs and knockback; +7 Move Speed Add for 8s (24s cooldown)"
+      "effect": "Removes and grants immunity to move-speed slowing debuffs and knockback; +7 Move Speed Add for 8s (24s cooldown)",
+      "icon": "https://cdn.darkerdb.com/codex/b8dff5ffd03f6152491b12bd09fb45c6ae72036368a81db4de2a19219b20d13f"
     },
     {
       "id": "disarm",
       "name": "Disarm",
-      "effect": "Blocking a melee attack within 8s disarms the target for 1s (24s cooldown, weapon required)"
+      "effect": "Blocking a melee attack within 8s disarms the target for 1s (24s cooldown, weapon required)",
+      "icon": "https://cdn.darkerdb.com/codex/967fa9a917bde098921d28ed3faa573530e09b288df95c6f2872fdbd0424d13c"
     },
     {
       "id": "fortified_ground",
       "name": "Fortified Ground",
-      "effect": "Deploys a banner (infinite duration); allies within 33m gain +3 All Attributes (18s cooldown)"
+      "effect": "Deploys a banner (infinite duration); allies within 33m gain +3 All Attributes (18s cooldown)",
+      "icon": "https://cdn.darkerdb.com/codex/2a0cdede329ec21015c65f0a110d295025f09399bf5c7b658566e39eb1308096"
     },
     {
       "id": "perfect_block",
       "name": "Perfect Block",
-      "effect": "+5 Impact Resistance for 8s (7s cooldown)"
+      "effect": "+5 Impact Resistance for 8s (7s cooldown)",
+      "icon": "https://cdn.darkerdb.com/codex/9c906557e8f6baad5b019c03af50a1161cc10767928a465a90fbdee15ab26584"
     },
     {
       "id": "pommel_strike",
       "name": "Pommel Strike",
-      "effect": "Hilt strike with one-handed main weapon: 15 Physical Base Damage (100% scaling), silences target; interrupted silence deals +10 damage and -50% Move Speed for 2s (18s cooldown)"
+      "effect": "Hilt strike with one-handed main weapon: 15 Physical Base Damage (100% scaling), silences target; interrupted silence deals +10 damage and -50% Move Speed for 2s (18s cooldown)",
+      "icon": "https://cdn.darkerdb.com/codex/e7596291913ab6a7f1df6394ca40f41c71488cfa3896ec9bd2b3b50136e5bc25"
     },
     {
       "id": "second_wind",
       "name": "Second Wind",
-      "effect": "Recovers 40% of Max Health over 12s; removes Adrenaline Rush penalties; single use, recharges at Tier 5 rate"
+      "effect": "Recovers 40% of Max Health over 12s; removes Adrenaline Rush penalties; single use, recharges at Tier 5 rate",
+      "icon": "https://cdn.darkerdb.com/codex/4d43f1d56aebe9250f7f4039c0af103440df40dab5495d275753b8ce15ee6137"
     },
     {
       "id": "shield_slam",
       "name": "Shield Slam",
-      "effect": "Shield bash: 30 Physical Base Damage (100% scaling), -20% Move Speed for 3s, knockback (8s cooldown)"
+      "effect": "Shield bash: 30 Physical Base Damage (100% scaling), -20% Move Speed for 3s, knockback (8s cooldown)",
+      "icon": "https://cdn.darkerdb.com/codex/e3f90615275a2e98ebc378787e7a2ba5f1d9c580f4bba82fab9c4c509da6fd50"
     },
     {
       "id": "spell_reflection",
       "name": "Spell Reflection",
-      "effect": "While blocking: reflects projectile/hitscan spells; +15% Magical Damage Reduction for 5s or until reflection (18s cooldown)"
+      "effect": "While blocking: reflects projectile/hitscan spells; +15% Magical Damage Reduction for 5s or until reflection (18s cooldown)",
+      "icon": "https://cdn.darkerdb.com/codex/26aa867b46404a50c3a01a0e8af06c0a2ffc67c371b593fdcac33c62fb912dc1"
     },
     {
       "id": "sprint",
       "name": "Sprint",
-      "effect": "Gain 3 Momentum stacks (+10 Move Speed Add each); lose 1 stack every 2s (28s cooldown)"
+      "effect": "Gain 3 Momentum stacks (+10 Move Speed Add each); lose 1 stack every 2s (28s cooldown)",
+      "icon": "https://cdn.darkerdb.com/codex/f3715f4694decda2e695661a2c0c4601d4bc21626ae8818843f98d17eeff4e2b"
     },
     {
       "id": "taunt",
       "name": "Taunt",
-      "effect": "7.5m area: increases monster aggro by 200%; +12% Physical and Magical Damage Reduction for 8s (18s cooldown)"
+      "effect": "7.5m area: increases monster aggro by 200%; +12% Physical and Magical Damage Reduction for 8s (18s cooldown)",
+      "icon": "https://cdn.darkerdb.com/codex/05efc2bad90c32e81b7f30f76e9637a548436ad874f48b48179e0c9756c68d31"
     },
     {
       "id": "victory_strike",
       "name": "Victory Strike",
-      "effect": "Next attack within 10s deals +40% additional Physical Power; resets without cooldown if it kills a player (24s cooldown)"
+      "effect": "Next attack within 10s deals +40% additional Physical Power; resets without cooldown if it kills a player (24s cooldown)",
+      "icon": "https://cdn.darkerdb.com/codex/54e226d2edb1b3de4a0e18b7a4616031882e553a0b1f9568718e31f27ad06535"
     }
   ],
   "weapons": {

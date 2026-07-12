@@ -1,117 +1,1186 @@
 {
-  "_meta": {
-    "source": "darkanddarker.wiki.spellsandguns.com class pages (Spells/Songs sections), fetched 2026-07-12",
-    "assumptions": "memory cost = spell tier (game convention). Bard songs have no tier on the wiki -> cost null, excluded from memory math. Sorcerer merged spells are created in-dungeon by combining casts -> cost null.",
-    "hit_fields": "hits: [{label, base, scaling, heal?}] — damage = (base + staff Magical Damage) * (1 + MagicalPowerBonus% * scaling%), heals ignore the dummy"
-  },
-  "classes": {
-    "wizard": [
-      { "id": "zap", "name": "Zap", "cost": 1, "kind": "projectile", "hits": [{ "label": "hit", "base": 20, "scaling": 100 }, { "label": "burn/s", "base": 1, "scaling": 50 }] },
-      { "id": "light_orb", "name": "Light Orb", "cost": 1, "kind": "utility", "hits": [] },
-      { "id": "magic_lock", "name": "Magic Lock", "cost": 2, "kind": "utility", "hits": [] },
-      { "id": "slow", "name": "Slow", "cost": 2, "kind": "debuff", "hits": [] },
-      { "id": "ignite", "name": "Ignite", "cost": 2, "kind": "buff", "hits": [{ "label": "on-hit fire", "base": 5, "scaling": 50 }, { "label": "burn/s", "base": 1, "scaling": 50 }] },
-      { "id": "ice_bolt", "name": "Ice Bolt", "cost": 2, "kind": "projectile", "hits": [{ "label": "hit", "base": 30, "scaling": 100 }] },
-      { "id": "magic_missile", "name": "Magic Missile", "cost": 3, "kind": "projectile", "hits": [{ "label": "per missile", "base": 10, "scaling": 50 }] },
-      { "id": "haste", "name": "Haste", "cost": 3, "kind": "buff", "hits": [] },
-      { "id": "lightning_strike", "name": "Lightning Strike", "cost": 4, "kind": "aoe", "hits": [{ "label": "strike", "base": 30, "scaling": 100 }] },
-      { "id": "invisibility", "name": "Invisibility", "cost": 4, "kind": "buff", "hits": [] },
-      { "id": "fireball", "name": "Fireball", "cost": 4, "kind": "projectile", "hits": [{ "label": "direct", "base": 35, "scaling": 100 }, { "label": "splash", "base": 10, "scaling": 100 }, { "label": "burn/s", "base": 3, "scaling": 50 }] },
-      { "id": "explosion", "name": "Explosion", "cost": 5, "kind": "aoe", "hits": [{ "label": "blast", "base": 25, "scaling": 100 }, { "label": "burn/s", "base": 3, "scaling": 50 }] },
-      { "id": "chain_lightning", "name": "Chain Lightning", "cost": 6, "kind": "aoe", "hits": [{ "label": "1st", "base": 30, "scaling": 100 }, { "label": "2nd", "base": 25, "scaling": 100 }, { "label": "3rd", "base": 25, "scaling": 100 }, { "label": "4th", "base": 20, "scaling": 100 }] }
+ "_meta": {
+  "source": "darkanddarker.wiki.spellsandguns.com class pages (Spells/Songs sections), fetched 2026-07-12",
+  "assumptions": "memory cost = spell tier (game convention). Bard songs have no tier on the wiki -> cost null, excluded from memory math. Sorcerer merged spells are created in-dungeon by combining casts -> cost null.",
+  "hit_fields": "hits: [{label, base, scaling, heal?}] — damage = (base + staff Magical Damage) * (1 + MagicalPowerBonus% * scaling%), heals ignore the dummy"
+ },
+ "classes": {
+  "wizard": [
+   {
+    "id": "zap",
+    "name": "Zap",
+    "cost": 1,
+    "kind": "projectile",
+    "hits": [
+     {
+      "label": "hit",
+      "base": 20,
+      "scaling": 100
+     },
+     {
+      "label": "burn/s",
+      "base": 1,
+      "scaling": 50
+     }
     ],
-    "cleric": [
-      { "id": "protection", "name": "Protection", "cost": 1, "kind": "buff", "hits": [{ "label": "shield", "base": 20, "scaling": 0 }] },
-      { "id": "bless", "name": "Bless", "cost": 1, "kind": "buff", "hits": [] },
-      { "id": "divine_strike", "name": "Divine Strike", "cost": 2, "kind": "buff", "hits": [{ "label": "on-hit divine", "base": 5, "scaling": 100 }] },
-      { "id": "cleanse", "name": "Cleanse", "cost": 2, "kind": "utility", "hits": [] },
-      { "id": "lesser_heal", "name": "Lesser Heal", "cost": 3, "kind": "heal", "hits": [{ "label": "heal", "base": 20, "scaling": 80, "heal": true }] },
-      { "id": "bind", "name": "Bind", "cost": 3, "kind": "utility", "hits": [] },
-      { "id": "holy_strike", "name": "Holy Strike", "cost": 4, "kind": "aoe", "hits": [{ "label": "strike", "base": 20, "scaling": 100 }] },
-      { "id": "holy_light", "name": "Holy Light", "cost": 5, "kind": "heal", "hits": [{ "label": "heal", "base": 35, "scaling": 80, "heal": true }, { "label": "vs undead/demon", "base": 100, "scaling": 80 }] },
-      { "id": "sanctuary", "name": "Sanctuary", "cost": 6, "kind": "aoe", "hits": [{ "label": "pulse heal", "base": 5, "scaling": 50, "heal": true }, { "label": "pulse vs evil", "base": 14, "scaling": 50 }] },
-      { "id": "locust_swarm", "name": "Locust Swarm", "cost": 7, "kind": "dot", "hits": [{ "label": "per second", "base": 13, "scaling": 100 }] },
-      { "id": "earthquake", "name": "Earthquake", "cost": 7, "kind": "aoe", "hits": [{ "label": "per step", "base": 7, "scaling": 50 }] },
-      { "id": "resurrection", "name": "Resurrection", "cost": 8, "kind": "utility", "hits": [] }
+    "icon": "https://www.spellsandguns.com/images/thumb/0/0b/Spell_Zap.png/96px-Spell_Zap.png"
+   },
+   {
+    "id": "light_orb",
+    "name": "Light Orb",
+    "cost": 1,
+    "kind": "utility",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/8/85/Spell_Light_Orb.png/96px-Spell_Light_Orb.png"
+   },
+   {
+    "id": "magic_lock",
+    "name": "Magic Lock",
+    "cost": 2,
+    "kind": "utility",
+    "hits": []
+   },
+   {
+    "id": "slow",
+    "name": "Slow",
+    "cost": 2,
+    "kind": "debuff",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/a/ae/Spell_Slow.png/96px-Spell_Slow.png"
+   },
+   {
+    "id": "ignite",
+    "name": "Ignite",
+    "cost": 2,
+    "kind": "buff",
+    "hits": [
+     {
+      "label": "on-hit fire",
+      "base": 5,
+      "scaling": 50
+     },
+     {
+      "label": "burn/s",
+      "base": 1,
+      "scaling": 50
+     }
     ],
-    "warlock": [
-      { "id": "power_of_sacrifice", "name": "Power of Sacrifice", "cost": 1, "kind": "dot", "hits": [{ "label": "per tick", "base": 3, "scaling": 0 }] },
-      { "id": "curse_of_weakness", "name": "Curse of Weakness", "cost": 1, "kind": "debuff", "hits": [] },
-      { "id": "bolt_of_darkness", "name": "Bolt of Darkness", "cost": 1, "kind": "projectile", "hits": [{ "label": "hit", "base": 20, "scaling": 100 }] },
-      { "id": "curse_of_pain", "name": "Curse of Pain", "cost": 2, "kind": "dot", "hits": [{ "label": "curse", "base": 15, "scaling": 50 }] },
-      { "id": "bloodstained_blade", "name": "Bloodstained Blade", "cost": 2, "kind": "buff", "hits": [{ "label": "on-hit evil", "base": 3, "scaling": 0 }] },
-      { "id": "spell_predation", "name": "Spell Predation", "cost": 3, "kind": "utility", "hits": [{ "label": "drain", "base": 3, "scaling": 100 }] },
-      { "id": "evil_eye", "name": "Evil Eye", "cost": 3, "kind": "utility", "hits": [] },
-      { "id": "ray_of_darkness", "name": "Ray of Darkness", "cost": 4, "kind": "dot", "hits": [{ "label": "per tick", "base": 12, "scaling": 100 }] },
-      { "id": "life_drain", "name": "Life Drain", "cost": 4, "kind": "heal", "hits": [{ "label": "drain/s", "base": 5, "scaling": 25 }] },
-      { "id": "hellfire", "name": "Hellfire", "cost": 4, "kind": "aoe", "hits": [{ "label": "blast", "base": 60, "scaling": 50 }] },
-      { "id": "flame_walker", "name": "Flame Walker", "cost": 5, "kind": "aoe", "hits": [{ "label": "per second", "base": 5, "scaling": 100 }] },
-      { "id": "eldritch_shield", "name": "Eldritch Shield", "cost": 5, "kind": "buff", "hits": [{ "label": "shield", "base": 25, "scaling": 0 }] },
-      { "id": "summon_hydra", "name": "Summon Hydra", "cost": 6, "kind": "utility", "hits": [{ "label": "hydra bolt", "base": 10, "scaling": 100 }] }
+    "icon": "https://www.spellsandguns.com/images/thumb/4/4d/Spell_Ignite.png/96px-Spell_Ignite.png"
+   },
+   {
+    "id": "ice_bolt",
+    "name": "Ice Bolt",
+    "cost": 2,
+    "kind": "projectile",
+    "hits": [
+     {
+      "label": "hit",
+      "base": 30,
+      "scaling": 100
+     }
     ],
-    "sorcerer": [
-      { "id": "fire_arrow", "name": "Fire Arrow", "cost": 1, "kind": "projectile", "hits": [{ "label": "hit", "base": 8, "scaling": 100 }] },
-      { "id": "stone_skin", "name": "Stone Skin", "cost": 1, "kind": "buff", "hits": [] },
-      { "id": "water_bolt", "name": "Water Bolt", "cost": 1, "kind": "projectile", "hits": [{ "label": "hit", "base": 15, "scaling": 100 }] },
-      { "id": "glaciate", "name": "Glaciate", "cost": 1, "kind": "buff", "hits": [{ "label": "on-hit ice", "base": 3, "scaling": 50 }] },
-      { "id": "windblast", "name": "Windblast", "cost": 2, "kind": "projectile", "hits": [{ "label": "hit", "base": 10, "scaling": 100 }] },
-      { "id": "eruption", "name": "Eruption", "cost": 2, "kind": "aoe", "hits": [{ "label": "blast", "base": 20, "scaling": 100 }] },
-      { "id": "flamestrike", "name": "Flamestrike", "cost": 2, "kind": "aoe", "hits": [{ "label": "strike", "base": 30, "scaling": 100 }] },
-      { "id": "ice_spear", "name": "Ice Spear", "cost": 2, "kind": "projectile", "hits": [{ "label": "hit", "base": 30, "scaling": 100 }] },
-      { "id": "fire_orb", "name": "Fire Orb", "cost": 3, "kind": "aoe", "hits": [{ "label": "per tick", "base": 5, "scaling": 50 }] },
-      { "id": "lightning_bolt", "name": "Lightning Bolt", "cost": 3, "kind": "channeled", "hits": [{ "label": "per tick", "base": 7, "scaling": 50 }] },
-      { "id": "vortex", "name": "Vortex", "cost": 4, "kind": "aoe", "hits": [{ "label": "hit", "base": 15, "scaling": 100 }] },
-      { "id": "levitation", "name": "Levitation", "cost": 4, "kind": "utility", "hits": [] },
-      { "id": "lightning_sphere", "name": "Lightning Sphere", "cost": 4, "kind": "aoe", "hits": [{ "label": "per tick", "base": 5, "scaling": 50 }] },
-      { "id": "summon_earth_elemental", "name": "Summon Earth Elemental", "cost": 5, "kind": "utility", "hits": [{ "label": "elemental hit", "base": 40, "scaling": 100 }] },
-      { "id": "electric_dash", "name": "Electric Dash", "cost": null, "kind": "merged", "hits": [{ "label": "dash", "base": 10, "scaling": 100 }, { "label": "empowered", "base": 15, "scaling": 100 }] },
-      { "id": "elemental_bolt", "name": "Elemental Bolt", "cost": null, "kind": "merged", "hits": [{ "label": "hit", "base": 50, "scaling": 100 }] },
-      { "id": "flamefrost_spear", "name": "Flamefrost Spear", "cost": null, "kind": "merged", "hits": [{ "label": "fire", "base": 30, "scaling": 100 }, { "label": "ice", "base": 30, "scaling": 100 }] },
-      { "id": "flamethrower", "name": "Flamethrower", "cost": null, "kind": "merged", "hits": [{ "label": "per tick", "base": 20, "scaling": 100 }] },
-      { "id": "ice_bound", "name": "Ice Bound", "cost": null, "kind": "merged", "hits": [] },
-      { "id": "lightning_storm", "name": "Lightning Storm", "cost": null, "kind": "merged", "hits": [{ "label": "per tick", "base": 10, "scaling": 100 }] },
-      { "id": "lightning_vortex", "name": "Lightning Vortex", "cost": null, "kind": "merged", "hits": [{ "label": "hit", "base": 20, "scaling": 100 }] },
-      { "id": "mud_shield", "name": "Mud Shield", "cost": null, "kind": "merged", "hits": [] },
-      { "id": "summon_lava_elemental", "name": "Summon Lava Elemental", "cost": null, "kind": "merged", "hits": [{ "label": "elemental hit", "base": 10, "scaling": 50 }] },
-      { "id": "thorn_of_earth", "name": "Thorn of Earth", "cost": null, "kind": "merged", "hits": [{ "label": "hit", "base": 30, "scaling": 100 }] },
-      { "id": "wall_of_fire", "name": "Wall of Fire", "cost": null, "kind": "merged", "hits": [{ "label": "wall", "base": 10, "scaling": 100 }, { "label": "burn", "base": 20, "scaling": 100 }] },
-      { "id": "aqua_prison", "name": "Aqua Prison", "cost": null, "kind": "merged", "hits": [{ "label": "hit", "base": 15, "scaling": 100 }] },
-      { "id": "frost_breath", "name": "Frost Breath", "cost": null, "kind": "merged", "hits": [{ "label": "per tick", "base": 20, "scaling": 100 }] },
-      { "id": "plasma_blast", "name": "Plasma Blast", "cost": null, "kind": "merged", "hits": [{ "label": "blast", "base": 50, "scaling": 100 }] },
-      { "id": "frost_lightning", "name": "Frost Lightning", "cost": null, "kind": "merged", "hits": [{ "label": "lightning", "base": 15, "scaling": 100 }, { "label": "ice", "base": 15, "scaling": 100 }] }
+    "icon": "https://www.spellsandguns.com/images/thumb/d/d3/Spell_Ice_Bolt.png/96px-Spell_Ice_Bolt.png"
+   },
+   {
+    "id": "magic_missile",
+    "name": "Magic Missile",
+    "cost": 3,
+    "kind": "projectile",
+    "hits": [
+     {
+      "label": "per missile",
+      "base": 10,
+      "scaling": 50
+     }
     ],
-    "druid": [
-      { "id": "natures_touch", "name": "Nature's Touch", "cost": 1, "kind": "heal", "hits": [{ "label": "heal", "base": 15, "scaling": 25, "heal": true }] },
-      { "id": "barkskin_armor", "name": "Barkskin Armor", "cost": 2, "kind": "buff", "hits": [] },
-      { "id": "orb_of_nature", "name": "Orb of Nature", "cost": 2, "kind": "projectile", "hits": [{ "label": "hit", "base": 15, "scaling": 100 }] },
-      { "id": "dreamfire", "name": "Dreamfire", "cost": 3, "kind": "aoe", "hits": [{ "label": "blast", "base": 15, "scaling": 100 }] },
-      { "id": "thorn_barrier", "name": "Thorn Barrier", "cost": 4, "kind": "aoe", "hits": [{ "label": "thorns", "base": 4, "scaling": 0 }] },
-      { "id": "entangling_vines", "name": "Entangling Vines", "cost": 4, "kind": "utility", "hits": [] },
-      { "id": "restore", "name": "Restore", "cost": 5, "kind": "heal", "hits": [{ "label": "heal", "base": 20, "scaling": 25, "heal": true }] },
-      { "id": "summon_treant", "name": "Summon Treant", "cost": 5, "kind": "utility", "hits": [{ "label": "treant hit", "base": 35.2, "scaling": 100 }] },
-      { "id": "tree_of_life", "name": "Tree of Life", "cost": 6, "kind": "buff", "hits": [{ "label": "heal", "base": 15, "scaling": 0, "heal": true }] },
-      { "id": "mending_grove", "name": "Mending Grove", "cost": 6, "kind": "aoe", "hits": [{ "label": "heal/s", "base": 10, "scaling": 0, "heal": true }] }
+    "icon": "https://www.spellsandguns.com/images/thumb/a/a6/Spell_Magic_Missile.png/96px-Spell_Magic_Missile.png"
+   },
+   {
+    "id": "haste",
+    "name": "Haste",
+    "cost": 3,
+    "kind": "buff",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/2/24/Spell_Haste.png/96px-Spell_Haste.png"
+   },
+   {
+    "id": "lightning_strike",
+    "name": "Lightning Strike",
+    "cost": 4,
+    "kind": "aoe",
+    "hits": [
+     {
+      "label": "strike",
+      "base": 30,
+      "scaling": 100
+     }
     ],
-    "bard": [
-      { "id": "rousing_rhythms", "name": "Rousing Rhythms", "cost": null, "kind": "song", "hits": [] },
-      { "id": "din_of_darkness", "name": "Din of Darkness", "cost": null, "kind": "song", "hits": [] },
-      { "id": "beats_of_alacrity", "name": "Beats of Alacrity", "cost": null, "kind": "song", "hits": [] },
-      { "id": "allegro", "name": "Allegro", "cost": null, "kind": "song", "hits": [] },
-      { "id": "accelerando", "name": "Accelerando", "cost": null, "kind": "song", "hits": [] },
-      { "id": "unchained_harmony", "name": "Unchained Harmony", "cost": null, "kind": "song", "hits": [] },
-      { "id": "shriek_of_weakness", "name": "Shriek of Weakness", "cost": null, "kind": "song", "hits": [] },
-      { "id": "piercing_shrill", "name": "Piercing Shrill", "cost": null, "kind": "song", "hits": [] },
-      { "id": "banshees_howl", "name": "Banshees Howl", "cost": null, "kind": "song", "hits": [] },
-      { "id": "song_of_silence", "name": "Song of Silence", "cost": null, "kind": "song", "hits": [] },
-      { "id": "peacemaking", "name": "Peacemaking", "cost": null, "kind": "song", "hits": [] },
-      { "id": "lament_of_languor", "name": "Lament of Languor", "cost": null, "kind": "song", "hits": [] },
-      { "id": "chaotic_discord", "name": "Chaotic Discord", "cost": null, "kind": "song", "hits": [] },
-      { "id": "aria_of_alacrity", "name": "Aria of Alacrity", "cost": null, "kind": "song", "hits": [] },
-      { "id": "tranquility", "name": "Tranquility", "cost": null, "kind": "song", "hits": [] },
-      { "id": "song_of_shadow", "name": "Song of Shadow", "cost": null, "kind": "song", "hits": [] },
-      { "id": "harmonic_shield", "name": "Harmonic Shield", "cost": null, "kind": "song", "hits": [] },
-      { "id": "chorale_of_clarity", "name": "Chorale of Clarity", "cost": null, "kind": "song", "hits": [] },
-      { "id": "ballad_of_courage", "name": "Ballad of Courage", "cost": null, "kind": "song", "hits": [] }
+    "icon": "https://www.spellsandguns.com/images/thumb/7/76/Spell_Lightning_Strike.png/96px-Spell_Lightning_Strike.png"
+   },
+   {
+    "id": "invisibility",
+    "name": "Invisibility",
+    "cost": 4,
+    "kind": "buff",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/6/6c/Spell_Invisibility.png/96px-Spell_Invisibility.png"
+   },
+   {
+    "id": "fireball",
+    "name": "Fireball",
+    "cost": 4,
+    "kind": "projectile",
+    "hits": [
+     {
+      "label": "direct",
+      "base": 35,
+      "scaling": 100
+     },
+     {
+      "label": "splash",
+      "base": 10,
+      "scaling": 100
+     },
+     {
+      "label": "burn/s",
+      "base": 3,
+      "scaling": 50
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/e/e2/Spell_Fireball.png/96px-Spell_Fireball.png"
+   },
+   {
+    "id": "explosion",
+    "name": "Explosion",
+    "cost": 5,
+    "kind": "aoe",
+    "hits": [
+     {
+      "label": "blast",
+      "base": 25,
+      "scaling": 100
+     },
+     {
+      "label": "burn/s",
+      "base": 3,
+      "scaling": 50
+     }
     ]
-  }
+   },
+   {
+    "id": "chain_lightning",
+    "name": "Chain Lightning",
+    "cost": 6,
+    "kind": "aoe",
+    "hits": [
+     {
+      "label": "1st",
+      "base": 30,
+      "scaling": 100
+     },
+     {
+      "label": "2nd",
+      "base": 25,
+      "scaling": 100
+     },
+     {
+      "label": "3rd",
+      "base": 25,
+      "scaling": 100
+     },
+     {
+      "label": "4th",
+      "base": 20,
+      "scaling": 100
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/2/2d/Spell_Chain_Lightning.png/96px-Spell_Chain_Lightning.png"
+   }
+  ],
+  "cleric": [
+   {
+    "id": "protection",
+    "name": "Protection",
+    "cost": 1,
+    "kind": "buff",
+    "hits": [
+     {
+      "label": "shield",
+      "base": 20,
+      "scaling": 0
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/0/06/Spell_Protection.png/96px-Spell_Protection.png"
+   },
+   {
+    "id": "bless",
+    "name": "Bless",
+    "cost": 1,
+    "kind": "buff",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/3/3a/Spell_Bless.png/96px-Spell_Bless.png"
+   },
+   {
+    "id": "divine_strike",
+    "name": "Divine Strike",
+    "cost": 2,
+    "kind": "buff",
+    "hits": [
+     {
+      "label": "on-hit divine",
+      "base": 5,
+      "scaling": 100
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/4/4f/Spell_Divine_Strike.png/96px-Spell_Divine_Strike.png"
+   },
+   {
+    "id": "cleanse",
+    "name": "Cleanse",
+    "cost": 2,
+    "kind": "utility",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/d/df/Spell_Cleanse.png/96px-Spell_Cleanse.png"
+   },
+   {
+    "id": "lesser_heal",
+    "name": "Lesser Heal",
+    "cost": 3,
+    "kind": "heal",
+    "hits": [
+     {
+      "label": "heal",
+      "base": 20,
+      "scaling": 80,
+      "heal": true
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/9/9b/Spell_Lesser_Heal.png/96px-Spell_Lesser_Heal.png"
+   },
+   {
+    "id": "bind",
+    "name": "Bind",
+    "cost": 3,
+    "kind": "utility",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/f/f6/Spell_Bind.png/96px-Spell_Bind.png"
+   },
+   {
+    "id": "holy_strike",
+    "name": "Holy Strike",
+    "cost": 4,
+    "kind": "aoe",
+    "hits": [
+     {
+      "label": "strike",
+      "base": 20,
+      "scaling": 100
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/9/92/Spell_Holy_Strike.png/96px-Spell_Holy_Strike.png"
+   },
+   {
+    "id": "holy_light",
+    "name": "Holy Light",
+    "cost": 5,
+    "kind": "heal",
+    "hits": [
+     {
+      "label": "heal",
+      "base": 35,
+      "scaling": 80,
+      "heal": true
+     },
+     {
+      "label": "vs undead/demon",
+      "base": 100,
+      "scaling": 80
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/2/26/Spell_Holy_Light.png/96px-Spell_Holy_Light.png"
+   },
+   {
+    "id": "sanctuary",
+    "name": "Sanctuary",
+    "cost": 6,
+    "kind": "aoe",
+    "hits": [
+     {
+      "label": "pulse heal",
+      "base": 5,
+      "scaling": 50,
+      "heal": true
+     },
+     {
+      "label": "pulse vs evil",
+      "base": 14,
+      "scaling": 50
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/e/e6/Spell_Sanctuary.png/96px-Spell_Sanctuary.png"
+   },
+   {
+    "id": "locust_swarm",
+    "name": "Locust Swarm",
+    "cost": 7,
+    "kind": "dot",
+    "hits": [
+     {
+      "label": "per second",
+      "base": 13,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "earthquake",
+    "name": "Earthquake",
+    "cost": 7,
+    "kind": "aoe",
+    "hits": [
+     {
+      "label": "per step",
+      "base": 7,
+      "scaling": 50
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/b/b1/Spell_Earthquake.png/96px-Spell_Earthquake.png"
+   },
+   {
+    "id": "resurrection",
+    "name": "Resurrection",
+    "cost": 8,
+    "kind": "utility",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/5/56/Spell_Resurrection.png/96px-Spell_Resurrection.png"
+   }
+  ],
+  "warlock": [
+   {
+    "id": "power_of_sacrifice",
+    "name": "Power of Sacrifice",
+    "cost": 1,
+    "kind": "dot",
+    "hits": [
+     {
+      "label": "per tick",
+      "base": 3,
+      "scaling": 0
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/3/3f/Spell_Power_of_Sacrifice.png/96px-Spell_Power_of_Sacrifice.png"
+   },
+   {
+    "id": "curse_of_weakness",
+    "name": "Curse of Weakness",
+    "cost": 1,
+    "kind": "debuff",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/0/04/Spell_Curse_of_Weakness.png/96px-Spell_Curse_of_Weakness.png"
+   },
+   {
+    "id": "bolt_of_darkness",
+    "name": "Bolt of Darkness",
+    "cost": 1,
+    "kind": "projectile",
+    "hits": [
+     {
+      "label": "hit",
+      "base": 20,
+      "scaling": 100
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/3/38/Spell_Bolt_of_Darkness.png/96px-Spell_Bolt_of_Darkness.png"
+   },
+   {
+    "id": "curse_of_pain",
+    "name": "Curse of Pain",
+    "cost": 2,
+    "kind": "dot",
+    "hits": [
+     {
+      "label": "curse",
+      "base": 15,
+      "scaling": 50
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/3/3c/Spell_Curse_of_Pain.png/96px-Spell_Curse_of_Pain.png"
+   },
+   {
+    "id": "bloodstained_blade",
+    "name": "Bloodstained Blade",
+    "cost": 2,
+    "kind": "buff",
+    "hits": [
+     {
+      "label": "on-hit evil",
+      "base": 3,
+      "scaling": 0
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/8/87/Spell_Bloodstained_Blade.png/96px-Spell_Bloodstained_Blade.png"
+   },
+   {
+    "id": "spell_predation",
+    "name": "Spell Predation",
+    "cost": 3,
+    "kind": "utility",
+    "hits": [
+     {
+      "label": "drain",
+      "base": 3,
+      "scaling": 100
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/3/39/Spell_Spell_Predation.png/96px-Spell_Spell_Predation.png"
+   },
+   {
+    "id": "evil_eye",
+    "name": "Evil Eye",
+    "cost": 3,
+    "kind": "utility",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/f/f9/Spell_Evil_Eye.png/96px-Spell_Evil_Eye.png"
+   },
+   {
+    "id": "ray_of_darkness",
+    "name": "Ray of Darkness",
+    "cost": 4,
+    "kind": "dot",
+    "hits": [
+     {
+      "label": "per tick",
+      "base": 12,
+      "scaling": 100
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/c/c9/Spell_Ray_of_Darkness.png/96px-Spell_Ray_of_Darkness.png"
+   },
+   {
+    "id": "life_drain",
+    "name": "Life Drain",
+    "cost": 4,
+    "kind": "heal",
+    "hits": [
+     {
+      "label": "drain/s",
+      "base": 5,
+      "scaling": 25
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/2/23/Spell_Life_Drain.png/96px-Spell_Life_Drain.png"
+   },
+   {
+    "id": "hellfire",
+    "name": "Hellfire",
+    "cost": 4,
+    "kind": "aoe",
+    "hits": [
+     {
+      "label": "blast",
+      "base": 60,
+      "scaling": 50
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/7/77/Spell_Hellfire.png/96px-Spell_Hellfire.png"
+   },
+   {
+    "id": "flame_walker",
+    "name": "Flame Walker",
+    "cost": 5,
+    "kind": "aoe",
+    "hits": [
+     {
+      "label": "per second",
+      "base": 5,
+      "scaling": 100
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/f/fc/Spell_Flame_Walker.png/96px-Spell_Flame_Walker.png"
+   },
+   {
+    "id": "eldritch_shield",
+    "name": "Eldritch Shield",
+    "cost": 5,
+    "kind": "buff",
+    "hits": [
+     {
+      "label": "shield",
+      "base": 25,
+      "scaling": 0
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/2/2e/Spell_Eldritch_Shield.png/96px-Spell_Eldritch_Shield.png"
+   },
+   {
+    "id": "summon_hydra",
+    "name": "Summon Hydra",
+    "cost": 6,
+    "kind": "utility",
+    "hits": [
+     {
+      "label": "hydra bolt",
+      "base": 10,
+      "scaling": 100
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/4/49/Spell_Summon_Hydra.png/96px-Spell_Summon_Hydra.png"
+   }
+  ],
+  "sorcerer": [
+   {
+    "id": "fire_arrow",
+    "name": "Fire Arrow",
+    "cost": 1,
+    "kind": "projectile",
+    "hits": [
+     {
+      "label": "hit",
+      "base": 8,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "stone_skin",
+    "name": "Stone Skin",
+    "cost": 1,
+    "kind": "buff",
+    "hits": []
+   },
+   {
+    "id": "water_bolt",
+    "name": "Water Bolt",
+    "cost": 1,
+    "kind": "projectile",
+    "hits": [
+     {
+      "label": "hit",
+      "base": 15,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "glaciate",
+    "name": "Glaciate",
+    "cost": 1,
+    "kind": "buff",
+    "hits": [
+     {
+      "label": "on-hit ice",
+      "base": 3,
+      "scaling": 50
+     }
+    ]
+   },
+   {
+    "id": "windblast",
+    "name": "Windblast",
+    "cost": 2,
+    "kind": "projectile",
+    "hits": [
+     {
+      "label": "hit",
+      "base": 10,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "eruption",
+    "name": "Eruption",
+    "cost": 2,
+    "kind": "aoe",
+    "hits": [
+     {
+      "label": "blast",
+      "base": 20,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "flamestrike",
+    "name": "Flamestrike",
+    "cost": 2,
+    "kind": "aoe",
+    "hits": [
+     {
+      "label": "strike",
+      "base": 30,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "ice_spear",
+    "name": "Ice Spear",
+    "cost": 2,
+    "kind": "projectile",
+    "hits": [
+     {
+      "label": "hit",
+      "base": 30,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "fire_orb",
+    "name": "Fire Orb",
+    "cost": 3,
+    "kind": "aoe",
+    "hits": [
+     {
+      "label": "per tick",
+      "base": 5,
+      "scaling": 50
+     }
+    ]
+   },
+   {
+    "id": "lightning_bolt",
+    "name": "Lightning Bolt",
+    "cost": 3,
+    "kind": "channeled",
+    "hits": [
+     {
+      "label": "per tick",
+      "base": 7,
+      "scaling": 50
+     }
+    ]
+   },
+   {
+    "id": "vortex",
+    "name": "Vortex",
+    "cost": 4,
+    "kind": "aoe",
+    "hits": [
+     {
+      "label": "hit",
+      "base": 15,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "levitation",
+    "name": "Levitation",
+    "cost": 4,
+    "kind": "utility",
+    "hits": []
+   },
+   {
+    "id": "lightning_sphere",
+    "name": "Lightning Sphere",
+    "cost": 4,
+    "kind": "aoe",
+    "hits": [
+     {
+      "label": "per tick",
+      "base": 5,
+      "scaling": 50
+     }
+    ]
+   },
+   {
+    "id": "summon_earth_elemental",
+    "name": "Summon Earth Elemental",
+    "cost": 5,
+    "kind": "utility",
+    "hits": [
+     {
+      "label": "elemental hit",
+      "base": 40,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "electric_dash",
+    "name": "Electric Dash",
+    "cost": null,
+    "kind": "merged",
+    "hits": [
+     {
+      "label": "dash",
+      "base": 10,
+      "scaling": 100
+     },
+     {
+      "label": "empowered",
+      "base": 15,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "elemental_bolt",
+    "name": "Elemental Bolt",
+    "cost": null,
+    "kind": "merged",
+    "hits": [
+     {
+      "label": "hit",
+      "base": 50,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "flamefrost_spear",
+    "name": "Flamefrost Spear",
+    "cost": null,
+    "kind": "merged",
+    "hits": [
+     {
+      "label": "fire",
+      "base": 30,
+      "scaling": 100
+     },
+     {
+      "label": "ice",
+      "base": 30,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "flamethrower",
+    "name": "Flamethrower",
+    "cost": null,
+    "kind": "merged",
+    "hits": [
+     {
+      "label": "per tick",
+      "base": 20,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "ice_bound",
+    "name": "Ice Bound",
+    "cost": null,
+    "kind": "merged",
+    "hits": []
+   },
+   {
+    "id": "lightning_storm",
+    "name": "Lightning Storm",
+    "cost": null,
+    "kind": "merged",
+    "hits": [
+     {
+      "label": "per tick",
+      "base": 10,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "lightning_vortex",
+    "name": "Lightning Vortex",
+    "cost": null,
+    "kind": "merged",
+    "hits": [
+     {
+      "label": "hit",
+      "base": 20,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "mud_shield",
+    "name": "Mud Shield",
+    "cost": null,
+    "kind": "merged",
+    "hits": []
+   },
+   {
+    "id": "summon_lava_elemental",
+    "name": "Summon Lava Elemental",
+    "cost": null,
+    "kind": "merged",
+    "hits": [
+     {
+      "label": "elemental hit",
+      "base": 10,
+      "scaling": 50
+     }
+    ]
+   },
+   {
+    "id": "thorn_of_earth",
+    "name": "Thorn of Earth",
+    "cost": null,
+    "kind": "merged",
+    "hits": [
+     {
+      "label": "hit",
+      "base": 30,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "wall_of_fire",
+    "name": "Wall of Fire",
+    "cost": null,
+    "kind": "merged",
+    "hits": [
+     {
+      "label": "wall",
+      "base": 10,
+      "scaling": 100
+     },
+     {
+      "label": "burn",
+      "base": 20,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "aqua_prison",
+    "name": "Aqua Prison",
+    "cost": null,
+    "kind": "merged",
+    "hits": [
+     {
+      "label": "hit",
+      "base": 15,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "frost_breath",
+    "name": "Frost Breath",
+    "cost": null,
+    "kind": "merged",
+    "hits": [
+     {
+      "label": "per tick",
+      "base": 20,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "plasma_blast",
+    "name": "Plasma Blast",
+    "cost": null,
+    "kind": "merged",
+    "hits": [
+     {
+      "label": "blast",
+      "base": 50,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "frost_lightning",
+    "name": "Frost Lightning",
+    "cost": null,
+    "kind": "merged",
+    "hits": [
+     {
+      "label": "lightning",
+      "base": 15,
+      "scaling": 100
+     },
+     {
+      "label": "ice",
+      "base": 15,
+      "scaling": 100
+     }
+    ]
+   }
+  ],
+  "druid": [
+   {
+    "id": "natures_touch",
+    "name": "Nature's Touch",
+    "cost": 1,
+    "kind": "heal",
+    "hits": [
+     {
+      "label": "heal",
+      "base": 15,
+      "scaling": 25,
+      "heal": true
+     }
+    ]
+   },
+   {
+    "id": "barkskin_armor",
+    "name": "Barkskin Armor",
+    "cost": 2,
+    "kind": "buff",
+    "hits": []
+   },
+   {
+    "id": "orb_of_nature",
+    "name": "Orb of Nature",
+    "cost": 2,
+    "kind": "projectile",
+    "hits": [
+     {
+      "label": "hit",
+      "base": 15,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "dreamfire",
+    "name": "Dreamfire",
+    "cost": 3,
+    "kind": "aoe",
+    "hits": [
+     {
+      "label": "blast",
+      "base": 15,
+      "scaling": 100
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/0/05/Spell_Dreamfire.png/96px-Spell_Dreamfire.png"
+   },
+   {
+    "id": "thorn_barrier",
+    "name": "Thorn Barrier",
+    "cost": 4,
+    "kind": "aoe",
+    "hits": [
+     {
+      "label": "thorns",
+      "base": 4,
+      "scaling": 0
+     }
+    ]
+   },
+   {
+    "id": "entangling_vines",
+    "name": "Entangling Vines",
+    "cost": 4,
+    "kind": "utility",
+    "hits": []
+   },
+   {
+    "id": "restore",
+    "name": "Restore",
+    "cost": 5,
+    "kind": "heal",
+    "hits": [
+     {
+      "label": "heal",
+      "base": 20,
+      "scaling": 25,
+      "heal": true
+     }
+    ],
+    "icon": "https://www.spellsandguns.com/images/thumb/7/7f/Spell_Restore.png/96px-Spell_Restore.png"
+   },
+   {
+    "id": "summon_treant",
+    "name": "Summon Treant",
+    "cost": 5,
+    "kind": "utility",
+    "hits": [
+     {
+      "label": "treant hit",
+      "base": 35.2,
+      "scaling": 100
+     }
+    ]
+   },
+   {
+    "id": "tree_of_life",
+    "name": "Tree of Life",
+    "cost": 6,
+    "kind": "buff",
+    "hits": [
+     {
+      "label": "heal",
+      "base": 15,
+      "scaling": 0,
+      "heal": true
+     }
+    ]
+   },
+   {
+    "id": "mending_grove",
+    "name": "Mending Grove",
+    "cost": 6,
+    "kind": "aoe",
+    "hits": [
+     {
+      "label": "heal/s",
+      "base": 10,
+      "scaling": 0,
+      "heal": true
+     }
+    ]
+   }
+  ],
+  "bard": [
+   {
+    "id": "rousing_rhythms",
+    "name": "Rousing Rhythms",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/e/e4/Music_Rousing_Rhythms.png/96px-Music_Rousing_Rhythms.png"
+   },
+   {
+    "id": "din_of_darkness",
+    "name": "Din of Darkness",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/d/d9/Music_Din_of_Darkness.png/96px-Music_Din_of_Darkness.png"
+   },
+   {
+    "id": "beats_of_alacrity",
+    "name": "Beats of Alacrity",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/6/61/Music_Beats_of_Alacrity.png/96px-Music_Beats_of_Alacrity.png"
+   },
+   {
+    "id": "allegro",
+    "name": "Allegro",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/8/85/Music_Allegro.png/96px-Music_Allegro.png"
+   },
+   {
+    "id": "accelerando",
+    "name": "Accelerando",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/2/2e/Music_Accelerando.png/96px-Music_Accelerando.png"
+   },
+   {
+    "id": "unchained_harmony",
+    "name": "Unchained Harmony",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/f/fa/Music_Unchained_Harmony.png/96px-Music_Unchained_Harmony.png"
+   },
+   {
+    "id": "shriek_of_weakness",
+    "name": "Shriek of Weakness",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/f/f4/Music_Shriek_of_Weakness.png/96px-Music_Shriek_of_Weakness.png"
+   },
+   {
+    "id": "piercing_shrill",
+    "name": "Piercing Shrill",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/d/d8/Music_Piercing_Shrill.png/96px-Music_Piercing_Shrill.png"
+   },
+   {
+    "id": "banshees_howl",
+    "name": "Banshees Howl",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/d/d8/Music_Banshees_Howl.png/96px-Music_Banshees_Howl.png"
+   },
+   {
+    "id": "song_of_silence",
+    "name": "Song of Silence",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/e/e6/Music_Song_of_Silence.png/96px-Music_Song_of_Silence.png"
+   },
+   {
+    "id": "peacemaking",
+    "name": "Peacemaking",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/1/1f/Music_Peacemaking.png/96px-Music_Peacemaking.png"
+   },
+   {
+    "id": "lament_of_languor",
+    "name": "Lament of Languor",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/d/d3/Music_Lament_of_Languor.png/96px-Music_Lament_of_Languor.png"
+   },
+   {
+    "id": "chaotic_discord",
+    "name": "Chaotic Discord",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/1/13/Music_Chaotic_Discord.png/96px-Music_Chaotic_Discord.png"
+   },
+   {
+    "id": "aria_of_alacrity",
+    "name": "Aria of Alacrity",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/c/ca/Music_Aria_of_Alacrity.png/96px-Music_Aria_of_Alacrity.png"
+   },
+   {
+    "id": "tranquility",
+    "name": "Tranquility",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/c/c3/Music_Tranquility.png/96px-Music_Tranquility.png"
+   },
+   {
+    "id": "song_of_shadow",
+    "name": "Song of Shadow",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/4/43/Music_Song_of_Shadow.png/96px-Music_Song_of_Shadow.png"
+   },
+   {
+    "id": "harmonic_shield",
+    "name": "Harmonic Shield",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/4/46/Music_Harmonic_Shield.png/96px-Music_Harmonic_Shield.png"
+   },
+   {
+    "id": "chorale_of_clarity",
+    "name": "Chorale of Clarity",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/e/e5/Music_Chorale_of_Clarity.png/96px-Music_Chorale_of_Clarity.png"
+   },
+   {
+    "id": "ballad_of_courage",
+    "name": "Ballad of Courage",
+    "cost": null,
+    "kind": "song",
+    "hits": [],
+    "icon": "https://www.spellsandguns.com/images/thumb/a/a4/Music_Ballad_of_Courage.png/96px-Music_Ballad_of_Courage.png"
+   }
+  ]
+ }
 }

@@ -2,9 +2,15 @@ import { useEffect, useMemo, useState } from 'react';
 import { computeStats } from './engine/computeStats';
 import { validateBuild } from './engine/validateBuild';
 import { classes, enchantSlotCount, itemIndex, items, spellBook, statCurves } from './engine/data';
-import { gearTotals, type EnchantChoice, type GearSlotId, type Loadout } from './engine/itemStats';
+import {
+  enchantablePool,
+  gearTotals,
+  type EnchantChoice,
+  type GearSlotId,
+  type Loadout,
+} from './engine/itemStats';
 import { eligibleItems } from './engine/gearRules';
-import { classSpells } from './engine/spells';
+import { classSpells, spellSlots } from './engine/spells';
 import { decodeBuild, encodeBuild, type BuildState } from './engine/buildCodec';
 import { PickList } from './ui/PickList';
 import { StatPanel } from './ui/StatPanel';
@@ -49,7 +55,9 @@ function sanitizeBuild(raw: BuildState): BuildState {
   const skillIds = [...new Set(raw.skillIds)]
     .filter((id) => skillPool.has(id))
     .slice(0, classData.skill_slots);
-  const spellIds = [...new Set(raw.spellIds ?? [])].filter((id) => spellPool.has(id));
+  const spellIds = [...new Set(raw.spellIds ?? [])]
+    .filter((id) => spellPool.has(id))
+    .slice(0, spellSlots(skillIds)); // spells require memory-skill slots
 
   const loadout: UiLoadout = {};
   for (const [slot, eq] of Object.entries(raw.loadout) as [GearSlotId, UiLoadout[GearSlotId]][]) {
@@ -61,9 +69,10 @@ function sanitizeBuild(raw: BuildState): BuildState {
     const slots = enchantSlotCount(item.rarity);
     const enchants: (EnchantChoice | null)[] = Array(slots).fill(null);
     const seen = new Set<string>();
+    const pool = enchantablePool(item); // base stats can't repeat as enchants
     (eq.enchants ?? []).slice(0, slots).forEach((en, idx) => {
       if (!en || seen.has(en.attr)) return;
-      const range = (item.pool ?? []).find(([a]) => a === en.attr);
+      const range = pool.find(([a]) => a === en.attr);
       if (!range) return;
       seen.add(en.attr);
       enchants[idx] = { attr: en.attr, value: Math.min(range[2], Math.max(range[1], en.value)) };
@@ -156,17 +165,23 @@ export default function App() {
   };
 
   const toggleSkill = (id: string) => {
-    setSkillIds((cur) =>
-      cur.includes(id)
+    setSkillIds((cur) => {
+      const next = cur.includes(id)
         ? cur.filter((x) => x !== id)
         : cur.length < classData.skill_slots
           ? [...cur, id]
-          : cur,
-    );
+          : cur;
+      // Dropping a memory skill shrinks the spell slots — trim the overflow.
+      setSpellIds((spells) => spells.slice(0, spellSlots(next)));
+      return next;
+    });
   };
 
   const toggleSpell = (id: string) => {
-    setSpellIds((cur) => (cur.includes(id) ? cur.filter((x) => x !== id) : [...cur, id]));
+    setSpellIds((cur) => {
+      if (cur.includes(id)) return cur.filter((x) => x !== id);
+      return cur.length < spellSlots(skillIds) ? [...cur, id] : cur;
+    });
   };
 
   const switchClass = (id: string) => {
@@ -272,6 +287,7 @@ export default function App() {
               <SpellPanel
                 spells={spells}
                 selectedIds={spellIds}
+                skillIds={skillIds}
                 memoryCapacity={stats.memoryCapacity}
                 onToggle={toggleSpell}
               />

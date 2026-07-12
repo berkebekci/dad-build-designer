@@ -3,12 +3,22 @@ import type { ClassData } from '../engine/types';
 import {
   GEAR_SLOTS,
   attrLabel,
+  enchantablePool,
   type EnchantChoice,
   type GearSlotId,
   type ItemRecord,
 } from '../engine/itemStats';
 import { eligibleItems, isTwoHanded } from '../engine/gearRules';
-import { enchantSlotCount, itemIndex, items, rarityColor, rarityOrder } from '../engine/data';
+import {
+  enchantSlotCount,
+  itemIcons,
+  itemIndex,
+  items,
+  rarityColor,
+  rarityOrder,
+  rarityTiers,
+} from '../engine/data';
+import { NumberField } from './NumberField';
 
 /** UI-side loadout: enchant rows may be empty (null) until the user picks. */
 export interface UiEquipped {
@@ -51,14 +61,26 @@ function carryEnchants(
   const slots = enchantSlotCount(newItem.rarity);
   const out: (EnchantChoice | null)[] = Array(slots).fill(null);
   if (!old) return out;
+  const pool = enchantablePool(newItem);
   let i = 0;
   for (const en of old.enchants) {
     if (!en || i >= slots) continue;
-    const range = (newItem.pool ?? []).find(([a]) => a === en.attr);
+    const range = pool.find(([a]) => a === en.attr);
     if (!range) continue;
     out[i++] = { attr: en.attr, value: Math.min(range[2], Math.max(range[1], en.value)) };
   }
   return out;
+}
+
+/** An archetype that exists in a single rarity is a named/crafted variant. */
+function isNamed(variants: ItemRecord[]): boolean {
+  return variants.length === 1;
+}
+
+function ItemIcon({ name }: { name: string }) {
+  const url = itemIcons[name];
+  if (url) return <img className="item-icon" src={url} alt="" loading="lazy" />;
+  return <span className="item-icon item-icon--fallback">{name[0]}</span>;
 }
 
 /** Rarity chips for one archetype; the equipped rarity is highlighted. */
@@ -106,6 +128,7 @@ function ItemPicker({
   const [query, setQuery] = useState('');
   const [pickedName, setPickedName] = useState<string | null>(null);
   const [focused, setFocused] = useState(false);
+  const [rarityFilter, setRarityFilter] = useState<string | null>(null);
 
   // One entry per archetype name, variants sorted by rarity.
   const byName = useMemo(() => {
@@ -126,6 +149,7 @@ function ItemPicker({
     return (
       <div className="itempicker">
         <div className="itempicker-equipped">
+          <ItemIcon name={equippedItem.name} />
           <span className="item-name" style={{ color: rarityColor(equippedItem.rarity) }}>
             {equippedItem.name}
           </span>
@@ -140,19 +164,21 @@ function ItemPicker({
   }
 
   // With an empty query the FULL archetype list opens on focus (scrollable),
-  // so newcomers can browse; typing narrows it down.
+  // so newcomers can browse; typing or the rarity filter narrows it down.
+  const names = [...byName.keys()].filter(
+    (n) => !rarityFilter || byName.get(n)!.some((v) => v.rarity === rarityFilter),
+  );
   const matches = query.trim()
-    ? [...byName.keys()]
-        .filter((n) => n.toLowerCase().includes(query.trim().toLowerCase()))
-        .slice(0, MAX_SUGGESTIONS)
-    : focused
-      ? [...byName.keys()]
+    ? names.filter((n) => n.toLowerCase().includes(query.trim().toLowerCase())).slice(0, MAX_SUGGESTIONS)
+    : focused || rarityFilter !== null
+      ? names
       : [];
 
   if (pickedName && byName.has(pickedName)) {
     return (
       <div className="itempicker">
         <div className="itempicker-equipped">
+          <ItemIcon name={pickedName} />
           <span className="item-name">{pickedName}</span>
           <button type="button" className="clear-btn" onClick={() => setPickedName(null)}>
             ×
@@ -186,20 +212,60 @@ function ItemPicker({
         }}
         aria-label={`Search item for ${SLOT_LABELS[slot]}`}
       />
+      {(focused || rarityFilter !== null) && (
+        // onMouseDown keeps the input focused so blur doesn't close the row first
+        <div className="rarity-filter" onMouseDown={(e) => e.preventDefault()}>
+          <button
+            type="button"
+            className={`rarity-chip${rarityFilter === null ? ' rarity-chip--active' : ''}`}
+            onClick={() => setRarityFilter(null)}
+          >
+            all
+          </button>
+          {rarityTiers
+            .filter((t) => t.order >= 2)
+            .map((t) => (
+              <button
+                key={t.id}
+                type="button"
+                className={`rarity-chip${rarityFilter === t.id ? ' rarity-chip--active' : ''}`}
+                style={{ borderColor: t.color, color: t.color }}
+                onClick={() => setRarityFilter(rarityFilter === t.id ? null : t.id)}
+              >
+                {t.id}
+              </button>
+            ))}
+        </div>
+      )}
       {matches.length > 0 && (
         <ul className="suggestions">
-          {matches.map((name) => (
-            <li key={name}>
-              {/* onMouseDown keeps the input focused so blur doesn't close the list first */}
-              <button
-                type="button"
-                onMouseDown={(e) => e.preventDefault()}
-                onClick={() => setPickedName(name)}
-              >
-                {name}
-              </button>
-            </li>
-          ))}
+          {matches.map((name) => {
+            const variants = byName.get(name)!;
+            return (
+              <li key={name}>
+                {/* onMouseDown keeps the input focused so blur doesn't close the list first */}
+                <button
+                  type="button"
+                  onMouseDown={(e) => e.preventDefault()}
+                  onClick={() => setPickedName(name)}
+                >
+                  <ItemIcon name={name} />
+                  <span className="suggestion-name">{name}</span>
+                  {isNamed(variants) && (
+                    <span
+                      className="named-badge"
+                      style={{
+                        borderColor: rarityColor(variants[0]!.rarity),
+                        color: rarityColor(variants[0]!.rarity),
+                      }}
+                    >
+                      named · {variants[0]!.rarity}
+                    </span>
+                  )}
+                </button>
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>
@@ -217,7 +283,8 @@ function EnchantRow({
   usedAttrs: Set<string>;
   onPick: (next: EnchantChoice | null) => void;
 }) {
-  const pool = item.pool ?? [];
+  // Game rule: base stats can't repeat as enchantments (enchantablePool).
+  const pool = enchantablePool(item);
   const range = choice ? pool.find(([a]) => a === choice.attr) : undefined;
 
   return (
@@ -244,17 +311,13 @@ function EnchantRow({
           ))}
       </select>
       {choice && range && (
-        <input
-          type="number"
+        <NumberField
           value={choice.value}
           min={range[1]}
           max={range[2]}
           step={Number.isInteger(range[1]) && Number.isInteger(range[2]) ? 1 : 0.1}
-          onChange={(e) => {
-            const v = Number(e.target.value);
-            if (!Number.isFinite(v)) return;
-            onPick({ attr: choice.attr, value: Math.min(range[2], Math.max(range[1], v)) });
-          }}
+          onChange={(v) => onPick({ attr: choice.attr, value: v })}
+          ariaLabel={`${attrLabel(choice.attr)} roll`}
         />
       )}
     </div>

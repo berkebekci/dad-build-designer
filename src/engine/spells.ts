@@ -27,6 +27,16 @@ export interface SpellData {
   cost: number | null;
   kind: string;
   hits: SpellHit[];
+  icon?: string;
+}
+
+/** Skills that grant spell/song slots — each provides 5 slots (game rule). */
+const MEMORY_SKILL = /^(spell_memory|music_memory|sorcery)/;
+
+export const SLOTS_PER_MEMORY_SKILL = 5;
+
+export function spellSlots(skillIds: string[]): number {
+  return skillIds.filter((id) => MEMORY_SKILL.test(id)).length * SLOTS_PER_MEMORY_SKILL;
 }
 
 export type SpellBook = Record<string, SpellData[]>;

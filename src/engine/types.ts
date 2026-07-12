@@ -16,12 +16,14 @@ export interface PerkData {
   id: string;
   name: string;
   effect: string;
+  icon?: string;
 }
 
 export interface SkillData {
   id: string;
   name: string;
   effect: string;
+  icon?: string;
 }
 
 export interface ClassData {

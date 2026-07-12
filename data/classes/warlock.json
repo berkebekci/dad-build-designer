@@ -32,94 +32,112 @@
     {
       "id": "antimagic",
       "name": "Antimagic",
-      "effect": "+20% Damage Reduction against all magical elements except Divine, Curse and Neutral"
+      "effect": "+20% Damage Reduction against all magical elements except Divine, Curse and Neutral",
+      "icon": "https://cdn.darkerdb.com/codex/6412df3b7476a7a892e076828ba5d9ce466919bebb3ce624a569cd709d8b0153"
     },
     {
       "id": "curse_mastery",
       "name": "Curse Mastery",
-      "effect": "Extends curse durations (Curse of Pain 10.4s, Curse of Weakness 15s, Power of Sacrifice 15.6s)"
+      "effect": "Extends curse durations (Curse of Pain 10.4s, Curse of Weakness 15s, Power of Sacrifice 15.6s)",
+      "icon": "https://www.spellsandguns.com/images/thumb/d/dd/Perk_Curse_Mastery.png/96px-Perk_Curse_Mastery.png"
     },
     {
       "id": "dark_enhancement",
       "name": "Dark Enhancement",
-      "effect": "+20% Dark Power Bonus for dark magic spells"
+      "effect": "+20% Dark Power Bonus for dark magic spells",
+      "icon": "https://www.spellsandguns.com/images/thumb/8/83/Perk_Dark_Enhancement.png/96px-Perk_Dark_Enhancement.png"
     },
     {
       "id": "dark_reflection",
       "name": "Dark Reflection",
-      "effect": "Reflect 15 Dark Magical Base Damage (25% scaling) to melee attackers"
+      "effect": "Reflect 15 Dark Magical Base Damage (25% scaling) to melee attackers",
+      "icon": "https://www.spellsandguns.com/images/thumb/7/74/Perk_Dark_Reflection.png/96px-Perk_Dark_Reflection.png"
     },
     {
       "id": "demon_armor",
       "name": "Demon Armor",
-      "effect": "Gain the ability to equip plate armor; -10% Spell Casting Speed"
+      "effect": "Gain the ability to equip plate armor; -10% Spell Casting Speed",
+      "icon": "https://www.spellsandguns.com/images/thumb/5/54/Perk_Demon_Armor.png/96px-Perk_Demon_Armor.png"
     },
     {
       "id": "immortal_lament",
       "name": "Immortal Lament",
-      "effect": "Own spells cannot reduce health below 1; healing boost below 5% health"
+      "effect": "Own spells cannot reduce health below 1; healing boost below 5% health",
+      "icon": "https://www.spellsandguns.com/images/thumb/1/1b/Perk_Immortal_Lament.png/96px-Perk_Immortal_Lament.png"
     },
     {
       "id": "infernal_pledge",
       "name": "Infernal Pledge",
-      "effect": "+10% damage reduction and +15% damage bonus vs Undead and Demon races"
+      "effect": "+10% damage reduction and +15% damage bonus vs Undead and Demon races",
+      "icon": "https://www.spellsandguns.com/images/thumb/3/3a/Perk_Infernal_Pledge.png/96px-Perk_Infernal_Pledge.png"
     },
     {
       "id": "malice",
       "name": "Malice",
-      "effect": "+15% Will Bonus"
+      "effect": "+15% Will Bonus",
+      "icon": "https://www.spellsandguns.com/images/thumb/c/c1/Perk_Malice.png/96px-Perk_Malice.png"
     },
     {
       "id": "shadow_touch",
       "name": "Shadow Touch",
-      "effect": "Melee attacks deal dark damage and heal you"
+      "effect": "Melee attacks deal dark damage and heal you",
+      "icon": "https://www.spellsandguns.com/images/thumb/6/6b/Perk_Shadow_Touch.png/96px-Perk_Shadow_Touch.png"
     },
     {
       "id": "soul_collector",
       "name": "Soul Collector",
-      "effect": "Final blows collect a darkness shard"
+      "effect": "Final blows collect a darkness shard",
+      "icon": "https://cdn.darkerdb.com/codex/814ac50169e90d2453582c134c219d9b2c5bc7b4b7e58288708db1aaa975e371"
     },
     {
       "id": "torture_mastery",
       "name": "Torture Mastery",
-      "effect": "Curse damage ticks heal you; spells cost 2x health"
+      "effect": "Curse damage ticks heal you; spells cost 2x health",
+      "icon": "https://cdn.darkerdb.com/codex/45fb50348b72805b3c350e62976ef95e950359d0ec9491ec7fcaa2eb0e3eadcd"
     },
     {
       "id": "vampirism",
       "name": "Vampirism",
-      "effect": "+20% Outgoing Magical Healing Mod"
+      "effect": "+20% Outgoing Magical Healing Mod",
+      "icon": "https://cdn.darkerdb.com/codex/4a1c49327dd1976b303996810f8b31d61f1cd511defbcb6e6efb424e024685e0"
     }
   ],
   "skills": [
     {
       "id": "blood_pact",
       "name": "Blood Pact",
-      "effect": "Take the form of your contracted demon, gaining an additional max health, armor rating, and magic resistance. Your entire body is covered in Abyssal Flame, taking damage per second and dealing magical damage per second to nearby characters. Once activated, the effect cannot be stopped until the contract is complete. Additionally, by consuming Darkness Shards, you gain all attributes, dark magical damage bonus for each Darkness Shard consumed. When you become a demon your skills change to demon-only skills. Left-Click: Use equipped item. If no item is equipped, then performs bare-handed attack. Perform up to 4 combo attacks using both hands. Right-Click: Use equipped item. If no item is equipped, then fires a bolt of darkness."
+      "effect": "Take the form of your contracted demon, gaining an additional max health, armor rating, and magic resistance. Your entire body is covered in Abyssal Flame, taking damage per second and dealing magical damage per second to nearby characters. Once activated, the effect cannot be stopped until the contract is complete. Additionally, by consuming Darkness Shards, you gain all attributes, dark magical damage bonus for each Darkness Shard consumed. When you become a demon your skills change to demon-only skills. Left-Click: Use equipped item. If no item is equipped, then performs bare-handed attack. Perform up to 4 combo attacks using both hands. Right-Click: Use equipped item. If no item is equipped, then fires a bolt of darkness.",
+      "icon": "https://cdn.darkerdb.com/codex/42a8400b1dd6fc3d56a29b404d6261846319b3094ab8ba89ffb2b76e01d2cffa"
     },
     {
       "id": "blow_of_corruption",
       "name": "Blow of Corruption",
-      "effect": "Your next physical attack deals evil magical damage to the target and reduces their incoming physical healing by and incoming magical healing by for seconds. Cooldown: seconds"
+      "effect": "Your next physical attack deals evil magical damage to the target and reduces their incoming physical healing by and incoming magical healing by for seconds. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/009f869082945b5dde75a73f8dd08e44e12bddcee43024fbd61978fa8af1eb3b"
     },
     {
       "id": "dark_offering",
       "name": "Dark Offering",
-      "effect": "Channel your mind, sacrificing of your max health per second to gain magical damage bonus and physical damage bonus. This bonus lasts for seconds. Cooldown: seconds"
+      "effect": "Channel your mind, sacrificing of your max health per second to gain magical damage bonus and physical damage bonus. This bonus lasts for seconds. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/bedd83f081e83a5fa96aa1873c9479c017291b68f9a9f58fe7dd82cf2c91b4cf"
     },
     {
       "id": "phantomize",
       "name": "Phantomize",
-      "effect": "Phase through melee attacks and projectiles for seconds. While active, gain move speed bonus and lose magical damage reduction. During this period you can only move and do not collide with other players or monsters. Cooldown: seconds"
+      "effect": "Phase through melee attacks and projectiles for seconds. While active, gain move speed bonus and lose magical damage reduction. During this period you can only move and do not collide with other players or monsters. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/0041802f79e4734577f401c9da519d10f3e2462ecc409fac218604a59ad1a1fc"
     },
     {
       "id": "spell_memory1",
       "name": "Spell Memory I",
-      "effect": "Gain the ability to memorize spells to use in the dungeon."
+      "effect": "Gain the ability to memorize spells to use in the dungeon.",
+      "icon": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105"
     },
     {
       "id": "spell_memory2",
       "name": "Spell Memory II",
-      "effect": "Gain the ability to memorize additional spells to use in the dungeon."
+      "effect": "Gain the ability to memorize additional spells to use in the dungeon.",
+      "icon": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105"
     }
   ],
   "weapons": {

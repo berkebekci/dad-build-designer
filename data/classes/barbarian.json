@@ -25,67 +25,80 @@
     {
       "id": "axe_specialization",
       "name": "Axe Specialization",
-      "effect": "While using axes: +3 Physical Buff Weapon Damage"
+      "effect": "While using axes: +3 Physical Buff Weapon Damage",
+      "icon": "https://www.spellsandguns.com/images/thumb/a/a7/Perk_Axe_Specialization.png/96px-Perk_Axe_Specialization.png"
     },
     {
       "id": "berserker",
       "name": "Berserker",
-      "effect": "+2% Physical Power Bonus and +0.5% Move Speed Bonus for every 10% of max health missing (up to 20% / 5%)"
+      "effect": "+2% Physical Power Bonus and +0.5% Move Speed Bonus for every 10% of max health missing (up to 20% / 5%)",
+      "icon": "https://cdn.darkerdb.com/codex/2727ef23e7057c6af402911c4f8ca6fc4c53c4dc1806991b1382892596c76daa"
     },
     {
       "id": "carnage",
       "name": "Carnage",
-      "effect": "After striking 2+ players within 1.5s: +40% Physical Power Bonus for 3s"
+      "effect": "After striking 2+ players within 1.5s: +40% Physical Power Bonus for 3s",
+      "icon": "https://www.spellsandguns.com/images/thumb/f/f1/Perk_Carnage.png/96px-Perk_Carnage.png"
     },
     {
       "id": "crush",
       "name": "Crush",
-      "effect": "Destroy unreinforced containers in one strike with two-handed weapons; +1 Impact Power on two-handed attacks"
+      "effect": "Destroy unreinforced containers in one strike with two-handed weapons; +1 Impact Power on two-handed attacks",
+      "icon": "https://cdn.darkerdb.com/codex/60c6d9724b96fcc518a0b432e8d393b006e8d4ae612878d0a10cf72306759469"
     },
     {
       "id": "executioner",
       "name": "Executioner",
-      "effect": "+20% Headshot Damage Modifier with axes"
+      "effect": "+20% Headshot Damage Modifier with axes",
+      "icon": "https://www.spellsandguns.com/images/thumb/2/29/Perk_Executioner.png/96px-Perk_Executioner.png"
     },
     {
       "id": "heavy_swing",
       "name": "Heavy Swing",
-      "effect": "Targets you hit suffer 2x duration of movement speed reduction effects"
+      "effect": "Targets you hit suffer 2x duration of movement speed reduction effects",
+      "icon": "https://www.spellsandguns.com/images/thumb/6/67/Perk_Heavy_Swing.png/96px-Perk_Heavy_Swing.png"
     },
     {
       "id": "iron_will",
       "name": "Iron Will",
-      "effect": "+75 Magical Resistance and knockback immunity"
+      "effect": "+75 Magical Resistance and knockback immunity",
+      "icon": "https://cdn.darkerdb.com/codex/6f5ca3ce7fb01cd18d43f623bb55a7274e7f5347fd553a3ed3321b1f11d501a1"
     },
     {
       "id": "morale_boost",
       "name": "Morale Boost",
-      "effect": "25% Max Health healing after killing a player"
+      "effect": "25% Max Health healing after killing a player",
+      "icon": "https://www.spellsandguns.com/images/thumb/8/82/Perk_Morale_Boost.png/96px-Perk_Morale_Boost.png"
     },
     {
       "id": "potion_chugger",
       "name": "Potion Chugger",
-      "effect": "1.2x healing and shielding potency from potions, with reduced duration"
+      "effect": "1.2x healing and shielding potency from potions, with reduced duration",
+      "icon": "https://www.spellsandguns.com/images/thumb/6/6b/Perk_Potion_Chugger.png/96px-Perk_Potion_Chugger.png"
     },
     {
       "id": "robust",
       "name": "Robust",
-      "effect": "+10% Max Health Bonus"
+      "effect": "+10% Max Health Bonus",
+      "icon": "https://cdn.darkerdb.com/codex/96e659cc7ecf6e4c96311aef2b6a245ac9721c47fcca1bd59f59993399f4c8ab"
     },
     {
       "id": "savage",
       "name": "Savage",
-      "effect": "Without chest armor: +10% Physical Power Bonus and +1 Impact Power"
+      "effect": "Without chest armor: +10% Physical Power Bonus and +1 Impact Power",
+      "icon": "https://www.spellsandguns.com/images/thumb/5/55/Perk_Savage.png/96px-Perk_Savage.png"
     },
     {
       "id": "skull_splitter",
       "name": "Skull Splitter",
-      "effect": "Headshots inflict Bleed: 12 damage over 4s"
+      "effect": "Headshots inflict Bleed: 12 damage over 4s",
+      "icon": "https://www.spellsandguns.com/images/thumb/3/39/Perk_Skull_Splitter.png/96px-Perk_Skull_Splitter.png"
     },
     {
       "id": "treacherous_lungs",
       "name": "Treacherous Lungs",
-      "effect": "Shout abilities last 1.5x longer"
+      "effect": "Shout abilities last 1.5x longer",
+      "icon": "https://www.spellsandguns.com/images/thumb/1/1d/Perk_Treacherous_Lungs.png/96px-Perk_Treacherous_Lungs.png"
     },
     {
       "id": "two_hander",
@@ -97,57 +110,68 @@
     {
       "id": "achilles_strike",
       "name": "Achilles Strike",
-      "effect": "Strike a target, reducing their move speed bonus by for seconds. While debuffed, each time the target moves they receive physical damage. Cooldown: seconds"
+      "effect": "Strike a target, reducing their move speed bonus by for seconds. While debuffed, each time the target moves they receive physical damage. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/192a6bd855a9f46829d021cb2fc8cc7af0f0b810680456bef88f08a69d0c63ce"
     },
     {
       "id": "blood_exchange",
       "name": "Blood Exchange",
-      "effect": "Lose of maximum health, but gain action speed for seconds and heal for of damage dealt while active. Cooldown: seconds"
+      "effect": "Lose of maximum health, but gain action speed for seconds and heal for of damage dealt while active. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/fe1543a06a0e3e869444ea59294ebd922fabfebdebc9a9a3ca61aedd938861fd"
     },
     {
       "id": "finishing_blow",
       "name": "Finishing Blow",
-      "effect": "Your next attack deals an additional true physical damage. If the target’s health is or lower after the attack, they are instantly killed. Cooldown: seconds"
+      "effect": "Your next attack deals an additional true physical damage. If the target’s health is or lower after the attack, they are instantly killed. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/ec33a5869dd363fa40c335b1e61649c3fdb6a0963b9afc57ceefe05bde88f730"
     },
     {
       "id": "grappling_hook",
       "name": "Grappling Hook",
-      "effect": "Throws a grappling rope at a target up to 4m away, pulling them toward you. Cooldown: seconds"
+      "effect": "Throws a grappling rope at a target up to 4m away, pulling them toward you. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/4d5c712ddc1c1588b0d77790140ec437d3ebc2766c758ef01ff5c0700947f95e"
     },
     {
       "id": "hurl_weapon",
       "name": "Hurl Weapon",
-      "effect": "Throws an axe to deal weapon damage. Can only be used when an axe is equipped as your primary weapon. Cooldown: seconds"
+      "effect": "Throws an axe to deal weapon damage. Can only be used when an axe is equipped as your primary weapon. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/37d5e36822b85d3462ae30937ab51bcf813379802e857d3b36f663463e8379a9"
     },
     {
       "id": "rage",
       "name": "Rage",
-      "effect": "Gain strength, move speed bonus. While active, lose physical damage reduction for seconds. Cooldown: seconds"
+      "effect": "Gain strength, move speed bonus. While active, lose physical damage reduction for seconds. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/9ae89aee72743d8e812fb8601250631d8dc34cf98280e1d54341bfbe4fa698f3"
     },
     {
       "id": "reckless_attack",
       "name": "Reckless Attack",
-      "effect": "Grants an additional armor penetration on your next attack, but reduces your armor rating by while active. The effect is consumed when you hit a target or object with a melee attack. Cooldown: seconds"
+      "effect": "Grants an additional armor penetration on your next attack, but reduces your armor rating by while active. The effect is consumed when you hit a target or object with a melee attack. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/673dd415c3771623e40dc06a01099cac62da03f73545726a69b8879cca0fff71"
     },
     {
       "id": "savage_roar",
       "name": "Savage Roar",
-      "effect": "Frightens all enemies within a 7.5m range radius for seconds reducing their physical damage bonus by and move speed bonus by. Cooldown: seconds"
+      "effect": "Frightens all enemies within a 7.5m range radius for seconds reducing their physical damage bonus by and move speed bonus by. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/36b6c2612efb80605ecc44387cef80681f364351cd6db3a104653e9a4e495447"
     },
     {
       "id": "war_cry",
       "name": "War Cry",
-      "effect": "Gain max health bonus for seconds. This effect applies to yourself and allies within a 7.5m radius. Cooldown: seconds"
+      "effect": "Gain max health bonus for seconds. This effect applies to yourself and allies within a 7.5m radius. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/c12c5cdfcaf24bb19bcc1f267988cbf68078ef8b577d3ef3b14f398f2bdf3294"
     },
     {
       "id": "war_sacrifice",
       "name": "War Sacrifice",
-      "effect": "While active, gain all attributes. In exchange, lose of your maximum health over seconds. Cooldown: seconds"
+      "effect": "While active, gain all attributes. In exchange, lose of your maximum health over seconds. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/223344649296f8c9d81219aa8955c47b028f2fa38443bd2001c0751f45059817"
     },
     {
       "id": "whirlwind",
       "name": "Whirlwind",
-      "effect": "Spin rapidly with a two-handed weapon, dealing of weapon damage to all nearby enemies. While spinning, your weapon cannot be interrupted by any impact. Cooldown: seconds"
+      "effect": "Spin rapidly with a two-handed weapon, dealing of weapon damage to all nearby enemies. While spinning, your weapon cannot be interrupted by any impact. Cooldown: seconds",
+      "icon": "https://cdn.darkerdb.com/codex/21e15495e2adbf1242df738ecc2c7a67102b4a2a0ce19943ce8e2d7611da3f3d"
     }
   ],
   "weapons": {
