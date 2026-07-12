@@ -67,14 +67,17 @@ export type FlatBucket =
   | 'armorRating'
   | 'moveSpeedAdd'
   | 'weaponDamage'
+  | 'gearWeaponDamage'
   | 'magicWeaponDamage'
   | 'flatPhysicalPower'
   | 'flatMagicalPower'
   | 'magicResistanceAdd'
   | 'memoryCapacityAdd'
   | 'maxHealthAdd'
-  | 'physicalDamageAdd'
-  | 'magicalDamageAdd'
+  | 'additionalPhysicalDamage'
+  | 'truePhysicalDamage'
+  | 'additionalMagicalDamage'
+  | 'trueMagicalDamage'
   | 'luck';
 
 export type PercentStat =
@@ -120,18 +123,22 @@ export const ATTR_RULES: Record<string, AttrRule> = {
   move_speed: { kind: 'flat', bucket: 'moveSpeedAdd' },
   additional_move_speed: { kind: 'flat', bucket: 'moveSpeedAdd' },
   weapon_damage: { kind: 'flat', bucket: 'weaponDamage' },
-  additional_weapon_damage: { kind: 'flat', bucket: 'weaponDamage' },
+  // "Gear Weapon Damage" applies AFTER combo/zone scaling in the damage formula,
+  // so enchant weapon-damage lives in its own bucket.
+  additional_weapon_damage: { kind: 'flat', bucket: 'gearWeaponDamage' },
   magic_weapon_damage: { kind: 'flat', bucket: 'magicWeaponDamage' },
   physical_power: { kind: 'flat', bucket: 'flatPhysicalPower' },
   magical_power: { kind: 'flat', bucket: 'flatMagicalPower' },
   magic_resistance: { kind: 'flat', bucket: 'magicResistanceAdd' },
   additional_memory_capacity: { kind: 'flat', bucket: 'memoryCapacityAdd' },
   max_health: { kind: 'flat', bucket: 'maxHealthAdd' },
-  additional_physical_damage: { kind: 'flat', bucket: 'physicalDamageAdd' },
-  true_physical_damage: { kind: 'flat', bucket: 'physicalDamageAdd' },
-  additional_magical_damage: { kind: 'flat', bucket: 'magicalDamageAdd' },
-  true_magical_damage: { kind: 'flat', bucket: 'magicalDamageAdd' },
-  magical_damage: { kind: 'flat', bucket: 'magicalDamageAdd' },
+  // "Additional Damage" adds after the power bonus; "True Damage" bypasses
+  // reductions entirely — both matter for the damage simulator.
+  additional_physical_damage: { kind: 'flat', bucket: 'additionalPhysicalDamage' },
+  true_physical_damage: { kind: 'flat', bucket: 'truePhysicalDamage' },
+  additional_magical_damage: { kind: 'flat', bucket: 'additionalMagicalDamage' },
+  true_magical_damage: { kind: 'flat', bucket: 'trueMagicalDamage' },
+  magical_damage: { kind: 'flat', bucket: 'additionalMagicalDamage' },
   luck: { kind: 'flat', bucket: 'luck' },
 
   action_speed: { kind: 'percent', stat: 'actionSpeedPct' },
@@ -195,14 +202,17 @@ function emptyTotals(): GearTotals {
       armorRating: 0,
       moveSpeedAdd: 0,
       weaponDamage: 0,
+      gearWeaponDamage: 0,
       magicWeaponDamage: 0,
       flatPhysicalPower: 0,
       flatMagicalPower: 0,
       magicResistanceAdd: 0,
       memoryCapacityAdd: 0,
       maxHealthAdd: 0,
-      physicalDamageAdd: 0,
-      magicalDamageAdd: 0,
+      additionalPhysicalDamage: 0,
+      truePhysicalDamage: 0,
+      additionalMagicalDamage: 0,
+      trueMagicalDamage: 0,
       luck: 0,
     },
     percents: {},

@@ -1,0 +1,17 @@
+{
+  "_meta": {
+    "source": "darkanddarker.wiki.spellsandguns.com/Damage",
+    "fetched_at": "2026-07-12",
+    "formula": "(((Base + BuffWeaponDmg) * Combo * Zone + GearWeaponDmg) * (1 + PowerBonus) + AdditionalDmg) * (1 + HitLocationBonus) * (1 - DR * (1 + DRMod) * (1 - Pen)) + TrueDmg",
+    "penetration_rule": "effective DR = target DR * (1 - attacker penetration); pen can only help the attacker (floor at unmodified 1-DR)",
+    "notes": "AoE and DoT sources ignore zone multipliers. Race bonus/reduction and projectile falloff are not modeled yet."
+  },
+  "hit_zones": {
+    "head": 1.5,
+    "body": 1.0,
+    "arms": 0.8,
+    "hands": 0.7,
+    "legs": 0.6,
+    "feet": 0.5
+  }
+}

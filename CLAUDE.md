@@ -57,9 +57,26 @@ hazır sonuç fırlatma; kararları gerekçeleriyle anlat. Açıklamalar Türkç
     malzeme fallback. Perk kancaları (`perk_gear_hooks`): weapon_mastery→tüm silahlar,
     slayer→plate yasak, demon_armor→plate açılır, spear_proficiency→mızraklar.
   - 48 birim testi yeşil; prod build ✓ (chunk uyarısı: items.json 1.5MB → ileride code-split).
-- Sıradaki fikirler (Faz 6): DPS/efektif-HP metrikleri; skill açıklamalarında API şablon
-  boşlukları ("Cooldown: seconds" — sayılar eksik, wiki'den tamamlanabilir); items.json
-  dynamic import; sınıf ikonları (API icon_url alanları mevcut).
+- Faz 6 tamam (kullanıcının 5 önerisi, 2026-07-12):
+  1. Item seçici yeniden tasarlandı: arama → arketip önerisi → renkli rarity çipleri
+     (`ItemPicker`, GearPanel.tsx). Rarity değişince enchant'lar korunur, yeni havuza
+     kelepçelenir (`carryEnchants`).
+  2. Max Health & Move Speed tam sayı gösterimi (Math.round); MS yanında oyun yüzdesi
+     (330 MS = %100).
+  3. Silah vuruş kombosu hasarları: `data/rules/weapon_hits.json` (35 silah, wiki
+     "Impact Zones" hücrelerinden birebir; riposte dahil). Eksik silahlar tek %100
+     vuruş fallback'i alır (Haze Blade, Magic/Ceremonial Staff, Pavise, shield bash).
+  4. Hasar simülatörü: `engine/damage.ts` — wiki'nin resmî formül sırası; dummy PDR/MDR/
+     headshot-reduction ayarlı; bölge çarpanları `data/rules/combat.json`
+     (head 1.5, body 1.0, arms 0.8, hands 0.7, legs 0.6, feet 0.5). UI: DamageSimPanel.
+  5. Armor/Magic Penetration hesaba dahil: effDR = DR × (1 − pen) (pen yalnızca saldırana
+     yarar). Headshot Damage Bonus (gear) kafa vuruşlarına uygulanır.
+  - ÖNEMLİ refaktör: additional_ ve true_ hasarlar AYRI kovalarda (formülde farklı
+    aşamalarda girerler); additional_weapon_damage artık gearWeaponDamage (combo/zone
+    SONRASI eklenir). 59 test yeşil.
+- Kalan fikirler: DPS/eHP metrikleri; skill açıklamalarında API şablon boşlukları
+  ("Cooldown: seconds"); items.json dynamic import; sınıf ikonları; off-hand/shield
+  vuruşları; Buff Weapon Damage (perk) hasar entegrasyonu.
 - TODO'lar JSON dosyalarının `_todo` alanlarında ve docs/kaynaklar.md'de.
 
 ## Oyun kuralları özeti

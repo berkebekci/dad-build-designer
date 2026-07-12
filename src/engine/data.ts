@@ -15,10 +15,13 @@ import sorcererJson from '../../data/classes/sorcerer.json';
 import warlockJson from '../../data/classes/warlock.json';
 import wizardJson from '../../data/classes/wizard.json';
 import rarityJson from '../../data/rules/rarity_enchantments.json';
+import combatJson from '../../data/rules/combat.json';
+import weaponHitsJson from '../../data/rules/weapon_hits.json';
 import itemsJson from '../../data/items/items.json';
 import type { CurveSet } from './computeStats';
 import type { ClassData } from './types';
 import type { ItemRecord } from './itemStats';
+import type { CombatRules, WeaponHitsTable } from './damage';
 
 export const statCurves = statCurvesJson as unknown as CurveSet;
 
@@ -69,3 +72,7 @@ export function rarityColor(rarity: string): string {
 export const items = (itemsJson as unknown as { items: ItemRecord[] }).items;
 
 export const itemIndex: Map<string, ItemRecord> = new Map(items.map((i) => [i.id, i]));
+
+export const combatRules = combatJson as unknown as CombatRules;
+
+export const weaponHits = weaponHitsJson as unknown as WeaponHitsTable;

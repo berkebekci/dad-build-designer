@@ -28,6 +28,16 @@ function num(value: number): string {
   return String(Math.round(value * 100) / 100);
 }
 
+/** The game shows these as whole numbers (< .5 down, >= .5 up). */
+function int(value: number): string {
+  return String(Math.round(value));
+}
+
+/** In-game move speed percentage: 330 MS = 100%. */
+function msPct(moveSpeed: number): string {
+  return `${((moveSpeed / 330) * 100).toFixed(1)}%`;
+}
+
 function signClass(value: number): string {
   if (value > 0) return 'stat-value stat-value--pos';
   if (value < 0) return 'stat-value stat-value--neg';
@@ -58,7 +68,7 @@ export function StatPanel({ stats }: { stats: DerivedStats }) {
       ))}
 
       <h3>Defense</h3>
-      <Row label="Max Health" value={num(stats.maxHealth)} />
+      <Row label="Max Health" value={int(stats.maxHealth)} />
       <Row label="Health Recovery" value={pct(stats.healthRecoveryPct)} cls={signClass(stats.healthRecoveryPct)} />
       <Row label="Armor Rating" value={num(stats.armorRating)} />
       <Row
@@ -77,14 +87,23 @@ export function StatPanel({ stats }: { stats: DerivedStats }) {
 
       <h3>Offense</h3>
       <Row label="Weapon Damage" value={num(stats.weaponDamage)} />
+      {stats.gearWeaponDamage !== 0 && (
+        <Row label="Gear Weapon Damage" value={num(stats.gearWeaponDamage)} />
+      )}
       {stats.magicWeaponDamage !== 0 && (
         <Row label="Magic Weapon Damage" value={num(stats.magicWeaponDamage)} />
       )}
-      {stats.physicalDamageAdd !== 0 && (
-        <Row label="Physical Damage Add" value={num(stats.physicalDamageAdd)} />
+      {stats.additionalPhysicalDamage !== 0 && (
+        <Row label="Additional Physical Damage" value={num(stats.additionalPhysicalDamage)} />
       )}
-      {stats.magicalDamageAdd !== 0 && (
-        <Row label="Magical Damage Add" value={num(stats.magicalDamageAdd)} />
+      {stats.additionalMagicalDamage !== 0 && (
+        <Row label="Additional Magical Damage" value={num(stats.additionalMagicalDamage)} />
+      )}
+      {stats.truePhysicalDamage !== 0 && (
+        <Row label="True Physical Damage" value={num(stats.truePhysicalDamage)} />
+      )}
+      {stats.trueMagicalDamage !== 0 && (
+        <Row label="True Magical Damage" value={num(stats.trueMagicalDamage)} />
       )}
       <Row label="Physical Power" value={num(stats.physicalPower)} />
       <Row
@@ -100,7 +119,7 @@ export function StatPanel({ stats }: { stats: DerivedStats }) {
       />
 
       <h3>Speed</h3>
-      <Row label="Move Speed" value={num(stats.moveSpeed)} />
+      <Row label="Move Speed" value={`${int(stats.moveSpeed)} (${msPct(stats.moveSpeed)})`} />
       <Row label="Action Speed" value={pct(stats.actionSpeedPct)} cls={signClass(stats.actionSpeedPct)} />
       <Row
         label="Spell Casting Speed"

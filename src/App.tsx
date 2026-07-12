@@ -8,6 +8,7 @@ import { decodeBuild, encodeBuild, type BuildState } from './engine/buildCodec';
 import { PickList } from './ui/PickList';
 import { StatPanel } from './ui/StatPanel';
 import { GearPanel, type UiLoadout } from './ui/GearPanel';
+import { DamageSimPanel } from './ui/DamageSimPanel';
 
 const STORAGE_KEY = 'dad_build_v1';
 
@@ -233,6 +234,12 @@ export default function App() {
 
         <section className="column">
           <StatPanel stats={stats} />
+          <DamageSimPanel
+            stats={stats}
+            weaponName={
+              loadout.primary ? itemIndex.get(loadout.primary.itemId)?.name : undefined
+            }
+          />
         </section>
       </main>
     </div>

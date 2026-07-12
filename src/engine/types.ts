@@ -107,10 +107,17 @@ export interface DerivedStats {
 
   /** Total armor rating that fed the PDR curve. */
   armorRating: number;
+  /** Base weapon damage (perfect roll) — scaled by combo/zone in the damage sim. */
   weaponDamage: number;
+  /** Enchant "Weapon Damage" — added after combo/zone scaling. */
+  gearWeaponDamage: number;
   magicWeaponDamage: number;
-  physicalDamageAdd: number;
-  magicalDamageAdd: number;
+  /** Added after the power bonus, still reduced by armor. */
+  additionalPhysicalDamage: number;
+  additionalMagicalDamage: number;
+  /** Bypasses all reductions. */
+  truePhysicalDamage: number;
+  trueMagicalDamage: number;
   luck: number;
   /** Situational gear-only percentages, shown when nonzero. */
   percentExtras: Partial<Record<PercentStat, number>>;

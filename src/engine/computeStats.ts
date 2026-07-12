@@ -158,9 +158,12 @@ export function computeStats(
 
     armorRating,
     weaponDamage: flats?.weaponDamage ?? 0,
+    gearWeaponDamage: flats?.gearWeaponDamage ?? 0,
     magicWeaponDamage: flats?.magicWeaponDamage ?? 0,
-    physicalDamageAdd: flats?.physicalDamageAdd ?? 0,
-    magicalDamageAdd: flats?.magicalDamageAdd ?? 0,
+    additionalPhysicalDamage: flats?.additionalPhysicalDamage ?? 0,
+    additionalMagicalDamage: flats?.additionalMagicalDamage ?? 0,
+    truePhysicalDamage: flats?.truePhysicalDamage ?? 0,
+    trueMagicalDamage: flats?.trueMagicalDamage ?? 0,
     luck: flats?.luck ?? 0,
     percentExtras: {
       projectileReductionPct: padd.projectileReductionPct,

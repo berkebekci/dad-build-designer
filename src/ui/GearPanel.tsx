@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import type { ClassData } from '../engine/types';
 import {
   GEAR_SLOTS,
@@ -31,17 +31,166 @@ const SLOT_LABELS: Record<GearSlotId, string> = {
   ring2: 'Ring 2',
 };
 
-interface GearPanelProps {
-  classData: ClassData;
-  perkIds: string[];
-  loadout: UiLoadout;
-  onChange: (next: UiLoadout) => void;
-}
+const MAX_SUGGESTIONS = 8;
 
 function fmtBase(item: ItemRecord): string {
   return (item.base ?? [])
     .map(([attr, , max]) => `${attrLabel(attr)} ${max > 0 ? '+' : ''}${max}`)
     .join(', ');
+}
+
+/**
+ * Switching rarity keeps the enchant choices that still exist in the new
+ * item's pool, clamped into the new roll ranges; row count follows the
+ * new rarity.
+ */
+function carryEnchants(
+  old: UiEquipped | undefined,
+  newItem: ItemRecord,
+): (EnchantChoice | null)[] {
+  const slots = enchantSlotCount(newItem.rarity);
+  const out: (EnchantChoice | null)[] = Array(slots).fill(null);
+  if (!old) return out;
+  let i = 0;
+  for (const en of old.enchants) {
+    if (!en || i >= slots) continue;
+    const range = (newItem.pool ?? []).find(([a]) => a === en.attr);
+    if (!range) continue;
+    out[i++] = { attr: en.attr, value: Math.min(range[2], Math.max(range[1], en.value)) };
+  }
+  return out;
+}
+
+/** Rarity chips for one archetype; the equipped rarity is highlighted. */
+function RarityChips({
+  variants,
+  activeId,
+  onPick,
+}: {
+  variants: ItemRecord[];
+  activeId?: string;
+  onPick: (item: ItemRecord) => void;
+}) {
+  return (
+    <div className="rarity-chips">
+      {variants.map((v) => (
+        <button
+          key={v.id}
+          type="button"
+          className={`rarity-chip${v.id === activeId ? ' rarity-chip--active' : ''}`}
+          style={{ borderColor: rarityColor(v.rarity), color: rarityColor(v.rarity) }}
+          title={`GS ${v.gearScore}`}
+          onClick={() => onPick(v)}
+        >
+          {v.rarity}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+/** Search-first item picker: type a name, pick the archetype, then a rarity. */
+function ItemPicker({
+  slot,
+  options,
+  equipped,
+  onEquip,
+  onClear,
+}: {
+  slot: GearSlotId;
+  options: ItemRecord[];
+  equipped: UiEquipped | undefined;
+  onEquip: (item: ItemRecord) => void;
+  onClear: () => void;
+}) {
+  const [query, setQuery] = useState('');
+  const [pickedName, setPickedName] = useState<string | null>(null);
+
+  // One entry per archetype name, variants sorted by rarity.
+  const byName = useMemo(() => {
+    const map = new Map<string, ItemRecord[]>();
+    for (const item of options) {
+      const list = map.get(item.name) ?? [];
+      list.push(item);
+      map.set(item.name, list);
+    }
+    for (const list of map.values()) list.sort((a, b) => rarityOrder(a.rarity) - rarityOrder(b.rarity));
+    return map;
+  }, [options]);
+
+  const equippedItem = equipped ? itemIndex.get(equipped.itemId) : undefined;
+
+  if (equippedItem) {
+    const variants = byName.get(equippedItem.name) ?? [equippedItem];
+    return (
+      <div className="itempicker">
+        <div className="itempicker-equipped">
+          <span className="item-name" style={{ color: rarityColor(equippedItem.rarity) }}>
+            {equippedItem.name}
+          </span>
+          <button type="button" className="clear-btn" onClick={onClear} title="Unequip">
+            ×
+          </button>
+        </div>
+        <RarityChips variants={variants} activeId={equippedItem.id} onPick={onEquip} />
+        <div className="item-summary">{fmtBase(equippedItem)}</div>
+      </div>
+    );
+  }
+
+  const matches = query.trim()
+    ? [...byName.keys()]
+        .filter((n) => n.toLowerCase().includes(query.trim().toLowerCase()))
+        .slice(0, MAX_SUGGESTIONS)
+    : [];
+
+  if (pickedName && byName.has(pickedName)) {
+    return (
+      <div className="itempicker">
+        <div className="itempicker-equipped">
+          <span className="item-name">{pickedName}</span>
+          <button type="button" className="clear-btn" onClick={() => setPickedName(null)}>
+            ×
+          </button>
+        </div>
+        <RarityChips
+          variants={byName.get(pickedName)!}
+          onPick={(item) => {
+            setPickedName(null);
+            setQuery('');
+            onEquip(item);
+          }}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className="itempicker">
+      <input
+        type="text"
+        className="item-search"
+        placeholder={`Search ${byName.size} items…`}
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' && matches.length > 0) setPickedName(matches[0]!);
+        }}
+        aria-label={`Search item for ${SLOT_LABELS[slot]}`}
+      />
+      {matches.length > 0 && (
+        <ul className="suggestions">
+          {matches.map((name) => (
+            <li key={name}>
+              <button type="button" onClick={() => setPickedName(name)}>
+                {name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
 }
 
 function EnchantRow({
@@ -99,15 +248,24 @@ function EnchantRow({
   );
 }
 
+interface GearPanelProps {
+  classData: ClassData;
+  perkIds: string[];
+  loadout: UiLoadout;
+  onChange: (next: UiLoadout) => void;
+}
+
 export function GearPanel({ classData, perkIds, loadout, onChange }: GearPanelProps) {
-  // Eligibility depends on perks (Weapon Mastery, Slayer) — recompute per slot.
+  // Eligibility depends on perks (Weapon Mastery, Slayer, Demon Armor...).
   const eligibleBySlot = useMemo(() => {
     const map = new Map<GearSlotId, ItemRecord[]>();
     for (const slot of GEAR_SLOTS) {
-      const list = eligibleItems(items, classData, slot, perkIds).sort(
-        (a, b) => a.name.localeCompare(b.name) || rarityOrder(a.rarity) - rarityOrder(b.rarity),
+      map.set(
+        slot,
+        eligibleItems(items, classData, slot, perkIds).sort(
+          (a, b) => a.name.localeCompare(b.name) || rarityOrder(a.rarity) - rarityOrder(b.rarity),
+        ),
       );
-      map.set(slot, list);
     }
     return map;
   }, [classData, perkIds]);
@@ -115,18 +273,16 @@ export function GearPanel({ classData, perkIds, loadout, onChange }: GearPanelPr
   const primaryItem = loadout.primary ? itemIndex.get(loadout.primary.itemId) : undefined;
   const twoHanded = isTwoHanded(primaryItem);
 
-  const setSlot = (slot: GearSlotId, itemId: string) => {
+  const equip = (slot: GearSlotId, item: ItemRecord) => {
     const next: UiLoadout = { ...loadout };
-    if (!itemId) {
-      delete next[slot];
-    } else {
-      const item = itemIndex.get(itemId);
-      next[slot] = {
-        itemId,
-        enchants: Array(enchantSlotCount(item?.rarity ?? 'common')).fill(null),
-      };
-      if (slot === 'primary' && isTwoHanded(item)) delete next.secondary;
-    }
+    next[slot] = { itemId: item.id, enchants: carryEnchants(loadout[slot], item) };
+    if (slot === 'primary' && isTwoHanded(item)) delete next.secondary;
+    onChange(next);
+  };
+
+  const clear = (slot: GearSlotId) => {
+    const next: UiLoadout = { ...loadout };
+    delete next[slot];
     onChange(next);
   };
 
@@ -144,39 +300,30 @@ export function GearPanel({ classData, perkIds, loadout, onChange }: GearPanelPr
       {GEAR_SLOTS.map((slot) => {
         const equipped = loadout[slot];
         const item = equipped ? itemIndex.get(equipped.itemId) : undefined;
-        const options = eligibleBySlot.get(slot) ?? [];
         const disabled = slot === 'secondary' && twoHanded;
         const usedAttrs = new Set(
-          (equipped?.enchants ?? []).filter((e): e is EnchantChoice => e !== null).map((e) => e.attr),
+          (equipped?.enchants ?? [])
+            .filter((e): e is EnchantChoice => e !== null)
+            .map((e) => e.attr),
         );
 
         return (
-          <div key={slot} className="gear-slot">
+          <div key={slot} className={`gear-slot${disabled ? ' gear-slot--disabled' : ''}`}>
             <label className="gear-slot-label">
               {SLOT_LABELS[slot]}
               {disabled && <span className="gear-note"> (two-handed)</span>}
             </label>
-            <select
-              value={equipped?.itemId ?? ''}
-              disabled={disabled}
-              onChange={(e) => setSlot(slot, e.target.value)}
-            >
-              <option value="">— empty —</option>
-              {options.map((it) => (
-                <option key={it.id} value={it.id}>
-                  {it.name} · {it.rarity} (GS {it.gearScore})
-                </option>
-              ))}
-            </select>
-            {item && (
-              <div className="item-summary">
-                <span className="item-rarity" style={{ color: rarityColor(item.rarity) }}>
-                  {item.rarity}
-                </span>{' '}
-                {fmtBase(item)}
-              </div>
+            {!disabled && (
+              <ItemPicker
+                slot={slot}
+                options={eligibleBySlot.get(slot) ?? []}
+                equipped={equipped}
+                onEquip={(it) => equip(slot, it)}
+                onClear={() => clear(slot)}
+              />
             )}
             {item &&
+              !disabled &&
               (equipped?.enchants ?? []).map((choice, idx) => (
                 <EnchantRow
                   key={idx}
