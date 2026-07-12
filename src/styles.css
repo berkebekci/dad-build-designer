@@ -423,6 +423,109 @@ body {
   grid-template-columns: 1.1fr 1.1fr 1.1fr 0.9fr;
 }
 
+.columns--three {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.columns--two {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 900px) {
+  .columns--three,
+  .columns--two {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tabbar {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tab {
+  background: transparent;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  color: var(--muted);
+  padding: 8px 18px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--text);
+}
+
+.tab--active {
+  color: var(--gold);
+  border-color: var(--border);
+  background: var(--panel);
+  font-weight: 700;
+}
+
+.damage-tab {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.damage-tab > .damagesim:first-child {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .damage-tab {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dummy-controls {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.derived-value {
+  display: block;
+  padding: 5px 6px;
+  font-size: 13px;
+  color: var(--pos);
+  font-variant-numeric: tabular-nums;
+}
+
+.spell-cost {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.slot-counter--over {
+  color: var(--neg);
+  border-color: var(--neg);
+}
+
+.memory-warning {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: var(--neg);
+}
+
+.spell-result h3 {
+  margin: 10px 0 4px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.suggestions {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
 @media (max-width: 1300px) {
   .columns--four {
     grid-template-columns: 1fr 1fr;

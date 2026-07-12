@@ -17,11 +17,13 @@ import wizardJson from '../../data/classes/wizard.json';
 import rarityJson from '../../data/rules/rarity_enchantments.json';
 import combatJson from '../../data/rules/combat.json';
 import weaponHitsJson from '../../data/rules/weapon_hits.json';
+import spellsJson from '../../data/spells/spells.json';
 import itemsJson from '../../data/items/items.json';
 import type { CurveSet } from './computeStats';
 import type { ClassData } from './types';
 import type { ItemRecord } from './itemStats';
 import type { CombatRules, WeaponHitsTable } from './damage';
+import type { SpellBook } from './spells';
 
 export const statCurves = statCurvesJson as unknown as CurveSet;
 
@@ -76,3 +78,5 @@ export const itemIndex: Map<string, ItemRecord> = new Map(items.map((i) => [i.id
 export const combatRules = combatJson as unknown as CombatRules;
 
 export const weaponHits = weaponHitsJson as unknown as WeaponHitsTable;
+
+export const spellBook = (spellsJson as unknown as { classes: SpellBook }).classes;

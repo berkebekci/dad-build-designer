@@ -10,6 +10,7 @@ export interface BuildState {
   classId: string;
   perkIds: string[];
   skillIds: string[];
+  spellIds: string[];
   loadout: UiLoadout;
 }
 
@@ -18,6 +19,8 @@ interface WireFormat {
   c: string;
   p: string[];
   s: string[];
+  /** memorized spells (added later — optional for older codes) */
+  m?: string[];
   g: Partial<Record<GearSlotId, { i: string; e: ([string, number] | null)[] }>>;
 }
 
@@ -33,7 +36,7 @@ function toWire(state: BuildState): WireFormat {
       e: eq.enchants.map((en) => (en ? [en.attr, en.value] : null)),
     };
   }
-  return { v: 1, c: state.classId, p: state.perkIds, s: state.skillIds, g };
+  return { v: 1, c: state.classId, p: state.perkIds, s: state.skillIds, m: state.spellIds, g };
 }
 
 function fromWire(wire: WireFormat): BuildState {
@@ -54,6 +57,7 @@ function fromWire(wire: WireFormat): BuildState {
     classId: wire.c,
     perkIds: wire.p ?? [],
     skillIds: wire.s ?? [],
+    spellIds: wire.m ?? [],
     loadout,
   };
 }

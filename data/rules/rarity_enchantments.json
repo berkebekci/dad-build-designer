@@ -11,7 +11,7 @@
     { "id": "rare",      "name": "Rare",      "order": 3, "enchantments": 2, "enchantments_crafted": 3, "color": "#0070dd" },
     { "id": "epic",      "name": "Epic",      "order": 4, "enchantments": 3, "enchantments_crafted": 4, "color": "#a335ee" },
     { "id": "legendary", "name": "Legendary", "order": 5, "enchantments": 4, "enchantments_crafted": 5, "color": "#ff8000" },
-    { "id": "unique",    "name": "Unique",    "order": 6, "enchantments": 5, "enchantments_crafted": 6, "color": "#e6cc80" }
+    { "id": "unique",    "name": "Unique",    "order": 6, "enchantments": 1, "enchantments_crafted": 1, "color": "#e6cc80" }
   ],
   "enchantment_categories": {
     "attributes": ["Strength", "Vigor", "Agility", "Dexterity", "Will", "Knowledge", "Resourcefulness"],

@@ -78,6 +78,7 @@ export type FlatBucket =
   | 'truePhysicalDamage'
   | 'additionalMagicalDamage'
   | 'trueMagicalDamage'
+  | 'spellFlatDamage'
   | 'luck';
 
 export type PercentStat =
@@ -138,7 +139,10 @@ export const ATTR_RULES: Record<string, AttrRule> = {
   true_physical_damage: { kind: 'flat', bucket: 'truePhysicalDamage' },
   additional_magical_damage: { kind: 'flat', bucket: 'additionalMagicalDamage' },
   true_magical_damage: { kind: 'flat', bucket: 'trueMagicalDamage' },
-  magical_damage: { kind: 'flat', bucket: 'additionalMagicalDamage' },
+  // Staff/spellbook "Magical Damage" boosts SPELLS (the formula's gear term
+  // for casts), not melee swings — Crystal Sword melee magic damage is
+  // magic_weapon_damage instead.
+  magical_damage: { kind: 'flat', bucket: 'spellFlatDamage' },
   luck: { kind: 'flat', bucket: 'luck' },
 
   action_speed: { kind: 'percent', stat: 'actionSpeedPct' },
@@ -213,6 +217,7 @@ function emptyTotals(): GearTotals {
       truePhysicalDamage: 0,
       additionalMagicalDamage: 0,
       trueMagicalDamage: 0,
+      spellFlatDamage: 0,
       luck: 0,
     },
     percents: {},

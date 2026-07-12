@@ -92,6 +92,10 @@ export function computeStats(
   // Armor rating total feeds the PDR curve.
   const armorRating = (mods.armorRating ?? 0) + (flats?.armorRating ?? 0);
 
+  // Magic resistance feeds the MDR curve, the magical mirror of armor -> PDR.
+  const magicResistance =
+    evalCurve(need('magic_resistance'), attrs.will) + (flats?.magicResistanceAdd ?? 0);
+
   // Move speed: flat base + agility curve + adds, times any Move Speed Bonus
   // percentage, then the game's hard cap.
   const moveCurve = need('move_speed_add');
@@ -138,16 +142,17 @@ export function computeStats(
     memoryCapacity,
     memoryRecoveryPct: evalCurve(need('memory_recovery'), attrs.knowledge),
     healthRecoveryPct: evalCurve(need('health_recovery'), attrs.vigor),
-    magicResistance:
-      evalCurve(need('magic_resistance'), attrs.will) + (flats?.magicResistanceAdd ?? 0),
+    magicResistance,
     physicalDamageReductionPct: Math.min(
       evalCurve(need('physical_damage_reduction'), armorRating) +
         (padd.physicalDamageReductionPct ?? 0),
       PDR_CAP,
     ),
-    // NOTE: the MR -> MDR curve is still missing from our data (see stat_curves
-    // _todo); until then this reflects gear additions only.
-    magicalDamageReductionPct: Math.min(padd.magicalDamageReductionPct ?? 0, MDR_CAP),
+    magicalDamageReductionPct: Math.min(
+      evalCurve(need('magical_damage_reduction'), magicResistance) +
+        (padd.magicalDamageReductionPct ?? 0),
+      MDR_CAP,
+    ),
     cooldownReductionPct: Math.min(
       evalCurve(need('cooldown_reduction'), attrs.resourcefulness) +
         (padd.cooldownReductionPct ?? 0),
@@ -164,6 +169,7 @@ export function computeStats(
     additionalMagicalDamage: flats?.additionalMagicalDamage ?? 0,
     truePhysicalDamage: flats?.truePhysicalDamage ?? 0,
     trueMagicalDamage: flats?.trueMagicalDamage ?? 0,
+    spellFlatDamage: flats?.spellFlatDamage ?? 0,
     luck: flats?.luck ?? 0,
     percentExtras: {
       projectileReductionPct: padd.projectileReductionPct,

@@ -1,16 +1,26 @@
 import { useEffect, useMemo, useState } from 'react';
 import { computeStats } from './engine/computeStats';
 import { validateBuild } from './engine/validateBuild';
-import { classes, enchantSlotCount, itemIndex, items, statCurves } from './engine/data';
+import { classes, enchantSlotCount, itemIndex, items, spellBook, statCurves } from './engine/data';
 import { gearTotals, type EnchantChoice, type GearSlotId, type Loadout } from './engine/itemStats';
 import { eligibleItems } from './engine/gearRules';
+import { classSpells } from './engine/spells';
 import { decodeBuild, encodeBuild, type BuildState } from './engine/buildCodec';
 import { PickList } from './ui/PickList';
 import { StatPanel } from './ui/StatPanel';
 import { GearPanel, type UiLoadout } from './ui/GearPanel';
-import { DamageSimPanel } from './ui/DamageSimPanel';
+import { SpellPanel } from './ui/SpellPanel';
+import { DamageTab } from './ui/DamageTab';
 
 const STORAGE_KEY = 'dad_build_v1';
+
+type TabId = 'class' | 'gear' | 'damage';
+
+const TABS: { id: TabId; label: string }[] = [
+  { id: 'class', label: 'Class' },
+  { id: 'gear', label: 'Gear & Stats' },
+  { id: 'damage', label: 'Damage' },
+];
 
 /** Strip empty enchant rows for the engine. */
 function toEngineLoadout(ui: UiLoadout): Loadout {
@@ -34,10 +44,12 @@ function sanitizeBuild(raw: BuildState): BuildState {
   const classData = classes[raw.classId] ? classes[raw.classId]! : classes['fighter']!;
   const perkPool = new Set(classData.perks.map((p) => p.id));
   const skillPool = new Set(classData.skills.map((s) => s.id));
+  const spellPool = new Set(classSpells(spellBook, classData.id).map((s) => s.id));
   const perkIds = [...new Set(raw.perkIds)].filter((id) => perkPool.has(id)).slice(0, classData.perk_slots);
   const skillIds = [...new Set(raw.skillIds)]
     .filter((id) => skillPool.has(id))
     .slice(0, classData.skill_slots);
+  const spellIds = [...new Set(raw.spellIds ?? [])].filter((id) => spellPool.has(id));
 
   const loadout: UiLoadout = {};
   for (const [slot, eq] of Object.entries(raw.loadout) as [GearSlotId, UiLoadout[GearSlotId]][]) {
@@ -59,11 +71,17 @@ function sanitizeBuild(raw: BuildState): BuildState {
     loadout[slot] = { itemId: item.id, enchants };
   }
 
-  return { classId: classData.id, perkIds, skillIds, loadout };
+  return { classId: classData.id, perkIds, skillIds, spellIds, loadout };
 }
 
 function loadInitialBuild(): BuildState {
-  const fallback: BuildState = { classId: 'fighter', perkIds: [], skillIds: [], loadout: {} };
+  const fallback: BuildState = {
+    classId: 'fighter',
+    perkIds: [],
+    skillIds: [],
+    spellIds: [],
+    loadout: {},
+  };
   const hashMatch = window.location.hash.match(/#b=([A-Za-z0-9_-]+)/);
   const fromHash = hashMatch ? decodeBuild(hashMatch[1]!) : null;
   if (fromHash) return sanitizeBuild(fromHash);
@@ -76,13 +94,19 @@ function loadInitialBuild(): BuildState {
 const initial = loadInitialBuild();
 
 export default function App() {
+  const [tab, setTab] = useState<TabId>('class');
   const [classId, setClassId] = useState(initial.classId);
   const classData = classes[classId]!;
 
   const [perkIds, setPerkIds] = useState<string[]>(initial.perkIds);
   const [skillIds, setSkillIds] = useState<string[]>(initial.skillIds);
+  const [spellIds, setSpellIds] = useState<string[]>(initial.spellIds);
   const [loadout, setLoadout] = useState<UiLoadout>(initial.loadout);
   const [copied, setCopied] = useState(false);
+  const [resetNonce, setResetNonce] = useState(0);
+
+  const spells = classSpells(spellBook, classId);
+  const selectedSpells = spells.filter((s) => spellIds.includes(s.id));
 
   // The whole app funnels into this one pure engine call.
   const stats = useMemo(() => {
@@ -94,9 +118,9 @@ export default function App() {
 
   // Autosave every change; the URL hash is only written on Share.
   useEffect(() => {
-    const state: BuildState = { classId, perkIds, skillIds, loadout };
+    const state: BuildState = { classId, perkIds, skillIds, spellIds, loadout };
     window.localStorage.setItem(STORAGE_KEY, encodeBuild(state));
-  }, [classId, perkIds, skillIds, loadout]);
+  }, [classId, perkIds, skillIds, spellIds, loadout]);
 
   /**
    * Perks can change gear legality (Weapon Mastery off -> caster weapons must
@@ -141,16 +165,22 @@ export default function App() {
     );
   };
 
+  const toggleSpell = (id: string) => {
+    setSpellIds((cur) => (cur.includes(id) ? cur.filter((x) => x !== id) : [...cur, id]));
+  };
+
   const switchClass = (id: string) => {
-    // Perk/skill/gear choices belong to a class; changing class resets them.
+    // Perk/skill/spell/gear choices belong to a class; changing class resets them.
     setClassId(id);
     setPerkIds([]);
     setSkillIds([]);
+    setSpellIds([]);
     setLoadout({});
+    setResetNonce((n) => n + 1);
   };
 
   const shareBuild = async () => {
-    const code = encodeBuild({ classId, perkIds, skillIds, loadout });
+    const code = encodeBuild({ classId, perkIds, skillIds, spellIds, loadout });
     const url = `${window.location.origin}${window.location.pathname}#b=${code}`;
     window.history.replaceState(null, '', `#b=${code}`);
     try {
@@ -165,7 +195,9 @@ export default function App() {
   const resetBuild = () => {
     setPerkIds([]);
     setSkillIds([]);
+    setSpellIds([]);
     setLoadout({});
+    setResetNonce((n) => n + 1);
     window.history.replaceState(null, '', window.location.pathname);
     window.localStorage.removeItem(STORAGE_KEY);
   };
@@ -194,6 +226,19 @@ export default function App() {
         </div>
       </header>
 
+      <nav className="tabbar">
+        {TABS.map((t) => (
+          <button
+            key={t.id}
+            type="button"
+            className={`tab${tab === t.id ? ' tab--active' : ''}`}
+            onClick={() => setTab(t.id)}
+          >
+            {t.label}
+          </button>
+        ))}
+      </nav>
+
       {issues.length > 0 && (
         <div className="issues" role="alert">
           {issues.map((i) => (
@@ -202,46 +247,63 @@ export default function App() {
         </div>
       )}
 
-      <main className="columns columns--four">
-        <section className="column">
-          <PickList
-            title="Perks"
-            items={classData.perks}
-            selectedIds={perkIds}
-            capacity={classData.perk_slots}
-            onToggle={togglePerk}
-          />
-        </section>
+      {tab === 'class' && (
+        <main className={`columns ${spells.length > 0 ? 'columns--three' : 'columns--two'}`}>
+          <section className="column">
+            <PickList
+              title="Perks"
+              items={classData.perks}
+              selectedIds={perkIds}
+              capacity={classData.perk_slots}
+              onToggle={togglePerk}
+            />
+          </section>
+          <section className="column">
+            <PickList
+              title="Skills"
+              items={classData.skills}
+              selectedIds={skillIds}
+              capacity={classData.skill_slots}
+              onToggle={toggleSkill}
+            />
+          </section>
+          {spells.length > 0 && (
+            <section className="column">
+              <SpellPanel
+                spells={spells}
+                selectedIds={spellIds}
+                memoryCapacity={stats.memoryCapacity}
+                onToggle={toggleSpell}
+              />
+            </section>
+          )}
+        </main>
+      )}
 
-        <section className="column">
-          <PickList
-            title="Skills"
-            items={classData.skills}
-            selectedIds={skillIds}
-            capacity={classData.skill_slots}
-            onToggle={toggleSkill}
-          />
-        </section>
+      {tab === 'gear' && (
+        <main className="columns columns--two">
+          <section className="column">
+            <GearPanel
+              classData={classData}
+              perkIds={perkIds}
+              loadout={loadout}
+              onChange={setLoadout}
+              resetNonce={resetNonce}
+            />
+          </section>
+          <section className="column">
+            <StatPanel stats={stats} />
+          </section>
+        </main>
+      )}
 
-        <section className="column">
-          <GearPanel
-            classData={classData}
-            perkIds={perkIds}
-            loadout={loadout}
-            onChange={setLoadout}
-          />
-        </section>
-
-        <section className="column">
-          <StatPanel stats={stats} />
-          <DamageSimPanel
-            stats={stats}
-            weaponName={
-              loadout.primary ? itemIndex.get(loadout.primary.itemId)?.name : undefined
-            }
-          />
-        </section>
-      </main>
+      {tab === 'damage' && (
+        <DamageTab
+          stats={stats}
+          weaponName={loadout.primary ? itemIndex.get(loadout.primary.itemId)?.name : undefined}
+          selectedSpells={selectedSpells}
+        />
+      )}
     </div>
   );
 }

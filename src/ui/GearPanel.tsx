@@ -105,6 +105,7 @@ function ItemPicker({
 }) {
   const [query, setQuery] = useState('');
   const [pickedName, setPickedName] = useState<string | null>(null);
+  const [focused, setFocused] = useState(false);
 
   // One entry per archetype name, variants sorted by rarity.
   const byName = useMemo(() => {
@@ -138,11 +139,15 @@ function ItemPicker({
     );
   }
 
+  // With an empty query the FULL archetype list opens on focus (scrollable),
+  // so newcomers can browse; typing narrows it down.
   const matches = query.trim()
     ? [...byName.keys()]
         .filter((n) => n.toLowerCase().includes(query.trim().toLowerCase()))
         .slice(0, MAX_SUGGESTIONS)
-    : [];
+    : focused
+      ? [...byName.keys()]
+      : [];
 
   if (pickedName && byName.has(pickedName)) {
     return (
@@ -173,8 +178,11 @@ function ItemPicker({
         placeholder={`Search ${byName.size} items…`}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
         onKeyDown={(e) => {
           if (e.key === 'Enter' && matches.length > 0) setPickedName(matches[0]!);
+          if (e.key === 'Escape') setFocused(false);
         }}
         aria-label={`Search item for ${SLOT_LABELS[slot]}`}
       />
@@ -182,7 +190,12 @@ function ItemPicker({
         <ul className="suggestions">
           {matches.map((name) => (
             <li key={name}>
-              <button type="button" onClick={() => setPickedName(name)}>
+              {/* onMouseDown keeps the input focused so blur doesn't close the list first */}
+              <button
+                type="button"
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={() => setPickedName(name)}
+              >
                 {name}
               </button>
             </li>
@@ -253,9 +266,11 @@ interface GearPanelProps {
   perkIds: string[];
   loadout: UiLoadout;
   onChange: (next: UiLoadout) => void;
+  /** Bumped by Reset/class switch — remounts pickers to clear mid-pick state. */
+  resetNonce?: number;
 }
 
-export function GearPanel({ classData, perkIds, loadout, onChange }: GearPanelProps) {
+export function GearPanel({ classData, perkIds, loadout, onChange, resetNonce = 0 }: GearPanelProps) {
   // Eligibility depends on perks (Weapon Mastery, Slayer, Demon Armor...).
   const eligibleBySlot = useMemo(() => {
     const map = new Map<GearSlotId, ItemRecord[]>();
@@ -315,6 +330,7 @@ export function GearPanel({ classData, perkIds, loadout, onChange }: GearPanelPr
             </label>
             {!disabled && (
               <ItemPicker
+                key={`${slot}:${resetNonce}`}
                 slot={slot}
                 options={eligibleBySlot.get(slot) ?? []}
                 equipped={equipped}

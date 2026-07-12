@@ -118,6 +118,8 @@ export interface DerivedStats {
   /** Bypasses all reductions. */
   truePhysicalDamage: number;
   trueMagicalDamage: number;
+  /** Staff/spellbook "Magical Damage" — flat bonus applied to SPELL casts. */
+  spellFlatDamage: number;
   luck: number;
   /** Situational gear-only percentages, shown when nonzero. */
   percentExtras: Partial<Record<PercentStat, number>>;

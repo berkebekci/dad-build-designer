@@ -6,6 +6,7 @@ describe('buildCodec', () => {
     classId: 'fighter',
     perkIds: ['swift', 'weapon_mastery'],
     skillIds: ['sprint'],
+    spellIds: [],
     loadout: {
       primary: {
         itemId: 'Longsword_6001',
@@ -22,8 +23,25 @@ describe('buildCodec', () => {
   });
 
   it('round-trips an empty build', () => {
-    const empty: BuildState = { classId: 'fighter', perkIds: [], skillIds: [], loadout: {} };
+    const empty: BuildState = {
+      classId: 'fighter',
+      perkIds: [],
+      skillIds: [],
+      spellIds: [],
+      loadout: {},
+    };
     expect(decodeBuild(encodeBuild(empty))).toEqual(empty);
+  });
+
+  it('round-trips a caster build with spells', () => {
+    const caster: BuildState = {
+      classId: 'wizard',
+      perkIds: ['quick_chant'],
+      skillIds: ['spell_memory1'],
+      spellIds: ['fireball', 'zap', 'haste'],
+      loadout: {},
+    };
+    expect(decodeBuild(encodeBuild(caster))).toEqual(caster);
   });
 
   it('rejects garbage without throwing', () => {

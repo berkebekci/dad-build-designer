@@ -112,6 +112,16 @@
       "unit": "points",
       "points": [[0, 0], [15, 15], [100, 57.5]]
     },
+    "magical_damage_reduction": {
+      "input": "magic_resistance",
+      "unit": "%",
+      "points": [
+        [-300, -595], [-15, -25], [8, -2], [18, 3], [33, 9], [53, 15],
+        [85, 23], [280, 62], [340, 71], [430, 80], [500, 83.5]
+      ],
+      "cap": 65,
+      "check": "All segment endpoints arithmetically consistent with per-point values (verified 2026-07-12). Naked Will 15 -> MR 30 -> 13.8% MDR."
+    },
     "physical_damage_reduction": {
       "input": "armor_rating",
       "unit": "%",
@@ -128,7 +138,6 @@
     }
   },
   "_todo": {
-    "magical_damage_reduction": "Full MR -> MDR table missing (known: -595% at -300 MR, cap 65%). Fetch from the wiki Magical_Damage_Reduction page.",
     "debuff_duration": "Full breakpoint table missing (known: +400% at 0 Will, -37.5% at 100 Will, floor -95%).",
     "luck": "Luck -> loot effect is non-linear; cap 500. May not be needed for the simulator."
   }

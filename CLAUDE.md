@@ -74,9 +74,31 @@ hazır sonuç fırlatma; kararları gerekçeleriyle anlat. Açıklamalar Türkç
   - ÖNEMLİ refaktör: additional_ ve true_ hasarlar AYRI kovalarda (formülde farklı
     aşamalarda girerler); additional_weapon_damage artık gearWeaponDamage (combo/zone
     SONRASI eklenir). 59 test yeşil.
-- Kalan fikirler: DPS/eHP metrikleri; skill açıklamalarında API şablon boşlukları
-  ("Cooldown: seconds"); items.json dynamic import; sınıf ikonları; off-hand/shield
-  vuruşları; Buff Weapon Damage (perk) hasar entegrasyonu.
+- Faz 7 tamam (kullanıcının 2. geri bildirim listesi, 2026-07-12):
+  1. ItemPicker odaklanınca TAM arketip listesi açılır (boş sorguda; scrollable);
+     öneriler onMouseDown ile seçilir (blur yarışı yok).
+  2. Unique rarity enchantment sayısı 5→1 düzeltildi (IronMace değişikliği).
+  3-5. SPELL SİSTEMİ: `data/spells/spells.json` (6 caster; maliyet=tier varsayımı,
+     Bard şarkıları/Sorcerer merged maliyetsiz). `engine/spells.ts`:
+     hasar=(base+staff Magical Damage)×(1+MPBonus×scaling) vs dummy MDR+MagicPen;
+     projectile'lar headshot alır; heal dummy'den bağımsız. Memory Capacity meter
+     (aşımda kırmızı uyarı). Staff "magical_damage" artık spellFlatDamage kovası
+     (melee DEĞİL — Crystal Sword tarzı magic_weapon_damage melee'de kalır).
+  4. MR→MDR eğrisi eklendi (wiki tablosu, cap %65; Will 15→%13.8). StatPanel
+     Defense: MDR% kalıcı satır. Damage sekmesi dummy'si: Armor Rating SAYI girişi
+     → PDR eğriden türetilip gösterilir; MDR % girişi; headshot red %.
+  6. Sekmeli UI: Class (perk/skill/spell) | Gear & Stats | Damage (interaktif:
+     dummy config + silah vuruş tablosu + spell hasar tablosu).
+  7. Reset düzeltildi: resetNonce ile ItemPicker'lar remount (orta-seçim temizlenir).
+  - buildCodec v1 + opsiyonel 'm' (spellIds) alanı — eski linkler çalışır.
+  - 66 test yeşil. NOT: panel odak testleri headless'ta güvenilmez
+    (document.hasFocus()=false → focus olayı bastırılır; focusin manuel dispatch ile
+    doğrulandı).
+- Kalan fikirler: DPS/eHP metrikleri; skill/spell açıklama boşlukları ("Cooldown:
+  seconds") + spell cost=tier varsayımının oyun içi doğrulaması (kullanıcı);
+  items.json dynamic import; sınıf/item ikonları (icon_url mevcut); off-hand/shield
+  vuruşları; Buff Weapon Damage (perk) hasar entegrasyonu; kullanıcının paylaşacağı
+  Çin DaD sitesinden UI ilhamı (bekleniyor).
 - TODO'lar JSON dosyalarının `_todo` alanlarında ve docs/kaynaklar.md'de.
 
 ## Oyun kuralları özeti

@@ -77,12 +77,13 @@ export function StatPanel({ stats }: { stats: DerivedStats }) {
         cls={signClass(stats.physicalDamageReductionPct)}
       />
       <Row label="Magic Resistance" value={num(stats.magicResistance)} />
-      {stats.magicalDamageReductionPct !== 0 && (
-        <Row
-          label="Magical DR (gear)"
-          value={pct(stats.magicalDamageReductionPct)}
-          cls={signClass(stats.magicalDamageReductionPct)}
-        />
+      <Row
+        label="Magical Damage Reduction"
+        value={pct(stats.magicalDamageReductionPct)}
+        cls={signClass(stats.magicalDamageReductionPct)}
+      />
+      {stats.spellFlatDamage !== 0 && (
+        <Row label="Magical Damage (spells)" value={num(stats.spellFlatDamage)} />
       )}
 
       <h3>Offense</h3>
