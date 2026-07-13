@@ -126,7 +126,6 @@ export default function App() {
   const [spellIds, setSpellIds] = useState<string[]>(initial.spellIds);
   const [loadout, setLoadout] = useState<UiLoadout>(initial.loadout);
   const [copied, setCopied] = useState(false);
-  const [resetNonce, setResetNonce] = useState(0);
 
   const spells = classSpells(spellBook, classId);
   const selectedSpells = spells.filter((s) => spellIds.includes(s.id));
@@ -205,7 +204,6 @@ export default function App() {
     setSkillIds([]);
     setSpellIds([]);
     setLoadout({});
-    setResetNonce((n) => n + 1);
   };
 
   const shareBuild = async () => {
@@ -226,7 +224,6 @@ export default function App() {
     setSkillIds([]);
     setSpellIds([]);
     setLoadout({});
-    setResetNonce((n) => n + 1);
     window.history.replaceState(null, '', window.location.pathname);
     window.localStorage.removeItem(STORAGE_KEY);
   };
@@ -311,19 +308,9 @@ export default function App() {
       )}
 
       {tab === 'gear' && (
-        <main className="columns columns--two">
-          <section className="column">
-            <GearPanel
-              classData={classData}
-              perkIds={perkIds}
-              loadout={loadout}
-              onChange={setLoadout}
-              resetNonce={resetNonce}
-            />
-          </section>
-          <section className="column">
-            <StatPanel stats={stats} />
-          </section>
+        <main className="gear-tab">
+          <StatPanel stats={stats} />
+          <GearPanel classData={classData} perkIds={perkIds} loadout={loadout} onChange={setLoadout} />
         </main>
       )}
 

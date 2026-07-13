@@ -17,10 +17,9 @@ import {
   itemIndex,
   items,
   rarityColor,
-  rarityOrder,
-  rarityTiers,
 } from '../engine/data';
 import { NumberField } from './NumberField';
+import { ItemPickerModal } from './ItemPickerModal';
 
 /** UI-side loadout: enchant rows may be empty (null) until the user picks. */
 export interface UiEquipped {
@@ -43,28 +42,17 @@ const SLOT_LABELS: Record<GearSlotId, string> = {
   ring2: 'Ring 2',
 };
 
-const MAX_SUGGESTIONS = 8;
+/** Paperdoll layout order (grid areas defined in CSS by slot id). */
+const PAPERDOLL_SLOTS: GearSlotId[] = [
+  'back', 'head', 'necklace',
+  'primary', 'chest', 'secondary',
+  'ring1', 'ring2',
+  'hands', 'legs', 'feet',
+];
 
-function fmtBase(item: ItemRecord): string {
-  return (item.base ?? [])
-    .map(([attr, , max]) => `${attrLabel(attr)} ${max > 0 ? '+' : ''}${max}`)
-    .join(', ');
-}
-
-/**
- * Switching rarity keeps the enchant choices that still exist in the new
- * item's pool, clamped into the new roll ranges; row count follows the
- * new rarity.
- */
-function carryEnchants(
-  old: UiEquipped | undefined,
-  newItem: ItemRecord,
-): (EnchantChoice | null)[] {
+function carryEnchants(old: UiEquipped | undefined, newItem: ItemRecord): (EnchantChoice | null)[] {
   const slots = enchantSlotCount(newItem.rarity);
-  // Artifacts: preset unchangeable enchantments, always auto-filled.
-  if (hasFixedEnchants(newItem.rarity)) {
-    return autoFillFixedEnchants(newItem, slots);
-  }
+  if (hasFixedEnchants(newItem.rarity)) return autoFillFixedEnchants(newItem, slots);
   const out: (EnchantChoice | null)[] = Array(slots).fill(null);
   if (!old) return out;
   const pool = enchantablePool(newItem);
@@ -78,203 +66,41 @@ function carryEnchants(
   return out;
 }
 
-/** An archetype that exists in a single rarity is a named/crafted variant. */
-function isNamed(variants: ItemRecord[]): boolean {
-  return variants.length === 1;
-}
-
-function ItemIcon({ name }: { name: string }) {
+function SlotIcon({ name }: { name: string }) {
   const url = itemIcons[name];
-  if (url) return <img className="item-icon" src={url} alt="" loading="lazy" />;
-  return <span className="item-icon item-icon--fallback">{name[0]}</span>;
+  if (url) return <img className="slot-img" src={url} alt="" loading="lazy" />;
+  return <span className="slot-img slot-img--fallback">{name[0]}</span>;
 }
 
-/** Rarity chips for one archetype; the equipped rarity is highlighted. */
-function RarityChips({
-  variants,
-  activeId,
-  onPick,
-}: {
-  variants: ItemRecord[];
-  activeId?: string;
-  onPick: (item: ItemRecord) => void;
-}) {
-  return (
-    <div className="rarity-chips">
-      {variants.map((v) => (
-        <button
-          key={v.id}
-          type="button"
-          className={`rarity-chip${v.id === activeId ? ' rarity-chip--active' : ''}`}
-          style={{ borderColor: rarityColor(v.rarity), color: rarityColor(v.rarity) }}
-          title={`GS ${v.gearScore}`}
-          onClick={() => onPick(v)}
-        >
-          {v.rarity}
-        </button>
-      ))}
-    </div>
-  );
-}
-
-/** Search-first item picker: type a name, pick the archetype, then a rarity. */
-function ItemPicker({
+/** One paperdoll slot: shows the equipped item's icon, or the slot name. */
+function PaperdollSlot({
   slot,
-  options,
-  equipped,
-  onEquip,
-  onClear,
+  item,
+  onClick,
 }: {
   slot: GearSlotId;
-  options: ItemRecord[];
-  equipped: UiEquipped | undefined;
-  onEquip: (item: ItemRecord) => void;
-  onClear: () => void;
+  item: ItemRecord | undefined;
+  onClick: () => void;
 }) {
-  const [query, setQuery] = useState('');
-  const [pickedName, setPickedName] = useState<string | null>(null);
-  const [focused, setFocused] = useState(false);
-  const [rarityFilter, setRarityFilter] = useState<string | null>(null);
-
-  // One entry per archetype name, variants sorted by rarity.
-  const byName = useMemo(() => {
-    const map = new Map<string, ItemRecord[]>();
-    for (const item of options) {
-      const list = map.get(item.name) ?? [];
-      list.push(item);
-      map.set(item.name, list);
-    }
-    for (const list of map.values()) list.sort((a, b) => rarityOrder(a.rarity) - rarityOrder(b.rarity));
-    return map;
-  }, [options]);
-
-  const equippedItem = equipped ? itemIndex.get(equipped.itemId) : undefined;
-
-  if (equippedItem) {
-    const variants = byName.get(equippedItem.name) ?? [equippedItem];
-    return (
-      <div className="itempicker">
-        <div className="itempicker-equipped">
-          <ItemIcon name={equippedItem.name} />
-          <span className="item-name" style={{ color: rarityColor(equippedItem.rarity) }}>
-            {equippedItem.name}
-          </span>
-          <button type="button" className="clear-btn" onClick={onClear} title="Unequip">
-            ×
-          </button>
-        </div>
-        <RarityChips variants={variants} activeId={equippedItem.id} onPick={onEquip} />
-        <div className="item-summary">{fmtBase(equippedItem)}</div>
-      </div>
-    );
-  }
-
-  // With an empty query the FULL archetype list opens on focus (scrollable),
-  // so newcomers can browse; typing or the rarity filter narrows it down.
-  const names = [...byName.keys()].filter(
-    (n) => !rarityFilter || byName.get(n)!.some((v) => v.rarity === rarityFilter),
-  );
-  const matches = query.trim()
-    ? names.filter((n) => n.toLowerCase().includes(query.trim().toLowerCase())).slice(0, MAX_SUGGESTIONS)
-    : focused || rarityFilter !== null
-      ? names
-      : [];
-
-  if (pickedName && byName.has(pickedName)) {
-    return (
-      <div className="itempicker">
-        <div className="itempicker-equipped">
-          <ItemIcon name={pickedName} />
-          <span className="item-name">{pickedName}</span>
-          <button type="button" className="clear-btn" onClick={() => setPickedName(null)}>
-            ×
-          </button>
-        </div>
-        <RarityChips
-          variants={byName.get(pickedName)!}
-          onPick={(item) => {
-            setPickedName(null);
-            setQuery('');
-            onEquip(item);
-          }}
-        />
-      </div>
-    );
-  }
-
   return (
-    <div className="itempicker">
-      <input
-        type="text"
-        className="item-search"
-        placeholder={`Search ${byName.size} items…`}
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' && matches.length > 0) setPickedName(matches[0]!);
-          if (e.key === 'Escape') setFocused(false);
-        }}
-        aria-label={`Search item for ${SLOT_LABELS[slot]}`}
-      />
-      {(focused || rarityFilter !== null) && (
-        // onMouseDown keeps the input focused so blur doesn't close the row first
-        <div className="rarity-filter" onMouseDown={(e) => e.preventDefault()}>
-          <button
-            type="button"
-            className={`rarity-chip${rarityFilter === null ? ' rarity-chip--active' : ''}`}
-            onClick={() => setRarityFilter(null)}
-          >
-            all
-          </button>
-          {rarityTiers
-            .filter((t) => t.order >= 2)
-            .map((t) => (
-              <button
-                key={t.id}
-                type="button"
-                className={`rarity-chip${rarityFilter === t.id ? ' rarity-chip--active' : ''}`}
-                style={{ borderColor: t.color, color: t.color }}
-                onClick={() => setRarityFilter(rarityFilter === t.id ? null : t.id)}
-              >
-                {t.id}
-              </button>
-            ))}
-        </div>
+    <button
+      type="button"
+      className={`pd-slot pd-slot--${slot}${item ? ' pd-slot--filled' : ''}`}
+      style={{ gridArea: slot, borderColor: item ? rarityColor(item.rarity) : undefined }}
+      onClick={onClick}
+      title={item ? `${item.name} (${item.rarity})` : SLOT_LABELS[slot]}
+    >
+      {item ? (
+        <>
+          <SlotIcon name={item.name} />
+          <span className="pd-slot-name" style={{ color: rarityColor(item.rarity) }}>
+            {item.name}
+          </span>
+        </>
+      ) : (
+        <span className="pd-slot-empty">{SLOT_LABELS[slot]}</span>
       )}
-      {matches.length > 0 && (
-        <ul className="suggestions">
-          {matches.map((name) => {
-            const variants = byName.get(name)!;
-            return (
-              <li key={name}>
-                {/* onMouseDown keeps the input focused so blur doesn't close the list first */}
-                <button
-                  type="button"
-                  onMouseDown={(e) => e.preventDefault()}
-                  onClick={() => setPickedName(name)}
-                >
-                  <ItemIcon name={name} />
-                  <span className="suggestion-name">{name}</span>
-                  {isNamed(variants) && (
-                    <span
-                      className="named-badge"
-                      style={{
-                        borderColor: rarityColor(variants[0]!.rarity),
-                        color: rarityColor(variants[0]!.rarity),
-                      }}
-                    >
-                      named · {variants[0]!.rarity}
-                    </span>
-                  )}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      )}
-    </div>
+    </button>
   );
 }
 
@@ -291,7 +117,6 @@ function EnchantRow({
   locked?: boolean;
   onPick: (next: EnchantChoice | null) => void;
 }) {
-  // Artifacts: enchantments are preset and unchangeable — show read-only.
   if (locked) {
     return (
       <div className="enchant-row enchant-row--locked">
@@ -302,23 +127,17 @@ function EnchantRow({
       </div>
     );
   }
-
-  // Game rule: base stats can't repeat as enchantments (enchantablePool).
   const pool = enchantablePool(item);
   const range = choice ? pool.find(([a]) => a === choice.attr) : undefined;
-
   return (
     <div className="enchant-row">
       <select
         value={choice?.attr ?? ''}
         onChange={(e) => {
           const attr = e.target.value;
-          if (!attr) {
-            onPick(null);
-            return;
-          }
+          if (!attr) return onPick(null);
           const entry = pool.find(([a]) => a === attr);
-          onPick({ attr, value: entry ? entry[2] : 0 }); // default: max roll
+          onPick({ attr, value: entry ? entry[2] : 0 });
         }}
       >
         <option value="">— enchantment —</option>
@@ -349,22 +168,14 @@ interface GearPanelProps {
   perkIds: string[];
   loadout: UiLoadout;
   onChange: (next: UiLoadout) => void;
-  /** Bumped by Reset/class switch — remounts pickers to clear mid-pick state. */
-  resetNonce?: number;
 }
 
-export function GearPanel({ classData, perkIds, loadout, onChange, resetNonce = 0 }: GearPanelProps) {
-  // Eligibility depends on perks (Weapon Mastery, Slayer, Demon Armor...).
+export function GearPanel({ classData, perkIds, loadout, onChange }: GearPanelProps) {
+  const [pickerSlot, setPickerSlot] = useState<GearSlotId | null>(null);
+
   const eligibleBySlot = useMemo(() => {
     const map = new Map<GearSlotId, ItemRecord[]>();
-    for (const slot of GEAR_SLOTS) {
-      map.set(
-        slot,
-        eligibleItems(items, classData, slot, perkIds).sort(
-          (a, b) => a.name.localeCompare(b.name) || rarityOrder(a.rarity) - rarityOrder(b.rarity),
-        ),
-      );
-    }
+    for (const slot of GEAR_SLOTS) map.set(slot, eligibleItems(items, classData, slot, perkIds));
     return map;
   }, [classData, perkIds]);
 
@@ -392,53 +203,79 @@ export function GearPanel({ classData, perkIds, loadout, onChange, resetNonce = 
     onChange({ ...loadout, [slot]: { ...current, enchants } });
   };
 
-  return (
-    <div className="gearpanel">
-      <h2>Equipment</h2>
-      {GEAR_SLOTS.map((slot) => {
-        const equipped = loadout[slot];
-        const item = equipped ? itemIndex.get(equipped.itemId) : undefined;
-        const disabled = slot === 'secondary' && twoHanded;
-        const usedAttrs = new Set(
-          (equipped?.enchants ?? [])
-            .filter((e): e is EnchantChoice => e !== null)
-            .map((e) => e.attr),
-        );
+  // Equipped items that have enchant slots -> shown in the enchant column.
+  const enchantable = PAPERDOLL_SLOTS.filter((slot) => {
+    const eq = loadout[slot];
+    if (!eq) return false;
+    const item = itemIndex.get(eq.itemId);
+    return item && enchantSlotCount(item.rarity) > 0;
+  });
 
-        return (
-          <div key={slot} className={`gear-slot${disabled ? ' gear-slot--disabled' : ''}`}>
-            <label className="gear-slot-label">
-              {SLOT_LABELS[slot]}
-              {disabled && <span className="gear-note"> (two-handed)</span>}
-            </label>
-            {!disabled && (
-              <ItemPicker
-                key={`${slot}:${resetNonce}`}
+  return (
+    <div className="gear-layout">
+      <div className="paperdoll">
+        <div className="pd-grid">
+          {PAPERDOLL_SLOTS.map((slot) => {
+            const eq = loadout[slot];
+            const item = eq ? itemIndex.get(eq.itemId) : undefined;
+            const disabled = slot === 'secondary' && twoHanded;
+            return (
+              <PaperdollSlot
+                key={slot}
                 slot={slot}
-                options={eligibleBySlot.get(slot) ?? []}
-                equipped={equipped}
-                onEquip={(it) => equip(slot, it)}
-                onClear={() => clear(slot)}
+                item={disabled ? undefined : item}
+                onClick={() => !disabled && setPickerSlot(slot)}
               />
-            )}
-            {item && !disabled && hasFixedEnchants(item.rarity) && (
-              <div className="fixed-enchants-note">Fixed enchantments (artifact)</div>
-            )}
-            {item &&
-              !disabled &&
-              (equipped?.enchants ?? []).map((choice, idx) => (
+            );
+          })}
+        </div>
+        {twoHanded && <p className="hint pd-note">Two-handed weapon — off-hand disabled.</p>}
+      </div>
+
+      <div className="enchant-column">
+        <h2>Enchantments</h2>
+        {enchantable.length === 0 && (
+          <p className="hint">Equip Uncommon+ gear to add enchantments.</p>
+        )}
+        {enchantable.map((slot) => {
+          const eq = loadout[slot]!;
+          const item = itemIndex.get(eq.itemId)!;
+          const usedAttrs = new Set(
+            eq.enchants.filter((e): e is EnchantChoice => e !== null).map((e) => e.attr),
+          );
+          const locked = hasFixedEnchants(item.rarity);
+          return (
+            <div key={slot} className="enchant-group">
+              <div className="enchant-group-head">
+                <span style={{ color: rarityColor(item.rarity) }}>{item.name}</span>
+                <span className="enchant-group-slot">{SLOT_LABELS[slot]}</span>
+              </div>
+              {locked && <div className="fixed-enchants-note">Fixed (artifact)</div>}
+              {eq.enchants.map((choice, idx) => (
                 <EnchantRow
                   key={idx}
                   item={item}
                   choice={choice}
                   usedAttrs={usedAttrs}
-                  locked={hasFixedEnchants(item.rarity)}
+                  locked={locked}
                   onPick={(next) => setEnchant(slot, idx, next)}
                 />
               ))}
-          </div>
-        );
-      })}
+            </div>
+          );
+        })}
+      </div>
+
+      {pickerSlot && (
+        <ItemPickerModal
+          slot={pickerSlot}
+          options={eligibleBySlot.get(pickerSlot) ?? []}
+          equippedId={loadout[pickerSlot]?.itemId}
+          onEquip={(item) => equip(pickerSlot, item)}
+          onClose={() => setPickerSlot(null)}
+          onUnequip={loadout[pickerSlot] ? () => clear(pickerSlot) : undefined}
+        />
+      )}
     </div>
   );
 }
