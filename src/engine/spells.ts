@@ -1,5 +1,5 @@
 import type { DerivedStats } from './types';
-import { reductionMultiplier, type DummyTarget } from './damage';
+import { headZoneMultiplier, reductionMultiplier, type DummyTarget } from './damage';
 
 /**
  * Spell damage/heal simulation.
@@ -83,14 +83,9 @@ export function simulateSpell(
 
     const drMult = reductionMultiplier(dummy.mdrPct, magicPen);
     const body = Math.round(scaled(1) * drMult);
-    const head = isProjectile
-      ? Math.round(
-          scaled(1.5) *
-            (1 + headshotBonus / 100) *
-            drMult *
-            (1 - dummy.headshotReductionPct / 100),
-        )
-      : null;
+    // Headshot bonus/reduction are additive to the head multiplier (see damage.ts).
+    const headMult = headZoneMultiplier(1.5, headshotBonus, dummy.headshotReductionPct);
+    const head = isProjectile ? Math.round(scaled(headMult) * drMult) : null;
     return { label: hit.label, heal: false, body, head };
   });
 }

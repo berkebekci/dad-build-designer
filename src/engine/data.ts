@@ -17,6 +17,7 @@ import wizardJson from '../../data/classes/wizard.json';
 import rarityJson from '../../data/rules/rarity_enchantments.json';
 import combatJson from '../../data/rules/combat.json';
 import weaponHitsJson from '../../data/rules/weapon_hits.json';
+import opponentsJson from '../../data/rules/opponents.json';
 import spellsJson from '../../data/spells/spells.json';
 import itemsJson from '../../data/items/items.json';
 import iconsJson from '../../data/items/icons.json';
@@ -97,6 +98,23 @@ export const combatRules = combatJson as unknown as CombatRules;
 export const weaponHits = weaponHitsJson as unknown as WeaponHitsTable;
 
 export const spellBook = (spellsJson as unknown as { classes: SpellBook }).classes;
+
+export type TankinessTier = 'low' | 'medium' | 'high';
+
+export interface OpponentProfile {
+  pdr: number;
+  mdr: number;
+  hdr: number;
+  hp: number;
+}
+
+export const opponentProfiles = (
+  opponentsJson as unknown as { classes: Record<string, Record<TankinessTier, OpponentProfile>> }
+).classes;
+
+export function opponentProfile(classId: string, tier: TankinessTier): OpponentProfile {
+  return opponentProfiles[classId]?.[tier] ?? { pdr: 0, mdr: 0, hdr: 0, hp: 125 };
+}
 
 /** archetype name -> icon URL (wiki mirror thumbnails) */
 export const itemIcons = (iconsJson as unknown as { icons: Record<string, string> }).icons;

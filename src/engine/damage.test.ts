@@ -74,11 +74,29 @@ describe('simulateHits - Falchion 40 WD on naked Fighter (0% PP bonus)', () => {
     expect(withPen.hits[0]!.zones.body).toBe(34); // 40 * (1 - 0.3*0.5)
   });
 
-  it('headshot reduction only affects the head', () => {
+  it('headshot reduction subtracts from the head bonus additively, not multiplicatively', () => {
+    // Typical 15% reduction: head mult = 1.5 - 0.15 = 1.35, so 40 * 1.35 = 54
+    // (NOT the old buggy 60 * 0.85 = 51).
+    const dummy: DummyTarget = { pdrPct: 0, mdrPct: 0, headshotReductionPct: 15 };
+    const { hits } = simulateHits(statsWithSword(), 'Falchion', weaponHits, combatRules, dummy);
+    expect(hits[0]!.zones.head).toBe(54);
+    expect(hits[0]!.zones.body).toBe(40); // untouched
+  });
+
+  it('extreme headshot reduction floors the head at body damage (never worse)', () => {
+    // 50% reduction: 1.5 - 0.5 = 1.0, floored at 1.0 -> head == body.
     const dummy: DummyTarget = { pdrPct: 0, mdrPct: 0, headshotReductionPct: 50 };
     const { hits } = simulateHits(statsWithSword(), 'Falchion', weaponHits, combatRules, dummy);
-    expect(hits[0]!.zones.head).toBe(30); // 60 * 0.5
-    expect(hits[0]!.zones.body).toBe(40); // untouched
+    expect(hits[0]!.zones.head).toBe(40);
+  });
+
+  it('gear headshot bonus adds to the head multiplier', () => {
+    // +20% headshot bonus vs 15% reduction: 1.5 + 0.2 - 0.15 = 1.55 -> 40*1.55 = 62
+    const stats = statsWithSword();
+    stats.percentExtras.headshotDamagePct = 20;
+    const dummy: DummyTarget = { pdrPct: 0, mdrPct: 0, headshotReductionPct: 15 };
+    const { hits } = simulateHits(stats, 'Falchion', weaponHits, combatRules, dummy);
+    expect(hits[0]!.zones.head).toBe(62);
   });
 
   it('true damage bypasses PDR entirely', () => {

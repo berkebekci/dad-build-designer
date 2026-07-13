@@ -51,7 +51,12 @@ Repo: https://github.com/berkebekci/dad-build-designer
 - Rarity → enchantments: Poor/Common 0, Uncommon 1, Rare 2, Epic 3, Legendary 4,
   Unique 1, Artifact 6 (fixed/unchangeable). Bit order above; artifact = top tier.
 - Zone multipliers: head 1.5, body 1.0, arms 0.8, hands 0.7, legs 0.6, feet 0.5.
+- Headshot: bonus/reduction are ADDITIVE to the head multiplier (1.5 + gearBonus
+  − targetHDR, floored at 1.0), NOT multiplicative. e.g. 150% − 15% = 135%.
 - Move speed shown as % with 330 = 100%. Penetration: effDR = DR·(1−pen).
+- Damage tab: opponent = a class + tankiness tier (low/med/high); averaged
+  PDR/MDR/HDR/HP in data/rules/opponents.json (fighter/rogue user-given, rest
+  estimated) drive damage + hits-to-kill.
 
 ## Status
 

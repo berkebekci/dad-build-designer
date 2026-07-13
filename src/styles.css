@@ -532,6 +532,115 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+/* --- opponent panel + tankiness slider --- */
+.opponent-panel {
+  grid-column: 1 / -1;
+}
+
+.opponent-controls {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.opponent-controls select {
+  width: 100%;
+  background: var(--panel-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+.tankiness-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.tankiness-tier {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.tankiness input[type='range'] {
+  width: 100%;
+  accent-color: var(--gold);
+}
+
+.tankiness-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.opponent-profile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.profile-chip {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 3px 12px;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+/* --- hits to kill --- */
+.ttk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ttk-cell {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.ttk-cell--head {
+  border-color: var(--gold);
+}
+
+.ttk-num {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.ttk-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.ttk-sub {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
 .spell-cost {
   color: var(--muted);
   font-weight: 400;

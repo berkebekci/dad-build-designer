@@ -101,15 +101,28 @@ function componentDamage(
   gearWeaponDmg: number,
   powerBonusPct: number,
   additional: number,
-  headFactor: number,
   drPct: number,
   penPct: number,
-  headReductionFactor: number,
 ): number {
   if (base <= 0 && gearWeaponDmg <= 0 && additional <= 0) return 0;
   const afterZone = base * comboMult * zoneMult + gearWeaponDmg;
   const afterPower = afterZone * (1 + powerBonusPct / 100) + additional;
-  return afterPower * headFactor * reductionMultiplier(drPct, penPct) * headReductionFactor;
+  return afterPower * reductionMultiplier(drPct, penPct);
+}
+
+/**
+ * Effective head zone multiplier. Headshot Damage BONUS (from gear) and the
+ * target's Headshot Damage REDUCTION modify the headshot bonus ADDITIVELY,
+ * not multiplicatively: a 1.5x head with 15% reduction is 1.35x (150% - 15%),
+ * NOT 1.5 * 0.85. Player headshot bonus adds on top. Floored so a head hit is
+ * never worse than a body hit.
+ */
+export function headZoneMultiplier(
+  baseHeadMult: number,
+  headshotBonusPct: number,
+  headshotReductionPct: number,
+): number {
+  return Math.max(1, baseHeadMult + headshotBonusPct / 100 - headshotReductionPct / 100);
 }
 
 /**
@@ -135,9 +148,12 @@ export function simulateHits(
   const buildHit = (multPct: number, label: string, isRiposte: boolean): HitResult => {
     const zones = {} as Record<ZoneId, number>;
     for (const zone of ZONES) {
-      const zoneMult = rules.hit_zones[zone];
-      const headFactor = zone === 'head' ? 1 + headshotBonus / 100 : 1;
-      const headRed = zone === 'head' ? 1 - dummy.headshotReductionPct / 100 : 1;
+      // Head applies headshot bonus/reduction additively to its multiplier
+      // (150% - 15% reduction = 135%), other zones use their flat multiplier.
+      const zoneMult =
+        zone === 'head'
+          ? headZoneMultiplier(rules.hit_zones.head, headshotBonus, dummy.headshotReductionPct)
+          : rules.hit_zones[zone];
 
       const physical = componentDamage(
         stats.weaponDamage,
@@ -146,10 +162,8 @@ export function simulateHits(
         stats.gearWeaponDamage,
         stats.physicalPowerBonusPct,
         stats.additionalPhysicalDamage,
-        headFactor,
         dummy.pdrPct,
         armorPen,
-        headRed,
       );
       const magical = componentDamage(
         stats.magicWeaponDamage,
@@ -158,10 +172,8 @@ export function simulateHits(
         0,
         stats.magicalPowerBonusPct,
         stats.additionalMagicalDamage,
-        headFactor,
         dummy.mdrPct,
         magicPen,
-        headRed,
       );
 
       const total = physical + magical + stats.truePhysicalDamage + stats.trueMagicalDamage;

@@ -2,9 +2,8 @@ import { useState } from 'react';
 import type { DerivedStats } from '../engine/types';
 import { simulateHits, type DummyTarget, type ZoneId } from '../engine/damage';
 import { simulateSpell, type SpellData } from '../engine/spells';
-import { evalCurve } from '../engine/curves';
-import { combatRules, statCurves, weaponHits } from '../engine/data';
-import { NumberField } from './NumberField';
+import { classes, opponentProfile, type TankinessTier } from '../engine/data';
+import { combatRules, weaponHits } from '../engine/data';
 
 const SHOWN_ZONES: { id: ZoneId; label: string }[] = [
   { id: 'head', label: 'Head' },
@@ -13,66 +12,113 @@ const SHOWN_ZONES: { id: ZoneId; label: string }[] = [
   { id: 'legs', label: 'Leg' },
 ];
 
+const TIERS: TankinessTier[] = ['low', 'medium', 'high'];
+const TIER_LABEL: Record<TankinessTier, string> = { low: 'Low', medium: 'Medium', high: 'High' };
+
 interface DamageTabProps {
   stats: DerivedStats;
   weaponName: string | undefined;
   selectedSpells: SpellData[];
 }
 
-export function DamageTab({ stats, weaponName, selectedSpells }: DamageTabProps) {
-  // The dummy is configured like a real target: armor rating as a NUMBER
-  // (converted through the same PDR curve as players), MDR as a percent.
-  const [armorRating, setArmorRating] = useState(200);
-  const [mdrPct, setMdrPct] = useState(20);
-  const [headshotReductionPct, setHeadshotReductionPct] = useState(0);
+function htk(hp: number, perHit: number): string {
+  if (perHit <= 0) return '∞';
+  return String(Math.ceil(hp / perHit));
+}
 
-  const pdrCurve = statCurves.curves['physical_damage_reduction']!;
-  const dummyPdr = Math.min(evalCurve(pdrCurve, armorRating), 65);
-  const dummy: DummyTarget = { pdrPct: dummyPdr, mdrPct, headshotReductionPct };
+export function DamageTab({ stats, weaponName, selectedSpells }: DamageTabProps) {
+  // The opponent is a real class at a chosen tankiness tier; its averaged
+  // PDR/MDR/headshot-reduction and HP drive the damage + hits-to-kill.
+  const [opponentId, setOpponentId] = useState('fighter');
+  const [tierIdx, setTierIdx] = useState(1); // 0=low, 1=medium, 2=high
+  const tier = TIERS[tierIdx]!;
+  const prof = opponentProfile(opponentId, tier);
+
+  const dummy: DummyTarget = {
+    pdrPct: prof.pdr,
+    mdrPct: prof.mdr,
+    headshotReductionPct: prof.hdr,
+  };
 
   const hasWeapon = stats.weaponDamage > 0 || stats.magicWeaponDamage > 0;
   const melee = hasWeapon ? simulateHits(stats, weaponName, weaponHits, combatRules, dummy) : null;
   const damageSpells = selectedSpells.filter((s) => s.hits.length > 0);
 
+  // Hits-to-kill: average the main combo (non-riposte) body/head damage.
+  const comboHits = melee?.hits.filter((h) => !h.isRiposte) ?? [];
+  const avgBody = comboHits.length
+    ? comboHits.reduce((s, h) => s + h.zones.body, 0) / comboHits.length
+    : 0;
+  const avgHead = comboHits.length
+    ? comboHits.reduce((s, h) => s + h.zones.head, 0) / comboHits.length
+    : 0;
+
   return (
     <div className="damage-tab">
-      <div className="damagesim">
-        <h2>Training Dummy</h2>
-        <div className="dummy-controls">
+      <div className="damagesim opponent-panel">
+        <h2>Opponent</h2>
+        <div className="opponent-controls">
           <label className="gear-field">
-            Armor Rating
-            <NumberField
-              value={armorRating}
-              min={-300}
-              max={600}
-              onChange={setArmorRating}
-              ariaLabel="Dummy armor rating"
-            />
+            Class
+            <select value={opponentId} onChange={(e) => setOpponentId(e.target.value)}>
+              {Object.values(classes).map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
+                </option>
+              ))}
+            </select>
           </label>
-          <label className="gear-field">
-            → PDR
-            <span className="derived-value">{(Math.round(dummyPdr * 10) / 10).toFixed(1)}%</span>
-          </label>
-          <label className="gear-field">
-            MDR %
-            <NumberField value={mdrPct} min={0} max={100} onChange={setMdrPct} ariaLabel="Dummy MDR" />
-          </label>
-          <label className="gear-field">
-            Headshot Red. %
-            <NumberField
-              value={headshotReductionPct}
+          <div className="tankiness">
+            <div className="tankiness-head">
+              <span>Tankiness</span>
+              <span className="tankiness-tier">{TIER_LABEL[tier]}</span>
+            </div>
+            <input
+              type="range"
               min={0}
-              max={100}
-              onChange={setHeadshotReductionPct}
-              ariaLabel="Dummy headshot reduction"
+              max={2}
+              step={1}
+              value={tierIdx}
+              onChange={(e) => setTierIdx(Number(e.target.value))}
+              aria-label="Opponent tankiness"
             />
-          </label>
+            <div className="tankiness-ticks">
+              {TIERS.map((t) => (
+                <span key={t}>{TIER_LABEL[t]}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="opponent-profile">
+          <span className="profile-chip">HP {prof.hp}</span>
+          <span className="profile-chip">PDR {prof.pdr}%</span>
+          <span className="profile-chip">MDR {prof.mdr}%</span>
+          <span className="profile-chip">Headshot Red. {prof.hdr}%</span>
         </div>
         <p className="hint">
-          The dummy's armor rating runs through the same PDR curve as players (cap 65%).
+          Values are per-class, per-tankiness averages ({classes[opponentId]?.name} · {TIER_LABEL[tier]}).
           Your Armor/Magic Penetration, Headshot Bonus, additional and true damage are all applied.
         </p>
       </div>
+
+      {melee && (
+        <div className="damagesim ttk-panel">
+          <h2>Hits to Kill</h2>
+          <div className="ttk-grid">
+            <div className="ttk-cell">
+              <div className="ttk-num">{htk(prof.hp, avgBody)}</div>
+              <div className="ttk-label">body hits</div>
+              <div className="ttk-sub">~{Math.round(avgBody)}/hit</div>
+            </div>
+            <div className="ttk-cell ttk-cell--head">
+              <div className="ttk-num">{htk(prof.hp, avgHead)}</div>
+              <div className="ttk-label">head hits</div>
+              <div className="ttk-sub">~{Math.round(avgHead)}/hit</div>
+            </div>
+          </div>
+          <p className="hint">Average across the {comboHits.length}-hit combo vs {prof.hp} HP.</p>
+        </div>
+      )}
 
       <div className="damagesim">
         <h2>Weapon Hits{weaponName ? ` — ${weaponName}` : ''}</h2>
@@ -105,8 +151,8 @@ export function DamageTab({ stats, weaponName, selectedSpells }: DamageTabProps)
             </table>
             <p className="hint">
               Zones: head ×1.5, body ×1.0, arm ×0.8, leg ×0.6 (hands ×0.7, feet ×0.5 not shown).
-              {melee.usedFallback &&
-                ' Combo data missing for this weapon — showing a single 100% attack.'}
+              Headshot reduction subtracts from the headshot bonus (150% − 15% = 135%).
+              {melee.usedFallback && ' Combo data missing for this weapon — showing a single 100% attack.'}
             </p>
           </>
         )}
@@ -142,8 +188,8 @@ export function DamageTab({ stats, weaponName, selectedSpells }: DamageTabProps)
         })}
         {damageSpells.length > 0 && (
           <p className="hint">
-            Spell damage = (base + staff Magical Damage) × (1 + MP Bonus × scaling) vs dummy MDR
-            with Magic Penetration; projectiles can headshot (×1.5). Heals ignore the dummy.
+            Spell damage = (base + staff Magical Damage) × (1 + MP Bonus × scaling) vs the opponent's
+            MDR with your Magic Penetration; projectiles can headshot. Heals ignore the opponent.
           </p>
         )}
       </div>
