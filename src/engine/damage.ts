@@ -44,6 +44,48 @@ export interface HitResult {
 
 const ZONES: ZoneId[] = ['head', 'body', 'arms', 'hands', 'legs', 'feet'];
 
+/** Reskin prefixes/suffixes that don't change a weapon's attack pattern. */
+const RESKIN_PREFIXES = [
+  'Golden',
+  'Obsidian',
+  'Divine',
+  'Sterling',
+  'Tidal',
+  'Frostlight',
+  'Elven',
+  'Rubysilver',
+];
+const RESKIN_SUFFIXES = [' of Righteousness', ' of Honor', ' of Truth', ' of Solaris'];
+
+/**
+ * Resolves a weapon's combo, inheriting from the base weapon for named
+ * reskins (e.g. "Obsidian War Hammer" -> "War Hammer", "Tidal Falchion" ->
+ * "Falchion"). Unique-name artifacts with no base fall through to the caller's
+ * single-hit fallback.
+ */
+export function resolveWeaponHits(
+  weaponName: string | undefined,
+  table: WeaponHitsTable,
+): { hits: number[]; riposte?: number[] } | undefined {
+  if (!weaponName) return undefined;
+  if (table.weapons[weaponName]) return table.weapons[weaponName];
+
+  let base = weaponName;
+  for (const p of RESKIN_PREFIXES) {
+    if (base.startsWith(p + ' ')) {
+      base = base.slice(p.length + 1);
+      break;
+    }
+  }
+  for (const s of RESKIN_SUFFIXES) {
+    if (base.endsWith(s)) {
+      base = base.slice(0, -s.length);
+      break;
+    }
+  }
+  return table.weapons[base];
+}
+
 /** Effective damage-reduction multiplier after penetration (pen only helps). */
 export function reductionMultiplier(drPct: number, penPct: number): number {
   const dr = drPct / 100;
@@ -81,7 +123,7 @@ export function simulateHits(
   rules: CombatRules,
   dummy: DummyTarget,
 ): { hits: HitResult[]; usedFallback: boolean } {
-  const entry = weaponName ? hitsTable.weapons[weaponName] : undefined;
+  const entry = resolveWeaponHits(weaponName, hitsTable);
   const usedFallback = !entry;
   const sequence = entry?.hits ?? [100];
   const riposte = entry?.riposte ?? [];

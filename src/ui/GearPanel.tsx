@@ -3,6 +3,7 @@ import type { ClassData } from '../engine/types';
 import {
   GEAR_SLOTS,
   attrLabel,
+  autoFillFixedEnchants,
   enchantablePool,
   type EnchantChoice,
   type GearSlotId,
@@ -11,6 +12,7 @@ import {
 import { eligibleItems, isTwoHanded } from '../engine/gearRules';
 import {
   enchantSlotCount,
+  hasFixedEnchants,
   itemIcons,
   itemIndex,
   items,
@@ -59,6 +61,10 @@ function carryEnchants(
   newItem: ItemRecord,
 ): (EnchantChoice | null)[] {
   const slots = enchantSlotCount(newItem.rarity);
+  // Artifacts: preset unchangeable enchantments, always auto-filled.
+  if (hasFixedEnchants(newItem.rarity)) {
+    return autoFillFixedEnchants(newItem, slots);
+  }
   const out: (EnchantChoice | null)[] = Array(slots).fill(null);
   if (!old) return out;
   const pool = enchantablePool(newItem);
@@ -276,13 +282,27 @@ function EnchantRow({
   item,
   choice,
   usedAttrs,
+  locked,
   onPick,
 }: {
   item: ItemRecord;
   choice: EnchantChoice | null;
   usedAttrs: Set<string>;
+  locked?: boolean;
   onPick: (next: EnchantChoice | null) => void;
 }) {
+  // Artifacts: enchantments are preset and unchangeable — show read-only.
+  if (locked) {
+    return (
+      <div className="enchant-row enchant-row--locked">
+        <span className="locked-enchant">
+          <span className="lock-icon">🔒</span>
+          {choice ? `${attrLabel(choice.attr)} +${choice.value}` : '—'}
+        </span>
+      </div>
+    );
+  }
+
   // Game rule: base stats can't repeat as enchantments (enchantablePool).
   const pool = enchantablePool(item);
   const range = choice ? pool.find(([a]) => a === choice.attr) : undefined;
@@ -401,6 +421,9 @@ export function GearPanel({ classData, perkIds, loadout, onChange, resetNonce = 
                 onClear={() => clear(slot)}
               />
             )}
+            {item && !disabled && hasFixedEnchants(item.rarity) && (
+              <div className="fixed-enchants-note">Fixed enchantments (artifact)</div>
+            )}
             {item &&
               !disabled &&
               (equipped?.enchants ?? []).map((choice, idx) => (
@@ -409,6 +432,7 @@ export function GearPanel({ classData, perkIds, loadout, onChange, resetNonce = 
                   item={item}
                   choice={choice}
                   usedAttrs={usedAttrs}
+                  locked={hasFixedEnchants(item.rarity)}
                   onPick={(next) => setEnchant(slot, idx, next)}
                 />
               ))}

@@ -419,6 +419,40 @@ body {
   color: var(--neg);
 }
 
+.stat-sub {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.enchant-row--locked {
+  margin-left: 12px;
+}
+
+.locked-enchant {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--gold);
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.lock-icon {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.fixed-enchants-note {
+  font-size: 11px;
+  color: #ff4dd2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
 .columns--four {
   grid-template-columns: 1.1fr 1.1fr 1.1fr 0.9fr;
 }

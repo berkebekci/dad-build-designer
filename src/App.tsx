@@ -1,8 +1,17 @@
 import { useEffect, useMemo, useState } from 'react';
 import { computeStats } from './engine/computeStats';
 import { validateBuild } from './engine/validateBuild';
-import { classes, enchantSlotCount, itemIndex, items, spellBook, statCurves } from './engine/data';
 import {
+  classes,
+  enchantSlotCount,
+  hasFixedEnchants,
+  itemIndex,
+  items,
+  spellBook,
+  statCurves,
+} from './engine/data';
+import {
+  autoFillFixedEnchants,
   enchantablePool,
   gearTotals,
   type EnchantChoice,
@@ -67,6 +76,11 @@ function sanitizeBuild(raw: BuildState): BuildState {
     const legal = eligibleItems(items, classData, slot, perkIds).some((i) => i.id === item.id);
     if (!legal) continue;
     const slots = enchantSlotCount(item.rarity);
+    // Artifacts: preset unchangeable enchantments, ignore whatever was saved.
+    if (hasFixedEnchants(item.rarity)) {
+      loadout[slot] = { itemId: item.id, enchants: autoFillFixedEnchants(item, slots) };
+      continue;
+    }
     const enchants: (EnchantChoice | null)[] = Array(slots).fill(null);
     const seen = new Set<string>();
     const pool = enchantablePool(item); // base stats can't repeat as enchants

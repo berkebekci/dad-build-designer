@@ -54,6 +54,8 @@ export interface RarityTier {
   enchantments: number;
   enchantments_crafted: number;
   color: string;
+  /** Artifacts: the enchantments are preset and can't be changed by the player. */
+  fixed_enchants?: boolean;
 }
 
 export const rarityTiers = (rarityJson as { rarity_tiers: RarityTier[] }).rarity_tiers;
@@ -79,6 +81,11 @@ export function rarityOrder(rarity: string): number {
 
 export function rarityColor(rarity: string): string {
   return tierFor(rarity)?.color ?? '#ffffff';
+}
+
+/** True for artifacts: enchantments are preset and locked (not user-editable). */
+export function hasFixedEnchants(rarity: string): boolean {
+  return tierFor(rarity)?.fixed_enchants ?? false;
 }
 
 export const items = (itemsJson as unknown as { items: ItemRecord[] }).items;

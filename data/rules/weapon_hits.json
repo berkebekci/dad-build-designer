@@ -33,6 +33,8 @@
     "Hatchet": { "hits": [100, 105, 110], "riposte": [150] },
     "Bloodsap Blade": { "hits": [100, 105, 110], "riposte": [150, 150] },
     "Crystal Sword": { "hits": [100, 105, 110], "riposte": [150] },
+    "Boneshaper": { "hits": [100, 110, 110], "riposte": [150] },
+    "Light Bringer": { "hits": [100, 105, 110], "riposte": [150] },
     "Crossbow": { "hits": [100] },
     "Windlass Crossbow": { "hits": [100] },
     "Hand Crossbow": { "hits": [100] },

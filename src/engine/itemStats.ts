@@ -182,6 +182,27 @@ export function enchantablePool(item: ItemRecord): [string, number, number][] {
   return (item.pool ?? []).filter(([a]) => !baseAttrs.has(a));
 }
 
+/**
+ * Artifacts have preset, unchangeable enchantments. Our dataset only marks
+ * some of them as fixed (min==max in the pool), so we take those first and
+ * top up to `count` from the highest remaining pool rolls. Approximate but
+ * gives a consistent locked loadout. Returns choices at their max roll.
+ */
+export function autoFillFixedEnchants(item: ItemRecord, count: number): EnchantChoice[] {
+  const pool = enchantablePool(item);
+  const fixed = pool.filter(([, min, max]) => min === max);
+  const ranged = pool
+    .filter(([, min, max]) => min !== max)
+    .sort((a, b) => b[2] - a[2]); // biggest rolls first
+  const picked: EnchantChoice[] = [];
+  for (const [attr, , max] of [...fixed, ...ranged]) {
+    if (picked.length >= count) break;
+    if (picked.some((p) => p.attr === attr)) continue;
+    picked.push({ attr, value: max });
+  }
+  return picked;
+}
+
 /** Human-readable label for enchantment pickers and stat rows. */
 export function attrLabel(attr: string): string {
   return attr

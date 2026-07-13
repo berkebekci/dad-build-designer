@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { eligibleItems, isTwoHanded, normalizeLoadout } from './gearRules';
+import { autoFillFixedEnchants } from './itemStats';
 import { classes, enchantSlotCount, fighter, items, itemIndex, rarityColor, rarityOrder } from './data';
 
 describe('eligibleItems - Fighter with real item DB', () => {
@@ -117,12 +118,19 @@ describe('artifact + legend rarities', () => {
     expect(rarityOrder('artifact')).toBe(7);
     expect(rarityOrder('artifact')).toBeGreaterThan(rarityOrder('unique'));
     expect(rarityColor('artifact')).not.toBe('#ffffff');
-    expect(enchantSlotCount('artifact')).toBe(1);
+    expect(enchantSlotCount('artifact')).toBe(6); // 6 fixed unchangeable enchantments
   });
 
   it('legend aliases to legendary (no more unknown -1 order)', () => {
     expect(rarityOrder('legend')).toBe(rarityOrder('legendary'));
     expect(rarityColor('legend')).toBe(rarityColor('legendary'));
+  });
+
+  it('artifacts auto-fill 6 locked enchantments from the pool', () => {
+    const artifact = items.find((i) => i.rarity === 'artifact' && (i.pool?.length ?? 0) >= 6)!;
+    const filled = autoFillFixedEnchants(artifact, 6);
+    expect(filled.length).toBe(6);
+    expect(new Set(filled.map((f) => f.attr)).size).toBe(6); // no duplicates
   });
 
   it('every item in the DB now resolves to a known rarity order', () => {
