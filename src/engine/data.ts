@@ -60,16 +60,25 @@ export const rarityTiers = (rarityJson as { rarity_tiers: RarityTier[] }).rarity
 
 const rarityById = new Map(rarityTiers.map((t) => [t.id, t]));
 
+// A few DB rows use legacy rarity strings (e.g. "legend" for 2 starter items);
+// map them onto the canonical tier so color/sort/enchant math still work.
+const rarityAliases = (rarityJson as { rarity_aliases?: Record<string, string> })
+  .rarity_aliases ?? {};
+
+function tierFor(rarity: string): RarityTier | undefined {
+  return rarityById.get(rarity) ?? rarityById.get(rarityAliases[rarity] ?? '');
+}
+
 export function enchantSlotCount(rarity: string): number {
-  return rarityById.get(rarity)?.enchantments ?? 0;
+  return tierFor(rarity)?.enchantments ?? 0;
 }
 
 export function rarityOrder(rarity: string): number {
-  return rarityById.get(rarity)?.order ?? -1;
+  return tierFor(rarity)?.order ?? -1;
 }
 
 export function rarityColor(rarity: string): string {
-  return rarityById.get(rarity)?.color ?? '#ffffff';
+  return tierFor(rarity)?.color ?? '#ffffff';
 }
 
 export const items = (itemsJson as unknown as { items: ItemRecord[] }).items;

@@ -33,31 +33,31 @@
       "id": "dancing_feet",
       "name": "Dancing Feet",
       "effect": "+10 Move Speed while holding an instrument",
-      "icon": "https://www.spellsandguns.com/images/thumb/2/2a/Perk_Dancing_Feet.png/96px-Perk_Dancing_Feet.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/2/2a/Perk_Dancing_Feet.png/96px-Perk_Dancing_Feet.png"
     },
     {
       "id": "fermata",
       "name": "Fermata",
       "effect": "+5 Resourcefulness",
-      "icon": "https://www.spellsandguns.com/images/thumb/a/ac/Perk_Fermata.png/96px-Perk_Fermata.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/a/ac/Perk_Fermata.png/96px-Perk_Fermata.png"
     },
     {
       "id": "jolly_time",
       "name": "Jolly Time",
       "effect": "Drinking ale restores 5 Physical Base Healing and grants +5 Move Speed and +5 Vigor",
-      "icon": "https://www.spellsandguns.com/images/thumb/9/9a/Perk_Jolly_Time.png/96px-Perk_Jolly_Time.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/9/9a/Perk_Jolly_Time.png/96px-Perk_Jolly_Time.png"
     },
     {
       "id": "lore_mastery",
       "name": "Lore Mastery",
       "effect": "+30% Regular Interaction Speed and +10 Memory Capacity",
-      "icon": "https://www.spellsandguns.com/images/thumb/3/32/Perk_Lore_Mastery.png/96px-Perk_Lore_Mastery.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/3/32/Perk_Lore_Mastery.png/96px-Perk_Lore_Mastery.png"
     },
     {
       "id": "melodic_protection",
       "name": "Melodic Protection",
       "effect": "+25% Physical and Magical Damage Reduction while playing songs",
-      "icon": "https://www.spellsandguns.com/images/thumb/1/12/Perk_Melodic_Protection.png/96px-Perk_Melodic_Protection.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/1/12/Perk_Melodic_Protection.png/96px-Perk_Melodic_Protection.png"
     },
     {
       "id": "rapier_mastery",
@@ -69,13 +69,13 @@
       "id": "reinforced_instruments",
       "name": "Reinforced Instruments",
       "effect": "+50% Physical Power Bonus when attacking with musical instruments",
-      "icon": "https://www.spellsandguns.com/images/thumb/6/61/Perk_Reinforced_Instruments.png/96px-Perk_Reinforced_Instruments.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/6/61/Perk_Reinforced_Instruments.png/96px-Perk_Reinforced_Instruments.png"
     },
     {
       "id": "story_teller",
       "name": "Story Teller",
       "effect": "Party members within 6m gain +5 Will and +3 Knowledge",
-      "icon": "https://www.spellsandguns.com/images/thumb/d/d6/Perk_Story_Teller.png/96px-Perk_Story_Teller.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/d6/Perk_Story_Teller.png/96px-Perk_Story_Teller.png"
     },
     {
       "id": "superior_dexterity",

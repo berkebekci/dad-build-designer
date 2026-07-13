@@ -9,7 +9,7 @@ import {
   type GearSlotId,
   type Loadout,
 } from './engine/itemStats';
-import { eligibleItems } from './engine/gearRules';
+import { eligibleItems, normalizeLoadout } from './engine/gearRules';
 import { classSpells, spellSlots } from './engine/spells';
 import { decodeBuild, encodeBuild, type BuildState } from './engine/buildCodec';
 import { PickList } from './ui/PickList';
@@ -28,7 +28,7 @@ const TABS: { id: TabId; label: string }[] = [
   { id: 'damage', label: 'Damage' },
 ];
 
-/** Strip empty enchant rows for the engine. */
+/** Strip empty enchant rows and enforce the 2H rule for the engine. */
 function toEngineLoadout(ui: UiLoadout): Loadout {
   const out: Loadout = {};
   for (const [slot, equipped] of Object.entries(ui) as [GearSlotId, UiLoadout[GearSlotId]][]) {
@@ -38,7 +38,7 @@ function toEngineLoadout(ui: UiLoadout): Loadout {
       enchants: equipped.enchants.filter((e): e is EnchantChoice => e !== null),
     };
   }
-  return out;
+  return normalizeLoadout(out, itemIndex);
 }
 
 /**
@@ -80,7 +80,7 @@ function sanitizeBuild(raw: BuildState): BuildState {
     loadout[slot] = { itemId: item.id, enchants };
   }
 
-  return { classId: classData.id, perkIds, skillIds, spellIds, loadout };
+  return { classId: classData.id, perkIds, skillIds, spellIds, loadout: normalizeLoadout(loadout, itemIndex) };
 }
 
 function loadInitialBuild(): BuildState {

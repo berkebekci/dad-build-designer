@@ -39,49 +39,49 @@
       "id": "curse_mastery",
       "name": "Curse Mastery",
       "effect": "Extends curse durations (Curse of Pain 10.4s, Curse of Weakness 15s, Power of Sacrifice 15.6s)",
-      "icon": "https://www.spellsandguns.com/images/thumb/d/dd/Perk_Curse_Mastery.png/96px-Perk_Curse_Mastery.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/dd/Perk_Curse_Mastery.png/96px-Perk_Curse_Mastery.png"
     },
     {
       "id": "dark_enhancement",
       "name": "Dark Enhancement",
       "effect": "+20% Dark Power Bonus for dark magic spells",
-      "icon": "https://www.spellsandguns.com/images/thumb/8/83/Perk_Dark_Enhancement.png/96px-Perk_Dark_Enhancement.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/8/83/Perk_Dark_Enhancement.png/96px-Perk_Dark_Enhancement.png"
     },
     {
       "id": "dark_reflection",
       "name": "Dark Reflection",
       "effect": "Reflect 15 Dark Magical Base Damage (25% scaling) to melee attackers",
-      "icon": "https://www.spellsandguns.com/images/thumb/7/74/Perk_Dark_Reflection.png/96px-Perk_Dark_Reflection.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/7/74/Perk_Dark_Reflection.png/96px-Perk_Dark_Reflection.png"
     },
     {
       "id": "demon_armor",
       "name": "Demon Armor",
       "effect": "Gain the ability to equip plate armor; -10% Spell Casting Speed",
-      "icon": "https://www.spellsandguns.com/images/thumb/5/54/Perk_Demon_Armor.png/96px-Perk_Demon_Armor.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/5/54/Perk_Demon_Armor.png/96px-Perk_Demon_Armor.png"
     },
     {
       "id": "immortal_lament",
       "name": "Immortal Lament",
       "effect": "Own spells cannot reduce health below 1; healing boost below 5% health",
-      "icon": "https://www.spellsandguns.com/images/thumb/1/1b/Perk_Immortal_Lament.png/96px-Perk_Immortal_Lament.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/1/1b/Perk_Immortal_Lament.png/96px-Perk_Immortal_Lament.png"
     },
     {
       "id": "infernal_pledge",
       "name": "Infernal Pledge",
       "effect": "+10% damage reduction and +15% damage bonus vs Undead and Demon races",
-      "icon": "https://www.spellsandguns.com/images/thumb/3/3a/Perk_Infernal_Pledge.png/96px-Perk_Infernal_Pledge.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/3/3a/Perk_Infernal_Pledge.png/96px-Perk_Infernal_Pledge.png"
     },
     {
       "id": "malice",
       "name": "Malice",
       "effect": "+15% Will Bonus",
-      "icon": "https://www.spellsandguns.com/images/thumb/c/c1/Perk_Malice.png/96px-Perk_Malice.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/c/c1/Perk_Malice.png/96px-Perk_Malice.png"
     },
     {
       "id": "shadow_touch",
       "name": "Shadow Touch",
       "effect": "Melee attacks deal dark damage and heal you",
-      "icon": "https://www.spellsandguns.com/images/thumb/6/6b/Perk_Shadow_Touch.png/96px-Perk_Shadow_Touch.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/6/6b/Perk_Shadow_Touch.png/96px-Perk_Shadow_Touch.png"
     },
     {
       "id": "soul_collector",

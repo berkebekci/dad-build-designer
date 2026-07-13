@@ -23,7 +23,7 @@
       "scaling": 50
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/0/0b/Spell_Zap.png/96px-Spell_Zap.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/0/0b/Spell_Zap.png/96px-Spell_Zap.png"
    },
    {
     "id": "light_orb",
@@ -31,7 +31,7 @@
     "cost": 1,
     "kind": "utility",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/8/85/Spell_Light_Orb.png/96px-Spell_Light_Orb.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/8/85/Spell_Light_Orb.png/96px-Spell_Light_Orb.png"
    },
    {
     "id": "magic_lock",
@@ -46,7 +46,7 @@
     "cost": 2,
     "kind": "debuff",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/a/ae/Spell_Slow.png/96px-Spell_Slow.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/a/ae/Spell_Slow.png/96px-Spell_Slow.png"
    },
    {
     "id": "ignite",
@@ -65,7 +65,7 @@
       "scaling": 50
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/4/4d/Spell_Ignite.png/96px-Spell_Ignite.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/4/4d/Spell_Ignite.png/96px-Spell_Ignite.png"
    },
    {
     "id": "ice_bolt",
@@ -79,7 +79,7 @@
       "scaling": 100
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/d/d3/Spell_Ice_Bolt.png/96px-Spell_Ice_Bolt.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/d3/Spell_Ice_Bolt.png/96px-Spell_Ice_Bolt.png"
    },
    {
     "id": "magic_missile",
@@ -93,7 +93,7 @@
       "scaling": 50
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/a/a6/Spell_Magic_Missile.png/96px-Spell_Magic_Missile.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/a/a6/Spell_Magic_Missile.png/96px-Spell_Magic_Missile.png"
    },
    {
     "id": "haste",
@@ -101,7 +101,7 @@
     "cost": 3,
     "kind": "buff",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/2/24/Spell_Haste.png/96px-Spell_Haste.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/2/24/Spell_Haste.png/96px-Spell_Haste.png"
    },
    {
     "id": "lightning_strike",
@@ -115,7 +115,7 @@
       "scaling": 100
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/7/76/Spell_Lightning_Strike.png/96px-Spell_Lightning_Strike.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/7/76/Spell_Lightning_Strike.png/96px-Spell_Lightning_Strike.png"
    },
    {
     "id": "invisibility",
@@ -123,7 +123,7 @@
     "cost": 4,
     "kind": "buff",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/6/6c/Spell_Invisibility.png/96px-Spell_Invisibility.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/6/6c/Spell_Invisibility.png/96px-Spell_Invisibility.png"
    },
    {
     "id": "fireball",
@@ -147,7 +147,7 @@
       "scaling": 50
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/e/e2/Spell_Fireball.png/96px-Spell_Fireball.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/e/e2/Spell_Fireball.png/96px-Spell_Fireball.png"
    },
    {
     "id": "explosion",
@@ -194,7 +194,7 @@
       "scaling": 100
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/2/2d/Spell_Chain_Lightning.png/96px-Spell_Chain_Lightning.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/2/2d/Spell_Chain_Lightning.png/96px-Spell_Chain_Lightning.png"
    }
   ],
   "cleric": [
@@ -210,7 +210,7 @@
       "scaling": 0
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/0/06/Spell_Protection.png/96px-Spell_Protection.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/0/06/Spell_Protection.png/96px-Spell_Protection.png"
    },
    {
     "id": "bless",
@@ -218,7 +218,7 @@
     "cost": 1,
     "kind": "buff",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/3/3a/Spell_Bless.png/96px-Spell_Bless.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/3/3a/Spell_Bless.png/96px-Spell_Bless.png"
    },
    {
     "id": "divine_strike",
@@ -232,7 +232,7 @@
       "scaling": 100
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/4/4f/Spell_Divine_Strike.png/96px-Spell_Divine_Strike.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/4/4f/Spell_Divine_Strike.png/96px-Spell_Divine_Strike.png"
    },
    {
     "id": "cleanse",
@@ -240,7 +240,7 @@
     "cost": 2,
     "kind": "utility",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/d/df/Spell_Cleanse.png/96px-Spell_Cleanse.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/df/Spell_Cleanse.png/96px-Spell_Cleanse.png"
    },
    {
     "id": "lesser_heal",
@@ -255,7 +255,7 @@
       "heal": true
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/9/9b/Spell_Lesser_Heal.png/96px-Spell_Lesser_Heal.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/9/9b/Spell_Lesser_Heal.png/96px-Spell_Lesser_Heal.png"
    },
    {
     "id": "bind",
@@ -263,7 +263,7 @@
     "cost": 3,
     "kind": "utility",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/f/f6/Spell_Bind.png/96px-Spell_Bind.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/f/f6/Spell_Bind.png/96px-Spell_Bind.png"
    },
    {
     "id": "holy_strike",
@@ -277,7 +277,7 @@
       "scaling": 100
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/9/92/Spell_Holy_Strike.png/96px-Spell_Holy_Strike.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/9/92/Spell_Holy_Strike.png/96px-Spell_Holy_Strike.png"
    },
    {
     "id": "holy_light",
@@ -297,7 +297,7 @@
       "scaling": 80
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/2/26/Spell_Holy_Light.png/96px-Spell_Holy_Light.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/2/26/Spell_Holy_Light.png/96px-Spell_Holy_Light.png"
    },
    {
     "id": "sanctuary",
@@ -317,7 +317,7 @@
       "scaling": 50
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/e/e6/Spell_Sanctuary.png/96px-Spell_Sanctuary.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/e/e6/Spell_Sanctuary.png/96px-Spell_Sanctuary.png"
    },
    {
     "id": "locust_swarm",
@@ -344,7 +344,7 @@
       "scaling": 50
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/b/b1/Spell_Earthquake.png/96px-Spell_Earthquake.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/b/b1/Spell_Earthquake.png/96px-Spell_Earthquake.png"
    },
    {
     "id": "resurrection",
@@ -352,7 +352,7 @@
     "cost": 8,
     "kind": "utility",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/5/56/Spell_Resurrection.png/96px-Spell_Resurrection.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/5/56/Spell_Resurrection.png/96px-Spell_Resurrection.png"
    }
   ],
   "warlock": [
@@ -368,7 +368,7 @@
       "scaling": 0
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/3/3f/Spell_Power_of_Sacrifice.png/96px-Spell_Power_of_Sacrifice.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/3/3f/Spell_Power_of_Sacrifice.png/96px-Spell_Power_of_Sacrifice.png"
    },
    {
     "id": "curse_of_weakness",
@@ -376,7 +376,7 @@
     "cost": 1,
     "kind": "debuff",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/0/04/Spell_Curse_of_Weakness.png/96px-Spell_Curse_of_Weakness.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/0/04/Spell_Curse_of_Weakness.png/96px-Spell_Curse_of_Weakness.png"
    },
    {
     "id": "bolt_of_darkness",
@@ -390,7 +390,7 @@
       "scaling": 100
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/3/38/Spell_Bolt_of_Darkness.png/96px-Spell_Bolt_of_Darkness.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/3/38/Spell_Bolt_of_Darkness.png/96px-Spell_Bolt_of_Darkness.png"
    },
    {
     "id": "curse_of_pain",
@@ -404,7 +404,7 @@
       "scaling": 50
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/3/3c/Spell_Curse_of_Pain.png/96px-Spell_Curse_of_Pain.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/3/3c/Spell_Curse_of_Pain.png/96px-Spell_Curse_of_Pain.png"
    },
    {
     "id": "bloodstained_blade",
@@ -418,7 +418,7 @@
       "scaling": 0
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/8/87/Spell_Bloodstained_Blade.png/96px-Spell_Bloodstained_Blade.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/8/87/Spell_Bloodstained_Blade.png/96px-Spell_Bloodstained_Blade.png"
    },
    {
     "id": "spell_predation",
@@ -432,7 +432,7 @@
       "scaling": 100
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/3/39/Spell_Spell_Predation.png/96px-Spell_Spell_Predation.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/3/39/Spell_Spell_Predation.png/96px-Spell_Spell_Predation.png"
    },
    {
     "id": "evil_eye",
@@ -440,7 +440,7 @@
     "cost": 3,
     "kind": "utility",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/f/f9/Spell_Evil_Eye.png/96px-Spell_Evil_Eye.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/f/f9/Spell_Evil_Eye.png/96px-Spell_Evil_Eye.png"
    },
    {
     "id": "ray_of_darkness",
@@ -454,7 +454,7 @@
       "scaling": 100
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/c/c9/Spell_Ray_of_Darkness.png/96px-Spell_Ray_of_Darkness.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/c/c9/Spell_Ray_of_Darkness.png/96px-Spell_Ray_of_Darkness.png"
    },
    {
     "id": "life_drain",
@@ -468,7 +468,7 @@
       "scaling": 25
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/2/23/Spell_Life_Drain.png/96px-Spell_Life_Drain.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/2/23/Spell_Life_Drain.png/96px-Spell_Life_Drain.png"
    },
    {
     "id": "hellfire",
@@ -482,7 +482,7 @@
       "scaling": 50
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/7/77/Spell_Hellfire.png/96px-Spell_Hellfire.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/7/77/Spell_Hellfire.png/96px-Spell_Hellfire.png"
    },
    {
     "id": "flame_walker",
@@ -496,7 +496,7 @@
       "scaling": 100
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/f/fc/Spell_Flame_Walker.png/96px-Spell_Flame_Walker.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/f/fc/Spell_Flame_Walker.png/96px-Spell_Flame_Walker.png"
    },
    {
     "id": "eldritch_shield",
@@ -510,7 +510,7 @@
       "scaling": 0
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/2/2e/Spell_Eldritch_Shield.png/96px-Spell_Eldritch_Shield.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/2/2e/Spell_Eldritch_Shield.png/96px-Spell_Eldritch_Shield.png"
    },
    {
     "id": "summon_hydra",
@@ -524,7 +524,7 @@
       "scaling": 100
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/4/49/Spell_Summon_Hydra.png/96px-Spell_Summon_Hydra.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/4/49/Spell_Summon_Hydra.png/96px-Spell_Summon_Hydra.png"
    }
   ],
   "sorcerer": [
@@ -949,7 +949,7 @@
       "scaling": 100
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/0/05/Spell_Dreamfire.png/96px-Spell_Dreamfire.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/0/05/Spell_Dreamfire.png/96px-Spell_Dreamfire.png"
    },
    {
     "id": "thorn_barrier",
@@ -984,7 +984,7 @@
       "heal": true
      }
     ],
-    "icon": "https://www.spellsandguns.com/images/thumb/7/7f/Spell_Restore.png/96px-Spell_Restore.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/7/7f/Spell_Restore.png/96px-Spell_Restore.png"
    },
    {
     "id": "summon_treant",
@@ -1035,7 +1035,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/e/e4/Music_Rousing_Rhythms.png/96px-Music_Rousing_Rhythms.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/e/e4/Music_Rousing_Rhythms.png/96px-Music_Rousing_Rhythms.png"
    },
    {
     "id": "din_of_darkness",
@@ -1043,7 +1043,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/d/d9/Music_Din_of_Darkness.png/96px-Music_Din_of_Darkness.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/d9/Music_Din_of_Darkness.png/96px-Music_Din_of_Darkness.png"
    },
    {
     "id": "beats_of_alacrity",
@@ -1051,7 +1051,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/6/61/Music_Beats_of_Alacrity.png/96px-Music_Beats_of_Alacrity.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/6/61/Music_Beats_of_Alacrity.png/96px-Music_Beats_of_Alacrity.png"
    },
    {
     "id": "allegro",
@@ -1059,7 +1059,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/8/85/Music_Allegro.png/96px-Music_Allegro.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/8/85/Music_Allegro.png/96px-Music_Allegro.png"
    },
    {
     "id": "accelerando",
@@ -1067,7 +1067,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/2/2e/Music_Accelerando.png/96px-Music_Accelerando.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/2/2e/Music_Accelerando.png/96px-Music_Accelerando.png"
    },
    {
     "id": "unchained_harmony",
@@ -1075,7 +1075,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/f/fa/Music_Unchained_Harmony.png/96px-Music_Unchained_Harmony.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/f/fa/Music_Unchained_Harmony.png/96px-Music_Unchained_Harmony.png"
    },
    {
     "id": "shriek_of_weakness",
@@ -1083,7 +1083,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/f/f4/Music_Shriek_of_Weakness.png/96px-Music_Shriek_of_Weakness.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/f/f4/Music_Shriek_of_Weakness.png/96px-Music_Shriek_of_Weakness.png"
    },
    {
     "id": "piercing_shrill",
@@ -1091,7 +1091,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/d/d8/Music_Piercing_Shrill.png/96px-Music_Piercing_Shrill.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/d8/Music_Piercing_Shrill.png/96px-Music_Piercing_Shrill.png"
    },
    {
     "id": "banshees_howl",
@@ -1099,7 +1099,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/d/d8/Music_Banshees_Howl.png/96px-Music_Banshees_Howl.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/d8/Music_Banshees_Howl.png/96px-Music_Banshees_Howl.png"
    },
    {
     "id": "song_of_silence",
@@ -1107,7 +1107,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/e/e6/Music_Song_of_Silence.png/96px-Music_Song_of_Silence.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/e/e6/Music_Song_of_Silence.png/96px-Music_Song_of_Silence.png"
    },
    {
     "id": "peacemaking",
@@ -1115,7 +1115,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/1/1f/Music_Peacemaking.png/96px-Music_Peacemaking.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/1/1f/Music_Peacemaking.png/96px-Music_Peacemaking.png"
    },
    {
     "id": "lament_of_languor",
@@ -1123,7 +1123,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/d/d3/Music_Lament_of_Languor.png/96px-Music_Lament_of_Languor.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/d3/Music_Lament_of_Languor.png/96px-Music_Lament_of_Languor.png"
    },
    {
     "id": "chaotic_discord",
@@ -1131,7 +1131,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/1/13/Music_Chaotic_Discord.png/96px-Music_Chaotic_Discord.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/1/13/Music_Chaotic_Discord.png/96px-Music_Chaotic_Discord.png"
    },
    {
     "id": "aria_of_alacrity",
@@ -1139,7 +1139,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/c/ca/Music_Aria_of_Alacrity.png/96px-Music_Aria_of_Alacrity.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/c/ca/Music_Aria_of_Alacrity.png/96px-Music_Aria_of_Alacrity.png"
    },
    {
     "id": "tranquility",
@@ -1147,7 +1147,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/c/c3/Music_Tranquility.png/96px-Music_Tranquility.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/c/c3/Music_Tranquility.png/96px-Music_Tranquility.png"
    },
    {
     "id": "song_of_shadow",
@@ -1155,7 +1155,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/4/43/Music_Song_of_Shadow.png/96px-Music_Song_of_Shadow.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/4/43/Music_Song_of_Shadow.png/96px-Music_Song_of_Shadow.png"
    },
    {
     "id": "harmonic_shield",
@@ -1163,7 +1163,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/4/46/Music_Harmonic_Shield.png/96px-Music_Harmonic_Shield.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/4/46/Music_Harmonic_Shield.png/96px-Music_Harmonic_Shield.png"
    },
    {
     "id": "chorale_of_clarity",
@@ -1171,7 +1171,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/e/e5/Music_Chorale_of_Clarity.png/96px-Music_Chorale_of_Clarity.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/e/e5/Music_Chorale_of_Clarity.png/96px-Music_Chorale_of_Clarity.png"
    },
    {
     "id": "ballad_of_courage",
@@ -1179,7 +1179,7 @@
     "cost": null,
     "kind": "song",
     "hits": [],
-    "icon": "https://www.spellsandguns.com/images/thumb/a/a4/Music_Ballad_of_Courage.png/96px-Music_Ballad_of_Courage.png"
+    "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/a/a4/Music_Ballad_of_Courage.png/96px-Music_Ballad_of_Courage.png"
    }
   ]
  }

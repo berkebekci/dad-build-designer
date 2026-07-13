@@ -125,3 +125,22 @@ export function eligibleItems(
 export function isTwoHanded(item: ItemRecord | undefined): boolean {
   return item?.handType === 'two_handed';
 }
+
+/**
+ * Drops the off-hand whenever the primary is two-handed. Applied at the engine
+ * boundary and in the share/persistence sanitizer so an illegal loadout (e.g.
+ * an old save with Longsword + Crystal Ball) can never contribute the off-hand
+ * to the stats — the UI hiding the slot alone is not enough. Works structurally
+ * on both the engine Loadout and the UI loadout (both key slots by { itemId }).
+ */
+export function normalizeLoadout<
+  T extends Partial<Record<'primary' | 'secondary', { itemId: string }>>,
+>(loadout: T, itemIndex: Map<string, ItemRecord>): T {
+  const primary = loadout.primary ? itemIndex.get(loadout.primary.itemId) : undefined;
+  if (isTwoHanded(primary) && loadout.secondary) {
+    const next = { ...loadout };
+    delete next.secondary;
+    return next;
+  }
+  return loadout;
+}

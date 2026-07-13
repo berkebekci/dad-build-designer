@@ -94,11 +94,37 @@ hazır sonuç fırlatma; kararları gerekçeleriyle anlat. Açıklamalar Türkç
   - 66 test yeşil. NOT: panel odak testleri headless'ta güvenilmez
     (document.hasFocus()=false → focus olayı bastırılır; focusin manuel dispatch ile
     doğrulandı).
-- Kalan fikirler: DPS/eHP metrikleri; skill/spell açıklama boşlukları ("Cooldown:
-  seconds") + spell cost=tier varsayımının oyun içi doğrulaması (kullanıcı);
-  items.json dynamic import; sınıf/item ikonları (icon_url mevcut); off-hand/shield
-  vuruşları; Buff Weapon Damage (perk) hasar entegrasyonu; kullanıcının paylaşacağı
-  Çin DaD sitesinden UI ilhamı (bekleniyor).
+- Faz 9 tamam (tester feedback + dnd.wiki UI incelemesi, 2026-07-12):
+  - **KRİTİK ikon düzeltmesi:** İki hata vardı. (1) Ayna resim host'u yanlıştı —
+    `www.spellsandguns.com` 404, doğrusu `darkanddarker.wiki.spellsandguns.com`.
+    (2) Item thumbnail'ları 96px'te YOK (400) — tam-boy `/images/X/YY/Name.png`
+    her zaman çözülüyor. Her iki fetch script'i düzeltildi; icons.json + spells +
+    class dosyaları toplu değiştirildi (554 URL). Tarayıcıda 27/27 yetenek +
+    41/41 item ikonu yükleniyor. darkerdb CDN ikonları (cdn.darkerdb.com) zaten
+    çalışıyordu; sadece ayna-kaynaklı olanlar bozuktu.
+  - **Artifact + legend rarity:** DB'de `artifact` (25 silah, en üst tier) ve
+    `legend` (2 başlangıç item'i, veri tuhaflığı) tanımsızdı → görünmez/bozuktu.
+    artifact tier eklendi (order 7, renk #ff4dd2, filtre çipi); legend →
+    legendary alias'landı (rarity_aliases, data.ts tierFor). Artifact enchant
+    sayısı 1 varsayıldı (VERİFY gerek — _todo).
+  - **2H off-hand motor-seviyesi zorlaması:** UI slotu gizliyordu ama kalıcı/
+    paylaşılan build (eski localStorage: 2H + off-hand) off-hand'i gizli tutup
+    STATLARA katıyordu. `normalizeLoadout` (gearRules) 2H primary'de secondary'yi
+    düşürür; toEngineLoadout VE sanitizeBuild'de uygulanır. Doğrulandı: Magic Staff
+    (2H) + Crystal Ball paylaşım linki → yalnız primary kalıyor, off-hand disabled.
+  - Görsel yenileme: PickList/SpellPanel artık ikon-karo grid'i; item seçicide
+    ikonlar + rarity filtre çipleri + "named" rozeti. NumberField (0-yapışması ve
+    negatif giriş düzeltmesi).
+  - **Veri notu:** class JSON weapon name-list'leri (ör. wizard'da "Longsword")
+    item mask'leriyle çelişebilir; mask (`required_class`) YÖNETİR (nativelyEquippable),
+    name-list yalnız mask'siz item fallback'i. Longsword mask=641 (fighter/warlock/
+    sorcerer), wizard değil — stale liste zararsız.
+  - 76 test yeşil.
+- Kalan fikirler: DPS/eHP metrikleri; skill/spell buff toggle sistemi (dnd.wiki
+  tarzı, statlara canlı işleyen — EN BÜYÜK oynanış değeri); canavar hedefleri + TTK
+  (dnd.wiki'de Skeleton Warlord HP 4344, undead ırkı → Undead/Demon Damage statları
+  devreye girer); spell cost=tier oyun-içi doğrulama; items.json dynamic import;
+  class JSON weapon-list temizliği (opsiyonel).
 - TODO'lar JSON dosyalarının `_todo` alanlarında ve docs/kaynaklar.md'de.
 
 ## Oyun kuralları özeti

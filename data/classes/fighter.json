@@ -37,25 +37,25 @@
       "id": "adrenaline_spike",
       "name": "Adrenaline Spike",
       "effect": "Below 40% health: +15% Action Speed, +3% Move Speed, +30% Interaction Speed for 12s (24s cooldown)",
-      "icon": "https://www.spellsandguns.com/images/thumb/b/b6/Perk_Adrenaline_Spike.png/96px-Perk_Adrenaline_Spike.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/b/b6/Perk_Adrenaline_Spike.png/96px-Perk_Adrenaline_Spike.png"
     },
     {
       "id": "barricade",
       "name": "Barricade",
       "effect": "While in defensive stance: +75 Armor Rating and +75 Magical Resistance",
-      "icon": "https://www.spellsandguns.com/images/thumb/2/27/Perk_Barricade.png/96px-Perk_Barricade.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/2/27/Perk_Barricade.png/96px-Perk_Barricade.png"
     },
     {
       "id": "combo_attack",
       "name": "Combo Attack",
       "effect": "Consecutive melee attacks within 2s grant +10% Physical Power per stack (max 2 stacks)",
-      "icon": "https://www.spellsandguns.com/images/thumb/e/e1/Perk_Combo_Attack.png/96px-Perk_Combo_Attack.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/e/e1/Perk_Combo_Attack.png/96px-Perk_Combo_Attack.png"
     },
     {
       "id": "counterattack",
       "name": "Counterattack",
       "effect": "Successful block grants +10% Move Speed and Action Speed for 3s",
-      "icon": "https://www.spellsandguns.com/images/thumb/d/d0/Perk_Counterattack.png/96px-Perk_Counterattack.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/d0/Perk_Counterattack.png/96px-Perk_Counterattack.png"
     },
     {
       "id": "defense_mastery",
@@ -67,37 +67,37 @@
       "id": "dual_wield",
       "name": "Dual Wield",
       "effect": "While both hands are equipped: +10% Action Speed (excludes lanterns and shields)",
-      "icon": "https://www.spellsandguns.com/images/thumb/f/f4/Perk_Dual_Wield.png/96px-Perk_Dual_Wield.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/f/f4/Perk_Dual_Wield.png/96px-Perk_Dual_Wield.png"
     },
     {
       "id": "last_bastion",
       "name": "Last Bastion",
       "effect": "At 33% health: +150 Armor Rating, +50 Magical Resistance, +30% Projectile Reduction for 8s (48s cooldown)",
-      "icon": "https://www.spellsandguns.com/images/thumb/e/e8/Perk_Last_Bastion.png/96px-Perk_Last_Bastion.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/e/e8/Perk_Last_Bastion.png/96px-Perk_Last_Bastion.png"
     },
     {
       "id": "projectile_resistance",
       "name": "Projectile Resistance",
       "effect": "+10% Projectile Damage Reduction; additional +10% while in defensive stance",
-      "icon": "https://www.spellsandguns.com/images/thumb/8/8d/Perk_Projectile_Resistance.png/96px-Perk_Projectile_Resistance.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/8/8d/Perk_Projectile_Resistance.png/96px-Perk_Projectile_Resistance.png"
     },
     {
       "id": "shield_mastery",
       "name": "Shield Mastery",
       "effect": "In defensive stance: +10% Move Speed; successful block grants +50% Action Speed and +10% Physical Power for 1s",
-      "icon": "https://www.spellsandguns.com/images/thumb/e/e8/Perk_Shield_Expert.png/96px-Perk_Shield_Expert.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/e/e8/Perk_Shield_Expert.png/96px-Perk_Shield_Expert.png"
     },
     {
       "id": "slayer",
       "name": "Slayer",
       "effect": "Dual-wielded weapons grant +5 Physical Buff Weapon Damage and +10 Move Speed; loses plate armor access",
-      "icon": "https://www.spellsandguns.com/images/thumb/5/5c/Perk_Slayer.png/96px-Perk_Slayer.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/5/5c/Perk_Slayer.png/96px-Perk_Slayer.png"
     },
     {
       "id": "swift",
       "name": "Swift",
       "effect": "-20% Armor Speed Penalty (excludes other modifiers)",
-      "icon": "https://www.spellsandguns.com/images/thumb/0/06/Perk_Swift.png/96px-Perk_Swift.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/0/06/Perk_Swift.png/96px-Perk_Swift.png"
     },
     {
       "id": "sword_mastery",
@@ -115,7 +115,7 @@
       "id": "weapon_guard",
       "name": "Weapon Guard",
       "effect": "While blocking with a weapon: +5% Physical Damage Reduction; successful block grants +10% Physical Power and +5% Action Speed for 2s",
-      "icon": "https://www.spellsandguns.com/images/thumb/9/9e/Perk_Weapon_Guard.png/96px-Perk_Weapon_Guard.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/9/9e/Perk_Weapon_Guard.png/96px-Perk_Weapon_Guard.png"
     },
     {
       "id": "weapon_mastery",

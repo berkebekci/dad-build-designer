@@ -26,7 +26,7 @@
       "id": "axe_specialization",
       "name": "Axe Specialization",
       "effect": "While using axes: +3 Physical Buff Weapon Damage",
-      "icon": "https://www.spellsandguns.com/images/thumb/a/a7/Perk_Axe_Specialization.png/96px-Perk_Axe_Specialization.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/a/a7/Perk_Axe_Specialization.png/96px-Perk_Axe_Specialization.png"
     },
     {
       "id": "berserker",
@@ -38,7 +38,7 @@
       "id": "carnage",
       "name": "Carnage",
       "effect": "After striking 2+ players within 1.5s: +40% Physical Power Bonus for 3s",
-      "icon": "https://www.spellsandguns.com/images/thumb/f/f1/Perk_Carnage.png/96px-Perk_Carnage.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/f/f1/Perk_Carnage.png/96px-Perk_Carnage.png"
     },
     {
       "id": "crush",
@@ -50,13 +50,13 @@
       "id": "executioner",
       "name": "Executioner",
       "effect": "+20% Headshot Damage Modifier with axes",
-      "icon": "https://www.spellsandguns.com/images/thumb/2/29/Perk_Executioner.png/96px-Perk_Executioner.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/2/29/Perk_Executioner.png/96px-Perk_Executioner.png"
     },
     {
       "id": "heavy_swing",
       "name": "Heavy Swing",
       "effect": "Targets you hit suffer 2x duration of movement speed reduction effects",
-      "icon": "https://www.spellsandguns.com/images/thumb/6/67/Perk_Heavy_Swing.png/96px-Perk_Heavy_Swing.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/6/67/Perk_Heavy_Swing.png/96px-Perk_Heavy_Swing.png"
     },
     {
       "id": "iron_will",
@@ -68,13 +68,13 @@
       "id": "morale_boost",
       "name": "Morale Boost",
       "effect": "25% Max Health healing after killing a player",
-      "icon": "https://www.spellsandguns.com/images/thumb/8/82/Perk_Morale_Boost.png/96px-Perk_Morale_Boost.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/8/82/Perk_Morale_Boost.png/96px-Perk_Morale_Boost.png"
     },
     {
       "id": "potion_chugger",
       "name": "Potion Chugger",
       "effect": "1.2x healing and shielding potency from potions, with reduced duration",
-      "icon": "https://www.spellsandguns.com/images/thumb/6/6b/Perk_Potion_Chugger.png/96px-Perk_Potion_Chugger.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/6/6b/Perk_Potion_Chugger.png/96px-Perk_Potion_Chugger.png"
     },
     {
       "id": "robust",
@@ -86,19 +86,19 @@
       "id": "savage",
       "name": "Savage",
       "effect": "Without chest armor: +10% Physical Power Bonus and +1 Impact Power",
-      "icon": "https://www.spellsandguns.com/images/thumb/5/55/Perk_Savage.png/96px-Perk_Savage.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/5/55/Perk_Savage.png/96px-Perk_Savage.png"
     },
     {
       "id": "skull_splitter",
       "name": "Skull Splitter",
       "effect": "Headshots inflict Bleed: 12 damage over 4s",
-      "icon": "https://www.spellsandguns.com/images/thumb/3/39/Perk_Skull_Splitter.png/96px-Perk_Skull_Splitter.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/3/39/Perk_Skull_Splitter.png/96px-Perk_Skull_Splitter.png"
     },
     {
       "id": "treacherous_lungs",
       "name": "Treacherous Lungs",
       "effect": "Shout abilities last 1.5x longer",
-      "icon": "https://www.spellsandguns.com/images/thumb/1/1d/Perk_Treacherous_Lungs.png/96px-Perk_Treacherous_Lungs.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/1/1d/Perk_Treacherous_Lungs.png/96px-Perk_Treacherous_Lungs.png"
     },
     {
       "id": "two_hander",

@@ -12,7 +12,8 @@ import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const MIRROR = 'https://darkanddarker.wiki.spellsandguns.com';
-const IMG_HOST = 'https://www.spellsandguns.com';
+// Images are served from the wiki's own host; www.spellsandguns.com 404s.
+const IMG_HOST = 'https://darkanddarker.wiki.spellsandguns.com';
 const DATA = path.resolve(import.meta.dirname, '..', 'data');
 
 const PAGES = [
@@ -64,7 +65,9 @@ async function main() {
       const key = norm(file.replace(/_/g, ' '));
       const canonical = wanted.get(key);
       if (!canonical || icons[canonical]) continue;
-      icons[canonical] = `${IMG_HOST}/images/thumb/${m[1]}/${m[2]}.${m[3]}/96px-${m[2]}.${m[3]}`;
+      // Full-size image: item thumbnails aren't generated at 96px (they 400),
+      // but the source image always resolves.
+      icons[canonical] = `${IMG_HOST}/images/${m[1]}/${m[2]}.${m[3]}`;
       added++;
     }
     console.log(`  ${page}: +${added} (total ${Object.keys(icons).length})`);

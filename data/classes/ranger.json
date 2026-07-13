@@ -46,13 +46,13 @@
       "id": "crippling_shot",
       "name": "Crippling Shot",
       "effect": "Leg hits inflict -40% Move Speed Bonus for 1s",
-      "icon": "https://www.spellsandguns.com/images/thumb/0/01/Perk_Crippling_Shot.png/96px-Perk_Crippling_Shot.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/0/01/Perk_Crippling_Shot.png/96px-Perk_Crippling_Shot.png"
     },
     {
       "id": "crossbow_mastery",
       "name": "Crossbow Mastery",
       "effect": "+5% Physical Power Bonus with crossbows; +50% Action Speed while reloading",
-      "icon": "https://www.spellsandguns.com/images/thumb/a/a3/Perk_Crossbow_Mastery.png/96px-Perk_Crossbow_Mastery.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/a/a3/Perk_Crossbow_Mastery.png/96px-Perk_Crossbow_Mastery.png"
     },
     {
       "id": "first_aid",
@@ -63,7 +63,7 @@
       "id": "kinesthesia",
       "name": "Kinesthesia",
       "effect": "15% movement multiplier while moving with bowstring drawn",
-      "icon": "https://www.spellsandguns.com/images/thumb/1/1b/Perk_Kinesthesia.png/96px-Perk_Kinesthesia.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/1/1b/Perk_Kinesthesia.png/96px-Perk_Kinesthesia.png"
     },
     {
       "id": "longshot_expert",
@@ -102,19 +102,19 @@
       "id": "sharpshooter",
       "name": "Sharpshooter",
       "effect": "+15% Headshot Damage Modifier with ranged weapons",
-      "icon": "https://www.spellsandguns.com/images/thumb/1/1e/Perk_Sharpshooter.png/96px-Perk_Sharpshooter.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/1/1e/Perk_Sharpshooter.png/96px-Perk_Sharpshooter.png"
     },
     {
       "id": "spear_proficiency",
       "name": "Spear Proficiency",
       "effect": "Gain the ability to equip spears; +0.5% Move Speed Base",
-      "icon": "https://www.spellsandguns.com/images/thumb/d/d9/Perk_Spear_Proficiency.png/96px-Perk_Spear_Proficiency.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/d9/Perk_Spear_Proficiency.png/96px-Perk_Spear_Proficiency.png"
     },
     {
       "id": "windfletch",
       "name": "Windfletch",
       "effect": "+15% projectile speed for arrows and bolts",
-      "icon": "https://www.spellsandguns.com/images/thumb/4/44/Perk_Windfletch.png/96px-Perk_Windfletch.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/4/44/Perk_Windfletch.png/96px-Perk_Windfletch.png"
     }
   ],
   "skills": [

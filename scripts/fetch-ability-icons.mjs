@@ -10,7 +10,8 @@ import { readFile, writeFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 
 const MIRROR = 'https://darkanddarker.wiki.spellsandguns.com';
-const IMG_HOST = 'https://www.spellsandguns.com';
+// Images are served from the wiki's own host; www.spellsandguns.com 404s.
+const IMG_HOST = 'https://darkanddarker.wiki.spellsandguns.com';
 const DATA = path.resolve(import.meta.dirname, '..', 'data');
 
 const PAGES = [

@@ -37,7 +37,7 @@
       "id": "creep",
       "name": "Creep",
       "effect": "Quieter footsteps while crouching; +10% Move Speed Bonus crouched; -50% monster detection radius",
-      "icon": "https://www.spellsandguns.com/images/thumb/d/d1/Perk_Creep.png/96px-Perk_Creep.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/d1/Perk_Creep.png/96px-Perk_Creep.png"
     },
     {
       "id": "dagger_mastery",
@@ -49,13 +49,13 @@
       "id": "double_jump",
       "name": "Double Jump",
       "effect": "Jump an additional time in the air",
-      "icon": "https://www.spellsandguns.com/images/thumb/1/13/Perk_Double_Jump.png/96px-Perk_Double_Jump.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/1/13/Perk_Double_Jump.png/96px-Perk_Double_Jump.png"
     },
     {
       "id": "hide_mastery",
       "name": "Hide Mastery",
       "effect": "Hide duration 1.5x, cooldown 0.7x",
-      "icon": "https://www.spellsandguns.com/images/thumb/5/56/Perk_Hide_Mastery.png/96px-Perk_Hide_Mastery.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/5/56/Perk_Hide_Mastery.png/96px-Perk_Hide_Mastery.png"
     },
     {
       "id": "jokester",
@@ -72,13 +72,13 @@
       "id": "pickpocket",
       "name": "Pickpocket",
       "effect": "Steal items from a nearby enemy with the interact key",
-      "icon": "https://www.spellsandguns.com/images/thumb/c/cb/Perk_Pickpocket.png/96px-Perk_Pickpocket.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/c/cb/Perk_Pickpocket.png/96px-Perk_Pickpocket.png"
     },
     {
       "id": "poisoned_weapon",
       "name": "Poisoned Weapon",
       "effect": "Attacks apply poison: 4 Neutral Magical Base Damage over 4s",
-      "icon": "https://www.spellsandguns.com/images/thumb/b/b1/Perk_Poisoned_Weapon.png/96px-Perk_Poisoned_Weapon.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/b/b1/Perk_Poisoned_Weapon.png/96px-Perk_Poisoned_Weapon.png"
     },
     {
       "id": "stealth",
@@ -90,7 +90,7 @@
       "id": "thrust",
       "name": "Thrust",
       "effect": "+15% Armor Penetration with daggers",
-      "icon": "https://www.spellsandguns.com/images/thumb/4/4e/Perk_Thrust.png/96px-Perk_Thrust.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/4/4e/Perk_Thrust.png/96px-Perk_Thrust.png"
     },
     {
       "id": "traps_and_locks",
@@ -101,13 +101,13 @@
       "id": "trickster",
       "name": "Trickster",
       "effect": "+20% Action Speed with throwing weapons",
-      "icon": "https://www.spellsandguns.com/images/thumb/d/da/Perk_Trickster.png/96px-Perk_Trickster.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/da/Perk_Trickster.png/96px-Perk_Trickster.png"
     },
     {
       "id": "veil_of_shadows",
       "name": "Veil of Shadows",
       "effect": "Below 30% health: enter stealth for 6s (48s cooldown)",
-      "icon": "https://www.spellsandguns.com/images/thumb/0/0b/Perk_Veil_Of_Shadows.png/96px-Perk_Veil_Of_Shadows.png"
+      "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/0/0b/Perk_Veil_Of_Shadows.png/96px-Perk_Veil_Of_Shadows.png"
     }
   ],
   "skills": [

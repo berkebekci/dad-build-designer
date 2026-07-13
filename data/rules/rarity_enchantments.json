@@ -11,8 +11,12 @@
     { "id": "rare",      "name": "Rare",      "order": 3, "enchantments": 2, "enchantments_crafted": 3, "color": "#0070dd" },
     { "id": "epic",      "name": "Epic",      "order": 4, "enchantments": 3, "enchantments_crafted": 4, "color": "#a335ee" },
     { "id": "legendary", "name": "Legendary", "order": 5, "enchantments": 4, "enchantments_crafted": 5, "color": "#ff8000" },
-    { "id": "unique",    "name": "Unique",    "order": 6, "enchantments": 1, "enchantments_crafted": 1, "color": "#e6cc80" }
+    { "id": "unique",    "name": "Unique",    "order": 6, "enchantments": 1, "enchantments_crafted": 1, "color": "#e6cc80" },
+    { "id": "artifact",  "name": "Artifact",  "order": 7, "enchantments": 1, "enchantments_crafted": 1, "color": "#ff4dd2" }
   ],
+  "rarity_aliases": {
+    "legend": "legendary"
+  },
   "enchantment_categories": {
     "attributes": ["Strength", "Vigor", "Agility", "Dexterity", "Will", "Knowledge", "Resourcefulness"],
     "physical_damage": ["Physical Power Bonus", "Physical Power", "Physical Gear Weapon Damage", "Physical Damage Add", "Armor Penetration"],
@@ -28,6 +32,8 @@
   "_todo": {
     "roll_ranges": "Per-slot min/max roll tables (1H weapon, shield, 2H weapon, chest, legs, feet, head, hands, cloak, necklace, ring) exist on the wiki but not fetched yet. Examples: Strength rolls 1-3 on weapons/armor, Luck rolls 15-30 on 1H weapons. Full tables to be fetched in Phase 4.",
     "slot_eligibility": "The full matrix of which enchantment can roll on which slot comes from the same tables.",
-    "socketed": "Socketed enchantments have reduced ranges (~60-80% of base) - to be verified."
+    "socketed": "Socketed enchantments have reduced ranges (~60-80% of base) - to be verified.",
+    "artifact_enchantments": "Artifact enchant count set to 1 (matching Unique) - VERIFY in game; artifacts are fixed named weapons and may have 0 or preset enchants.",
+    "legend_alias": "2 items (Adventurer Boots/Cloak) use rarity 'legend' in the DB - aliased to 'legendary'."
   }
 }
