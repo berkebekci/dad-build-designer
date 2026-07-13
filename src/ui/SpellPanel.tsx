@@ -70,7 +70,7 @@ export function SpellPanel({
         <DetailCard
           name={shown.name}
           icon={shown.icon}
-          effect={summary(shown)}
+          effect={shown.description ?? summary(shown)}
           meta={shown.cost !== null ? `Tier ${shown.cost} · ${shown.kind}` : `Free · ${shown.kind}`}
         />
       )}

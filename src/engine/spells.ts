@@ -28,6 +28,8 @@ export interface SpellData {
   kind: string;
   hits: SpellHit[];
   icon?: string;
+  /** Real in-game description (wiki verbatim). */
+  description?: string;
 }
 
 /** Skills that grant spell/song slots — each provides 5 slots (game rule). */

@@ -571,11 +571,15 @@ body {
 }
 
 .item-icon {
-  width: 28px;
-  height: 28px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
   flex-shrink: 0;
   image-rendering: -webkit-optimize-contrast;
+  background: #100c09;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2px;
 }
 
 .item-icon--fallback {
@@ -584,10 +588,15 @@ body {
   justify-content: center;
   background: var(--panel-2);
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 6px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 700;
+}
+
+.itempicker-equipped .item-icon {
+  width: 60px;
+  height: 60px;
 }
 
 .named-badge {
@@ -606,10 +615,6 @@ body {
   gap: 4px;
 }
 
-.itempicker-equipped .item-icon {
-  width: 36px;
-  height: 36px;
-}
 
 /* --- ability icon tile grid (perks / skills / spells) --- */
 .tile-grid {
