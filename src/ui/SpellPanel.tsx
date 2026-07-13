@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import type { SpellData } from '../engine/spells';
 import { selectionCost, spellSlots, SLOTS_PER_MEMORY_SKILL } from '../engine/spells';
-import { AbilityIcon } from './PickList';
+import { AbilityIcon, DetailCard } from './PickList';
 
 interface SpellPanelProps {
   spells: SpellData[];
@@ -11,11 +12,11 @@ interface SpellPanelProps {
 }
 
 function summary(spell: SpellData): string {
-  if (spell.hits.length === 0) return spell.kind;
+  if (spell.hits.length === 0) return `${spell.kind} — no direct damage`;
   const parts = spell.hits.map(
-    (h) => `${h.label}: ${h.base}${h.heal ? ' heal' : ''} (${h.scaling}%)`,
+    (h) => `${h.label}: ${h.base}${h.heal ? ' base heal' : ' base'} (${h.scaling}% scaling)`,
   );
-  return `${spell.kind} — ${parts.join(', ')}`;
+  return `${spell.kind}. ${parts.join('; ')}.`;
 }
 
 /**
@@ -36,6 +37,8 @@ export function SpellPanel({
   const used = selectionCost(selected);
   const overMemory = used > memoryCapacity;
   const slotsFull = selected.length >= slots;
+  const [hoverId, setHoverId] = useState<string | null>(null);
+  const shown = spells.find((s) => s.id === hoverId) ?? selected[0] ?? spells[0];
 
   return (
     <div className="picklist">
@@ -63,6 +66,15 @@ export function SpellPanel({
         </p>
       )}
 
+      {shown && (
+        <DetailCard
+          name={shown.name}
+          icon={shown.icon}
+          effect={summary(shown)}
+          meta={shown.cost !== null ? `Tier ${shown.cost} · ${shown.kind}` : `Free · ${shown.kind}`}
+        />
+      )}
+
       <div className="tile-grid">
         {spells.map((spell) => {
           const isSelected = selectedIds.includes(spell.id);
@@ -73,6 +85,8 @@ export function SpellPanel({
               type="button"
               className={`tile${isSelected ? ' tile--selected' : ''}${locked ? ' tile--locked' : ''}`}
               onClick={() => onToggle(spell.id)}
+              onMouseEnter={() => setHoverId(spell.id)}
+              onFocus={() => setHoverId(spell.id)}
               disabled={locked}
               aria-pressed={isSelected}
               title={`${spell.name} — ${summary(spell)}`}

@@ -696,6 +696,42 @@ body {
   gap: 6px;
 }
 
+/* --- hover/selection detail card (perks / skills / spells) --- */
+.detail-card {
+  background: linear-gradient(180deg, #241c15, #1c1610);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  min-height: 92px;
+}
+
+.detail-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.detail-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.detail-meta {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.detail-effect {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
 @media (max-width: 1300px) {
   .columns--four {
     grid-template-columns: 1fr 1fr;
