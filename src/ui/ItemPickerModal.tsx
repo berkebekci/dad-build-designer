@@ -144,36 +144,34 @@ export function ItemPickerModal({
         <div className="modal-grid">
           {visible.length === 0 && <p className="hint">No items match.</p>}
           {visible.map(({ name, variants }) => {
-            // Which rarity to equip when the card is clicked: the filtered one,
-            // else the equipped variant, else the highest available.
-            const filtered = rarityFilter ? variants.filter((v) => v.rarity === rarityFilter) : variants;
-            const pool = filtered.length ? filtered : variants;
+            // Clicking the card equips the item at the filtered rarity (or the
+            // highest available when the filter is "all"). The rarity filter at
+            // the top is the rarity selector, so cards don't repeat it.
+            const filtered = rarityFilter
+              ? variants.find((v) => v.rarity === rarityFilter)
+              : undefined;
+            const pick = filtered ?? variants[variants.length - 1]!;
             const isEquipped = variants.some((v) => v.id === equippedId);
             return (
-              <div key={name} className={`modal-card${isEquipped ? ' modal-card--equipped' : ''}`}>
+              <button
+                key={name}
+                type="button"
+                className={`modal-card${isEquipped ? ' modal-card--equipped' : ''}`}
+                style={{ borderColor: rarityColor(pick.rarity) }}
+                title={`${name} · ${pick.rarity} (Gear Score ${pick.gearScore})`}
+                onClick={() => {
+                  onEquip(pick);
+                  onClose();
+                }}
+              >
                 <ItemImg name={name} size={72} />
                 <div className="modal-card-body">
-                  <div className="modal-card-name">{name}</div>
-                  <div className="modal-card-stats">{baseStats(variants[0]!) || '—'}</div>
-                  <div className="rarity-chips">
-                    {pool.map((v) => (
-                      <button
-                        key={v.id}
-                        type="button"
-                        className={`rarity-chip${v.id === equippedId ? ' rarity-chip--active' : ''}`}
-                        style={{ borderColor: rarityColor(v.rarity), color: rarityColor(v.rarity) }}
-                        title={`Gear Score ${v.gearScore}`}
-                        onClick={() => {
-                          onEquip(v);
-                          onClose();
-                        }}
-                      >
-                        {v.rarity}
-                      </button>
-                    ))}
+                  <div className="modal-card-name" style={{ color: rarityColor(pick.rarity) }}>
+                    {name}
                   </div>
+                  <div className="modal-card-stats">{baseStats(pick) || '—'}</div>
                 </div>
-              </div>
+              </button>
             );
           })}
         </div>

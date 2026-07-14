@@ -32,9 +32,9 @@ const STORAGE_KEY = 'dad_build_v1';
 type TabId = 'class' | 'gear' | 'damage';
 
 const TABS: { id: TabId; label: string }[] = [
-  { id: 'class', label: 'Class' },
   { id: 'gear', label: 'Gear & Stats' },
-  { id: 'damage', label: 'Damage' },
+  { id: 'class', label: 'Perks & Skills' },
+  { id: 'damage', label: 'Calculations' },
 ];
 
 /** Strip empty enchant rows and enforce the 2H rule for the engine. */
@@ -117,7 +117,7 @@ function loadInitialBuild(): BuildState {
 const initial = loadInitialBuild();
 
 export default function App() {
-  const [tab, setTab] = useState<TabId>('class');
+  const [tab, setTab] = useState<TabId>('gear');
   const [classId, setClassId] = useState(initial.classId);
   const classData = classes[classId]!;
 

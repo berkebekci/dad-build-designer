@@ -538,10 +538,10 @@ body {
 }
 
 .opponent-controls {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 18px;
-  align-items: center;
+  align-items: end;
   margin-bottom: 12px;
 }
 
@@ -555,32 +555,44 @@ body {
   font-size: 14px;
 }
 
-.tankiness-head {
+.tankiness {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tankiness-caption {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--muted);
-  margin-bottom: 4px;
 }
 
-.tankiness-tier {
-  color: var(--gold);
-  font-weight: 700;
+.tankiness-switch {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-.tankiness input[type='range'] {
-  width: 100%;
-  accent-color: var(--gold);
-}
-
-.tankiness-ticks {
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
+.tk-opt {
+  background: var(--panel-2);
+  border: none;
+  border-right: 1px solid var(--border);
   color: var(--muted);
-  margin-top: 2px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.tk-opt:last-child {
+  border-right: none;
+}
+
+.tk-opt--active {
+  background: var(--gold);
+  color: #1a1408;
+  font-weight: 700;
 }
 
 .opponent-profile {
@@ -1076,14 +1088,25 @@ body {
 .modal-card {
   display: flex;
   gap: 10px;
+  align-items: center;
+  text-align: left;
   background: var(--panel-2);
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 10px;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.12s, box-shadow 0.12s;
+}
+
+.modal-card:hover {
+  background: #2a2116;
+  box-shadow: 0 0 0 1px currentColor;
 }
 
 .modal-card--equipped {
-  border-color: var(--gold);
+  box-shadow: inset 3px 0 0 var(--gold);
 }
 
 .modal-item-img {

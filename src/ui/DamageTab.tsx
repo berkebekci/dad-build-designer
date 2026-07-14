@@ -69,22 +69,17 @@ export function DamageTab({ stats, weaponName, selectedSpells }: DamageTabProps)
             </select>
           </label>
           <div className="tankiness">
-            <div className="tankiness-head">
-              <span>Tankiness</span>
-              <span className="tankiness-tier">{TIER_LABEL[tier]}</span>
-            </div>
-            <input
-              type="range"
-              min={0}
-              max={2}
-              step={1}
-              value={tierIdx}
-              onChange={(e) => setTierIdx(Number(e.target.value))}
-              aria-label="Opponent tankiness"
-            />
-            <div className="tankiness-ticks">
-              {TIERS.map((t) => (
-                <span key={t}>{TIER_LABEL[t]}</span>
+            <span className="tankiness-caption">Tankiness</span>
+            <div className="tankiness-switch" role="group" aria-label="Opponent tankiness">
+              {TIERS.map((t, i) => (
+                <button
+                  key={t}
+                  type="button"
+                  className={`tk-opt${tierIdx === i ? ' tk-opt--active' : ''}`}
+                  onClick={() => setTierIdx(i)}
+                >
+                  {TIER_LABEL[t]}
+                </button>
               ))}
             </div>
           </div>
@@ -100,25 +95,6 @@ export function DamageTab({ stats, weaponName, selectedSpells }: DamageTabProps)
           Your Armor/Magic Penetration, Headshot Bonus, additional and true damage are all applied.
         </p>
       </div>
-
-      {melee && (
-        <div className="damagesim ttk-panel">
-          <h2>Hits to Kill</h2>
-          <div className="ttk-grid">
-            <div className="ttk-cell">
-              <div className="ttk-num">{htk(prof.hp, avgBody)}</div>
-              <div className="ttk-label">body hits</div>
-              <div className="ttk-sub">~{Math.round(avgBody)}/hit</div>
-            </div>
-            <div className="ttk-cell ttk-cell--head">
-              <div className="ttk-num">{htk(prof.hp, avgHead)}</div>
-              <div className="ttk-label">head hits</div>
-              <div className="ttk-sub">~{Math.round(avgHead)}/hit</div>
-            </div>
-          </div>
-          <p className="hint">Average across the {comboHits.length}-hit combo vs {prof.hp} HP.</p>
-        </div>
-      )}
 
       <div className="damagesim">
         <h2>Weapon Hits{weaponName ? ` — ${weaponName}` : ''}</h2>
@@ -157,6 +133,25 @@ export function DamageTab({ stats, weaponName, selectedSpells }: DamageTabProps)
           </>
         )}
       </div>
+
+      {melee && (
+        <div className="damagesim ttk-panel">
+          <h2>Hits to Kill</h2>
+          <div className="ttk-grid">
+            <div className="ttk-cell">
+              <div className="ttk-num">{htk(prof.hp, avgBody)}</div>
+              <div className="ttk-label">body hits</div>
+              <div className="ttk-sub">~{Math.round(avgBody)}/hit</div>
+            </div>
+            <div className="ttk-cell ttk-cell--head">
+              <div className="ttk-num">{htk(prof.hp, avgHead)}</div>
+              <div className="ttk-label">head hits</div>
+              <div className="ttk-sub">~{Math.round(avgHead)}/hit</div>
+            </div>
+          </div>
+          <p className="hint">Average across the {comboHits.length}-hit combo vs {prof.hp} HP.</p>
+        </div>
+      )}
 
       <div className="damagesim">
         <h2>Spell Damage</h2>
