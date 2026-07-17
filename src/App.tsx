@@ -9,6 +9,8 @@ import {
   items,
   perkEffects,
   perkTotals,
+  skillEffects,
+  skillTotals,
   spellBook,
   statCurves,
 } from './engine/data';
@@ -129,18 +131,22 @@ export default function App() {
   const [spellIds, setSpellIds] = useState<string[]>(initial.spellIds);
   const [loadout, setLoadout] = useState<UiLoadout>(initial.loadout);
   const [copied, setCopied] = useState(false);
-  // Situational perk buffs the user has toggled on (local, not persisted).
+  // Situational perk/skill buffs the user has toggled on (local, not persisted).
   const [activePerkBuffs, setActivePerkBuffs] = useState<string[]>([]);
+  const [activeSkillBuffs, setActiveSkillBuffs] = useState<string[]>([]);
 
   const spells = classSpells(spellBook, classId);
   const selectedSpells = spells.filter((s) => spellIds.includes(s.id));
 
-  // The whole app funnels into this one pure engine call. Gear + perks merge.
+  // The whole app funnels into this one pure engine call. Gear + perks + skills merge.
   const stats = useMemo(() => {
     const gear = gearTotals(toEngineLoadout(loadout), itemIndex);
     const perks = perkTotals(perkIds, activePerkBuffs);
-    return computeStats(classData, statCurves, { gear: mergeGearTotals(gear, perks) });
-  }, [classData, loadout, perkIds, activePerkBuffs]);
+    const skillBuffs = skillTotals(skillIds, activeSkillBuffs);
+    return computeStats(classData, statCurves, {
+      gear: mergeGearTotals(mergeGearTotals(gear, perks), skillBuffs),
+    });
+  }, [classData, loadout, perkIds, activePerkBuffs, skillIds, activeSkillBuffs]);
 
   const issues = validateBuild(classData, { perkIds, skillIds });
 
@@ -194,6 +200,8 @@ export default function App() {
           : cur;
       // Dropping a memory skill shrinks the spell slots — trim the overflow.
       setSpellIds((spells) => spells.slice(0, spellSlots(next)));
+      // Deselecting a skill drops its situational buff too.
+      if (!next.includes(id)) setActiveSkillBuffs((cur) => cur.filter((x) => x !== id));
       return next;
     });
   };
@@ -213,6 +221,7 @@ export default function App() {
     setSpellIds([]);
     setLoadout({});
     setActivePerkBuffs([]);
+    setActiveSkillBuffs([]);
   };
 
   const shareBuild = async () => {
@@ -234,6 +243,7 @@ export default function App() {
     setSpellIds([]);
     setLoadout({});
     setActivePerkBuffs([]);
+    setActiveSkillBuffs([]);
     window.history.replaceState(null, '', window.location.pathname);
     window.localStorage.removeItem(STORAGE_KEY);
   };
@@ -309,6 +319,14 @@ export default function App() {
               selectedIds={skillIds}
               capacity={classData.skill_slots}
               onToggle={toggleSkill}
+              buffs={{
+                active: activeSkillBuffs,
+                condition: (id) => skillEffects[id]?.conditional,
+                onToggle: (id) =>
+                  setActiveSkillBuffs((cur) =>
+                    cur.includes(id) ? cur.filter((x) => x !== id) : [...cur, id],
+                  ),
+              }}
             />
           </section>
           {spells.length > 0 && (
@@ -337,6 +355,7 @@ export default function App() {
           stats={stats}
           weaponName={loadout.primary ? itemIndex.get(loadout.primary.itemId)?.name : undefined}
           selectedSpells={selectedSpells}
+          selectedSkills={classData.skills.filter((s) => skillIds.includes(s.id))}
         />
       )}
     </div>

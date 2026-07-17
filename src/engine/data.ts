@@ -20,6 +20,7 @@ import weaponHitsJson from '../../data/rules/weapon_hits.json';
 import opponentsJson from '../../data/rules/opponents.json';
 import spellsJson from '../../data/spells/spells.json';
 import perkEffectsJson from '../../data/rules/perk_effects.json';
+import skillEffectsJson from '../../data/rules/skill_effects.json';
 import itemsJson from '../../data/items/items.json';
 import iconsJson from '../../data/items/icons.json';
 import type { CurveSet } from './computeStats';
@@ -27,6 +28,7 @@ import type { ClassData } from './types';
 import type { ItemRecord } from './itemStats';
 import type { CombatRules, WeaponHitsTable } from './damage';
 import type { SpellBook } from './spells';
+import type { SkillDamageEffect } from './skillDamage';
 import { applyStatMap, emptyTotals, type GearTotals } from './itemStats';
 
 export const statCurves = statCurvesJson as unknown as CurveSet;
@@ -125,6 +127,30 @@ export function perkTotals(perkIds: string[], activeConditional: string[]): Gear
   for (const id of perkIds) {
     const eff = perkEffects[id];
     if (!eff) continue;
+    if (eff.conditional && !activeConditional.includes(id)) continue;
+    applyStatMap(totals, eff.stats);
+  }
+  return totals;
+}
+
+export interface SkillEffect {
+  /** Persistent/toggleable stat contribution, same shape as PerkEffect. */
+  stats?: Record<string, number>;
+  conditional?: string;
+  /** Direct-damage hits shown in the Calculations tab's Skill Damage panel. */
+  damage?: SkillDamageEffect;
+}
+
+export const skillEffects = (
+  skillEffectsJson as unknown as { skills: Record<string, SkillEffect> }
+).skills;
+
+/** Stat totals from selected skills — mirrors perkTotals(). */
+export function skillTotals(skillIds: string[], activeConditional: string[]): GearTotals {
+  const totals = emptyTotals();
+  for (const id of skillIds) {
+    const eff = skillEffects[id];
+    if (!eff?.stats) continue;
     if (eff.conditional && !activeConditional.includes(id)) continue;
     applyStatMap(totals, eff.stats);
   }

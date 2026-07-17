@@ -2,7 +2,8 @@ import { useState } from 'react';
 import type { DerivedStats } from '../engine/types';
 import { simulateHits, type DummyTarget, type ZoneId } from '../engine/damage';
 import { simulateSpell, type SpellData } from '../engine/spells';
-import { classes, opponentProfile, type TankinessTier } from '../engine/data';
+import { simulateSkillDamage, type SkillDamageEffect } from '../engine/skillDamage';
+import { classes, opponentProfile, skillEffects, type TankinessTier } from '../engine/data';
 import { combatRules, weaponHits } from '../engine/data';
 
 const SHOWN_ZONES: { id: ZoneId; label: string }[] = [
@@ -19,6 +20,7 @@ interface DamageTabProps {
   stats: DerivedStats;
   weaponName: string | undefined;
   selectedSpells: SpellData[];
+  selectedSkills: { id: string; name: string }[];
 }
 
 function htk(hp: number, perHit: number): string {
@@ -26,7 +28,7 @@ function htk(hp: number, perHit: number): string {
   return String(Math.ceil(hp / perHit));
 }
 
-export function DamageTab({ stats, weaponName, selectedSpells }: DamageTabProps) {
+export function DamageTab({ stats, weaponName, selectedSpells, selectedSkills }: DamageTabProps) {
   // The opponent is a real class at a chosen tankiness tier; its averaged
   // PDR/MDR/headshot-reduction and HP drive the damage + hits-to-kill.
   const [opponentId, setOpponentId] = useState('fighter');
@@ -43,6 +45,11 @@ export function DamageTab({ stats, weaponName, selectedSpells }: DamageTabProps)
   const hasWeapon = stats.weaponDamage > 0 || stats.magicWeaponDamage > 0;
   const melee = hasWeapon ? simulateHits(stats, weaponName, weaponHits, combatRules, dummy) : null;
   const damageSpells = selectedSpells.filter((s) => s.hits.length > 0);
+  const damageSkills: { name: string; effect: SkillDamageEffect }[] = [];
+  for (const s of selectedSkills) {
+    const effect = skillEffects[s.id]?.damage;
+    if (effect) damageSkills.push({ name: s.name, effect });
+  }
 
   // Hits-to-kill: average the main combo (non-riposte) body/head damage.
   const comboHits = melee?.hits.filter((h) => !h.isRiposte) ?? [];
@@ -132,6 +139,28 @@ export function DamageTab({ stats, weaponName, selectedSpells }: DamageTabProps)
             </p>
           </>
         )}
+      </div>
+
+      <div className="damagesim">
+        <h2>Skill Damage</h2>
+        {damageSkills.length === 0 && (
+          <p className="hint">Select a damage-dealing skill in the Perks & Skills tab to see numbers here.</p>
+        )}
+        {damageSkills.map(({ name, effect }) => (
+          <div key={name} className="spell-result">
+            <h3>{name}</h3>
+            <table className="hit-table">
+              <tbody>
+                {simulateSkillDamage(stats, effect, dummy).map((r) => (
+                  <tr key={r.label}>
+                    <td>{r.label}</td>
+                    <td className="hit-dmg">{r.amount}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ))}
       </div>
 
       {melee && (

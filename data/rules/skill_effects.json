@@ -1,0 +1,77 @@
+{
+  "_meta": {
+    "description": "Skill stat/damage contributions, sourced from darkanddarker.wiki.spellsandguns.com class pages (fetched 2026-07-17). `stats` uses the same raw attribute keys as items/perks (see ATTR_RULES); conditional skills apply only when toggled on in the Skills panel. `damage` is a hit list in the same base/scaling shape as spells.json — `type` picks whether it scales off Physical or Magical Power Bonus and which DR/penetration applies.",
+    "coverage": "Partial — only skills with clear, single-target numeric effects are modeled. Memory skills (spell/music/sorcery/shapeshift memory), pure mobility (Backstep, Tumbling, Hide, Shadowstep), pure CC (Dissonance, Cut Throat, Weakpoint Attack), demon-form/shapeshift-form skills, and multi-mechanic skills (Blood Pact, Arcane Shield's absorb-then-explode, trap-placement skills like Caltrops) are omitted. Extend as needed.",
+    "user_flag": "2026-07-17: skills (e.g. Warlock Blow of Corruption) did not affect Calculations; this file + skillTotals()/simulateSkillDamage() fixes it."
+  },
+  "skills": {
+    "blow_of_corruption": {
+      "damage": { "hits": [{ "label": "Blow of Corruption", "base": 12, "scaling": 100, "type": "magical" }] }
+    },
+    "dark_offering": {
+      "stats": { "physical_damage_bonus": 50, "magical_damage_bonus": 50 },
+      "conditional": "10 stacks (max channel)"
+    },
+
+    "shield_slam": {
+      "damage": { "hits": [{ "label": "Shield Slam", "base": 30, "scaling": 100, "type": "physical" }] }
+    },
+    "pommel_strike": {
+      "damage": { "hits": [{ "label": "Pommel Strike (hilt)", "base": 15, "scaling": 100, "type": "physical" }] }
+    },
+    "victory_strike": {
+      "stats": { "physical_damage_bonus": 40 },
+      "conditional": "Next attack (10s window)"
+    },
+    "taunt": {
+      "stats": { "physical_damage_reduction": 12, "magical_damage_reduction": 12 },
+      "conditional": "Active (8s)"
+    },
+
+    "judgement": {
+      "damage": { "hits": [{ "label": "Judgement", "base": 25, "scaling": 100, "type": "magical" }] }
+    },
+    "smite": {
+      "stats": { "additional_magical_damage": 10 },
+      "conditional": "Active (7s) — adds to every melee hit"
+    },
+
+    "rupture": {
+      "damage": { "hits": [{ "label": "Rupture (bleed, 5s)", "base": 15, "scaling": 75, "type": "physical" }] }
+    },
+    "sneak_attack": {
+      "damage": {
+        "hits": [
+          { "label": "Sneak Attack bonus", "base": 10, "scaling": 0, "type": "physical" },
+          { "label": "+ target not in combat", "base": 10, "scaling": 0, "type": "physical" }
+        ]
+      }
+    },
+
+    "overdraw": {
+      "stats": { "physical_damage_bonus": 75 },
+      "conditional": "3 stacks (max, bow fully drawn 3.75s)"
+    },
+    "true_shot": {
+      "stats": { "physical_damage_bonus": 8 },
+      "conditional": "Active (8s)"
+    },
+    "penetrating_shot": {
+      "stats": { "armor_penetration": 25 },
+      "conditional": "Active (8s), bow/crossbow"
+    },
+    "quick_fire": {
+      "stats": { "action_speed": 50 },
+      "conditional": "Active (8s), bow/crossbow"
+    },
+
+    "rage": {
+      "stats": { "strength": 10, "move_speed_bonus": 7, "physical_damage_reduction": -5 },
+      "conditional": "Active (6s)"
+    },
+    "war_sacrifice": {
+      "stats": { "all_attributes": 8 },
+      "conditional": "Active (8s)"
+    }
+  }
+}
