@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "description": "Perk stat contributions. `stats` uses the same raw attribute keys as items (see ATTR_RULES). Perks without a `conditional` field apply their stats whenever the perk is selected. `conditional` perks (situational buffs/stances) apply only when the user toggles them on in the Perks panel.",
+    "attribute_bonus_keys": "e.g. will_bonus / knowledge_bonus multiply the attribute (Attribute Bonus %).",
+    "coverage": "Clear passive + toggleable stat perks. Many perks (movement, healing-on-kill, utility) have no direct stat effect and are omitted. Extend as needed.",
+    "user_flag": "2026-07-14: perks were not applying to stats; this file + perkTotals() fixes it."
+  },
+  "perks": {
+    "mana_surge": { "stats": { "magical_damage_bonus": 10 } },
+    "sage": { "stats": { "knowledge_bonus": 15 } },
+    "malice": { "stats": { "will_bonus": 15 } },
+    "vampirism": { "stats": { "magical_healing": 20 } },
+    "robust": { "stats": { "max_health_bonus": 10 } },
+    "iron_will": { "stats": { "magic_resistance": 75 } },
+    "holy_aura": { "stats": { "armor_rating": 15, "magic_resistance": 15 } },
+    "fermata": { "stats": { "resourcefulness": 5 } },
+    "lore_mastery": { "stats": { "regular_interaction_speed": 30, "additional_memory_capacity": 10 } },
+    "advanced_healer": { "stats": { "magical_healing": 5 } },
+
+    "barricade": { "stats": { "armor_rating": 75, "magic_resistance": 75 }, "conditional": "Defensive stance" },
+    "last_bastion": { "stats": { "armor_rating": 150, "magic_resistance": 50, "projectile_damage_reduction": 30 }, "conditional": "Below 33% health" },
+    "adrenaline_spike": { "stats": { "action_speed": 15, "move_speed_bonus": 3, "regular_interaction_speed": 30 }, "conditional": "Below 40% health" },
+    "combo_attack": { "stats": { "physical_damage_bonus": 20 }, "conditional": "2 combo stacks" },
+    "veteran_instinct": { "stats": { "physical_damage_reduction": 10, "physical_damage_bonus": 10 }, "conditional": "On entering combat" },
+    "weapon_guard": { "stats": { "physical_damage_reduction": 5 }, "conditional": "Blocking with a weapon" },
+    "defense_mastery": { "stats": { "additional_armor_rating": 15 }, "conditional": "Additional armor bonus" },
+
+    "two_hander": { "stats": { "physical_damage_bonus": 5, "armor_penetration": 10 }, "conditional": "Two-handed weapon" },
+    "berserker": { "stats": { "physical_damage_bonus": 20, "move_speed_bonus": 5 }, "conditional": "Low health (max)" },
+    "savage": { "stats": { "physical_damage_bonus": 10 }, "conditional": "No chest armor" },
+
+    "dagger_mastery": { "stats": { "physical_damage_bonus": 10, "true_physical_damage": 1 }, "conditional": "Daggers" },
+    "back_attack": { "stats": { "physical_damage_bonus": 30 }, "conditional": "Attacking from behind" },
+    "ambush": { "stats": { "physical_damage_bonus": 25, "move_speed_bonus": 10 }, "conditional": "After exiting hide" },
+    "thrust": { "stats": { "armor_penetration": 15 }, "conditional": "Daggers" },
+    "trickster": { "stats": { "action_speed": 20 }, "conditional": "Throwing weapons" },
+
+    "blunt_weapon_mastery": { "stats": { "physical_damage_bonus": 10 }, "conditional": "Mace" },
+    "undead_slaying": { "stats": { "undead_damage_bonus": 20 }, "conditional": "vs Undead" },
+
+    "ranged_weapons_mastery": { "stats": { "physical_damage_bonus": 5 }, "conditional": "Bows/crossbows" },
+    "crossbow_mastery": { "stats": { "physical_damage_bonus": 5 }, "conditional": "Crossbows" },
+    "sharpshooter": { "stats": { "headshot_damage_bonus": 15 }, "conditional": "Ranged weapons" },
+
+    "ice_shield": { "stats": { "armor_rating": 20 }, "conditional": "Not on cooldown" },
+    "arcane_mastery": { "stats": { "magical_damage_bonus": 5 } },
+    "fire_mastery": { "stats": { "magical_damage_bonus": 5 }, "conditional": "Fire spells" },
+
+    "infernal_pledge": { "stats": { "undead_damage_bonus": 15, "demon_damage_bonus": 15, "undead_damage_reduction": 10, "demon_damage_reduction": 10 }, "conditional": "vs Undead/Demon" },
+    "antimagic": { "stats": { "magical_damage_reduction": 20 }, "conditional": "vs most magic" },
+
+    "mana_flow": { "stats": { "magical_damage_bonus": 15, "magic_penetration": 15 }, "conditional": "3 cast stacks" },
+    "lightning_mastery": { "stats": { "magical_damage_bonus": 25 }, "conditional": "Lightning spells" },
+    "air_mastery": { "stats": { "magical_damage_bonus": 50 }, "conditional": "Air spells" },
+
+    "enhanced_wildness": { "stats": { "physical_damage_bonus": 5, "armor_rating": 20 }, "conditional": "Animal form" },
+    "spirit_magic_mastery": { "stats": { "magical_power": 10 }, "conditional": "Spirit magic" }
+  }
+}

@@ -7,12 +7,21 @@ interface PickItem {
   icon?: string;
 }
 
+interface BuffControls {
+  active: string[];
+  /** Returns the situational condition text for a perk, or undefined if none. */
+  condition: (id: string) => string | undefined;
+  onToggle: (id: string) => void;
+}
+
 interface PickListProps {
   title: string;
   items: PickItem[];
   selectedIds: string[];
   capacity: number;
   onToggle: (id: string) => void;
+  /** Optional situational-buff toggles (perks) shown in the detail card. */
+  buffs?: BuffControls;
 }
 
 /** Icon tile with a letter fallback when no game icon is available. */
@@ -68,7 +77,7 @@ export function DetailCard({
  * a detail card above the grid with the full effect text — the descriptions
  * are always one glance away instead of buried in a tooltip.
  */
-export function PickList({ title, items, selectedIds, capacity, onToggle }: PickListProps) {
+export function PickList({ title, items, selectedIds, capacity, onToggle, buffs }: PickListProps) {
   const full = selectedIds.length >= capacity;
   const [hoverId, setHoverId] = useState<string | null>(null);
 
@@ -76,6 +85,11 @@ export function PickList({ title, items, selectedIds, capacity, onToggle }: Pick
     items.find((i) => i.id === hoverId) ??
     items.find((i) => selectedIds.includes(i.id)) ??
     items[0];
+
+  // Situational buff toggle for the shown perk (only when selected + conditional).
+  const condition = shown && buffs ? buffs.condition(shown.id) : undefined;
+  const showBuffToggle = shown && buffs && selectedIds.includes(shown.id) && condition;
+  const buffOn = shown && buffs ? buffs.active.includes(shown.id) : false;
 
   return (
     <div className="picklist">
@@ -86,7 +100,19 @@ export function PickList({ title, items, selectedIds, capacity, onToggle }: Pick
         </span>
       </h2>
 
-      {shown && <DetailCard name={shown.name} icon={shown.icon} effect={shown.effect} />}
+      {shown && (
+        <DetailCard name={shown.name} icon={shown.icon} effect={shown.effect}>
+          {showBuffToggle && (
+            <button
+              type="button"
+              className={`buff-toggle${buffOn ? ' buff-toggle--on' : ''}`}
+              onClick={() => buffs!.onToggle(shown.id)}
+            >
+              {buffOn ? '✓ Active' : 'Activate'} · {condition}
+            </button>
+          )}
+        </DetailCard>
+      )}
 
       <div className="tile-grid">
         {items.map((item) => {

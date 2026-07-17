@@ -72,14 +72,28 @@ function SlotIcon({ name }: { name: string }) {
   return <span className="slot-img slot-img--fallback">{name[0]}</span>;
 }
 
-/** One paperdoll slot: shows the equipped item's icon, or the slot name. */
+/** Base stats + chosen enchants as "Label +value" lines for the hover tooltip. */
+function statLines(item: ItemRecord, enchants: (EnchantChoice | null)[]): string[] {
+  const lines = (item.base ?? []).map(
+    ([attr, , max]) => `${attrLabel(attr)} ${max > 0 ? '+' : ''}${max}`,
+  );
+  for (const en of enchants) {
+    if (en) lines.push(`${attrLabel(en.attr)} +${en.value}  (enchant)`);
+  }
+  return lines;
+}
+
+/** One paperdoll slot: shows the equipped item's icon, or the slot name.
+ * Hovering a filled slot reveals its stats in a tooltip. */
 function PaperdollSlot({
   slot,
   item,
+  enchants,
   onClick,
 }: {
   slot: GearSlotId;
   item: ItemRecord | undefined;
+  enchants: (EnchantChoice | null)[];
   onClick: () => void;
 }) {
   return (
@@ -88,13 +102,22 @@ function PaperdollSlot({
       className={`pd-slot pd-slot--${slot}${item ? ' pd-slot--filled' : ''}`}
       style={{ gridArea: slot, borderColor: item ? rarityColor(item.rarity) : undefined }}
       onClick={onClick}
-      title={item ? `${item.name} (${item.rarity})` : SLOT_LABELS[slot]}
     >
       {item ? (
         <>
           <SlotIcon name={item.name} />
           <span className="pd-slot-name" style={{ color: rarityColor(item.rarity) }}>
             {item.name}
+          </span>
+          <span className="pd-tooltip">
+            <span className="pd-tt-name" style={{ color: rarityColor(item.rarity) }}>
+              {item.name} · {item.rarity}
+            </span>
+            {statLines(item, enchants).map((l, i) => (
+              <span key={i} className="pd-tt-line">
+                {l}
+              </span>
+            ))}
           </span>
         </>
       ) : (
@@ -129,35 +152,75 @@ function EnchantRow({
   }
   const pool = enchantablePool(item);
   const range = choice ? pool.find(([a]) => a === choice.attr) : undefined;
+  const available = pool.filter(([attr]) => attr === choice?.attr || !usedAttrs.has(attr));
   return (
     <div className="enchant-row">
-      <select
-        value={choice?.attr ?? ''}
-        onChange={(e) => {
-          const attr = e.target.value;
-          if (!attr) return onPick(null);
-          const entry = pool.find(([a]) => a === attr);
-          onPick({ attr, value: entry ? entry[2] : 0 });
-        }}
-      >
-        <option value="">— enchantment —</option>
-        {pool
-          .filter(([attr]) => attr === choice?.attr || !usedAttrs.has(attr))
-          .map(([attr, min, max]) => (
-            <option key={attr} value={attr}>
-              {attrLabel(attr)} ({min}–{max})
-            </option>
-          ))}
-      </select>
-      {choice && range && (
-        <NumberField
-          value={choice.value}
-          min={range[1]}
-          max={range[2]}
-          step={Number.isInteger(range[1]) && Number.isInteger(range[2]) ? 1 : 0.1}
-          onChange={(v) => onPick({ attr: choice.attr, value: v })}
-          ariaLabel={`${attrLabel(choice.attr)} roll`}
+      {choice ? (
+        <>
+          <span className="enchant-chosen">
+            {attrLabel(choice.attr)}
+            <button type="button" className="enchant-clear" onClick={() => onPick(null)} title="Remove">
+              ×
+            </button>
+          </span>
+          {range && (
+            <NumberField
+              value={choice.value}
+              min={range[1]}
+              max={range[2]}
+              step={Number.isInteger(range[1]) && Number.isInteger(range[2]) ? 1 : 0.1}
+              onChange={(v) => onPick({ attr: choice.attr, value: v })}
+              ariaLabel={`${attrLabel(choice.attr)} roll`}
+            />
+          )}
+        </>
+      ) : (
+        <EnchantSearch
+          options={available}
+          onPick={(attr) => {
+            const entry = pool.find(([a]) => a === attr);
+            onPick({ attr, value: entry ? entry[2] : 0 });
+          }}
         />
+      )}
+    </div>
+  );
+}
+
+/** Searchable enchantment picker: type to filter the (up to 29) pool options. */
+function EnchantSearch({
+  options,
+  onPick,
+}: {
+  options: [string, number, number][];
+  onPick: (attr: string) => void;
+}) {
+  const [query, setQuery] = useState('');
+  const [open, setOpen] = useState(false);
+  const q = query.trim().toLowerCase();
+  const matches = q
+    ? options.filter(([attr]) => attrLabel(attr).toLowerCase().includes(q))
+    : options;
+  return (
+    <div className="enchant-search">
+      <input
+        type="text"
+        placeholder="search enchantment…"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        onFocus={() => setOpen(true)}
+        onBlur={() => setOpen(false)}
+      />
+      {open && matches.length > 0 && (
+        <ul className="enchant-options">
+          {matches.map(([attr, min, max]) => (
+            <li key={attr}>
+              <button type="button" onMouseDown={(e) => e.preventDefault()} onClick={() => onPick(attr)}>
+                {attrLabel(attr)} <span className="enchant-range">({min}–{max})</span>
+              </button>
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );
@@ -224,6 +287,7 @@ export function GearPanel({ classData, perkIds, loadout, onChange }: GearPanelPr
                 key={slot}
                 slot={slot}
                 item={disabled ? undefined : item}
+                enchants={eq?.enchants ?? []}
                 onClick={() => !disabled && setPickerSlot(slot)}
               />
             );

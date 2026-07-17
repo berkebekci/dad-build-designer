@@ -858,6 +858,24 @@ body {
   color: var(--text);
 }
 
+.buff-toggle {
+  margin-top: 8px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--muted);
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.buff-toggle--on {
+  background: #2d3a1a;
+  border-color: var(--pos);
+  color: var(--pos);
+  font-weight: 600;
+}
+
 @media (max-width: 1300px) {
   .columns--four {
     grid-template-columns: 1fr 1fr;
@@ -914,6 +932,7 @@ body {
 }
 
 .pd-slot {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -926,8 +945,44 @@ body {
   cursor: pointer;
   font: inherit;
   padding: 6px;
-  overflow: hidden;
   transition: border-color 0.12s, background 0.12s;
+}
+
+/* hover tooltip: item stats */
+.pd-tooltip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 170px;
+  max-width: 240px;
+  background: #16110c;
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  padding: 8px 10px;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+.pd-slot:hover .pd-tooltip {
+  display: flex;
+}
+
+.pd-tt-name {
+  font-weight: 700;
+  font-size: 12.5px;
+  text-transform: capitalize;
+  margin-bottom: 3px;
+}
+
+.pd-tt-line {
+  font-size: 12px;
+  color: var(--text);
 }
 
 .pd-slot:hover {
@@ -1022,6 +1077,91 @@ body {
 
 .enchant-group .enchant-row {
   margin-left: 0;
+}
+
+/* searchable enchantment picker */
+.enchant-search {
+  position: relative;
+  flex: 1;
+}
+
+.enchant-search input {
+  width: 100%;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  padding: 6px 8px;
+  font-size: 13px;
+}
+
+.enchant-search input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.enchant-options {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  right: 0;
+  z-index: 30;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background: var(--panel);
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+}
+
+.enchant-options button {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(58, 46, 34, 0.4);
+  color: var(--text);
+  padding: 6px 9px;
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.enchant-options button:hover {
+  background: #2d2415;
+  color: var(--gold);
+}
+
+.enchant-range {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.enchant-chosen {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-size: 12.5px;
+}
+
+.enchant-clear {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.enchant-clear:hover {
+  color: var(--neg);
 }
 
 /* --- item picker modal --- */

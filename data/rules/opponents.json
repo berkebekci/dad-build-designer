@@ -8,54 +8,54 @@
   },
   "classes": {
     "fighter": {
-      "low":    { "pdr": 35, "mdr": 20, "hdr": 15, "hp": 130 },
-      "medium": { "pdr": 50, "mdr": 30, "hdr": 22, "hp": 175 },
-      "high":   { "pdr": 67.5, "mdr": 40, "hdr": 29, "hp": 215 }
+      "low":    { "pdr": 30, "mdr": 10, "hdr": 18, "hp": 130 },
+      "medium": { "pdr": 50, "mdr": 20, "hdr": 28, "hp": 130 },
+      "high":   { "pdr": 65, "mdr": 35, "hdr": 29, "hp": 170 }
     },
     "rogue": {
-      "low":    { "pdr": 22.5, "mdr": 10, "hdr": 10, "hp": 90 },
-      "medium": { "pdr": 32.5, "mdr": 15, "hdr": 15, "hp": 120 },
-      "high":   { "pdr": 42.5, "mdr": 20, "hdr": 15, "hp": 150 }
+      "low":    { "pdr": 15, "mdr": 5, "hdr": 10, "hp": 100 },
+      "medium": { "pdr": 25, "mdr": 15, "hdr": 15, "hp": 130 },
+      "high":   { "pdr": 40, "mdr": 20, "hdr": 15, "hp": 150 }
     },
     "barbarian": {
-      "low":    { "pdr": 25, "mdr": 15, "hdr": 12, "hp": 155 },
-      "medium": { "pdr": 35, "mdr": 25, "hdr": 18, "hp": 200 },
-      "high":   { "pdr": 45, "mdr": 35, "hdr": 24, "hp": 245 }
+      "low":    { "pdr": 15, "mdr": 15, "hdr": 15, "hp": 140 },
+      "medium": { "pdr": 40, "mdr": 45, "hdr": 18, "hp": 170 },
+      "high":   { "pdr": 55, "mdr": 50, "hdr": 21, "hp": 200 }
     },
     "ranger": {
-      "low":    { "pdr": 22.5, "mdr": 10, "hdr": 10, "hp": 95 },
-      "medium": { "pdr": 32.5, "mdr": 15, "hdr": 15, "hp": 128 },
-      "high":   { "pdr": 42.5, "mdr": 20, "hdr": 18, "hp": 160 }
+      "low":    { "pdr": 20, "mdr": 10, "hdr": 12, "hp": 100 },
+      "medium": { "pdr": 25, "mdr": 15, "hdr": 15, "hp": 130 },
+      "high":   { "pdr": 35, "mdr": 20, "hdr": 15, "hp": 140 }
     },
     "wizard": {
-      "low":    { "pdr": 15, "mdr": 15, "hdr": 8, "hp": 80 },
-      "medium": { "pdr": 25, "mdr": 25, "hdr": 12, "hp": 105 },
-      "high":   { "pdr": 35, "mdr": 35, "hdr": 16, "hp": 135 }
+      "low":    { "pdr": 20, "mdr": 20, "hdr": 10, "hp": 100 },
+      "medium": { "pdr": 25, "mdr": 35, "hdr": 10, "hp": 120 },
+      "high":   { "pdr": 30, "mdr": 40, "hdr": 10, "hp": 140 }
     },
     "cleric": {
-      "low":    { "pdr": 30, "mdr": 25, "hdr": 14, "hp": 125 },
-      "medium": { "pdr": 45, "mdr": 35, "hdr": 20, "hp": 165 },
-      "high":   { "pdr": 60, "mdr": 45, "hdr": 26, "hp": 205 }
+      "low":    { "pdr": 25, "mdr": 25, "hdr": 15, "hp": 130 },
+      "medium": { "pdr": 45, "mdr": 40, "hdr": 28, "hp": 160 },
+      "high":   { "pdr": 55, "mdr": 45, "hdr": 29, "hp": 170 }
     },
     "bard": {
-      "low":    { "pdr": 20, "mdr": 15, "hdr": 10, "hp": 100 },
-      "medium": { "pdr": 30, "mdr": 22, "hdr": 15, "hp": 135 },
-      "high":   { "pdr": 40, "mdr": 30, "hdr": 20, "hp": 170 }
+      "low":    { "pdr": 25, "mdr": 15, "hdr": 15, "hp": 130 },
+      "medium": { "pdr": 35, "mdr": 25, "hdr": 15, "hp": 150 },
+      "high":   { "pdr": 60, "mdr": 25, "hdr": 15, "hp": 180 }
     },
     "warlock": {
-      "low":    { "pdr": 25, "mdr": 22, "hdr": 12, "hp": 120 },
-      "medium": { "pdr": 38, "mdr": 32, "hdr": 18, "hp": 160 },
-      "high":   { "pdr": 52, "mdr": 42, "hdr": 24, "hp": 200 }
+      "low":    { "pdr": 20, "mdr": 20, "hdr": 15, "hp": 120 },
+      "medium": { "pdr": 35, "mdr": 50, "hdr": 15, "hp": 140 },
+      "high":   { "pdr": 50, "mdr": 60, "hdr": 29, "hp": 160 }
     },
     "druid": {
-      "low":    { "pdr": 22, "mdr": 20, "hdr": 10, "hp": 110 },
-      "medium": { "pdr": 32, "mdr": 30, "hdr": 16, "hp": 145 },
-      "high":   { "pdr": 42, "mdr": 40, "hdr": 22, "hp": 185 }
+      "low":    { "pdr": 20, "mdr": 20, "hdr": 10, "hp": 110 },
+      "medium": { "pdr": 30, "mdr": 30, "hdr": 15, "hp": 130 },
+      "high":   { "pdr": 40, "mdr": 40, "hdr": 15, "hp": 150 }
     },
     "sorcerer": {
-      "low":    { "pdr": 18, "mdr": 22, "hdr": 9, "hp": 85 },
-      "medium": { "pdr": 28, "mdr": 32, "hdr": 13, "hp": 112 },
-      "high":   { "pdr": 38, "mdr": 42, "hdr": 17, "hp": 140 }
+      "low":    { "pdr": 20, "mdr": 25, "hdr": 10, "hp": 120 },
+      "medium": { "pdr": 30, "mdr": 35, "hdr": 15, "hp": 140 },
+      "high":   { "pdr": 40, "mdr": 45, "hdr": 15, "hp": 150 }
     }
   }
 }

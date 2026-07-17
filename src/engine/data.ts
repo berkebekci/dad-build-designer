@@ -19,6 +19,7 @@ import combatJson from '../../data/rules/combat.json';
 import weaponHitsJson from '../../data/rules/weapon_hits.json';
 import opponentsJson from '../../data/rules/opponents.json';
 import spellsJson from '../../data/spells/spells.json';
+import perkEffectsJson from '../../data/rules/perk_effects.json';
 import itemsJson from '../../data/items/items.json';
 import iconsJson from '../../data/items/icons.json';
 import type { CurveSet } from './computeStats';
@@ -26,6 +27,7 @@ import type { ClassData } from './types';
 import type { ItemRecord } from './itemStats';
 import type { CombatRules, WeaponHitsTable } from './damage';
 import type { SpellBook } from './spells';
+import { applyStatMap, emptyTotals, type GearTotals } from './itemStats';
 
 export const statCurves = statCurvesJson as unknown as CurveSet;
 
@@ -98,6 +100,36 @@ export const combatRules = combatJson as unknown as CombatRules;
 export const weaponHits = weaponHitsJson as unknown as WeaponHitsTable;
 
 export const spellBook = (spellsJson as unknown as { classes: SpellBook }).classes;
+
+export interface PerkEffect {
+  stats: Record<string, number>;
+  /** Situational condition; when set, applied only if the user toggles it on. */
+  conditional?: string;
+}
+
+export const perkEffects = (
+  perkEffectsJson as unknown as { perks: Record<string, PerkEffect> }
+).perks;
+
+/** True if a perk has a stat effect at all. */
+export function perkHasEffect(perkId: string): boolean {
+  return !!perkEffects[perkId];
+}
+
+/**
+ * Stat totals from selected perks. Unconditional perks apply when selected;
+ * conditional perks apply only if their id is in `activeConditional`.
+ */
+export function perkTotals(perkIds: string[], activeConditional: string[]): GearTotals {
+  const totals = emptyTotals();
+  for (const id of perkIds) {
+    const eff = perkEffects[id];
+    if (!eff) continue;
+    if (eff.conditional && !activeConditional.includes(id)) continue;
+    applyStatMap(totals, eff.stats);
+  }
+  return totals;
+}
 
 export type TankinessTier = 'low' | 'medium' | 'high';
 

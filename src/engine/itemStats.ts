@@ -60,6 +60,7 @@ export type Loadout = Partial<Record<GearSlotId, EquippedItem>>;
  */
 type AttrRule =
   | { kind: 'attribute'; attr: AttributeName }
+  | { kind: 'attributePct'; attr: AttributeName }
   | { kind: 'flat'; bucket: FlatBucket }
   | { kind: 'percent'; stat: PercentStat };
 
@@ -118,6 +119,15 @@ export const ATTR_RULES: Record<string, AttrRule> = {
   knowledge: { kind: 'attribute', attr: 'knowledge' },
   resourcefulness: { kind: 'attribute', attr: 'resourcefulness' },
   all_attributes: { kind: 'attribute', attr: 'strength' }, // special-cased in apply()
+
+  // Attribute Bonus % (perks): Final Attribute = Attribute * (1 + Bonus).
+  strength_bonus: { kind: 'attributePct', attr: 'strength' },
+  vigor_bonus: { kind: 'attributePct', attr: 'vigor' },
+  agility_bonus: { kind: 'attributePct', attr: 'agility' },
+  dexterity_bonus: { kind: 'attributePct', attr: 'dexterity' },
+  will_bonus: { kind: 'attributePct', attr: 'will' },
+  knowledge_bonus: { kind: 'attributePct', attr: 'knowledge' },
+  resourcefulness_bonus: { kind: 'attributePct', attr: 'resourcefulness' },
 
   armor_rating: { kind: 'flat', bucket: 'armorRating' },
   additional_armor_rating: { kind: 'flat', bucket: 'armorRating' },
@@ -211,9 +221,11 @@ export function attrLabel(attr: string): string {
     .join(' ');
 }
 
-/** Everything gear contributes, in engine units. */
+/** Everything gear (and perks) contribute, in engine units. */
 export interface GearTotals {
   attributeBonuses: Partial<Attributes>;
+  /** Attribute Bonus % (perks): Final Attribute = Attribute * (1 + Bonus/100). */
+  attributeBonusPct: Partial<Attributes>;
   flats: Record<FlatBucket, number>;
   percents: Partial<Record<PercentStat, number>>;
   unknownAttrs: string[];
@@ -229,9 +241,10 @@ const ATTRIBUTE_NAMES_LOCAL: AttributeName[] = [
   'resourcefulness',
 ];
 
-function emptyTotals(): GearTotals {
+export function emptyTotals(): GearTotals {
   return {
     attributeBonuses: {},
+    attributeBonusPct: {},
     flats: {
       armorRating: 0,
       moveSpeedAdd: 0,
@@ -271,6 +284,9 @@ function apply(totals: GearTotals, attr: string, value: number): void {
     case 'attribute':
       totals.attributeBonuses[rule.attr] = (totals.attributeBonuses[rule.attr] ?? 0) + value;
       break;
+    case 'attributePct':
+      totals.attributeBonusPct[rule.attr] = (totals.attributeBonusPct[rule.attr] ?? 0) + value;
+      break;
     case 'flat':
       totals.flats[rule.bucket] += value;
       break;
@@ -278,6 +294,30 @@ function apply(totals: GearTotals, attr: string, value: number): void {
       totals.percents[rule.stat] = (totals.percents[rule.stat] ?? 0) + value;
       break;
   }
+}
+
+/** Fold a raw {attr: value} map (e.g. a perk's stat effects) into totals. */
+export function applyStatMap(totals: GearTotals, statMap: Record<string, number>): void {
+  for (const [attr, value] of Object.entries(statMap)) apply(totals, attr, value);
+}
+
+/** Merge two GearTotals (e.g. gear + perks) into a fresh one. */
+export function mergeGearTotals(a: GearTotals, b: GearTotals): GearTotals {
+  const out = emptyTotals();
+  for (const src of [a, b]) {
+    for (const [k, v] of Object.entries(src.attributeBonuses)) {
+      out.attributeBonuses[k as AttributeName] = (out.attributeBonuses[k as AttributeName] ?? 0) + (v ?? 0);
+    }
+    for (const [k, v] of Object.entries(src.attributeBonusPct)) {
+      out.attributeBonusPct[k as AttributeName] = (out.attributeBonusPct[k as AttributeName] ?? 0) + (v ?? 0);
+    }
+    for (const k of Object.keys(src.flats) as FlatBucket[]) out.flats[k] += src.flats[k];
+    for (const [k, v] of Object.entries(src.percents)) {
+      out.percents[k as PercentStat] = (out.percents[k as PercentStat] ?? 0) + (v ?? 0);
+    }
+    for (const u of src.unknownAttrs) if (!out.unknownAttrs.includes(u)) out.unknownAttrs.push(u);
+  }
+  return out;
 }
 
 /**

@@ -36,6 +36,16 @@ export function resolveAttributes(
   return out;
 }
 
+/** Apply Attribute Bonus % (perks) after flat resolution, then re-clamp. */
+export function applyAttributePct(attrs: Attributes, pct: Partial<Attributes> | undefined): Attributes {
+  if (!pct) return attrs;
+  const out = {} as Attributes;
+  for (const name of ATTRIBUTE_NAMES) {
+    out[name] = clampAttribute(attrs[name] * (1 + (pct[name] ?? 0) / 100));
+  }
+  return out;
+}
+
 /** Weighted sum like "Action Speed Rating = 0.25*AGI + 0.75*DEX", weights from JSON. */
 export function compositeRating(
   attrs: Attributes,
@@ -71,10 +81,9 @@ export function computeStats(
   const flats = gear?.flats;
   const padd = gear?.percents ?? {};
 
-  const attrs = resolveAttributes(
-    classData.base_attributes,
-    mods.attributeBonuses,
-    gear?.attributeBonuses,
+  const attrs = applyAttributePct(
+    resolveAttributes(classData.base_attributes, mods.attributeBonuses, gear?.attributeBonuses),
+    gear?.attributeBonusPct,
   );
 
   // Ratings that blend two attributes (weights live in the data file).

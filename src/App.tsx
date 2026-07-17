@@ -7,6 +7,8 @@ import {
   hasFixedEnchants,
   itemIndex,
   items,
+  perkEffects,
+  perkTotals,
   spellBook,
   statCurves,
 } from './engine/data';
@@ -14,6 +16,7 @@ import {
   autoFillFixedEnchants,
   enchantablePool,
   gearTotals,
+  mergeGearTotals,
   type EnchantChoice,
   type GearSlotId,
   type Loadout,
@@ -126,15 +129,18 @@ export default function App() {
   const [spellIds, setSpellIds] = useState<string[]>(initial.spellIds);
   const [loadout, setLoadout] = useState<UiLoadout>(initial.loadout);
   const [copied, setCopied] = useState(false);
+  // Situational perk buffs the user has toggled on (local, not persisted).
+  const [activePerkBuffs, setActivePerkBuffs] = useState<string[]>([]);
 
   const spells = classSpells(spellBook, classId);
   const selectedSpells = spells.filter((s) => spellIds.includes(s.id));
 
-  // The whole app funnels into this one pure engine call.
+  // The whole app funnels into this one pure engine call. Gear + perks merge.
   const stats = useMemo(() => {
     const gear = gearTotals(toEngineLoadout(loadout), itemIndex);
-    return computeStats(classData, statCurves, { gear });
-  }, [classData, loadout]);
+    const perks = perkTotals(perkIds, activePerkBuffs);
+    return computeStats(classData, statCurves, { gear: mergeGearTotals(gear, perks) });
+  }, [classData, loadout, perkIds, activePerkBuffs]);
 
   const issues = validateBuild(classData, { perkIds, skillIds });
 
@@ -174,6 +180,8 @@ export default function App() {
     if (next !== perkIds) {
       setPerkIds(next);
       reconcileLoadout(next);
+      // Deselecting a perk drops its situational buff too.
+      if (!next.includes(id)) setActivePerkBuffs((cur) => cur.filter((x) => x !== id));
     }
   };
 
@@ -204,6 +212,7 @@ export default function App() {
     setSkillIds([]);
     setSpellIds([]);
     setLoadout({});
+    setActivePerkBuffs([]);
   };
 
   const shareBuild = async () => {
@@ -224,6 +233,7 @@ export default function App() {
     setSkillIds([]);
     setSpellIds([]);
     setLoadout({});
+    setActivePerkBuffs([]);
     window.history.replaceState(null, '', window.location.pathname);
     window.localStorage.removeItem(STORAGE_KEY);
   };
@@ -282,6 +292,14 @@ export default function App() {
               selectedIds={perkIds}
               capacity={classData.perk_slots}
               onToggle={togglePerk}
+              buffs={{
+                active: activePerkBuffs,
+                condition: (id) => perkEffects[id]?.conditional,
+                onToggle: (id) =>
+                  setActivePerkBuffs((cur) =>
+                    cur.includes(id) ? cur.filter((x) => x !== id) : [...cur, id],
+                  ),
+              }}
             />
           </section>
           <section className="column">
