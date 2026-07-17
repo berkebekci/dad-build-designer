@@ -1,10 +1,12 @@
 import type { ClassData } from './types';
 import type { GearSlotId, ItemRecord } from './itemStats';
 
-/** Our UI slot -> the API's slot_type value. */
+/** Our UI slot -> the API's slot_type value. Weapon set 2 mirrors set 1's slot types. */
 export const SLOT_TO_API: Record<GearSlotId, string> = {
   primary: 'primary',
   secondary: 'secondary',
+  primary2: 'primary',
+  secondary2: 'secondary',
   head: 'head',
   chest: 'chest',
   legs: 'legs',
@@ -17,6 +19,17 @@ export const SLOT_TO_API: Record<GearSlotId, string> = {
 };
 
 const ARMOR_SLOTS: GearSlotId[] = ['head', 'chest', 'legs', 'hands', 'feet', 'back'];
+const MAIN_HAND_SLOTS: GearSlotId[] = ['primary', 'primary2'];
+const OFF_HAND_SLOTS: GearSlotId[] = ['secondary', 'secondary2'];
+const WEAPON_SLOTS: GearSlotId[] = [...MAIN_HAND_SLOTS, ...OFF_HAND_SLOTS];
+/** [main-hand, off-hand] pairs — the off-hand is dropped when the main-hand is two-handed. */
+const WEAPON_SET_PAIRS: readonly [
+  'primary' | 'primary2',
+  'secondary' | 'secondary2',
+][] = [
+  ['primary', 'secondary'],
+  ['primary2', 'secondary2'],
+];
 
 interface ActiveHooks {
   unlockAllWeapons: boolean;
@@ -57,14 +70,13 @@ function nativelyEquippable(
     return (item.classMask & classData.class_mask) !== 0;
   }
   // Fallbacks when the item carries no mask:
-  if (slot === 'primary' || slot === 'secondary') {
-    const names =
-      slot === 'primary'
-        ? new Set([
-            ...(classData.weapons?.two_handed ?? []),
-            ...(classData.weapons?.one_handed_main ?? []),
-          ])
-        : new Set(classData.weapons?.off_hand ?? []);
+  if (WEAPON_SLOTS.includes(slot)) {
+    const names = MAIN_HAND_SLOTS.includes(slot)
+      ? new Set([
+          ...(classData.weapons?.two_handed ?? []),
+          ...(classData.weapons?.one_handed_main ?? []),
+        ])
+      : new Set(classData.weapons?.off_hand ?? []);
     return names.has(item.name);
   }
   if (ARMOR_SLOTS.includes(slot)) {
@@ -92,7 +104,7 @@ export function eligibleItems(
   return allItems.filter((item) => {
     if (item.slotType !== apiSlot) return false;
 
-    if (slot === 'primary' || slot === 'secondary') {
+    if (WEAPON_SLOTS.includes(slot)) {
       if (item.itemType !== 'weapon') return false;
       if (hooks.unlockAllWeapons) return true;
       if (hooks.unlockWeapons.has(item.name)) return true;
@@ -127,20 +139,23 @@ export function isTwoHanded(item: ItemRecord | undefined): boolean {
 }
 
 /**
- * Drops the off-hand whenever the primary is two-handed. Applied at the engine
+ * Drops the off-hand whenever its weapon set's main-hand is two-handed,
+ * independently for each of the two weapon sets. Applied at the engine
  * boundary and in the share/persistence sanitizer so an illegal loadout (e.g.
  * an old save with Longsword + Crystal Ball) can never contribute the off-hand
  * to the stats — the UI hiding the slot alone is not enough. Works structurally
  * on both the engine Loadout and the UI loadout (both key slots by { itemId }).
  */
 export function normalizeLoadout<
-  T extends Partial<Record<'primary' | 'secondary', { itemId: string }>>,
+  T extends Partial<Record<'primary' | 'secondary' | 'primary2' | 'secondary2', { itemId: string }>>,
 >(loadout: T, itemIndex: Map<string, ItemRecord>): T {
-  const primary = loadout.primary ? itemIndex.get(loadout.primary.itemId) : undefined;
-  if (isTwoHanded(primary) && loadout.secondary) {
-    const next = { ...loadout };
-    delete next.secondary;
-    return next;
+  let next = loadout;
+  for (const [mainSlot, offSlot] of WEAPON_SET_PAIRS) {
+    const main = next[mainSlot] ? itemIndex.get(next[mainSlot]!.itemId) : undefined;
+    if (isTwoHanded(main) && next[offSlot]) {
+      next = { ...next };
+      delete next[offSlot];
+    }
   }
-  return loadout;
+  return next;
 }

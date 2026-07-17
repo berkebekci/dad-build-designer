@@ -14,6 +14,7 @@ describe('buildCodec', () => {
       },
       feet: { itemId: 'AdventurerBoots_3001', enchants: [null] },
     },
+    activeWeaponSet: 1,
   };
 
   it('round-trips a full build', () => {
@@ -29,6 +30,7 @@ describe('buildCodec', () => {
       skillIds: [],
       spellIds: [],
       loadout: {},
+      activeWeaponSet: 1,
     };
     expect(decodeBuild(encodeBuild(empty))).toEqual(empty);
   });
@@ -40,6 +42,7 @@ describe('buildCodec', () => {
       skillIds: ['spell_memory1'],
       spellIds: ['fireball', 'zap', 'haste'],
       loadout: {},
+      activeWeaponSet: 2,
     };
     expect(decodeBuild(encodeBuild(caster))).toEqual(caster);
   });

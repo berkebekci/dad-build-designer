@@ -42,11 +42,20 @@ const TABS: { id: TabId; label: string }[] = [
   { id: 'damage', label: 'Calculations' },
 ];
 
-/** Strip empty enchant rows and enforce the 2H rule for the engine. */
-function toEngineLoadout(ui: UiLoadout): Loadout {
+/** The weapon slots that belong to the OTHER (inactive) weapon set — excluded from stats. */
+function inactiveWeaponSlots(activeWeaponSet: 1 | 2): Set<GearSlotId> {
+  return activeWeaponSet === 1 ? new Set(['primary2', 'secondary2']) : new Set(['primary', 'secondary']);
+}
+
+/**
+ * Strip empty enchant rows, drop the inactive weapon set (it's a saved backup
+ * loadout, not simultaneously worn), and enforce the 2H rule for the engine.
+ */
+function toEngineLoadout(ui: UiLoadout, activeWeaponSet: 1 | 2): Loadout {
+  const skip = inactiveWeaponSlots(activeWeaponSet);
   const out: Loadout = {};
   for (const [slot, equipped] of Object.entries(ui) as [GearSlotId, UiLoadout[GearSlotId]][]) {
-    if (!equipped) continue;
+    if (!equipped || skip.has(slot)) continue;
     out[slot] = {
       itemId: equipped.itemId,
       enchants: equipped.enchants.filter((e): e is EnchantChoice => e !== null),
@@ -99,7 +108,14 @@ function sanitizeBuild(raw: BuildState): BuildState {
     loadout[slot] = { itemId: item.id, enchants };
   }
 
-  return { classId: classData.id, perkIds, skillIds, spellIds, loadout: normalizeLoadout(loadout, itemIndex) };
+  return {
+    classId: classData.id,
+    perkIds,
+    skillIds,
+    spellIds,
+    loadout: normalizeLoadout(loadout, itemIndex),
+    activeWeaponSet: raw.activeWeaponSet === 2 ? 2 : 1,
+  };
 }
 
 function loadInitialBuild(): BuildState {
@@ -109,6 +125,7 @@ function loadInitialBuild(): BuildState {
     skillIds: [],
     spellIds: [],
     loadout: {},
+    activeWeaponSet: 1,
   };
   const hashMatch = window.location.hash.match(/#b=([A-Za-z0-9_-]+)/);
   const fromHash = hashMatch ? decodeBuild(hashMatch[1]!) : null;
@@ -134,27 +151,29 @@ export default function App() {
   // Situational perk/skill buffs the user has toggled on (local, not persisted).
   const [activePerkBuffs, setActivePerkBuffs] = useState<string[]>([]);
   const [activeSkillBuffs, setActiveSkillBuffs] = useState<string[]>([]);
+  // Which weapon set is actively worn — the other is a saved backup loadout.
+  const [activeWeaponSet, setActiveWeaponSet] = useState<1 | 2>(initial.activeWeaponSet);
 
   const spells = classSpells(spellBook, classId);
   const selectedSpells = spells.filter((s) => spellIds.includes(s.id));
 
   // The whole app funnels into this one pure engine call. Gear + perks + skills merge.
   const stats = useMemo(() => {
-    const gear = gearTotals(toEngineLoadout(loadout), itemIndex);
+    const gear = gearTotals(toEngineLoadout(loadout, activeWeaponSet), itemIndex);
     const perks = perkTotals(perkIds, activePerkBuffs);
     const skillBuffs = skillTotals(skillIds, activeSkillBuffs);
     return computeStats(classData, statCurves, {
       gear: mergeGearTotals(mergeGearTotals(gear, perks), skillBuffs),
     });
-  }, [classData, loadout, perkIds, activePerkBuffs, skillIds, activeSkillBuffs]);
+  }, [classData, loadout, activeWeaponSet, perkIds, activePerkBuffs, skillIds, activeSkillBuffs]);
 
   const issues = validateBuild(classData, { perkIds, skillIds });
 
   // Autosave every change; the URL hash is only written on Share.
   useEffect(() => {
-    const state: BuildState = { classId, perkIds, skillIds, spellIds, loadout };
+    const state: BuildState = { classId, perkIds, skillIds, spellIds, loadout, activeWeaponSet };
     window.localStorage.setItem(STORAGE_KEY, encodeBuild(state));
-  }, [classId, perkIds, skillIds, spellIds, loadout]);
+  }, [classId, perkIds, skillIds, spellIds, loadout, activeWeaponSet]);
 
   /**
    * Perks can change gear legality (Weapon Mastery off -> caster weapons must
@@ -222,10 +241,11 @@ export default function App() {
     setLoadout({});
     setActivePerkBuffs([]);
     setActiveSkillBuffs([]);
+    setActiveWeaponSet(1);
   };
 
   const shareBuild = async () => {
-    const code = encodeBuild({ classId, perkIds, skillIds, spellIds, loadout });
+    const code = encodeBuild({ classId, perkIds, skillIds, spellIds, loadout, activeWeaponSet });
     const url = `${window.location.origin}${window.location.pathname}#b=${code}`;
     window.history.replaceState(null, '', `#b=${code}`);
     try {
@@ -244,6 +264,7 @@ export default function App() {
     setLoadout({});
     setActivePerkBuffs([]);
     setActiveSkillBuffs([]);
+    setActiveWeaponSet(1);
     window.history.replaceState(null, '', window.location.pathname);
     window.localStorage.removeItem(STORAGE_KEY);
   };
@@ -346,14 +367,25 @@ export default function App() {
       {tab === 'gear' && (
         <main className="gear-tab">
           <StatPanel stats={stats} />
-          <GearPanel classData={classData} perkIds={perkIds} loadout={loadout} onChange={setLoadout} />
+          <GearPanel
+            classData={classData}
+            perkIds={perkIds}
+            loadout={loadout}
+            onChange={setLoadout}
+            activeWeaponSet={activeWeaponSet}
+            onSetActiveWeaponSet={setActiveWeaponSet}
+          />
         </main>
       )}
 
       {tab === 'damage' && (
         <DamageTab
           stats={stats}
-          weaponName={loadout.primary ? itemIndex.get(loadout.primary.itemId)?.name : undefined}
+          weaponName={
+            loadout[activeWeaponSet === 1 ? 'primary' : 'primary2']
+              ? itemIndex.get(loadout[activeWeaponSet === 1 ? 'primary' : 'primary2']!.itemId)?.name
+              : undefined
+          }
           selectedSpells={selectedSpells}
           selectedSkills={classData.skills.filter((s) => skillIds.includes(s.id))}
         />

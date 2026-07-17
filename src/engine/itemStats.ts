@@ -37,6 +37,8 @@ export interface EquippedItem {
 export const GEAR_SLOTS = [
   'primary',
   'secondary',
+  'primary2',
+  'secondary2',
   'head',
   'chest',
   'legs',

@@ -4,8 +4,10 @@ import { attrLabel } from '../engine/itemStats';
 import { itemIcons, rarityColor, rarityOrder, rarityTiers } from '../engine/data';
 
 const SLOT_LABELS: Record<GearSlotId, string> = {
-  primary: 'Primary Weapon',
-  secondary: 'Off-Hand',
+  primary: 'Weapon 1 — Main Hand',
+  secondary: 'Weapon 1 — Off-Hand',
+  primary2: 'Weapon 2 — Main Hand',
+  secondary2: 'Weapon 2 — Off-Hand',
   head: 'Head',
   chest: 'Chest',
   legs: 'Legs',

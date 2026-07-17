@@ -919,15 +919,43 @@ body {
   padding: 18px;
 }
 
+.weapon-set-switch {
+  display: inline-flex;
+  gap: 4px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 3px;
+  margin-bottom: 6px;
+}
+
+.ws-opt {
+  font: inherit;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.ws-opt--active {
+  background: var(--gold);
+  color: #16110c;
+  font-weight: 600;
+}
+
 .pd-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 74px 132px 60px 104px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 90px 60px 90px 50px 90px;
   grid-template-areas:
-    'back    head    necklace'
-    'primary chest   secondary'
-    'ring1   .       ring2'
-    'hands   legs    feet';
+    'primary secondary head      primary2 secondary2'
+    'primary secondary necklace  primary2 secondary2'
+    '.       .         chest     back     back'
+    'ring1   .         legs      .        ring2'
+    'hands   hands      legs     feet     feet';
   gap: 10px;
 }
 

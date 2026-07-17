@@ -111,6 +111,31 @@ describe('normalizeLoadout - two-handed drops the off-hand', () => {
     const norm = normalizeLoadout(loadout, itemIndex);
     expect(norm.secondary).toBeDefined();
   });
+
+  it('applies the two-handed rule to weapon set 2 independently of set 1', () => {
+    const loadout = {
+      primary: { itemId: armingSword.id, enchants: [] },
+      secondary: { itemId: crystalBall.id, enchants: [] },
+      primary2: { itemId: longsword.id, enchants: [] },
+      secondary2: { itemId: crystalBall.id, enchants: [] },
+    };
+    const norm = normalizeLoadout(loadout, itemIndex);
+    // Set 1 (one-handed) keeps its off-hand; set 2 (two-handed) loses its own.
+    expect(norm.secondary).toBeDefined();
+    expect(norm.secondary2).toBeUndefined();
+  });
+});
+
+describe('eligibleItems - second weapon set mirrors the first', () => {
+  it('primary2/secondary2 use the same eligibility rules as primary/secondary', () => {
+    const set1Main = eligibleItems(items, fighter, 'primary', []).map((i) => i.name).sort();
+    const set2Main = eligibleItems(items, fighter, 'primary2', []).map((i) => i.name).sort();
+    expect(set2Main).toEqual(set1Main);
+
+    const set1Off = eligibleItems(items, fighter, 'secondary', []).map((i) => i.name).sort();
+    const set2Off = eligibleItems(items, fighter, 'secondary2', []).map((i) => i.name).sort();
+    expect(set2Off).toEqual(set1Off);
+  });
 });
 
 describe('artifact + legend rarities', () => {

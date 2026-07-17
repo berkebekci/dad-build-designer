@@ -29,8 +29,10 @@ export interface UiEquipped {
 export type UiLoadout = Partial<Record<GearSlotId, UiEquipped>>;
 
 const SLOT_LABELS: Record<GearSlotId, string> = {
-  primary: 'Primary Weapon',
-  secondary: 'Off-Hand',
+  primary: 'Weapon 1 — Main Hand',
+  secondary: 'Weapon 1 — Off-Hand',
+  primary2: 'Weapon 2 — Main Hand',
+  secondary2: 'Weapon 2 — Off-Hand',
   head: 'Head',
   chest: 'Chest',
   legs: 'Legs',
@@ -44,10 +46,16 @@ const SLOT_LABELS: Record<GearSlotId, string> = {
 
 /** Paperdoll layout order (grid areas defined in CSS by slot id). */
 const PAPERDOLL_SLOTS: GearSlotId[] = [
-  'back', 'head', 'necklace',
-  'primary', 'chest', 'secondary',
+  'primary', 'secondary', 'head', 'necklace', 'primary2', 'secondary2',
+  'chest', 'back',
   'ring1', 'ring2',
   'hands', 'legs', 'feet',
+];
+
+/** [main-hand, off-hand] slot pairs, one per weapon set. */
+const WEAPON_SET_SLOTS: [GearSlotId, GearSlotId][] = [
+  ['primary', 'secondary'],
+  ['primary2', 'secondary2'],
 ];
 
 function carryEnchants(old: UiEquipped | undefined, newItem: ItemRecord): (EnchantChoice | null)[] {
@@ -231,9 +239,19 @@ interface GearPanelProps {
   perkIds: string[];
   loadout: UiLoadout;
   onChange: (next: UiLoadout) => void;
+  /** Which weapon set (1 or 2) currently feeds the character's live stats. */
+  activeWeaponSet: 1 | 2;
+  onSetActiveWeaponSet: (set: 1 | 2) => void;
 }
 
-export function GearPanel({ classData, perkIds, loadout, onChange }: GearPanelProps) {
+export function GearPanel({
+  classData,
+  perkIds,
+  loadout,
+  onChange,
+  activeWeaponSet,
+  onSetActiveWeaponSet,
+}: GearPanelProps) {
   const [pickerSlot, setPickerSlot] = useState<GearSlotId | null>(null);
 
   const eligibleBySlot = useMemo(() => {
@@ -242,13 +260,19 @@ export function GearPanel({ classData, perkIds, loadout, onChange }: GearPanelPr
     return map;
   }, [classData, perkIds]);
 
-  const primaryItem = loadout.primary ? itemIndex.get(loadout.primary.itemId) : undefined;
-  const twoHanded = isTwoHanded(primaryItem);
+  // Two-handed check is independent per weapon set (main-hand -> its own off-hand).
+  const disabledOffHands = new Set(
+    WEAPON_SET_SLOTS.filter(([main]) => {
+      const item = loadout[main] ? itemIndex.get(loadout[main]!.itemId) : undefined;
+      return isTwoHanded(item);
+    }).map(([, off]) => off),
+  );
 
   const equip = (slot: GearSlotId, item: ItemRecord) => {
     const next: UiLoadout = { ...loadout };
     next[slot] = { itemId: item.id, enchants: carryEnchants(loadout[slot], item) };
-    if (slot === 'primary' && isTwoHanded(item)) delete next.secondary;
+    const pair = WEAPON_SET_SLOTS.find(([main]) => main === slot);
+    if (pair && isTwoHanded(item)) delete next[pair[1]];
     onChange(next);
   };
 
@@ -277,11 +301,27 @@ export function GearPanel({ classData, perkIds, loadout, onChange }: GearPanelPr
   return (
     <div className="gear-layout">
       <div className="paperdoll">
+        <div className="weapon-set-switch" role="group" aria-label="Active weapon set">
+          {([1, 2] as const).map((set) => (
+            <button
+              key={set}
+              type="button"
+              className={`ws-opt${activeWeaponSet === set ? ' ws-opt--active' : ''}`}
+              onClick={() => onSetActiveWeaponSet(set)}
+            >
+              Weapon Set {set}
+            </button>
+          ))}
+        </div>
+        <p className="hint pd-note">
+          Only the active set's stats/enchants feed your Stats and Calculations — the other
+          set is a saved backup loadout.
+        </p>
         <div className="pd-grid">
           {PAPERDOLL_SLOTS.map((slot) => {
             const eq = loadout[slot];
             const item = eq ? itemIndex.get(eq.itemId) : undefined;
-            const disabled = slot === 'secondary' && twoHanded;
+            const disabled = disabledOffHands.has(slot);
             return (
               <PaperdollSlot
                 key={slot}
@@ -293,7 +333,9 @@ export function GearPanel({ classData, perkIds, loadout, onChange }: GearPanelPr
             );
           })}
         </div>
-        {twoHanded && <p className="hint pd-note">Two-handed weapon — off-hand disabled.</p>}
+        {disabledOffHands.size > 0 && (
+          <p className="hint pd-note">Two-handed weapon — its off-hand is disabled.</p>
+        )}
       </div>
 
       <div className="enchant-column">

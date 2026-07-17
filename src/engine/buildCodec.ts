@@ -12,6 +12,8 @@ export interface BuildState {
   skillIds: string[];
   spellIds: string[];
   loadout: UiLoadout;
+  /** Which weapon set (1 or 2) feeds live stats — defaults to 1 for older codes. */
+  activeWeaponSet: 1 | 2;
 }
 
 interface WireFormat {
@@ -22,6 +24,8 @@ interface WireFormat {
   /** memorized spells (added later — optional for older codes) */
   m?: string[];
   g: Partial<Record<GearSlotId, { i: string; e: ([string, number] | null)[] }>>;
+  /** active weapon set (added later — optional for older codes) */
+  w?: 1 | 2;
 }
 
 function toWire(state: BuildState): WireFormat {
@@ -36,7 +40,15 @@ function toWire(state: BuildState): WireFormat {
       e: eq.enchants.map((en) => (en ? [en.attr, en.value] : null)),
     };
   }
-  return { v: 1, c: state.classId, p: state.perkIds, s: state.skillIds, m: state.spellIds, g };
+  return {
+    v: 1,
+    c: state.classId,
+    p: state.perkIds,
+    s: state.skillIds,
+    m: state.spellIds,
+    g,
+    w: state.activeWeaponSet,
+  };
 }
 
 function fromWire(wire: WireFormat): BuildState {
@@ -59,6 +71,7 @@ function fromWire(wire: WireFormat): BuildState {
     skillIds: wire.s ?? [],
     spellIds: wire.m ?? [],
     loadout,
+    activeWeaponSet: wire.w === 2 ? 2 : 1,
   };
 }
 
