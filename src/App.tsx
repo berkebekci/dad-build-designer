@@ -26,11 +26,21 @@ import {
 import { eligibleItems, normalizeLoadout } from './engine/gearRules';
 import { classSpells, spellSlots } from './engine/spells';
 import { decodeBuild, encodeBuild, type BuildState } from './engine/buildCodec';
+import {
+  addSavedBuild,
+  loadSavedBuilds,
+  persistSavedBuilds,
+  removeSavedBuild,
+  renameSavedBuild,
+  sortByNewest,
+  type SavedBuild,
+} from './engine/savedBuilds';
 import { PickList } from './ui/PickList';
 import { StatPanel } from './ui/StatPanel';
 import { GearPanel, type UiLoadout } from './ui/GearPanel';
 import { SpellPanel } from './ui/SpellPanel';
 import { DamageTab } from './ui/DamageTab';
+import { SavedBuildsModal } from './ui/SavedBuildsModal';
 
 const STORAGE_KEY = 'dad_build_v1';
 
@@ -153,6 +163,9 @@ export default function App() {
   const [activeSkillBuffs, setActiveSkillBuffs] = useState<string[]>([]);
   // Which weapon set is actively worn — the other is a saved backup loadout.
   const [activeWeaponSet, setActiveWeaponSet] = useState<1 | 2>(initial.activeWeaponSet);
+  // Named build library (separate from the single autosaved "current build").
+  const [savedBuilds, setSavedBuilds] = useState<SavedBuild[]>(() => sortByNewest(loadSavedBuilds()));
+  const [savedBuildsOpen, setSavedBuildsOpen] = useState(false);
 
   const spells = classSpells(spellBook, classId);
   const selectedSpells = spells.filter((s) => spellIds.includes(s.id));
@@ -269,6 +282,39 @@ export default function App() {
     window.localStorage.removeItem(STORAGE_KEY);
   };
 
+  const mutateSavedBuilds = (fn: (cur: SavedBuild[]) => SavedBuild[]) => {
+    setSavedBuilds((cur) => {
+      const next = fn(cur);
+      persistSavedBuilds(next);
+      return next;
+    });
+  };
+
+  const saveBuildAs = (name: string) => {
+    const code = encodeBuild({ classId, perkIds, skillIds, spellIds, loadout, activeWeaponSet });
+    const entry: SavedBuild = { id: crypto.randomUUID(), name, savedAt: Date.now(), code };
+    mutateSavedBuilds((cur) => sortByNewest(addSavedBuild(cur, entry)));
+  };
+
+  const loadSavedBuild = (id: string) => {
+    const entry = savedBuilds.find((b) => b.id === id);
+    const decoded = entry ? decodeBuild(entry.code) : null;
+    if (!decoded) return;
+    const state = sanitizeBuild(decoded);
+    setClassId(state.classId);
+    setPerkIds(state.perkIds);
+    setSkillIds(state.skillIds);
+    setSpellIds(state.spellIds);
+    setLoadout(state.loadout);
+    setActiveWeaponSet(state.activeWeaponSet);
+    setActivePerkBuffs([]);
+    setActiveSkillBuffs([]);
+    setSavedBuildsOpen(false);
+  };
+
+  const renameSaved = (id: string, name: string) => mutateSavedBuilds((cur) => renameSavedBuild(cur, id, name));
+  const deleteSaved = (id: string) => mutateSavedBuilds((cur) => removeSavedBuild(cur, id));
+
   return (
     <div className="app">
       <header className="header">
@@ -284,6 +330,9 @@ export default function App() {
               ))}
             </select>
           </label>
+          <button type="button" className="btn btn--ghost" onClick={() => setSavedBuildsOpen(true)}>
+            My Builds{savedBuilds.length > 0 ? ` (${savedBuilds.length})` : ''}
+          </button>
           <button type="button" className="btn" onClick={shareBuild}>
             {copied ? 'Copied!' : 'Share Build'}
           </button>
@@ -292,6 +341,17 @@ export default function App() {
           </button>
         </div>
       </header>
+
+      {savedBuildsOpen && (
+        <SavedBuildsModal
+          builds={savedBuilds}
+          onSave={saveBuildAs}
+          onLoad={loadSavedBuild}
+          onRename={renameSaved}
+          onDelete={deleteSaved}
+          onClose={() => setSavedBuildsOpen(false)}
+        />
+      )}
 
       <nav className="tabbar">
         {TABS.map((t) => (
