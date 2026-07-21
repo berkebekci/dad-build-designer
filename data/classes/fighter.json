@@ -3,7 +3,8 @@
     "source": "darkanddarker.wiki.spellsandguns.com/Fighter (wiki.gg mirror)",
     "fetched_at": "2026-07-11",
     "game_patch": "Season 8 era (includes Veteran Instinct, Weapon Guard, Last Bastion, Pommel Strike)",
-    "verified_by_user": "2026-07-11 - perk/skill effects confirmed correct"
+    "verified_by_user": "2026-07-11 - perk/skill effects confirmed correct",
+    "patch_level": "Perk/skill roster merged from darkerdb API dump of Patch 6.12 / EA Season 10 (2026-07-21). New 6.12 entries use API descriptions (numeric values blank until the wiki catches up)."
   },
   "id": "fighter",
   "name": "Fighter",
@@ -92,6 +93,12 @@
       "name": "Slayer",
       "effect": "Dual-wielded weapons grant +5 Physical Buff Weapon Damage and +10 Move Speed; loses plate armor access",
       "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/5/5c/Perk_Slayer.png/96px-Perk_Slayer.png"
+    },
+    {
+      "id": "survivalist_tongue",
+      "name": "Survivalist Tongue",
+      "effect": "All consumables have a {0}% effect increase.",
+      "icon": "https://cdn.darkerdb.com/codex/0baae798834f4a5bfd6db66705301e6723111ddb171cd5938a4b658e3f399923"
     },
     {
       "id": "swift",

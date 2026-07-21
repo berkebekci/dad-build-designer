@@ -1,7 +1,8 @@
 {
   "_meta": {
     "source": "perks/weapons: darkanddarker.wiki.spellsandguns.com/Ranger; base stats & skills: api.darkerdb.com/v1/classes (merged by scripts/build-classes.mjs)",
-    "fetched_at": "2026-07-11"
+    "fetched_at": "2026-07-11",
+    "patch_level": "Perk/skill roster merged from darkerdb API dump of Patch 6.12 / EA Season 10 (2026-07-21). New 6.12 entries use API descriptions (numeric values blank until the wiki catches up)."
   },
   "id": "ranger",
   "name": "Ranger",
@@ -55,6 +56,12 @@
       "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/a/a3/Perk_Crossbow_Mastery.png/96px-Perk_Crossbow_Mastery.png"
     },
     {
+      "id": "feral_resonance",
+      "name": "Feral Resonance",
+      "effect": "When an allied animal is within a radius of meters, both you and the animal gain a 10% increase to maximum health bonus and a increase to physical damage bonus.",
+      "icon": "https://cdn.darkerdb.com/codex/2ef9ca89fa3ac58a1187ecd34c4a6c279064353085ad1e2316f275cf028d86fb"
+    },
+    {
       "id": "first_aid",
       "name": "First Aid",
       "effect": "+150% use speed for Bandages and Surgical Kits"
@@ -77,14 +84,15 @@
       "icon": "https://cdn.darkerdb.com/codex/7f85032022c9b9d5428dbc99bceb5f4008a44555718adadf3ee3562dd38a332d"
     },
     {
+      "id": "overload",
+      "name": "Overload",
+      "effect": "Increases the maximum loadable ammo of your currently bow-type equipped weapon by 50%.",
+      "icon": "https://cdn.darkerdb.com/codex/beb3f867c5e2de50d60f08ae257ca91f20c2f6f68ed52a1c98df73e4697cf544"
+    },
+    {
       "id": "point_blank_expert",
       "name": "Point-Blank Expert",
       "effect": "+3 True Physical Base Damage to targets within 6m"
-    },
-    {
-      "id": "purge_shot",
-      "name": "Purge Shot",
-      "effect": "Ranged hits remove a random magical buff and deal 3 Neutral True Magical Base Damage"
     },
     {
       "id": "quick_reload",
@@ -109,6 +117,12 @@
       "name": "Spear Proficiency",
       "effect": "Gain the ability to equip spears; +0.5% Move Speed Base",
       "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/d9/Perk_Spear_Proficiency.png/96px-Perk_Spear_Proficiency.png"
+    },
+    {
+      "id": "trap_mastery",
+      "name": "Trap Mastery",
+      "effect": "Instantly place trap items and recover them when disarmed.",
+      "icon": "https://cdn.darkerdb.com/codex/9d35b124596990ef53af5b40209bd5d915bdc2e85aa296edfaed3ecbabc57f29"
     },
     {
       "id": "windfletch",
@@ -177,6 +191,18 @@
       "name": "True Shot",
       "effect": "Projectile flight speed is greatly increased, also increasing physical damage bonus by for seconds.",
       "icon": "https://cdn.darkerdb.com/codex/d62c39ecb997bf2df4cd2833d87e80192d0da05e4af73b19c6ef95e3e046e49e"
+    },
+    {
+      "id": "purge_shot",
+      "name": "Purge Shot",
+      "effect": "For 10 seconds, removes all magical buffs from the target. Each successful ranged weapon hit deals 10(1.0) magical damage magical damage per buff removed. Cooldown: 32 seconds",
+      "icon": "https://cdn.darkerdb.com/codex/7b06f103b176bbcb63035701294d91a7d76712a3a9e91bbf062df0faf776a473"
+    },
+    {
+      "id": "taming_shot",
+      "name": "Taming Shot",
+      "effect": "Hit an animal to tame it and have it assist the Ranger. Already tamed animals cannot be tamed again.",
+      "icon": "https://cdn.darkerdb.com/codex/19ee32f6a27e232846dc6f6e65b713ccf6463708dd5015d3443072b8e9342f41"
     }
   ],
   "weapons": {

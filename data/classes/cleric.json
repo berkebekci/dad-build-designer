@@ -2,7 +2,8 @@
   "_meta": {
     "source": "perks/weapons: darkanddarker.wiki.spellsandguns.com/Cleric; base stats & skills: api.darkerdb.com/v1/classes (merged by scripts/build-classes.mjs)",
     "fetched_at": "2026-07-11",
-    "note": "Spell system (memory/casting) is out of scope for the stat engine; spell selection skills appear as skills only."
+    "note": "Spell system (memory/casting) is out of scope for the stat engine; spell selection skills appear as skills only.",
+    "patch_level": "Perk/skill roster merged from darkerdb API dump of Patch 6.12 / EA Season 10 (2026-07-21). New 6.12 entries use API descriptions (numeric values blank until the wiki catches up)."
   },
   "id": "cleric",
   "name": "Cleric",
@@ -31,6 +32,24 @@
       "icon": "https://cdn.darkerdb.com/codex/0755fc9f9cca8eba30ea39bee497a23c54f604e888355b4d4cb3aaba9a2249f2"
     },
     {
+      "id": "aura_of_awe",
+      "name": "Aura of Awe",
+      "effect": "Reduces the action speed of enemies within m by 7%.",
+      "icon": "https://cdn.darkerdb.com/codex/b6fb607b74180f0a02d20455c1e1902d9652202a31365da6e5c9c44558de12c0"
+    },
+    {
+      "id": "banishing_touch",
+      "name": "Banishing Touch",
+      "effect": "When hitting an undead or demon enemy with a melee or ranged attack, has a 5% chance to stun them for 1 second.",
+      "icon": "https://cdn.darkerdb.com/codex/7877dd4e4708b74fe68afece454c870f4023bcd55114fa6438242eb2f9041de8"
+    },
+    {
+      "id": "blood_tithe",
+      "name": "Blood Tithe",
+      "effect": "Your magical healing increases by 2 for every 10% of health you lose.",
+      "icon": "https://cdn.darkerdb.com/codex/5987b29fa9606fc196a7f9722ad034f439a81d07483c1b16580e95f94a9cf9bf"
+    },
+    {
       "id": "blunt_weapon_mastery",
       "name": "Blunt Weapon Mastery",
       "effect": "While using a mace: +10% Physical Power Bonus",
@@ -43,10 +62,22 @@
       "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/5/5d/Perk_Brewmaster.png/96px-Perk_Brewmaster.png"
     },
     {
+      "id": "divine_echo",
+      "name": "Divine Echo",
+      "effect": "While in a dungeon, Replaces your Resurrection spell with Miracle. When cast, instantly revives all dead allies at their current location. Miracle cannot be recharged.",
+      "icon": "https://cdn.darkerdb.com/codex/4d42d86988cf81145eb60c8943f0d2462e9c1447c4c36e712c3c56f62866c89a"
+    },
+    {
       "id": "faithfulness",
       "name": "Faithfulness",
       "effect": "+15% Divine Power Bonus; divine hits slow enemies",
       "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/4/4b/Perk_Faithfulness.png/96px-Perk_Faithfulness.png"
+    },
+    {
+      "id": "heretics_brand",
+      "name": "Heretics Brand",
+      "effect": "When you deal divine magic damage, reduce the target’s spell casting speed by 30% for 2 seconds and prevent them from entering stealth or invisibility.",
+      "icon": "https://cdn.darkerdb.com/codex/7e25fc783b83b2e580428bd887df9bd4dfd808747eabfc3e9e9a45660951d59d"
     },
     {
       "id": "holy_aura",
@@ -73,6 +104,12 @@
       "icon": "https://cdn.darkerdb.com/codex/4537d15e3fbc8b2fd816c51b5d4290f664f18d3ac188f9430414d02902ceae60"
     },
     {
+      "id": "pain_offering",
+      "name": "Pain Offering",
+      "effect": "When you take damage, heal allies within m for 3% of the damage taken.",
+      "icon": "https://cdn.darkerdb.com/codex/3ac962cb7862d1550586316634b60667e98b579aa49990dca3857c4176b6e3c7"
+    },
+    {
       "id": "perseverance",
       "name": "Perseverance",
       "effect": "All incoming damage reduced by 2 Physical and 2 Magical Absolute Reduction",
@@ -89,6 +126,18 @@
       "name": "Requiem",
       "effect": "Faster resurrection with reduced HP penalty",
       "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/7/73/Perk_Requiem.png/96px-Perk_Requiem.png"
+    },
+    {
+      "id": "sacred_flame",
+      "name": "Sacred Flame",
+      "effect": "When a divine attack is successful, apply sacred flame to the target for 2 seconds. When sacred flame reaches 3 stacks, it detonates, dealing 10(1.0) divine magical damage.",
+      "icon": "https://cdn.darkerdb.com/codex/88fa4bbeabf0c7d2ac1115815b8ce836dd689b6e7c53d89e6d9a39a3c7ef5efa"
+    },
+    {
+      "id": "stigmata",
+      "name": "Stigmata",
+      "effect": "Lose 1 health every 2 seconds, but gain 15% spell casting speed and 5 magical healing.",
+      "icon": "https://cdn.darkerdb.com/codex/9a240485df0b04df05efc5bde16e7e48dc09edcbd3517ea4ad2cdc2e2b200491"
     },
     {
       "id": "undead_slaying",
@@ -133,6 +182,30 @@
       "name": "Spell Memory II",
       "effect": "Gain the ability to memorize additional spells to use in the dungeon.",
       "icon": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105"
+    },
+    {
+      "id": "barefoot_pilgrimage",
+      "name": "Barefoot Pilgrimage",
+      "effect": "For 12 seconds, you losing all armor rating from equipped gear (retaining only base armor rating). In return, casting speed is increased by 20%, magical healing by 25%, and debuff duration bonus is reduced by 50%. Cooldown: 90 seconds",
+      "icon": "https://cdn.darkerdb.com/codex/b37ac4004baa28ba267be9dc40649c7d206496b689e0a193e6df7861399aef55"
+    },
+    {
+      "id": "confession",
+      "name": "Confession",
+      "effect": "Remove all harmful poison and curse effects from the target and heal 5 per effect removed. Cooldown: 60 seconds",
+      "icon": "https://cdn.darkerdb.com/codex/0dc410fac5b64da9f026d2e825686c0b8105bad5c3536d450a0f8f84ba1420be"
+    },
+    {
+      "id": "excommunication",
+      "name": "Excommunication",
+      "effect": "Excommunicates the target. For 8 seconds, the target’s divine magic resistance is reduced by 25% and they cannot receive magical healing. Cooldown: 45 seconds",
+      "icon": "https://cdn.darkerdb.com/codex/e30e77c0e15147a841ffb525f8d4f4939369a019fb4f80905e0975042fba08b5"
+    },
+    {
+      "id": "vow_of_silence",
+      "name": "Vow of Silence",
+      "effect": "Unable to cast spells for 6 seconds, but gain a stack of Penance every second.Penance: Increases the effectiveness of magical bonus by 10% and is consumed upon using a divine attack or spell. Cooldown: 32 seconds",
+      "icon": "https://cdn.darkerdb.com/codex/3ad197aa75ddd51e54a55c5272ea79f98390e382b32dc6650d77547ace8ce726"
     }
   ],
   "weapons": {

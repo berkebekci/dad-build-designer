@@ -2,7 +2,8 @@
   "_meta": {
     "source": "perks/weapons: darkanddarker.wiki.spellsandguns.com/Druid; base stats & skills: api.darkerdb.com/v1/classes (merged by scripts/build-classes.mjs)",
     "fetched_at": "2026-07-11",
-    "note": "Shapeshift forms and spell system are out of scope for the stat engine."
+    "note": "Shapeshift forms and spell system are out of scope for the stat engine.",
+    "patch_level": "Perk/skill roster merged from darkerdb API dump of Patch 6.12 / EA Season 10 (2026-07-21). New 6.12 entries use API descriptions (numeric values blank until the wiki catches up)."
   },
   "id": "druid",
   "name": "Druid",
@@ -23,6 +24,12 @@
     "leather"
   ],
   "perks": [
+    {
+      "id": "animal_kinship",
+      "name": "Animal Kinship",
+      "effect": "Not all animals and insects attack first.",
+      "icon": "https://cdn.darkerdb.com/codex/41f14bf962574cfe8e8ee31bba9e51fba68fc81d5ca0d07b8fa9b5fd25664710"
+    },
     {
       "id": "dreamwalk",
       "name": "Dreamwalk",
@@ -55,6 +62,12 @@
       "name": "Natural Healing",
       "effect": "Heal self and allies within 6m for 1 Magical Base Healing every 3s",
       "icon": "https://cdn.darkerdb.com/codex/34bdb63ea32c8d3c1268fe14901b2d4e4e82384377001bbf1abc776730bef3e6"
+    },
+    {
+      "id": "prophecy",
+      "name": "Prophecy",
+      "effect": "Targets near the aiming point are automatically selected, and single-target magic aimed at the selected target will not miss.",
+      "icon": "https://cdn.darkerdb.com/codex/3634de5b943d19c38e681f65c676cb958fda809a5a5348d0abce60645462d741"
     },
     {
       "id": "shapeshift_mastery",

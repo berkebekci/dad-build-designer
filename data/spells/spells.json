@@ -2,7 +2,8 @@
  "_meta": {
   "source": "darkanddarker.wiki.spellsandguns.com class pages (Spells/Songs sections), fetched 2026-07-12",
   "assumptions": "memory cost = spell tier (game convention). Bard songs have no tier on the wiki -> cost null, excluded from memory math. Sorcerer merged spells are created in-dungeon by combining casts -> cost null.",
-  "hit_fields": "hits: [{label, base, scaling, heal?}] — damage = (base + staff Magical Damage) * (1 + MagicalPowerBonus% * scaling%), heals ignore the dummy"
+  "hit_fields": "hits: [{label, base, scaling, heal?}] — damage = (base + staff Magical Damage) * (1 + MagicalPowerBonus% * scaling%), heals ignore the dummy",
+  "patch_level": "Balance numbers updated to Patch 6.12 / EA Season 10 (2026-07-17) from official Steam notes. New 6.12 spells (Wizard: Transmutation, Sleep, Frost Wave, Fly, Polymorph, Teleport, Meteor Strike; Cleric: Withering Word, Blessed Fare, Divine Grace, Veil of Judgment, Radiant Blade, Divine Barrier, Miracle) NOT yet added — wiki/darkerdb still pre-6.12; add when sources update."
  },
  "classes": {
   "wizard": [
@@ -14,7 +15,7 @@
     "hits": [
      {
       "label": "hit",
-      "base": 20,
+      "base": 15,
       "scaling": 100
      },
      {
@@ -24,7 +25,7 @@
      }
     ],
     "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/0/0b/Spell_Zap.png/96px-Spell_Zap.png",
-    "description": "Deals 20 Light Magical Base Damage and burns the target for 1s, dealing 1 Fire Magical Base Damage."
+    "description": "Deals 15 Light Magical Base Damage and burns the target for 1s, dealing 1 Fire Magical Base Damage."
    },
    {
     "id": "light_orb",
@@ -80,12 +81,12 @@
     "hits": [
      {
       "label": "hit",
-      "base": 30,
+      "base": 20,
       "scaling": 100
      }
     ],
     "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/d3/Spell_Ice_Bolt.png/96px-Spell_Ice_Bolt.png",
-    "description": "Deal 30 Projectile Ice Magical Base Damage with 4 Impact Power and inflict -20% Move Speed Bonus and -20% Action Speed for 1s. Projectile speed 14m/s."
+    "description": "Deal 20 Projectile Ice Magical Base Damage with 4 Impact Power and inflict -20% Move Speed Bonus and -20% Action Speed for 1s. Projectile speed 14m/s."
    },
    {
     "id": "magic_missile",
@@ -119,12 +120,12 @@
     "hits": [
      {
       "label": "strike",
-      "base": 30,
+      "base": 25,
       "scaling": 100
      }
     ],
     "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/7/76/Spell_Lightning_Strike.png/96px-Spell_Lightning_Strike.png",
-    "description": "A bolt of lightning falls in the targeted area after 0.5s, dealing 30 Lightning Magical Base Damage in a 0.8m blast radius and inflicting -20% Move Speed Bonus for 1s."
+    "description": "A bolt of lightning falls in the targeted area after 0.5s, dealing 25 Lightning Magical Base Damage in a 0.8m blast radius and inflicting -20% Move Speed Bonus for 1s."
    },
    {
     "id": "invisibility",
@@ -143,7 +144,7 @@
     "hits": [
      {
       "label": "direct",
-      "base": 35,
+      "base": 30,
       "scaling": 100
      },
      {
@@ -158,7 +159,7 @@
      }
     ],
     "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/e/e2/Spell_Fireball.png/96px-Spell_Fireball.png",
-    "description": "Shoot a fireball dealing 35 Projectile Fire Magical Base Damage on direct hit (6 Impact Power), or 10 Fire AoE damage with knockback and a 3-damage burn over 2s. Direct hits do not also splash. Projectile speed 12m/s."
+    "description": "Shoot a fireball dealing 30 Projectile Fire Magical Base Damage on direct hit (6 Impact Power), or 10 Fire AoE damage with knockback and a 3-damage burn over 2s. Direct hits do not also splash. Projectile speed 12m/s."
    },
    {
     "id": "explosion",
@@ -168,7 +169,7 @@
     "hits": [
      {
       "label": "blast",
-      "base": 25,
+      "base": 20,
       "scaling": 100
      },
      {
@@ -177,7 +178,7 @@
       "scaling": 50
      }
     ],
-    "description": "Place a mark that explodes after 3s, dealing 25 Fire Magical Base Damage in a 1m area plus a 3-damage burn over 2s. On a character it sticks until it explodes; removed with no damage if the Wizard dies or extracts."
+    "description": "Place a mark that explodes after 3s, dealing 20 Fire Magical Base Damage in a 1m area plus a 3-damage burn over 2s. On a character it sticks until it explodes; removed with no damage if the Wizard dies or extracts."
    },
    {
     "id": "chain_lightning",
@@ -574,7 +575,7 @@
     "hits": [
      {
       "label": "hit",
-      "base": 8,
+      "base": 10,
       "scaling": 100
      }
     ],
@@ -789,12 +790,12 @@
     "hits": [
      {
       "label": "fire",
-      "base": 30,
+      "base": 35,
       "scaling": 100
      },
      {
       "label": "ice",
-      "base": 30,
+      "base": 35,
       "scaling": 100
      }
     ]
@@ -807,7 +808,7 @@
     "hits": [
      {
       "label": "per tick",
-      "base": 20,
+      "base": 25,
       "scaling": 100
      }
     ]
@@ -827,7 +828,7 @@
     "hits": [
      {
       "label": "per tick",
-      "base": 10,
+      "base": 15,
       "scaling": 100
      }
     ]

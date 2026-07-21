@@ -26,31 +26,32 @@ describe('simulateSpell - Wizard Fireball', () => {
   const fireball = classSpells(spellBook, 'wizard').find((s) => s.id === 'fireball')!;
   const noDummy = { pdrPct: 0, mdrPct: 0, headshotReductionPct: 0 };
 
+  // Fireball base 30 since Patch 6.12 (was 35).
   it('naked wizard: base scaled by MP bonus only', () => {
     const stats = computeStats(wizard, statCurves); // will 20 -> MP bonus +5%
     const [direct] = simulateSpell(stats, fireball, noDummy);
-    // 35 * (1 + 0.05 * 1.0) = 36.75 -> 37
-    expect(direct!.body).toBe(37);
-    expect(direct!.head).toBe(55); // 35 * 1.5 * 1.05 = 55.125 -> 55
+    // 30 * (1 + 0.05 * 1.0) = 31.5 -> 32
+    expect(direct!.body).toBe(32);
+    expect(direct!.head).toBe(47); // 30 * 1.5 * 1.05 = 47.25 -> 47
   });
 
   it('staff Magical Damage adds flat before scaling', () => {
     const stats = computeStats(wizard, statCurves);
     stats.spellFlatDamage = 9; // Magic Staff
     const [direct] = simulateSpell(stats, fireball, noDummy);
-    // (35 + 9) * 1.05 = 46.2 -> 46
-    expect(direct!.body).toBe(46);
+    // (30 + 9) * 1.05 = 40.95 -> 41
+    expect(direct!.body).toBe(41);
   });
 
   it('dummy MDR reduces, magic pen restores part of it', () => {
     const stats = computeStats(wizard, statCurves);
     const dummy = { pdrPct: 0, mdrPct: 40, headshotReductionPct: 0 };
     const [without] = simulateSpell(stats, fireball, dummy);
-    expect(without!.body).toBe(22); // 36.75 * 0.6 = 22.05
+    expect(without!.body).toBe(19); // 31.5 * 0.6 = 18.9
 
     stats.percentExtras.magicPenetrationPct = 50;
     const [withPen] = simulateSpell(stats, fireball, dummy);
-    expect(withPen!.body).toBe(29); // 36.75 * (1 - 0.4*0.5) = 29.4
+    expect(withPen!.body).toBe(25); // 31.5 * (1 - 0.4*0.5) = 25.2
   });
 
   it('heals ignore the dummy and staff flat damage', () => {

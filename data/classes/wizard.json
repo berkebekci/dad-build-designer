@@ -2,7 +2,8 @@
   "_meta": {
     "source": "perks/weapons: darkanddarker.wiki.spellsandguns.com/Wizard; base stats & skills: api.darkerdb.com/v1/classes (merged by scripts/build-classes.mjs)",
     "fetched_at": "2026-07-11",
-    "note": "Spell system (memory/casting) is out of scope for the stat engine."
+    "note": "Spell system (memory/casting) is out of scope for the stat engine.",
+    "patch_level": "Perk/skill roster merged from darkerdb API dump of Patch 6.12 / EA Season 10 (2026-07-21). New 6.12 entries use API descriptions (numeric values blank until the wiki catches up)."
   },
   "id": "wizard",
   "name": "Wizard",
@@ -36,10 +37,34 @@
       "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/9/90/Perk_Arcane_Mastery.png/96px-Perk_Arcane_Mastery.png"
     },
     {
+      "id": "arcane_precision",
+      "name": "Arcane Precision",
+      "effect": "Deal 88.5% increased magical damage to crowd-controlled targets.",
+      "icon": "https://cdn.darkerdb.com/codex/39130ef13882f66f4146ab980c539e2b9d1aaa3dd327cf616ba9c60685615fc6"
+    },
+    {
+      "id": "cold_focus",
+      "name": "Cold Focus",
+      "effect": "Magical damage dealt to targets affected by frostbite is increased by 88.5%.",
+      "icon": "https://cdn.darkerdb.com/codex/1ba3951e0d3b36f385605d69749a6083c3c64c4c26de4b262d688a61ee5586c2"
+    },
+    {
       "id": "fire_mastery",
       "name": "Fire Mastery",
       "effect": "+5% Fire Power Bonus; burns last +2s and deal +2 base damage",
       "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/e/e7/Perk_Fire_Mastery.png/96px-Perk_Fire_Mastery.png"
+    },
+    {
+      "id": "focused_mind",
+      "name": "Focused Mind",
+      "effect": "While channeling, physical damage reduction is increased by 15% and magical damage reduction is increased by 15%. If the channeling is not interrupted, magical damage bonus increases by 5% every 0.5 seconds, stacking up to 3 times. This effect lasts for 8 seconds.",
+      "icon": "https://cdn.darkerdb.com/codex/a0c399c008018bedbca8938cb7e41b985e0895cf0e85724c2c4e6bd446978e13"
+    },
+    {
+      "id": "glass_cannon",
+      "name": "Glass Cannon",
+      "effect": "Reduces maximum health by 10% but grants a 20 magical power.",
+      "icon": "https://cdn.darkerdb.com/codex/75381ef9e4e382c90a8b740f2b3e1818701e633b00e58ef2184df633affc20e5"
     },
     {
       "id": "ice_mastery",
@@ -52,6 +77,12 @@
       "name": "Ice Shield",
       "effect": "+20 Armor Rating while not on cooldown; melee attackers suffer frostbite (-20% Move Speed Bonus, -20% Action Speed for 0.5s)",
       "icon": "https://cdn.darkerdb.com/codex/011ee6e554fcbe7333b60c4081f2104a71e1b76a29d6140990b82b063bc8ef81"
+    },
+    {
+      "id": "lingering_magic",
+      "name": "Lingering Magic",
+      "effect": "The duration of beneficial spell effects is increased by 88%.",
+      "icon": "https://cdn.darkerdb.com/codex/34c0e14a4fcccd699b1bff681880311ae70435e4c68a9269ad3ffb18a016a793"
     },
     {
       "id": "mana_surge",
@@ -94,6 +125,12 @@
       "name": "Staff Mastery",
       "effect": "With staff-type weapons: +2 Buff Magical Damage as base damage",
       "icon": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/6/64/Perk_Staff_Mastery.png/96px-Perk_Staff_Mastery.png"
+    },
+    {
+      "id": "static_charge",
+      "name": "Static Charge",
+      "effect": "Each lightning spell hit increases the damage of your next lightning spell by 10% lightning magical damage bonus, stacking up to 3 times.",
+      "icon": "https://cdn.darkerdb.com/codex/9e8c75d17de75ad89aeedc13bc8d71379ce28611753bd0ee010a457ae8f4b04e"
     }
   ],
   "skills": [
@@ -126,6 +163,24 @@
       "name": "Spell Memory II",
       "effect": "Gain the ability to memorize additional spells to use in the dungeon.",
       "icon": "https://cdn.darkerdb.com/codex/e76b6334addfaa2b9a710e2ead3cbc824a5b45b4bd7fba8b227274eef342f105"
+    },
+    {
+      "id": "arcane_infusion",
+      "name": "Arcane Infusion",
+      "effect": "For 6 seconds, your melee attacks deal an additional 7(0.5) arcane magical damage to enemies within a 1.75m radius around the target. Cooldown: 18 seconds",
+      "icon": "https://cdn.darkerdb.com/codex/a5ab13aee1afd1612b883735dd37966d2100518b7fd37debf6623e0aa8b93375"
+    },
+    {
+      "id": "arcane_insight",
+      "name": "Arcane Insight",
+      "effect": "For 8 seconds, memory capacity is increased by 50%, and you can move while channeling. Cooldown: 8 seconds",
+      "icon": "https://cdn.darkerdb.com/codex/0d4abbc05318d465a87f9188a4466eeee3cfb7d987aa8baad93351eddc873491"
+    },
+    {
+      "id": "arcane_surge",
+      "name": "Arcane Surge",
+      "effect": "Increases spell casting speed by 30% for 12 seconds. Cooldown: 24 seconds",
+      "icon": "https://cdn.darkerdb.com/codex/a104c2568fa3fe665e27e337519c5d048249b06f066ccfe4d3ab2e126af1fa59"
     }
   ],
   "weapons": {

@@ -2,7 +2,8 @@
   "_meta": {
     "source": "perks/weapons: darkanddarker.wiki.spellsandguns.com/Bard; base stats & skills: api.darkerdb.com/v1/classes (merged by scripts/build-classes.mjs)",
     "fetched_at": "2026-07-11",
-    "note": "Song system (music minigame) is out of scope for the stat engine; songs appear as skills only."
+    "note": "Song system (music minigame) is out of scope for the stat engine; songs appear as skills only.",
+    "patch_level": "Perk/skill roster merged from darkerdb API dump of Patch 6.12 / EA Season 10 (2026-07-21). New 6.12 entries use API descriptions (numeric values blank until the wiki catches up)."
   },
   "id": "bard",
   "name": "Bard",
@@ -88,6 +89,12 @@
       "name": "Wanderer's Luck",
       "effect": "+100 Luck (treasure chest loot quality)",
       "icon": "https://cdn.darkerdb.com/codex/6322d0c08aa47355a75ad3359f0b2ffb16202f125b190cd1f60273fcaa5e7a1c"
+    },
+    {
+      "id": "war_song",
+      "name": "War Song",
+      "effect": "A successful performance increases nearby allies' weapon damage by for 6 seconds.",
+      "icon": "https://cdn.darkerdb.com/codex/783f2752553262ba5607aad034154e7f8dcf27981357edaf10e53ad08a8831f2"
     }
   ],
   "skills": [

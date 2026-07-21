@@ -4,42 +4,26 @@
   "name": "Barbarian",
   "perks": [
    {
-    "id": "id.perk.robust",
-    "name": "Robust",
+    "id": "id.perk.axe_specialization",
+    "name": "Axe Specialization",
     "perk_tag": null,
-    "icon": "96e659cc7ecf6e4c96311aef2b6a245ac9721c47fcca1bd59f59993399f4c8ab",
-    "icon_url": "https://cdn.darkerdb.com/codex/96e659cc7ecf6e4c96311aef2b6a245ac9721c47fcca1bd59f59993399f4c8ab",
+    "icon": "21a818ac1a9d7b45a94ed0b7185fbe02ebf9844e493d617f1b569121c4c48722",
+    "icon_url": "https://cdn.darkerdb.com/codex/21a818ac1a9d7b45a94ed0b7185fbe02ebf9844e493d617f1b569121c4c48722",
     "abilities": [],
-    "description": "Gain max health bonus.",
+    "description": "While using axes or Francisca Axes, gain weapon damage.",
     "effects": [
      {
-      "id": "id.actor_status_effect.robust",
-      "max_health_mod": 80
+      "id": "id.actor_status_effect.axe_specialization",
+      "physical_damage_weapon": 3
      }
     ],
     "allowed_classes": [
      "id.class.barbarian",
      "id.class.grand_master_barbarian"
-    ]
-   },
-   {
-    "id": "id.perk.crush",
-    "name": "Crush",
-    "perk_tag": null,
-    "icon": "60c6d9724b96fcc518a0b432e8d393b006e8d4ae612878d0a10cf72306759469",
-    "icon_url": "https://cdn.darkerdb.com/codex/60c6d9724b96fcc518a0b432e8d393b006e8d4ae612878d0a10cf72306759469",
-    "abilities": [],
-    "description": "While equipped with a two-handed weapon, gain the ability to destroy unreinforced containers. Also gain impact power on your two-handed weapon attacks, making it easier to break blocks and parries.",
-    "effects": [
-     {
-      "id": "id.actor_status_effect.crush",
-      "impact_power": 1
-     }
     ],
-    "allowed_classes": [
-     "id.class.barbarian",
-     "id.class.grand_master_barbarian"
-    ]
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.perk.berserker",
@@ -57,7 +41,96 @@
     "allowed_classes": [
      "id.class.barbarian",
      "id.class.grand_master_barbarian"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.carnage",
+    "name": "Carnage",
+    "perk_tag": null,
+    "icon": "f3d329533f0d9942a8e760cbfdd402763c14ebe7cacb6c76aaae620f29f93bb3",
+    "icon_url": "https://cdn.darkerdb.com/codex/f3d329533f0d9942a8e760cbfdd402763c14ebe7cacb6c76aaae620f29f93bb3",
+    "abilities": [],
+    "description": "When you hit 2 or more players with a melee weapon within 1.5 seconds, gain 40% physical damage bonus for 3 seconds.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.crush",
+    "name": "Crush",
+    "perk_tag": null,
+    "icon": "60c6d9724b96fcc518a0b432e8d393b006e8d4ae612878d0a10cf72306759469",
+    "icon_url": "https://cdn.darkerdb.com/codex/60c6d9724b96fcc518a0b432e8d393b006e8d4ae612878d0a10cf72306759469",
+    "abilities": [],
+    "description": "While equipped with a two-handed weapon, gain the ability to destroy unreinforced containers. Also gain 1 impact power on your two-handed weapon attacks, making it easier to break blocks and parries.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.crush",
+      "impact_power": 1
+     }
+    ],
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.executioner",
+    "name": "Executioner",
+    "perk_tag": null,
+    "icon": "f01690dd179efcf4ee7692e0008e62024010370dc14359dd5495f0473e102b32",
+    "icon_url": "https://cdn.darkerdb.com/codex/f01690dd179efcf4ee7692e0008e62024010370dc14359dd5495f0473e102b32",
+    "abilities": [],
+    "description": "While using axes or Francisca Axes, gain 20% headshot damage bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.executioner_melee",
+      "headshot_damage_mod": 200
+     },
+     {
+      "id": "id.actor_status_effect.executioner_ranged",
+      "headshot_damage_mod": 200
+     }
+    ],
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.heavy_swing",
+    "name": "Heavy Swing",
+    "perk_tag": null,
+    "icon": "3c63e19f9980ccac41a491d7333112601d6f4c4501bea73b9682b57f97c6221c",
+    "icon_url": "https://cdn.darkerdb.com/codex/3c63e19f9980ccac41a491d7333112601d6f4c4501bea73b9682b57f97c6221c",
+    "abilities": [],
+    "description": "Hitting a target with a two-handed weapon increases the duration of movement speed reduction effects applied to them by 80%.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.heavy_swing"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.perk.iron_will",
@@ -66,7 +139,7 @@
     "icon": "6f5ca3ce7fb01cd18d43f623bb55a7274e7f5347fd553a3ed3321b1f11d501a1",
     "icon_url": "https://cdn.darkerdb.com/codex/6f5ca3ce7fb01cd18d43f623bb55a7274e7f5347fd553a3ed3321b1f11d501a1",
     "abilities": [],
-    "description": "Gain magic resistance and ignore knockback effects. The maximum magical damage reduction limit is increased to.",
+    "description": "Gain 75 magic resistance and ignore knockback effects. The maximum magical damage reduction limit is increased to 7.5%.",
     "effects": [
      {
       "id": "id.actor_status_effect.iron_will",
@@ -76,7 +149,158 @@
     "allowed_classes": [
      "id.class.barbarian",
      "id.class.grand_master_barbarian"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.morale_boost",
+    "name": "Morale Boost",
+    "perk_tag": null,
+    "icon": "db4c4a5ac5c24848e71a5f6c508df01edba05c22826e20ec84326648b656912b",
+    "icon_url": "https://cdn.darkerdb.com/codex/db4c4a5ac5c24848e71a5f6c508df01edba05c22826e20ec84326648b656912b",
+    "abilities": [],
+    "description": "Recover 25% maximum health after killing a player.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.morale_boost"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.potion_chugger",
+    "name": "Potion Chugger",
+    "perk_tag": null,
+    "icon": "2d0ce82a3d3d7153d60bf9b9060d022847bc54ef3d53930f941b32d78fc6e250",
+    "icon_url": "https://cdn.darkerdb.com/codex/2d0ce82a3d3d7153d60bf9b9060d022847bc54ef3d53930f941b32d78fc6e250",
+    "abilities": [],
+    "description": "Gain 88% increased potency towards all drinks, while reducing the duration by 5%.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.potion_chugger"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.robust",
+    "name": "Robust",
+    "perk_tag": null,
+    "icon": "96e659cc7ecf6e4c96311aef2b6a245ac9721c47fcca1bd59f59993399f4c8ab",
+    "icon_url": "https://cdn.darkerdb.com/codex/96e659cc7ecf6e4c96311aef2b6a245ac9721c47fcca1bd59f59993399f4c8ab",
+    "abilities": [],
+    "description": "Gain 10% max health bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.robust",
+      "max_health_mod": 100
+     }
+    ],
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.savage",
+    "name": "Savage",
+    "perk_tag": null,
+    "icon": "d8d0fd23f2d40019f5233d47224949ce5804f7160ae0ba6beac75de67fc82820",
+    "icon_url": "https://cdn.darkerdb.com/codex/d8d0fd23f2d40019f5233d47224949ce5804f7160ae0ba6beac75de67fc82820",
+    "abilities": [],
+    "description": "While not wearing any chest armor, gain 10% physical damage bonus and 1 impact power.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.savage",
+      "impact_power": 1,
+      "physical_damage_mod": 100
+     }
+    ],
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.skull_splitter",
+    "name": "Skull Splitter",
+    "perk_tag": null,
+    "icon": "fe9b80d62e6a1cf3e66a00e3f6e179ac803474d0a00346cd026be898b0d049e7",
+    "icon_url": "https://cdn.darkerdb.com/codex/fe9b80d62e6a1cf3e66a00e3f6e179ac803474d0a00346cd026be898b0d049e7",
+    "abilities": [],
+    "description": "Targets hit by a headshot are inflicted with Bleed. Bleed: Deals a total of 12 physical damage over 4 seconds.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.treacherous_lungs",
+    "name": "Treacherous Lungs",
+    "perk_tag": null,
+    "icon": "a7afd2343c1698fbb0aaa9f34d11082335722da5dd1e9546d03d8c77322fb9b4",
+    "icon_url": "https://cdn.darkerdb.com/codex/a7afd2343c1698fbb0aaa9f34d11082335722da5dd1e9546d03d8c77322fb9b4",
+    "abilities": [],
+    "description": "Increases the duration of all shouting abilities by 85%.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.treacherous_lungs"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.two_hander",
+    "name": "Two-Hander",
+    "perk_tag": null,
+    "icon": "861c7f886a2865efc4bf22a8f5765b067203eabb5cb1c0937d319ad58a1452ff",
+    "icon_url": "https://cdn.darkerdb.com/codex/861c7f886a2865efc4bf22a8f5765b067203eabb5cb1c0937d319ad58a1452ff",
+    "abilities": [],
+    "description": "When attacking with a two-handed weapon, gain 5% physical damage bonus and 10% armor penetration.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.two_hander",
+      "armor_penetration": 100,
+      "physical_damage_mod": 50
+     }
+    ],
+    "allowed_classes": [
+     "id.class.barbarian",
+     "id.class.grand_master_barbarian"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "icon": "4640ee63e73bb67a7c3c07a6f953b62c1b91bf71041ed4553582fa5769e470b3",
@@ -117,7 +341,10 @@
       ]
      }
     ],
-    "description": "Strike a target, reducing their move speed bonus by for seconds. While debuffed, each time the target moves they receive physical damage. Cooldown: seconds"
+    "description": "Strike a target, reducing their move speed bonus by 30% for 2 seconds. While debuffed, each time the target moves they receive 1(0.5) physical damage. Cooldown: 24 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.blood_exchange",
@@ -142,7 +369,10 @@
       ]
      }
     ],
-    "description": "Lose of maximum health, but gain action speed for seconds and heal for of damage dealt while active. Cooldown: seconds"
+    "description": "Lose 10% of maximum health, but gain 15% action speed for 8 seconds and heal for 1.5% of damage dealt while active. Cooldown: 28 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.finishing_blow",
@@ -165,7 +395,10 @@
       ]
      }
     ],
-    "description": "Your next attack deals an additional true physical damage. If the target’s health is or lower after the attack, they are instantly killed. Cooldown: seconds"
+    "description": "Your next attack deals an additional 5 true physical damage. If the target’s health is 10% or lower after the attack, they are instantly killed. Cooldown: 24 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.grappling_hook",
@@ -187,17 +420,20 @@
        {
         "target_type": "EGameplayEffectTargetType::EventData",
         "exec_knockback_vertical": 400,
-        "exec_knockback_horizontal": -600
+        "exec_knockback_horizontal": -700
        },
        {
-        "duration": 1500,
+        "duration": 1000,
         "target_type": "EGameplayEffectTargetType::EventData",
         "move_speed_mod": -500
        }
       ]
      }
     ],
-    "description": "Throws a grappling rope at a target up to 4m away, pulling them toward you. Cooldown: seconds"
+    "description": "Throws a grappling rope at a target up to 4m away, pulling them toward you. Cooldown: 16 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.hurl_weapon",
@@ -214,7 +450,10 @@
       "effects": []
      }
     ],
-    "description": "Throws an axe to deal weapon damage. Can only be used when an axe is equipped as your primary weapon. Cooldown: seconds"
+    "description": "Throws an axe to deal 15% weapon damage. Can only be used when an axe is equipped as your primary weapon. Cooldown: 8 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.rage",
@@ -238,7 +477,10 @@
       ]
      }
     ],
-    "description": "Gain strength, move speed bonus. While active, lose physical damage reduction for seconds. Cooldown: seconds"
+    "description": "Gain 10 strength, 7% move speed bonus. While active, lose 5% physical damage reduction for 6 seconds. Cooldown: 28 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.reckless_attack",
@@ -263,7 +505,10 @@
       ]
      }
     ],
-    "description": "Grants an additional armor penetration on your next attack, but reduces your armor rating by while active. The effect is consumed when you hit a target or object with a melee attack. Cooldown: seconds"
+    "description": "Grants an additional 50% armor penetration on your next attack, but reduces your armor rating by 100 while active. The effect is consumed when you hit a target or object with a melee attack. Cooldown: 24 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.savage_roar",
@@ -291,7 +536,10 @@
       ]
      }
     ],
-    "description": "Frightens all enemies within a 7.5m range radius for seconds reducing their physical damage bonus by and move speed bonus by. Cooldown: seconds"
+    "description": "Frightens all enemies within a 7.5m range radius for 6 seconds reducing their physical damage bonus by 30% and move speed bonus by 2.5%. Cooldown: 28 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.war_cry",
@@ -314,7 +562,10 @@
       ]
      }
     ],
-    "description": "Gain max health bonus for seconds. This effect applies to yourself and allies within a 7.5m radius. Cooldown: seconds"
+    "description": "Gain 20% max health bonus for 10 seconds. This effect applies to yourself and allies within a 7.5m radius. Cooldown: 28 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.war_sacrifice",
@@ -347,7 +598,10 @@
       ]
      }
     ],
-    "description": "While active, gain all attributes. In exchange, lose of your maximum health over seconds. Cooldown: seconds"
+    "description": "While active, gain all attributes. In exchange, lose 10% of your maximum health over 8 seconds. Cooldown: 28 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.whirlwind",
@@ -364,7 +618,10 @@
       "effects": []
      }
     ],
-    "description": "Spin rapidly with a two-handed weapon, dealing of weapon damage to all nearby enemies. While spinning, your weapon cannot be interrupted by any impact. Cooldown: seconds"
+    "description": "Spin rapidly with a two-handed weapon, dealing of weapon damage to all nearby enemies. While spinning, your weapon cannot be interrupted by any impact. Cooldown: 32 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "stats": {
@@ -375,9 +632,11 @@
    "dexterity": 12,
    "knowledge": 5,
    "move_speed": 300,
-   "max_health_add": 25,
    "resourcefulness": 12
   },
+  "patch": "0.16.138.8712",
+  "patch_name": "Hotfix 115",
+  "is_new": false,
   "spell_count": 0,
   "song_count": 0,
   "shapeshift_count": 0
@@ -386,31 +645,6 @@
   "id": "id.class.bard",
   "name": "Bard",
   "perks": [
-   {
-    "id": "id.perk.rapier_mastery",
-    "name": "Rapier Mastery",
-    "perk_tag": null,
-    "icon": "be06fcfbd9855745cfb6690940f3b4a89d6ca1e2f7eed1fa3720223e3c2802db",
-    "icon_url": "https://cdn.darkerdb.com/codex/be06fcfbd9855745cfb6690940f3b4a89d6ca1e2f7eed1fa3720223e3c2802db",
-    "abilities": [],
-    "description": "While using a Rapier, gain weapon damage and action speed.",
-    "effects": [
-     {
-      "id": "id.actor_status_effect.rapier_mastery",
-      "action_speed": 50,
-      "physical_damage_weapon": 3
-     },
-     {
-      "id": "id.actor_status_effect.rapier_mastery_demons_glee",
-      "action_speed": 50,
-      "physical_damage_weapon": 3
-     }
-    ],
-    "allowed_classes": [
-     "id.class.bard",
-     "id.class.grand_master_bard"
-    ]
-   },
    {
     "id": "id.perk.charismatic_performance",
     "name": "Charismatic Performance",
@@ -427,7 +661,194 @@
     "allowed_classes": [
      "id.class.bard",
      "id.class.grand_master_bard"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.dancing_feet",
+    "name": "Dancing Feet",
+    "perk_tag": null,
+    "icon": "efab734c66123036abf0b13ed21484c61e03df8444b86b7128f2416ac2de5d9d",
+    "icon_url": "https://cdn.darkerdb.com/codex/efab734c66123036abf0b13ed21484c61e03df8444b86b7128f2416ac2de5d9d",
+    "abilities": [],
+    "description": "While holding an instrument, gain 10 additional move speed.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.dancing_feet",
+      "move_speed_add": 10
+     }
+    ],
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.fermata",
+    "name": "Fermata",
+    "perk_tag": null,
+    "icon": "819951b8340e26d359678c98f0aaec27ad31bd7588c40e057c7bbc11023a43ef",
+    "icon_url": "https://cdn.darkerdb.com/codex/819951b8340e26d359678c98f0aaec27ad31bd7588c40e057c7bbc11023a43ef",
+    "abilities": [],
+    "description": "Music buffs applied to yourself last 1.5 times longer.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.fermata"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.jolly_time",
+    "name": "Jolly Time",
+    "perk_tag": null,
+    "icon": "a1e9b533e766c64c27c433e8dbdd030be520bb6d691440799d85c8e56e8b55ba",
+    "icon_url": "https://cdn.darkerdb.com/codex/a1e9b533e766c64c27c433e8dbdd030be520bb6d691440799d85c8e56e8b55ba",
+    "abilities": [],
+    "description": "Drinking ale recovers 5(1.0) health, and grants 5 additional move speed, 5 vigor while drunk.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.jolly_time"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.lore_mastery",
+    "name": "Lore Mastery",
+    "perk_tag": null,
+    "icon": "38a26e008c21a26e5d832747080bd89e5776bab370330a02fb07d3f36ae02da7",
+    "icon_url": "https://cdn.darkerdb.com/codex/38a26e008c21a26e5d832747080bd89e5776bab370330a02fb07d3f36ae02da7",
+    "abilities": [],
+    "description": "Grants 30% regular interaction speed and increases your Knowledge by an amount equal to 5% of your Resourcefulness.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.lore_mastery",
+      "regular_interaction_speed": 300
+     }
+    ],
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.melodic_protection",
+    "name": "Melodic Protection",
+    "perk_tag": null,
+    "icon": "7f6e66cf946c62549e9650cc05e86a6cda90b2f07b2236439b2b48700cab022d",
+    "icon_url": "https://cdn.darkerdb.com/codex/7f6e66cf946c62549e9650cc05e86a6cda90b2f07b2236439b2b48700cab022d",
+    "abilities": [],
+    "description": "While playing music, gain 25% physical damage reduction and 25% magical damage reduction.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.melodic_protection",
+      "magical_reduction": 250,
+      "physical_reduction": 250
+     }
+    ],
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.rapier_mastery",
+    "name": "Rapier Mastery",
+    "perk_tag": null,
+    "icon": "be06fcfbd9855745cfb6690940f3b4a89d6ca1e2f7eed1fa3720223e3c2802db",
+    "icon_url": "https://cdn.darkerdb.com/codex/be06fcfbd9855745cfb6690940f3b4a89d6ca1e2f7eed1fa3720223e3c2802db",
+    "abilities": [],
+    "description": "While using a Rapier, gain weapon damage and 5% action speed.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.rapier_mastery",
+      "action_speed": 50,
+      "physical_damage_weapon": 3
+     },
+     {
+      "id": "id.actor_status_effect.rapier_mastery_demons_glee",
+      "action_speed": 50,
+      "physical_damage_weapon": 3
+     }
+    ],
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.reinforced_instruments",
+    "name": "Reinforced Instruments",
+    "perk_tag": null,
+    "icon": "ad46fbcae7d103866c7a0eda45af539d826cc96cc1bbc0d77f127d37a1c1342d",
+    "icon_url": "https://cdn.darkerdb.com/codex/ad46fbcae7d103866c7a0eda45af539d826cc96cc1bbc0d77f127d37a1c1342d",
+    "abilities": [],
+    "description": "When attacking with an instrument, gain 50% physical damage bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.reinforced_instruments_melee",
+      "physical_damage_mod": 500
+     },
+     {
+      "id": "id.actor_status_effect.reinforced_instruments_ranged",
+      "physical_damage_mod": 500
+     }
+    ],
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.story_teller",
+    "name": "Story Teller",
+    "perk_tag": null,
+    "icon": "75d605a586580a03f35315ff5981421e7755540a21a2f37d4545186ad6c4dc32",
+    "icon_url": "https://cdn.darkerdb.com/codex/75d605a586580a03f35315ff5981421e7755540a21a2f37d4545186ad6c4dc32",
+    "abilities": [],
+    "description": "Give all nearby party members around a +5 will and +3 knowledge buff.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.story_teller"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.perk.superior_dexterity",
@@ -436,7 +857,7 @@
     "icon": "b473143116649a8338883b8cec8b98962dfa2d719c2497e10a0beb29488af0e7",
     "icon_url": "https://cdn.darkerdb.com/codex/b473143116649a8338883b8cec8b98962dfa2d719c2497e10a0beb29488af0e7",
     "abilities": [],
-    "description": "faster switching time when switching between weapons utility items.",
+    "description": "5% faster switching time when switching between weapons utility items.",
     "effects": [
      {
       "id": "id.actor_status_effect.superior_dexterity"
@@ -445,7 +866,10 @@
     "allowed_classes": [
      "id.class.bard",
      "id.class.grand_master_bard"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.perk.wanderers_luck",
@@ -454,7 +878,7 @@
     "icon": "6322d0c08aa47355a75ad3359f0b2ffb16202f125b190cd1f60273fcaa5e7a1c",
     "icon_url": "https://cdn.darkerdb.com/codex/6322d0c08aa47355a75ad3359f0b2ffb16202f125b190cd1f60273fcaa5e7a1c",
     "abilities": [],
-    "description": "Gain luck and increases the chance of finding high-quality items when opening treasure chests.",
+    "description": "Gain 100 luck and increases the chance of finding high-quality items when opening treasure chests.",
     "effects": [
      {
       "id": "id.actor_status_effect.wanderers_luck",
@@ -464,7 +888,27 @@
     "allowed_classes": [
      "id.class.bard",
      "id.class.grand_master_bard"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.war_song",
+    "name": "War Song",
+    "perk_tag": null,
+    "icon": "783f2752553262ba5607aad034154e7f8dcf27981357edaf10e53ad08a8831f2",
+    "icon_url": "https://cdn.darkerdb.com/codex/783f2752553262ba5607aad034154e7f8dcf27981357edaf10e53ad08a8831f2",
+    "abilities": [],
+    "description": "A successful performance increases nearby allies' weapon damage by for 6 seconds.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.bard",
+     "id.class.grand_master_bard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "icon": "4b126408445bb87b7ea1b803b08d254a9990a2dc5d0fb0b9f822a7d48ca24aa8",
@@ -486,7 +930,10 @@
       "effects": []
      }
     ],
-    "description": "Plays an instrument to make an unpleasant noise that silences all enemy targets for seconds.\nSilence: Disables skills spells performance abilities."
+    "description": "Plays an instrument to make an unpleasant noise that silences all enemy targets for 2 seconds. Silence: Disables skills spells performance abilities. Cooldown: 24 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.encore",
@@ -502,12 +949,15 @@
       "id": "id.skill_ability.encore",
       "effects": [
        {
-        "manual_dexterity": 1500
+        "manual_dexterity": 100
        }
       ]
      }
     ],
-    "description": "Resets the duration of all active music buffs on nearby party members. Cooldown: seconds"
+    "description": "Resets the duration of all active music buffs on nearby party members. Cooldown: 40 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.music_memory1",
@@ -524,7 +974,10 @@
       "effects": []
      }
     ],
-    "description": "Gain the ability to store up to 5 sheets of music."
+    "description": "Gain the ability to store up to 5 sheets of music.",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.music_memory2",
@@ -541,7 +994,10 @@
       "effects": []
      }
     ],
-    "description": "Gain the ability to store up to 5 sheets of music."
+    "description": "Gain the ability to store up to 5 sheets of music.",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.party_maker",
@@ -563,7 +1019,10 @@
       ]
      }
     ],
-    "description": "Play an instrument to grant all nearby allies immunity to drunkenness for seconds. While immune, drinking alcohol restores health. Cooldown: seconds"
+    "description": "Play an instrument to grant all nearby allies immunity to drunkenness for 15 seconds. While immune, drinking alcohol restores 5 health. Cooldown: 40 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "stats": {
@@ -574,9 +1033,11 @@
    "dexterity": 20,
    "knowledge": 20,
    "move_speed": 300,
-   "max_health_add": 25,
    "resourcefulness": 15
   },
+  "patch": "0.16.138.8712",
+  "patch_name": "Hotfix 115",
+  "is_new": false,
   "spell_count": 0,
   "song_count": 19,
   "shapeshift_count": 0
@@ -586,32 +1047,13 @@
   "name": "Cleric",
   "perks": [
    {
-    "id": "id.perk.blunt_weapon_mastery",
-    "name": "Blunt Weapon Mastery",
-    "perk_tag": null,
-    "icon": "48975ec3ebeacad1c21cc770f9164873161705096d6d32e4ec1e1ff33c3ec245",
-    "icon_url": "https://cdn.darkerdb.com/codex/48975ec3ebeacad1c21cc770f9164873161705096d6d32e4ec1e1ff33c3ec245",
-    "abilities": [],
-    "description": "While using a blunt weapon, gain physical damage bonus.",
-    "effects": [
-     {
-      "id": "id.actor_status_effect.blunt_weapon_mastery",
-      "physical_damage_mod": 100
-     }
-    ],
-    "allowed_classes": [
-     "id.class.cleric",
-     "id.class.grand_master_cleric"
-    ]
-   },
-   {
     "id": "id.perk.advanced_healer",
     "name": "Advanced Healer",
     "perk_tag": null,
     "icon": "0755fc9f9cca8eba30ea39bee497a23c54f604e888355b4d4cb3aaba9a2249f2",
     "icon_url": "https://cdn.darkerdb.com/codex/0755fc9f9cca8eba30ea39bee497a23c54f604e888355b4d4cb3aaba9a2249f2",
     "abilities": [],
-    "description": "Gain magical healing.",
+    "description": "Gain 5 magical healing.",
     "effects": [
      {
       "id": "id.actor_status_effect.advanced_healer",
@@ -621,7 +1063,285 @@
     "allowed_classes": [
      "id.class.cleric",
      "id.class.grand_master_cleric"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.aura_of_awe",
+    "name": "Aura of Awe",
+    "perk_tag": null,
+    "icon": "b6fb607b74180f0a02d20455c1e1902d9652202a31365da6e5c9c44558de12c0",
+    "icon_url": "https://cdn.darkerdb.com/codex/b6fb607b74180f0a02d20455c1e1902d9652202a31365da6e5c9c44558de12c0",
+    "abilities": [],
+    "description": "Reduces the action speed of enemies within m by 7%.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.aura_of_awe"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
+   {
+    "id": "id.perk.banishing_touch",
+    "name": "Banishing Touch",
+    "perk_tag": null,
+    "icon": "7877dd4e4708b74fe68afece454c870f4023bcd55114fa6438242eb2f9041de8",
+    "icon_url": "https://cdn.darkerdb.com/codex/7877dd4e4708b74fe68afece454c870f4023bcd55114fa6438242eb2f9041de8",
+    "abilities": [],
+    "description": "When hitting an undead or demon enemy with a melee or ranged attack, has a 5% chance to stun them for 1 second.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.banishing_touch"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
+   {
+    "id": "id.perk.blood_tithe",
+    "name": "Blood Tithe",
+    "perk_tag": null,
+    "icon": "5987b29fa9606fc196a7f9722ad034f439a81d07483c1b16580e95f94a9cf9bf",
+    "icon_url": "https://cdn.darkerdb.com/codex/5987b29fa9606fc196a7f9722ad034f439a81d07483c1b16580e95f94a9cf9bf",
+    "abilities": [],
+    "description": "Your magical healing increases by 2 for every 10% of health you lose.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.blood_tithe"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
+   {
+    "id": "id.perk.blunt_weapon_mastery",
+    "name": "Blunt Weapon Mastery",
+    "perk_tag": null,
+    "icon": "48975ec3ebeacad1c21cc770f9164873161705096d6d32e4ec1e1ff33c3ec245",
+    "icon_url": "https://cdn.darkerdb.com/codex/48975ec3ebeacad1c21cc770f9164873161705096d6d32e4ec1e1ff33c3ec245",
+    "abilities": [],
+    "description": "While using a blunt weapon, gain 10% physical damage bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.blunt_weapon_mastery",
+      "physical_damage_mod": 100
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.brewmaster",
+    "name": "Brewmaster",
+    "perk_tag": null,
+    "icon": "3fd7b9042ecb7a1ce4a76d37ab42050f30605c8b7630f7fe50fa2ae8797b85bc",
+    "icon_url": "https://cdn.darkerdb.com/codex/3fd7b9042ecb7a1ce4a76d37ab42050f30605c8b7630f7fe50fa2ae8797b85bc",
+    "abilities": [],
+    "description": "When you drink alcohol, you no longer exhibit the detrimental drunk effects and gain 10 strength. The duration of the drunk effect is increased by 50%.",
+    "effects": [
+     {
+      "id": "id.perk_effect.brewmaster"
+     },
+     {
+      "id": "id.actor_status_effect.brewmaster",
+      "strength_base": 10
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.divine_echo",
+    "name": "Divine Echo",
+    "perk_tag": null,
+    "icon": "4d42d86988cf81145eb60c8943f0d2462e9c1447c4c36e712c3c56f62866c89a",
+    "icon_url": "https://cdn.darkerdb.com/codex/4d42d86988cf81145eb60c8943f0d2462e9c1447c4c36e712c3c56f62866c89a",
+    "abilities": [],
+    "description": "While in a dungeon, Replaces your Resurrection spell with Miracle. When cast, instantly revives all dead allies at their current location. Miracle cannot be recharged.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.divine_echo"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
+   {
+    "id": "id.perk.faithfulness",
+    "name": "Faithfulness",
+    "perk_tag": null,
+    "icon": "2c55d840968467136029f3a0a5ef5eda3f9eeb929d83089b24af0f25c4018bdd",
+    "icon_url": "https://cdn.darkerdb.com/codex/2c55d840968467136029f3a0a5ef5eda3f9eeb929d83089b24af0f25c4018bdd",
+    "abilities": [],
+    "description": "Gain 15% divine magical damage bonus. When a divine attack is successful, reduce their move speed bonus by 15% for 1 seconds. Does not inflict while on cooldown.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.faithfulness",
+      "magical_divine_damage_mod": 150
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.heretics_brand",
+    "name": "Heretics Brand",
+    "perk_tag": null,
+    "icon": "7e25fc783b83b2e580428bd887df9bd4dfd808747eabfc3e9e9a45660951d59d",
+    "icon_url": "https://cdn.darkerdb.com/codex/7e25fc783b83b2e580428bd887df9bd4dfd808747eabfc3e9e9a45660951d59d",
+    "abilities": [],
+    "description": "When you deal divine magic damage, reduce the target’s spell casting speed by 30% for 2 seconds and prevent them from entering stealth or invisibility.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.heretics_brand"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
+   {
+    "id": "id.perk.holy_aura",
+    "name": "Holy Aura",
+    "perk_tag": null,
+    "icon": "19cd5f57b7efdf7b37504d2eb61df650551cafd620afd69cf87de7e6388540b0",
+    "icon_url": "https://cdn.darkerdb.com/codex/19cd5f57b7efdf7b37504d2eb61df650551cafd620afd69cf87de7e6388540b0",
+    "abilities": [],
+    "description": "Gain 15 armor rating and 15 magic resistance. This effects both yourself and allies.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.holy_aura"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.holy_water",
+    "name": "Holy Water",
+    "perk_tag": null,
+    "icon": "33c2f640ec08da90bbc15557ce45be2682bb63f185750a2dd25a88a795e4f492",
+    "icon_url": "https://cdn.darkerdb.com/codex/33c2f640ec08da90bbc15557ce45be2682bb63f185750a2dd25a88a795e4f492",
+    "abilities": [],
+    "description": "Drinking any drink removes all removable curses and harmful magic effects, and grants the Bless effect.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.holy_water"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.kindness",
+    "name": "Kindness",
+    "perk_tag": null,
+    "icon": "2cfbe061104a2edf55e82b3d3a2b581400febe0fd8c4191d427598f29ba0af9d",
+    "icon_url": "https://cdn.darkerdb.com/codex/2cfbe061104a2edf55e82b3d3a2b581400febe0fd8c4191d427598f29ba0af9d",
+    "abilities": [],
+    "description": "Heal yourself for 3% of the spell's total heal amount when healing another target.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.kindness"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.overhealing",
+    "name": "Over Healing",
+    "perk_tag": null,
+    "icon": "4537d15e3fbc8b2fd816c51b5d4290f664f18d3ac188f9430414d02902ceae60",
+    "icon_url": "https://cdn.darkerdb.com/codex/4537d15e3fbc8b2fd816c51b5d4290f664f18d3ac188f9430414d02902ceae60",
+    "abilities": [],
+    "description": "Even if the target's health is at full health, additional healing can be done by 2% of the target's maximum health. ^ degenerates at 2% per second.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.overhealing"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.pain_offering",
+    "name": "Pain Offering",
+    "perk_tag": null,
+    "icon": "3ac962cb7862d1550586316634b60667e98b579aa49990dca3857c4176b6e3c7",
+    "icon_url": "https://cdn.darkerdb.com/codex/3ac962cb7862d1550586316634b60667e98b579aa49990dca3857c4176b6e3c7",
+    "abilities": [],
+    "description": "When you take damage, heal allies within m for 3% of the damage taken.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
    },
    {
     "id": "id.perk.perseverance",
@@ -630,7 +1350,7 @@
     "icon": "959b25119a477272e37644352726d75a3d62a67cd59d26989d2079d3d02e9aca",
     "icon_url": "https://cdn.darkerdb.com/codex/959b25119a477272e37644352726d75a3d62a67cd59d26989d2079d3d02e9aca",
     "abilities": [],
-    "description": "Reduces all types of incoming damage by.",
+    "description": "Reduces all types of incoming damage by 2.",
     "effects": [
      {
       "id": "id.actor_status_effect.perseverance",
@@ -641,41 +1361,175 @@
     "allowed_classes": [
      "id.class.cleric",
      "id.class.grand_master_cleric"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
-    "id": "id.perk.overhealing",
-    "name": "Over Healing",
+    "id": "id.perk.protectionfrom_evil",
+    "name": "Protection from Evil",
     "perk_tag": null,
-    "icon": "4537d15e3fbc8b2fd816c51b5d4290f664f18d3ac188f9430414d02902ceae60",
-    "icon_url": "https://cdn.darkerdb.com/codex/4537d15e3fbc8b2fd816c51b5d4290f664f18d3ac188f9430414d02902ceae60",
-    "abilities": [
-     {
-      "id": "id.perk_ability.overhealing",
-      "effects": [
-       {
-        "target_type": "EGameplayEffectTargetType::EventData",
-        "exec_add_health_by_max_health_ratio": -20
-       }
-      ]
-     }
-    ],
-    "description": "Even if the target's health is at full health, additional healing can be done by of the target's maximum health. ^ degenerates at per second.",
+    "icon": "2cbde7f8662ce917b5dca2920a52d3759780307a896c56e4abb8eed07b3d0ee2",
+    "icon_url": "https://cdn.darkerdb.com/codex/2cbde7f8662ce917b5dca2920a52d3759780307a896c56e4abb8eed07b3d0ee2",
+    "abilities": [],
+    "description": "Reduce the duration of all harmful effects by 30%.",
     "effects": [
      {
-      "id": "id.actor_status_effect.overhealing"
+      "id": "id.actor_status_effect.protectionfrom_evil",
+      "debuff_duration_mod": -300
      }
     ],
     "allowed_classes": [
      "id.class.cleric",
      "id.class.grand_master_cleric"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.requiem",
+    "name": "Requiem",
+    "perk_tag": null,
+    "icon": "1193d433f53d445e1fdaffa3c12d86bec1d2387f6ca4a185e16f1d2fea6ffafb",
+    "icon_url": "https://cdn.darkerdb.com/codex/1193d433f53d445e1fdaffa3c12d86bec1d2387f6ca4a185e16f1d2fea6ffafb",
+    "abilities": [],
+    "description": "Resurrecting an ally revives them with 5% HP instead of a sliver of life. When reviving an ally at the Altar of Sacrifice, you do not need to sacrifice any of your own health. Using the Resurrection spell also grants 100% spell casting speed.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.requiem"
+     },
+     {
+      "id": "id.actor_status_effect.requiem_buff",
+      "spell_casting_speed": 1000
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.sacred_flame",
+    "name": "Sacred Flame",
+    "perk_tag": null,
+    "icon": "88fa4bbeabf0c7d2ac1115815b8ce836dd689b6e7c53d89e6d9a39a3c7ef5efa",
+    "icon_url": "https://cdn.darkerdb.com/codex/88fa4bbeabf0c7d2ac1115815b8ce836dd689b6e7c53d89e6d9a39a3c7ef5efa",
+    "abilities": [],
+    "description": "When a divine attack is successful, apply sacred flame to the target for 2 seconds. When sacred flame reaches 3 stacks, it detonates, dealing 10(1.0) divine magical damage.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.sacred_flame"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
+   {
+    "id": "id.perk.stigmata",
+    "name": "Stigmata",
+    "perk_tag": null,
+    "icon": "9a240485df0b04df05efc5bde16e7e48dc09edcbd3517ea4ad2cdc2e2b200491",
+    "icon_url": "https://cdn.darkerdb.com/codex/9a240485df0b04df05efc5bde16e7e48dc09edcbd3517ea4ad2cdc2e2b200491",
+    "abilities": [],
+    "description": "Lose 1 health every 2 seconds, but gain 15% spell casting speed and 5 magical healing.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
+   {
+    "id": "id.perk.undead_slaying",
+    "name": "Undead Slaying",
+    "perk_tag": null,
+    "icon": "59e62a1b3080a0b76c0e32dd02438efbaad522364429c5195ce49e6f64eecf46",
+    "icon_url": "https://cdn.darkerdb.com/codex/59e62a1b3080a0b76c0e32dd02438efbaad522364429c5195ce49e6f64eecf46",
+    "abilities": [],
+    "description": "Gain 20% undead damage bonus against undead monsters.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.undead_slaying",
+      "undead_damage_mod": 200
+     }
+    ],
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "icon": "2d0b28103e26824b6d5cdf6ac3ef9f2c12ac2f82dc22a83779d31f28b2965f65",
   "icon_url": "https://cdn.darkerdb.com/codex/2d0b28103e26824b6d5cdf6ac3ef9f2c12ac2f82dc22a83779d31f28b2965f65",
   "flavor": "The Cleric is a soldier of immense faith. The Cleric uses his sacred bonds to his gods to call forth the protective powers of light and to vanquish the forces of dark.",
   "skills": [
+   {
+    "id": "id.skill.barefoot_pilgrimage",
+    "name": "Barefoot Pilgrimage",
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "icon": "b37ac4004baa28ba267be9dc40649c7d206496b689e0a193e6df7861399aef55",
+    "icon_url": "https://cdn.darkerdb.com/codex/b37ac4004baa28ba267be9dc40649c7d206496b689e0a193e6df7861399aef55",
+    "abilities": [
+     {
+      "id": "id.skill_ability.barefoot_pilgrimage",
+      "effects": [
+       {
+        "duration": 12000,
+        "magical_heal_mod": 250,
+        "debuff_duration_mod": -500,
+        "spell_casting_speed": 200,
+        "item_armor_rating_mod": -1000
+       }
+      ]
+     }
+    ],
+    "description": "For 12 seconds, you losing all armor rating from equipped gear (retaining only base armor rating). In return, casting speed is increased by 20%, magical healing by 25%, and debuff duration bonus is reduced by 50%. Cooldown: 90 seconds",
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
+   {
+    "id": "id.skill.confession",
+    "name": "Confession",
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "icon": "0dc410fac5b64da9f026d2e825686c0b8105bad5c3536d450a0f8f84ba1420be",
+    "icon_url": "https://cdn.darkerdb.com/codex/0dc410fac5b64da9f026d2e825686c0b8105bad5c3536d450a0f8f84ba1420be",
+    "abilities": [
+     {
+      "id": "id.skill_ability.confession",
+      "effects": [
+       {
+        "target_type": "EGameplayEffectTargetType::EventData"
+       }
+      ]
+     }
+    ],
+    "description": "Remove all harmful poison and curse effects from the target and heal 5 per effect removed. Cooldown: 60 seconds",
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
    {
     "id": "id.skill.divine_protection",
     "name": "Divine Protection",
@@ -696,7 +1550,36 @@
       ]
      }
     ],
-    "description": "Gain physical damage reduction for seconds. Cooldown: seconds"
+    "description": "Gain 30% physical damage reduction for 6 seconds. Cooldown: 45 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.skill.excommunication",
+    "name": "Excommunication",
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "icon": "e30e77c0e15147a841ffb525f8d4f4939369a019fb4f80905e0975042fba08b5",
+    "icon_url": "https://cdn.darkerdb.com/codex/e30e77c0e15147a841ffb525f8d4f4939369a019fb4f80905e0975042fba08b5",
+    "abilities": [
+     {
+      "id": "id.skill_ability.excommunication",
+      "effects": [
+       {
+        "duration": 8000,
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "divine_magical_reduction": -250
+       }
+      ]
+     }
+    ],
+    "description": "Excommunicates the target. For 8 seconds, the target’s divine magic resistance is reduced by 25% and they cannot receive magical healing. Cooldown: 45 seconds",
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
    },
    {
     "id": "id.skill.holy_purification",
@@ -719,7 +1602,10 @@
       ]
      }
     ],
-    "description": "After channeling for 1.5 seconds, deal divine magical damage to all undead monsters within a 7.5m radius around you. Cooldown: seconds"
+    "description": "After channeling for 1.5 seconds, deal 100(1.0) divine magical damage to all undead monsters within a 7.5m radius around you. Cooldown: 45 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.judgement",
@@ -747,7 +1633,10 @@
       ]
      }
     ],
-    "description": "After channeling for 1 seconds, deal divine magical damage to a target and reduce their move speed bonus by for seconds. Once the channel begins on a target, crosshair targeting is no longer required. This spell has a 5m range and will fail if the target goes out of range. Cooldown: seconds"
+    "description": "After channeling for 1 seconds, deal 25(1.0) divine magical damage to a target and reduce their move speed bonus by 30% for 2 seconds. Once the channel begins on a target, crosshair targeting is no longer required. This spell has a 5m range and will fail if the target goes out of range. Cooldown: 28 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.smite",
@@ -763,17 +1652,20 @@
       "id": "id.skill_ability.smite",
       "effects": [
        {
-        "duration": 7000
+        "duration": 12000
        },
        {
         "target_type": "EGameplayEffectTargetType::EventData",
-        "exec_magical_damage_base": 10,
+        "exec_magical_damage_base": 5,
         "exec_attribute_bonus_ratio": 1000
        }
       ]
      }
     ],
-    "description": "Deal an additional divine magical damage to all enemies you hit within seconds. Only when melee attacking. Cooldown: seconds"
+    "description": "Deal an additional 5(1.0) divine magical damage to all enemies you hit within 12 seconds. Only when melee attacking. Cooldown: 18 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.spell_memory1",
@@ -796,7 +1688,10 @@
       "effects": []
      }
     ],
-    "description": "Gain the ability to memorize spells to use in the dungeon."
+    "description": "Gain the ability to memorize spells to use in the dungeon.",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.spell_memory2",
@@ -819,7 +1714,34 @@
       "effects": []
      }
     ],
-    "description": "Gain the ability to memorize additional spells to use in the dungeon."
+    "description": "Gain the ability to memorize additional spells to use in the dungeon.",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.skill.vow_of_silence",
+    "name": "Vow of Silence",
+    "allowed_classes": [
+     "id.class.cleric",
+     "id.class.grand_master_cleric"
+    ],
+    "icon": "3ad197aa75ddd51e54a55c5272ea79f98390e382b32dc6650d77547ace8ce726",
+    "icon_url": "https://cdn.darkerdb.com/codex/3ad197aa75ddd51e54a55c5272ea79f98390e382b32dc6650d77547ace8ce726",
+    "abilities": [
+     {
+      "id": "id.skill_ability.vow_of_silence",
+      "effects": [
+       {
+        "duration": 6000
+       }
+      ]
+     }
+    ],
+    "description": "Unable to cast spells for 6 seconds, but gain a stack of Penance every second.Penance: Increases the effectiveness of magical bonus by 10% and is consumed upon using a divine attack or spell. Cooldown: 32 seconds",
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
    }
   ],
   "stats": {
@@ -830,10 +1752,12 @@
    "dexterity": 14,
    "knowledge": 20,
    "move_speed": 300,
-   "max_health_add": 25,
    "resourcefulness": 12
   },
-  "spell_count": 12,
+  "patch": "0.16.138.8712",
+  "patch_name": "Hotfix 115",
+  "is_new": false,
+  "spell_count": 18,
   "song_count": 0,
   "shapeshift_count": 0
  },
@@ -842,71 +1766,46 @@
   "name": "Druid",
   "perks": [
    {
-    "id": "id.perk.natural_healing",
-    "name": "Natural Healing",
+    "id": "id.perk.animal_kinship",
+    "name": "Animal Kinship",
     "perk_tag": null,
-    "icon": "34bdb63ea32c8d3c1268fe14901b2d4e4e82384377001bbf1abc776730bef3e6",
-    "icon_url": "https://cdn.darkerdb.com/codex/34bdb63ea32c8d3c1268fe14901b2d4e4e82384377001bbf1abc776730bef3e6",
-    "abilities": [
-     {
-      "id": "id.perk_ability.natural_healing",
-      "effects": [
-       {
-        "target_type": "EGameplayEffectTargetType::EventData"
-       }
-      ]
-     },
-     {
-      "id": "id.perk_ability.natural_healing_granted",
-      "effects": []
-     }
-    ],
-    "description": "Recover yourself and nearby allies health every 3 seconds.",
+    "icon": "41f14bf962574cfe8e8ee31bba9e51fba68fc81d5ca0d07b8fa9b5fd25664710",
+    "icon_url": "https://cdn.darkerdb.com/codex/41f14bf962574cfe8e8ee31bba9e51fba68fc81d5ca0d07b8fa9b5fd25664710",
+    "abilities": [],
+    "description": "Not all animals and insects attack first.",
     "effects": [
      {
-      "id": "id.actor_status_effect.natural_healing"
+      "id": "id.actor_status_effect.animal_kinship"
      }
     ],
     "allowed_classes": [
      "id.class.druid",
      "id.class.grand_master_druid"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
-    "id": "id.perk.sun_and_moon",
-    "name": "Sun and Moon",
+    "id": "id.perk.dreamwalk",
+    "name": "Dreamwalk",
     "perk_tag": null,
-    "icon": "b94b7deb6d1e530c11e8201749d5f15dc527e411655cd0b1b05b0935fd3a9ad0",
-    "icon_url": "https://cdn.darkerdb.com/codex/b94b7deb6d1e530c11e8201749d5f15dc527e411655cd0b1b05b0935fd3a9ad0",
-    "abilities": [
-     {
-      "id": "id.perk_ability.sun_and_moon",
-      "effects": [
-       {
-        "target_type": "EGameplayEffectTargetType::EventData"
-       }
-      ]
-     },
-     {
-      "id": "id.perk_ability.sun_and_moon_granted",
-      "effects": [
-       {
-        "vigor_base": 3,
-        "magical_power": 5
-       }
-      ]
-     }
-    ],
-    "description": "Nearby allies gain vigor and magical power.",
+    "icon": "8f3c1ffb0c6617cc30b6dc07fdadd8a4a14bd76cc1406552960632aa00203127",
+    "icon_url": "https://cdn.darkerdb.com/codex/8f3c1ffb0c6617cc30b6dc07fdadd8a4a14bd76cc1406552960632aa00203127",
+    "abilities": [],
+    "description": "When you take damage, your magical power increases by 5 for 3 seconds and you become spiritual. The player does not collide with other targets and cannot attack or use skills, but can cast spells. This ability triggers once every 12 seconds. Cooldown: 12 seconds",
     "effects": [
      {
-      "id": "id.actor_status_effect.sun_and_moon"
+      "id": "id.actor_status_effect.dreamwalk"
      }
     ],
     "allowed_classes": [
      "id.class.druid",
      "id.class.grand_master_druid"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.perk.enhanced_wildness",
@@ -915,7 +1814,7 @@
     "icon": "d5bf9dd30404ee5f137e7964f74f5b043b35c69d53764d0f019780f4f5a15eee",
     "icon_url": "https://cdn.darkerdb.com/codex/d5bf9dd30404ee5f137e7964f74f5b043b35c69d53764d0f019780f4f5a15eee",
     "abilities": [],
-    "description": "While you are in animal form, you gain physical damage bonus and armor rating.",
+    "description": "While you are in animal form, you gain 5% physical damage bonus and 20 armor rating.",
     "effects": [
      {
       "id": "id.actor_status_effect.enhanced_wildness",
@@ -926,38 +1825,223 @@
     "allowed_classes": [
      "id.class.druid",
      "id.class.grand_master_druid"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
-    "id": "id.perk.dreamwalk",
-    "name": "Dreamwalk",
+    "id": "id.perk.force_of_nature",
+    "name": "Force of Nature",
     "perk_tag": null,
-    "icon": "8f3c1ffb0c6617cc30b6dc07fdadd8a4a14bd76cc1406552960632aa00203127",
-    "icon_url": "https://cdn.darkerdb.com/codex/8f3c1ffb0c6617cc30b6dc07fdadd8a4a14bd76cc1406552960632aa00203127",
-    "abilities": [
-     {
-      "id": "id.perk_ability.dreamwalk",
-      "effects": [
-       {
-        "duration": 2000,
-        "magical_power": 5
-       },
-       {
-        "duration": 12000
-       }
-      ]
-     }
+    "icon": "495e4b058202a79abbf1c28e1f5be43af85fdb59187ea922536aebb13676d3d4",
+    "icon_url": "https://cdn.darkerdb.com/codex/495e4b058202a79abbf1c28e1f5be43af85fdb59187ea922536aebb13676d3d4",
+    "abilities": [],
+    "description": "When you heal a target, the target gains 5 physical power for 3 seconds.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.druid",
+     "id.class.grand_master_druid"
     ],
-    "description": "When you take damage, your magical power increases by for seconds and you become spiritual. The player does not collide with other targets and cannot attack or use skills, but can cast spells. This ability triggers once every seconds. Cooldown: seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.herbal_sensing",
+    "name": "Herbal Sensing",
+    "perk_tag": null,
+    "icon": "0ef6be251be0d3d6981cb7e89d5e570ae1e2fa59b025552f002e80df379a6a30",
+    "icon_url": "https://cdn.darkerdb.com/codex/0ef6be251be0d3d6981cb7e89d5e570ae1e2fa59b025552f002e80df379a6a30",
+    "abilities": [],
+    "description": "Detects nearby herbs and increases the chance of gathering higher-grade herbs.",
     "effects": [
      {
-      "id": "id.actor_status_effect.dreamwalk"
+      "id": "id.actor_status_effect.herbal_sensing"
      }
     ],
     "allowed_classes": [
      "id.class.druid",
      "id.class.grand_master_druid"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.lifebloom_aura",
+    "name": "Lifebloom Aura",
+    "perk_tag": null,
+    "icon": "400dfe4e281ff8f1f5df8b656684a45c2ce99bc67142cc43cbb135fa6c33315e",
+    "icon_url": "https://cdn.darkerdb.com/codex/400dfe4e281ff8f1f5df8b656684a45c2ce99bc67142cc43cbb135fa6c33315e",
+    "abilities": [],
+    "description": "Restores an additional 1 health to target when caster heals self or allies within aura range. Disables shapeshift.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.lifebloom_aura"
+     },
+     {
+      "id": "id.actor_status_effect.infinity_unable_shape_shift"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.natural_healing",
+    "name": "Natural Healing",
+    "perk_tag": null,
+    "icon": "34bdb63ea32c8d3c1268fe14901b2d4e4e82384377001bbf1abc776730bef3e6",
+    "icon_url": "https://cdn.darkerdb.com/codex/34bdb63ea32c8d3c1268fe14901b2d4e4e82384377001bbf1abc776730bef3e6",
+    "abilities": [],
+    "description": "Recover yourself and nearby allies 1(0.1) health every 3 seconds.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.natural_healing"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.prophecy",
+    "name": "Prophecy",
+    "perk_tag": null,
+    "icon": "3634de5b943d19c38e681f65c676cb958fda809a5a5348d0abce60645462d741",
+    "icon_url": "https://cdn.darkerdb.com/codex/3634de5b943d19c38e681f65c676cb958fda809a5a5348d0abce60645462d741",
+    "abilities": [],
+    "description": "Targets near the aiming point are automatically selected, and single-target magic aimed at the selected target will not miss.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.prophecy"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.shapeshift_mastery",
+    "name": "Shapeshift Mastery",
+    "perk_tag": null,
+    "icon": "9fcc8bc5f13ba3fa56f92b925e397b5804be325d4ffff8458bbb4a1613e95251",
+    "icon_url": "https://cdn.darkerdb.com/codex/9fcc8bc5f13ba3fa56f92b925e397b5804be325d4ffff8458bbb4a1613e95251",
+    "abilities": [],
+    "description": "Reduces shapeshifting time by 25% and reduces the cooldown of Wild skills by 92.5%, but prevents the use of spirit spells.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.shapeshift_mastery"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.spirit_bond",
+    "name": "Spirit Bond",
+    "perk_tag": null,
+    "icon": "0e344f4580a18dc6de6f255bd47981c16776f9ef3ab66f6ee75719fadafacc7c",
+    "icon_url": "https://cdn.darkerdb.com/codex/0e344f4580a18dc6de6f255bd47981c16776f9ef3ab66f6ee75719fadafacc7c",
+    "abilities": [],
+    "description": "Once every 1 second, You will receive 2% of damage received by party members instead. Can receive damage up to 20.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.spirit_bond"
+     },
+     {
+      "id": "id.actor_status_effect.spirit_bond_activated"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.spirit_magic_mastery",
+    "name": "Spirit Magic Mastery",
+    "perk_tag": null,
+    "icon": "dbc2493d59e562219d47c5cfe183934e42ac6679577702007ee505decaf8615e",
+    "icon_url": "https://cdn.darkerdb.com/codex/dbc2493d59e562219d47c5cfe183934e42ac6679577702007ee505decaf8615e",
+    "abilities": [],
+    "description": "When you cast spirit magic, you gain 10 magical power.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.spirit_magic_mastery",
+      "magical_power": 10
+     }
+    ],
+    "allowed_classes": [
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.sun_and_moon",
+    "name": "Sun and Moon",
+    "perk_tag": null,
+    "icon": "b94b7deb6d1e530c11e8201749d5f15dc527e411655cd0b1b05b0935fd3a9ad0",
+    "icon_url": "https://cdn.darkerdb.com/codex/b94b7deb6d1e530c11e8201749d5f15dc527e411655cd0b1b05b0935fd3a9ad0",
+    "abilities": [],
+    "description": "Nearby allies gain 3 vigor and 5 magical power.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.sun_and_moon"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.thorn_coat",
+    "name": "Thorn Coat",
+    "perk_tag": null,
+    "icon": "91c14f976bbdd6908f5914b8277f5759f427ea3651273a45852b56504ac13d49",
+    "icon_url": "https://cdn.darkerdb.com/codex/91c14f976bbdd6908f5914b8277f5759f427ea3651273a45852b56504ac13d49",
+    "abilities": [],
+    "description": "When melee attacked, return 5 true physical damage to the attacker.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.thorn_coat"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.druid",
+     "id.class.grand_master_druid"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "icon": "b6bad4091add2896c8a2837ecb71db09c60433036ab7b992e6b9c579da0ecb09",
@@ -983,7 +2067,10 @@
       "effects": []
      }
     ],
-    "description": "Transforms into the selected creature. Tools cannot be used in a non-human state."
+    "description": "Transforms into the selected creature. Tools cannot be used in a non-human state.",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.shape_shift_memory2",
@@ -1004,7 +2091,10 @@
       "effects": []
      }
     ],
-    "description": "Transforms into the selected creature. Tools cannot be used in a non-human state."
+    "description": "Transforms into the selected creature. Tools cannot be used in a non-human state.",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.spell_memory1",
@@ -1027,7 +2117,10 @@
       "effects": []
      }
     ],
-    "description": "Gain the ability to memorize spells to use in the dungeon."
+    "description": "Gain the ability to memorize spells to use in the dungeon.",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.spell_memory2",
@@ -1050,7 +2143,10 @@
       "effects": []
      }
     ],
-    "description": "Gain the ability to memorize additional spells to use in the dungeon."
+    "description": "Gain the ability to memorize additional spells to use in the dungeon.",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "stats": {
@@ -1061,9 +2157,11 @@
    "dexterity": 12,
    "knowledge": 20,
    "move_speed": 300,
-   "max_health_add": 25,
    "resourcefulness": 18
   },
+  "patch": "0.16.138.8712",
+  "patch_name": "Hotfix 115",
+  "is_new": false,
   "spell_count": 10,
   "song_count": 0,
   "shapeshift_count": 5
@@ -1073,13 +2171,250 @@
   "name": "Fighter",
   "perks": [
    {
+    "id": "id.perk.adrenaline_spike",
+    "name": "Adrenaline Spike",
+    "perk_tag": null,
+    "icon": "118c6986aafd976d46d030c798646766c0c643fc8dd0c70750e4c5a4eb6a2590",
+    "icon_url": "https://cdn.darkerdb.com/codex/118c6986aafd976d46d030c798646766c0c643fc8dd0c70750e4c5a4eb6a2590",
+    "abilities": [],
+    "description": "When your health goes below 4%, gain 15% action speed, 3% move speed bonus, and 30% regular interaction speed for 12 seconds, and suffer no penalty from using the Adrenaline Rush skill. Cooldown: 24 seconds",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.barricade",
+    "name": "Barricade",
+    "perk_tag": null,
+    "icon": "bb75e0f39cf340c135049dfcb5f45cc6a5d5faf5b5c8fdb2e962da6b5a0d8e2c",
+    "icon_url": "https://cdn.darkerdb.com/codex/bb75e0f39cf340c135049dfcb5f45cc6a5d5faf5b5c8fdb2e962da6b5a0d8e2c",
+    "abilities": [],
+    "description": "While in defensive stance, gain 75 armor rating and 75 magic resistance.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.combo_attack",
+    "name": "Combo Attack",
+    "perk_tag": null,
+    "icon": "f1bcb29811f4214ec2dd1f66b6389ecd4816cf71a1fcacb9e23402bd8e1d5cdd",
+    "icon_url": "https://cdn.darkerdb.com/codex/f1bcb29811f4214ec2dd1f66b6389ecd4816cf71a1fcacb9e23402bd8e1d5cdd",
+    "abilities": [],
+    "description": "When you successfully land consecutive melee attacks within 2 seconds, gain 10% physical damage bonus per stack, up to 2 stacks.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.counterattack",
+    "name": "Counterattack",
+    "perk_tag": null,
+    "icon": "050031f3196adf800f4ef1b7a97b71bc1c92fed841ef58a82daaac651b5dfa24",
+    "icon_url": "https://cdn.darkerdb.com/codex/050031f3196adf800f4ef1b7a97b71bc1c92fed841ef58a82daaac651b5dfa24",
+    "abilities": [],
+    "description": "When you successfully block an attack, gain 10% move speed bonus and 10% action speed for 3 seconds.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.defense_mastery",
+    "name": "Defense Mastery",
+    "perk_tag": null,
+    "icon": "0588c88991fabed3545376f575052a01fa43289b52bc2e46a76a23ebd561d4b0",
+    "icon_url": "https://cdn.darkerdb.com/codex/0588c88991fabed3545376f575052a01fa43289b52bc2e46a76a23ebd561d4b0",
+    "abilities": [],
+    "description": "Gain an additional 15% armor rating bonus from equipped armor. The maximum physical damage reduction limit is Increased to 7.5%.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.defense_mastery",
+      "item_armor_rating_mod": 150
+     }
+    ],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.dual_wield",
+    "name": "Dual Wield",
+    "perk_tag": null,
+    "icon": "ec3a60c183da5786d3d20bc55d8bbaed3198f0ff92f2ee4d2bc46172aeffb7a0",
+    "icon_url": "https://cdn.darkerdb.com/codex/ec3a60c183da5786d3d20bc55d8bbaed3198f0ff92f2ee4d2bc46172aeffb7a0",
+    "abilities": [],
+    "description": "While you have weapons equipped in both hands, gain 10% action speed.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.last_bastion",
+    "name": "Last Bastion",
+    "perk_tag": null,
+    "icon": "16d5770dd97a39c85a108fca60aaf1b723eb191d0f84c8083664937dd5243fa9",
+    "icon_url": "https://cdn.darkerdb.com/codex/16d5770dd97a39c85a108fca60aaf1b723eb191d0f84c8083664937dd5243fa9",
+    "abilities": [],
+    "description": "When your health falls to 3.3% or below, you gain 150 armor rating, 50 magic resistance and 30% projectile damage reduction for 12 seconds. Cooldown: 32 seconds",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.projectile_resistance",
+    "name": "Projectile Resistance",
+    "perk_tag": null,
+    "icon": "cc9fecffa432d2493fadc5aa011b07d1e85a3e908d0305a04a832fd792134897",
+    "icon_url": "https://cdn.darkerdb.com/codex/cc9fecffa432d2493fadc5aa011b07d1e85a3e908d0305a04a832fd792134897",
+    "abilities": [],
+    "description": "Gain 10% projectile damage reduction. While in defensive stance, gain an additional 10% projectile damage reduction.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.projectile_resistance",
+      "projectile_reduction_mod": 100
+     },
+     {
+      "id": "id.actor_status_effect.projectile_resistance_activated",
+      "projectile_reduction_mod": 100
+     }
+    ],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.shield_mastery",
+    "name": "Shield Mastery",
+    "perk_tag": null,
+    "icon": "63c4c992fb5c9b444bf65ee67de9c4a39b9df1a2d808a301dd0645604d02187e",
+    "icon_url": "https://cdn.darkerdb.com/codex/63c4c992fb5c9b444bf65ee67de9c4a39b9df1a2d808a301dd0645604d02187e",
+    "abilities": [],
+    "description": "While in defensive stance with a shield, gain 10% move speed bonus. When you successfully block an attack, gain 50% action speed and 10% physical damage bonus on your next melee attack within 1 seconds.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.shield_mastery",
+      "move_speed_mod": 100
+     }
+    ],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.slayer",
+    "name": "Slayer",
+    "perk_tag": null,
+    "icon": "32caa5d76b296de583f3af6491fdf9d26ca5a742dd36e0e69ab9479fb8226a12",
+    "icon_url": "https://cdn.darkerdb.com/codex/32caa5d76b296de583f3af6491fdf9d26ca5a742dd36e0e69ab9479fb8226a12",
+    "abilities": [],
+    "description": "While holding a weapon in each hand, gain weapon damage, 10 additional move speed but lose the ability to equip plate armor.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.slayer"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.survivalist_tongue",
+    "name": "Survivalist Tongue",
+    "perk_tag": null,
+    "icon": "0baae798834f4a5bfd6db66705301e6723111ddb171cd5938a4b658e3f399923",
+    "icon_url": "https://cdn.darkerdb.com/codex/0baae798834f4a5bfd6db66705301e6723111ddb171cd5938a4b658e3f399923",
+    "abilities": [],
+    "description": "All consumables have a {0}% effect increase.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.survivalist_tongue",
+      "utility_effectiveness_mod": 1000
+     }
+    ],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.swift",
+    "name": "Swift",
+    "perk_tag": null,
+    "icon": "ebfa9d4e37a3bc4c107fe864cfb656710dfc21e657003ff4da55f67c440c8abd",
+    "icon_url": "https://cdn.darkerdb.com/codex/ebfa9d4e37a3bc4c107fe864cfb656710dfc21e657003ff4da55f67c440c8abd",
+    "abilities": [],
+    "description": "Reduces the armor move speed penalty by 20%. Only applies to armor-related penalties.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.swift",
+      "move_speed_armor_penalty_mod": -200
+     }
+    ],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
     "id": "id.perk.sword_mastery",
     "name": "Sword Mastery",
     "perk_tag": null,
     "icon": "5bc10fa7d29fcded618d86119cd3ad982be20d410c792733b9c8351253c79792",
     "icon_url": "https://cdn.darkerdb.com/codex/5bc10fa7d29fcded618d86119cd3ad982be20d410c792733b9c8351253c79792",
     "abilities": [],
-    "description": "When using a sword-type weapon, gain weapon damage and action speed. Also gain additional move speed when taking a defensive stance with your sword.",
+    "description": "When using a sword-type weapon, gain weapon damage and 5% action speed. Also gain 10 additional move speed when taking a defensive stance with your sword.",
     "effects": [
      {
       "id": "id.actor_status_effect.sword_mastery_passive",
@@ -1094,26 +2429,10 @@
     "allowed_classes": [
      "id.class.fighter",
      "id.class.grand_master_fighter"
-    ]
-   },
-   {
-    "id": "id.perk.defense_mastery",
-    "name": "Defense Mastery",
-    "perk_tag": null,
-    "icon": "0588c88991fabed3545376f575052a01fa43289b52bc2e46a76a23ebd561d4b0",
-    "icon_url": "https://cdn.darkerdb.com/codex/0588c88991fabed3545376f575052a01fa43289b52bc2e46a76a23ebd561d4b0",
-    "abilities": [],
-    "description": "Gain an additional armor rating bonus from equipped armor. The maximum physical damage reduction limit is Increased to.",
-    "effects": [
-     {
-      "id": "id.actor_status_effect.defense_mastery",
-      "item_armor_rating_mod": 150
-     }
     ],
-    "allowed_classes": [
-     "id.class.fighter",
-     "id.class.grand_master_fighter"
-    ]
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.perk.veteran_instinct",
@@ -1121,24 +2440,38 @@
     "perk_tag": null,
     "icon": "e95a6ffd6144c5fb47f6adfcf1f763a3e89a6a6ab46b4417bdf39917bfe99beb",
     "icon_url": "https://cdn.darkerdb.com/codex/e95a6ffd6144c5fb47f6adfcf1f763a3e89a6a6ab46b4417bdf39917bfe99beb",
-    "abilities": [
-     {
-      "id": "id.perk_ability.veteran_instinct",
-      "effects": [
-       {
-        "duration": 4000,
-        "physical_damage_mod": 100,
-        "physical_reduction_mod": 100
-       }
-      ]
-     }
-    ],
-    "description": "When you enter combat, physical damage reduction is increased by of its current value and physical damage bonus is increased by for seconds.",
+    "abilities": [],
+    "description": "When you enter combat, physical damage reduction is increased by 10% of its current value and physical damage bonus is increased by 10% for 4 seconds.",
     "effects": [],
     "allowed_classes": [
      "id.class.fighter",
      "id.class.grand_master_fighter"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.weapon_guard",
+    "name": "Weapon Guard",
+    "perk_tag": null,
+    "icon": "74a4745ad3b4ea0e0819a964b7294450a440c9d665642708b064fc201b9d5954",
+    "icon_url": "https://cdn.darkerdb.com/codex/74a4745ad3b4ea0e0819a964b7294450a440c9d665642708b064fc201b9d5954",
+    "abilities": [],
+    "description": "When defending with a weapon, gain 1 impact resistance and if you succeed in defending, you gain 10% physical damage bonus and 5% action speed for 2 seconds.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.weapon_guard",
+      "impact_resistance": 1
+     }
+    ],
+    "allowed_classes": [
+     "id.class.fighter",
+     "id.class.grand_master_fighter"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.perk.weapon_mastery",
@@ -1159,7 +2492,10 @@
     "allowed_classes": [
      "id.class.fighter",
      "id.class.grand_master_fighter"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "icon": "2dd6283bb5784ddbef7dccc27d10837862c441cdee7a897e64081004e13560b0",
@@ -1192,7 +2528,10 @@
       ]
      }
     ],
-    "description": "Gain action speed, move speed bonus for seconds. After the duration ends, lose action speed and move speed bonus for seconds. Cooldown: seconds"
+    "description": "Gain 15% action speed, 5% move speed bonus for 8 seconds. After the duration ends, lose 8% action speed and 4% move speed bonus for 2 seconds. Cooldown: 28 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.breakthrough",
@@ -1214,7 +2553,10 @@
       ]
      }
     ],
-    "description": "Removes debuffs that slow move speed, grants a additional move speed, and ignores all move speed debuff effects for seconds. Cooldown: seconds"
+    "description": "Removes debuffs that slow move speed, grants a 7 additional move speed, and ignores all move speed debuff effects for 8 seconds. Cooldown: 24 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.disarm",
@@ -1239,7 +2581,10 @@
       ]
      }
     ],
-    "description": "If you block a melee attack with your weapon within seconds, you disarm the attacker for seconds. Disarmed targets cannot use weapons. This effect can only be applied once and is consumed when you block a melee attack. Can only be used while a weapon is equipped. Cooldown: seconds"
+    "description": "If you block a melee attack with your weapon within 8 seconds, you disarm the attacker for 1 seconds. Disarmed targets cannot use weapons. This effect can only be applied once and is consumed when you block a melee attack. Can only be used while a weapon is equipped. Cooldown: 18 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.fortified_ground",
@@ -1270,7 +2615,10 @@
       ]
      }
     ],
-    "description": "Deploys a rallying banner for seconds. Allies within 33m of the banner have all attributes increased by. Cooldown: seconds"
+    "description": "Deploys a rallying banner for 45 seconds. Allies within 33m of the banner have all attributes increased by 3. Cooldown: 12 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.perfect_block",
@@ -1286,13 +2634,16 @@
       "id": "id.skill_ability.perfect_block",
       "effects": [
        {
-        "duration": 8000,
+        "duration": 12000,
         "impact_resistance": 5
        }
       ]
      }
     ],
-    "description": "Gain impact resistance for seconds. Cooldown: seconds"
+    "description": "Gain 5 impact resistance for 12 seconds. Cooldown: 8 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.pommel_strike",
@@ -1309,7 +2660,10 @@
       "effects": []
      }
     ],
-    "description": "When attacking with the hilt while a one-handed weapon is equipped as your main weapon, it deals an additional physical damage and silences the target. If the silence interrupts the enemy’s action, it deals an additional physical damage and reduces move speed bonus by for seconds. Silence: Disables skills spells performance abilities. Cooldown: seconds"
+    "description": "When attacking with the hilt while a one-handed weapon is equipped as your main weapon, it deals an additional 15(1.0) physical damage and silences the target. If the silence interrupts the enemy’s action, it deals an additional 10(1.0) physical damage and reduces move speed bonus by 50% for 2 seconds. Silence: Disables skills spells performance abilities. Cooldown: 12 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.second_wind",
@@ -1331,7 +2685,10 @@
       ]
      }
     ],
-    "description": "Recover maximum health over seconds. Additionally, Second Wind removes the negative effects of Adrenaline Rush. Recharge: Campfire"
+    "description": "Recover 40% maximum health over 12 seconds. Additionally, Second Wind removes the negative effects of Adrenaline Rush. Recharge: Campfire",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.shield_slam",
@@ -1348,7 +2705,10 @@
       "effects": []
      }
     ],
-    "description": "Inflicts physical damage on the target, and reduces the targets move speed bonus by for seconds. Cooldown: seconds"
+    "description": "Inflicts 30(1.0) physical damage on the target, and reduces the targets move speed bonus by 20% for 3 seconds. Cooldown: 8 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.spell_reflection",
@@ -1372,7 +2732,10 @@
       ]
      }
     ],
-    "description": "While blocking, gain the ability to reflect spells. This buff persists until triggered, lasting seconds. Before activation, gain magical damage reduction. Cooldown: seconds"
+    "description": "While blocking, gain the ability to reflect spells. This buff persists until triggered, lasting 5 seconds. Before activation, gain 15% magical damage reduction. Cooldown: 18 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.sprint",
@@ -1394,7 +2757,10 @@
       ]
      }
     ],
-    "description": "Gain 3 stacks of Momentum, granting additional move speed per stack. Lose 1 stack every seconds. Cooldown: seconds"
+    "description": "Gain 3 stacks of Momentum, granting 10 additional move speed per stack. Lose 1 stack every 2 seconds. Cooldown: 28 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.taunt",
@@ -1417,7 +2783,10 @@
       ]
      }
     ],
-    "description": "Increases the aggro value to all monsters within a 7.5m area by 200%. Gain physical damage reduction and magical damage reduction for seconds Cooldown: seconds"
+    "description": "Increases the aggro value to all monsters within a 7.5m area by 200%. Gain 12% physical damage reduction and 12% magical damage reduction for 8 seconds Cooldown: 18 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.victory_strike",
@@ -1441,7 +2810,10 @@
       ]
      }
     ],
-    "description": "Your next attack deals an additional physical damage bonus. If this attack kills a player, the skill triggers again with no cooldown. Cooldown: seconds"
+    "description": "Your next attack deals an additional 40% physical damage bonus. If this attack kills a player, the skill triggers again with no cooldown. Cooldown: 24 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "stats": {
@@ -1452,9 +2824,11 @@
    "dexterity": 15,
    "knowledge": 15,
    "move_speed": 300,
-   "max_health_add": 25,
    "resourcefulness": 15
   },
+  "patch": "0.16.138.8712",
+  "patch_name": "Hotfix 115",
+  "is_new": false,
   "spell_count": 0,
   "song_count": 0,
   "shapeshift_count": 0
@@ -1464,23 +2838,177 @@
   "name": "Ranger",
   "perks": [
    {
-    "id": "id.perk.quick_reload",
-    "name": "Quick Reload",
+    "id": "id.perk.camping_mastery",
+    "name": "Camping Mastery",
     "perk_tag": null,
-    "icon": "a5901b7e750058de6c825d5a2ccefd8cc685ac7df216ab5efa3600f1fa937acb",
-    "icon_url": "https://cdn.darkerdb.com/codex/a5901b7e750058de6c825d5a2ccefd8cc685ac7df216ab5efa3600f1fa937acb",
+    "icon": "cc78cfc037c6c3af516f0baf302e6cdc9a0103ab1d022c858b15616849bca33d",
+    "icon_url": "https://cdn.darkerdb.com/codex/cc78cfc037c6c3af516f0baf302e6cdc9a0103ab1d022c858b15616849bca33d",
     "abilities": [],
-    "description": "When reloading a bow-type or firearm-type weapon, gain action speed.",
+    "description": "Instantly place a campfire and increase its duration by 100%.",
     "effects": [
      {
-      "id": "id.actor_status_effect.quick_reload",
+      "id": "id.actor_status_effect.camping_mastery",
+      "regular_interaction_speed": 15000
+     },
+     {
+      "id": "id.actor_status_effect.camping_mastery_on_activated"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.chase",
+    "name": "Chase",
+    "perk_tag": null,
+    "icon": "342ce855a4d3764178f4076285f150b3828c4e46058a1356cd612edacde34e3a",
+    "icon_url": "https://cdn.darkerdb.com/codex/342ce855a4d3764178f4076285f150b3828c4e46058a1356cd612edacde34e3a",
+    "abilities": [],
+    "description": "Detect recent enemy footsteps and can hear enemy footstep sounds from farther away.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.chase"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.crippling_shot",
+    "name": "Crippling Shot",
+    "perk_tag": null,
+    "icon": "bd9961e5aa13eecc1d46310fbbfa1a575bb84008c8d1c8a7f600cabacc15b38a",
+    "icon_url": "https://cdn.darkerdb.com/codex/bd9961e5aa13eecc1d46310fbbfa1a575bb84008c8d1c8a7f600cabacc15b38a",
+    "abilities": [],
+    "description": "Hitting the target’s leg reduces their move speed bonus by 40% for 1 seconds.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.crossbow_mastery",
+    "name": "Crossbow Mastery",
+    "perk_tag": null,
+    "icon": "11ef0a16723bc18564734bd695356ad38da9a491bba080a4d01058a9d4d739f0",
+    "icon_url": "https://cdn.darkerdb.com/codex/11ef0a16723bc18564734bd695356ad38da9a491bba080a4d01058a9d4d739f0",
+    "abilities": [],
+    "description": "While using a crossbow, gain 5% physical damage bonus and an additional 50% action speed while reloading.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.crossbow_mastery",
+      "physical_damage_mod": 50
+     },
+     {
+      "id": "id.actor_status_effect.crossbow_mastery_reload",
       "action_speed": 500
      }
     ],
     "allowed_classes": [
      "id.class.ranger",
      "id.class.grand_master_ranger"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.feral_resonance",
+    "name": "Feral Resonance",
+    "perk_tag": null,
+    "icon": "2ef9ca89fa3ac58a1187ecd34c4a6c279064353085ad1e2316f275cf028d86fb",
+    "icon_url": "https://cdn.darkerdb.com/codex/2ef9ca89fa3ac58a1187ecd34c4a6c279064353085ad1e2316f275cf028d86fb",
+    "abilities": [],
+    "description": "When an allied animal is within a radius of meters, both you and the animal gain a 10% increase to maximum health bonus and a increase to physical damage bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.feral_resonance"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
+   {
+    "id": "id.perk.first_aid",
+    "name": "First Aid",
+    "perk_tag": null,
+    "icon": "c3157a9444a4b359b2698fe70f233a8e887c0f2fab4dc1b202e59ea076f48baf",
+    "icon_url": "https://cdn.darkerdb.com/codex/c3157a9444a4b359b2698fe70f233a8e887c0f2fab4dc1b202e59ea076f48baf",
+    "abilities": [],
+    "description": "Increases the use speed of Bandages and Surgical Kits by 0.15%, and allows them to be used on allies.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.first_aid"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.kinesthesia",
+    "name": "Kinesthesia",
+    "perk_tag": null,
+    "icon": "b67c0c9448e94b5cce9af2c345ad21adecdcbba4dcee988ed8892cfcd951f47d",
+    "icon_url": "https://cdn.darkerdb.com/codex/b67c0c9448e94b5cce9af2c345ad21adecdcbba4dcee988ed8892cfcd951f47d",
+    "abilities": [],
+    "description": "When moving with the bowstring drawn, move speed bonus increases by 88.5%.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.kinesthesia"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.longshot_expert",
+    "name": "Longshot Expert",
+    "perk_tag": null,
+    "icon": "95cfe4834b2ae444f1f386a6480ee907abe4f467856d8e5fc9080a6e42bf104c",
+    "icon_url": "https://cdn.darkerdb.com/codex/95cfe4834b2ae444f1f386a6480ee907abe4f467856d8e5fc9080a6e42bf104c",
+    "abilities": [],
+    "description": "Deals additional damage as the distance to the target increases, up to 10 physical damage.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.longshot_expert"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.perk.nimble_hands",
@@ -1498,30 +3026,75 @@
     "allowed_classes": [
      "id.class.ranger",
      "id.class.grand_master_ranger"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
-    "id": "id.perk.chase",
-    "name": "Chase",
+    "id": "id.perk.overload",
+    "name": "Overload",
     "perk_tag": null,
-    "icon": "342ce855a4d3764178f4076285f150b3828c4e46058a1356cd612edacde34e3a",
-    "icon_url": "https://cdn.darkerdb.com/codex/342ce855a4d3764178f4076285f150b3828c4e46058a1356cd612edacde34e3a",
-    "abilities": [
-     {
-      "id": "id.perk_ability.chase",
-      "effects": []
-     }
-    ],
-    "description": "Detect recent enemy footsteps and can hear enemy footstep sounds from farther away.",
+    "icon": "beb3f867c5e2de50d60f08ae257ca91f20c2f6f68ed52a1c98df73e4697cf544",
+    "icon_url": "https://cdn.darkerdb.com/codex/beb3f867c5e2de50d60f08ae257ca91f20c2f6f68ed52a1c98df73e4697cf544",
+    "abilities": [],
+    "description": "Increases the maximum loadable ammo of your currently bow-type equipped weapon by 50%.",
     "effects": [
      {
-      "id": "id.actor_status_effect.chase"
+      "id": "id.actor_status_effect.overload",
+      "ammo_count_mod": 500
      }
     ],
     "allowed_classes": [
      "id.class.ranger",
      "id.class.grand_master_ranger"
-    ]
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
+   {
+    "id": "id.perk.point_blank_expert",
+    "name": "Point-Blank Expert",
+    "perk_tag": null,
+    "icon": "9602caf7ce132cea8429b92fa0ee6d8a0b0bfc2f1a906116c97d6f191633d156",
+    "icon_url": "https://cdn.darkerdb.com/codex/9602caf7ce132cea8429b92fa0ee6d8a0b0bfc2f1a906116c97d6f191633d156",
+    "abilities": [],
+    "description": "Deals an additional 3 true physical damage to targets within 6m.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.point_blank_expert"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.quick_reload",
+    "name": "Quick Reload",
+    "perk_tag": null,
+    "icon": "a5901b7e750058de6c825d5a2ccefd8cc685ac7df216ab5efa3600f1fa937acb",
+    "icon_url": "https://cdn.darkerdb.com/codex/a5901b7e750058de6c825d5a2ccefd8cc685ac7df216ab5efa3600f1fa937acb",
+    "abilities": [],
+    "description": "When reloading a bow-type or firearm-type weapon, gain 50% action speed.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.quick_reload",
+      "action_speed": 500
+     }
+    ],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.perk.ranged_weapons_mastery",
@@ -1530,7 +3103,7 @@
     "icon": "cb5b6b0692aa76f3ad15560101f91da346651bd4d0fe58a2812f17fd0256ba85",
     "icon_url": "https://cdn.darkerdb.com/codex/cb5b6b0692aa76f3ad15560101f91da346651bd4d0fe58a2812f17fd0256ba85",
     "abilities": [],
-    "description": "When attacking with a ranged weapon, gain physical damage bonus.",
+    "description": "When attacking with a ranged weapon, gain 5% physical damage bonus.",
     "effects": [
      {
       "id": "id.actor_status_effect.ranged_weapons_mastery",
@@ -1540,7 +3113,97 @@
     "allowed_classes": [
      "id.class.ranger",
      "id.class.grand_master_ranger"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.sharpshooter",
+    "name": "Sharpshooter",
+    "perk_tag": null,
+    "icon": "f10ae4f3b7adfcb7fe2156420fc0ab42e82ab5af2c44636c24a30c41d94a7bcc",
+    "icon_url": "https://cdn.darkerdb.com/codex/f10ae4f3b7adfcb7fe2156420fc0ab42e82ab5af2c44636c24a30c41d94a7bcc",
+    "abilities": [],
+    "description": "When attacking with a ranged weapon, gain 15% headshot damage bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.sharpshooter",
+      "headshot_damage_mod": 150
+     }
+    ],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.spear_proficiency",
+    "name": "Spear Proficiency",
+    "perk_tag": null,
+    "icon": "f2ba86440ed2b73e4caa2cbc1541c9b7f03b02feb011dbfb14678d56df07ceb0",
+    "icon_url": "https://cdn.darkerdb.com/codex/f2ba86440ed2b73e4caa2cbc1541c9b7f03b02feb011dbfb14678d56df07ceb0",
+    "abilities": [],
+    "description": "Gain the ability to equip spears. While using a spear, gain 5 move speed.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.spear_proficiency",
+      "move_speed_base": 5
+     }
+    ],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.trap_mastery",
+    "name": "Trap Mastery",
+    "perk_tag": null,
+    "icon": "9d35b124596990ef53af5b40209bd5d915bdc2e85aa296edfaed3ecbabc57f29",
+    "icon_url": "https://cdn.darkerdb.com/codex/9d35b124596990ef53af5b40209bd5d915bdc2e85aa296edfaed3ecbabc57f29",
+    "abilities": [],
+    "description": "Instantly place trap items and recover them when disarmed.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.trap_mastery",
+      "regular_interaction_speed": 10000
+     }
+    ],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.wind_fletch",
+    "name": "Windfletch",
+    "perk_tag": null,
+    "icon": "56eaa5540cf49ad958df8946a27444ce2563abaf957eeff51db5bd4081c6800f",
+    "icon_url": "https://cdn.darkerdb.com/codex/56eaa5540cf49ad958df8946a27444ce2563abaf957eeff51db5bd4081c6800f",
+    "abilities": [],
+    "description": "Increases projectile speed of arrows and bolts by 1.5%.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.wind_fletch"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "icon": "3d01ff84ab494d3d3981df28ef67a661d6a759ff873653bff0212d956ef3aac2",
@@ -1566,7 +3229,10 @@
       ]
      }
     ],
-    "description": "Quickly retreats a short distance. It can also be used in the air. Cooldown: seconds"
+    "description": "Quickly retreats a short distance. It can also be used in the air. Cooldown: 12 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.explosive_shot",
@@ -1582,12 +3248,12 @@
       "id": "id.skill_ability.explosive_shot",
       "effects": [
        {
-        "duration": 8000
+        "duration": 12000
        },
        {
         "target_type": "EGameplayEffectTargetType::EventData",
         "exec_impact_power": 6,
-        "exec_magical_damage_base": 7,
+        "exec_magical_damage_base": 10,
         "exec_attribute_bonus_ratio": 1000
        },
        {
@@ -1599,7 +3265,10 @@
       ]
      }
     ],
-    "description": "For seconds, attacks made with bows or crossbows cause fired projectiles to explode after 3 seconds, dealing fire magical damage to nearby enemies and applying Burn for second. Burn: The target takes fire magical damage. Cooldown: seconds"
+    "description": "For 12 seconds, attacks made with bows or crossbows cause fired projectiles to explode after 3 seconds, dealing 10(1.0) fire magical damage to nearby enemies and applying Burn for 1 second. Burn: The target takes 3(0.5) fire magical damage. Cooldown: 22 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.field_ration",
@@ -1621,7 +3290,10 @@
       ]
      }
     ],
-    "description": "Forage food and recover health. Cooldown: seconds\nRecharge: Campfire"
+    "description": "Forage food and recover 40(1.0) health. Cooldown: 24 seconds\nRecharge: Campfire",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.forceful_shot",
@@ -1647,7 +3319,10 @@
       ]
      }
     ],
-    "description": "When using a bow-type weapon, gain the ability to knock targets back for seconds. Cooldown: seconds"
+    "description": "When using a bow-type weapon, gain the ability to knock targets back for 10 seconds. Cooldown: 20 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.multi_shot",
@@ -1664,7 +3339,10 @@
       "effects": []
      }
     ],
-    "description": "Fire 5 arrows at once in a cone shaped dispersion. Cooldown: seconds"
+    "description": "Fire 5 arrows at once in a cone shaped dispersion. Cooldown: 22 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.overdraw",
@@ -1680,12 +3358,18 @@
       "id": "id.skill_ability.overdraw",
       "effects": [
        {
-        "physical_damage_weapon_mod": 300
+        "duration": 12000
+       },
+       {
+        "physical_damage_weapon_mod": 250
        }
       ]
      }
     ],
-    "description": "When using bow-type weapons, maintaining a fully drawn bow increases weapon damage by per second, stacking for up to 3 seconds."
+    "description": "When using bow-type weapons, maintaining a fully drawn bow increases weapon damage by 25% every 1 seconds for 12 seconds, stacking up to 3 times. Cooldown: 22 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.penetrating_shot",
@@ -1708,7 +3392,39 @@
       ]
      }
     ],
-    "description": "Gain headshot penetration and armor penetration for seconds. Bow and crossbow attacks pierce targets. Cooldown: seconds"
+    "description": "Gain 50% headshot penetration and 25% armor penetration for 8 seconds. Bow and crossbow attacks pierce targets. Cooldown: 18 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.skill.purge_shot",
+    "name": "Purge Shot",
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "icon": "7b06f103b176bbcb63035701294d91a7d76712a3a9e91bbf062df0faf776a473",
+    "icon_url": "https://cdn.darkerdb.com/codex/7b06f103b176bbcb63035701294d91a7d76712a3a9e91bbf062df0faf776a473",
+    "abilities": [
+     {
+      "id": "id.skill_ability.purge_shot",
+      "effects": [
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_magical_damage_base": 10,
+        "exec_attribute_bonus_ratio": 1000
+       },
+       {
+        "duration": 10000
+       }
+      ]
+     }
+    ],
+    "description": "For 10 seconds, removes all magical buffs from the target. Each successful ranged weapon hit deals 10(1.0) magical damage magical damage per buff removed. Cooldown: 32 seconds",
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
    },
    {
     "id": "id.skill.quick_fire",
@@ -1732,7 +3448,10 @@
       ]
      }
     ],
-    "description": "Gain an additional action speed for seconds while using bow-type weapons. Cooldown: seconds"
+    "description": "Gain an additional 50% action speed for 8 seconds while using bow-type weapons. Cooldown: 18 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.quick_shot",
@@ -1749,7 +3468,35 @@
       "effects": []
      }
     ],
-    "description": "Fire arrows in a quick succession. Each bow-type will fire a different amount of arrows. Cooldown: seconds"
+    "description": "Fire arrows in a quick succession. Each bow-type will fire a different amount of arrows. Cooldown: 22 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.skill.taming_shot",
+    "name": "Taming Shot",
+    "allowed_classes": [
+     "id.class.ranger",
+     "id.class.grand_master_ranger"
+    ],
+    "icon": "19ee32f6a27e232846dc6f6e65b713ccf6463708dd5015d3443072b8e9342f41",
+    "icon_url": "https://cdn.darkerdb.com/codex/19ee32f6a27e232846dc6f6e65b713ccf6463708dd5015d3443072b8e9342f41",
+    "abilities": [
+     {
+      "id": "id.skill_ability.taming_shot",
+      "effects": [
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_physical_damage_true": 3
+       }
+      ]
+     }
+    ],
+    "description": "Hit an animal to tame it and have it assist the Ranger. Already tamed animals cannot be tamed again.",
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
    },
    {
     "id": "id.skill.true_shot",
@@ -1771,7 +3518,10 @@
       ]
      }
     ],
-    "description": "Projectile flight speed is greatly increased, also increasing physical damage bonus by for seconds."
+    "description": "Projectile flight speed is greatly increased, also increasing physical damage bonus by 8% for 8 seconds. Cooldown: 18 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "stats": {
@@ -1782,9 +3532,11 @@
    "dexterity": 18,
    "knowledge": 12,
    "move_speed": 300,
-   "max_health_add": 25,
    "resourcefulness": 23
   },
+  "patch": "0.16.138.8712",
+  "patch_name": "Hotfix 115",
+  "is_new": false,
   "spell_count": 0,
   "song_count": 0,
   "shapeshift_count": 0
@@ -1794,35 +3546,167 @@
   "name": "Rogue",
   "perks": [
    {
+    "id": "id.perk.ambush",
+    "name": "Ambush",
+    "perk_tag": null,
+    "icon": "0afd36c7989c9bfdaf0d21ac33a6a256fc2d8ea770c2c0a34636c544a5d8a770",
+    "icon_url": "https://cdn.darkerdb.com/codex/0afd36c7989c9bfdaf0d21ac33a6a256fc2d8ea770c2c0a34636c544a5d8a770",
+    "abilities": [],
+    "description": "When coming out of hide, you gain an additional 10% move speed bonus for 3 seconds. If the melee attack is successful, the effect disappears.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.back_attack",
+    "name": "Back Attack",
+    "perk_tag": null,
+    "icon": "ba3a15ea5e0fa24f173f489bf33b03ca382050b4bab8e4d1ae995e310d0d0cb2",
+    "icon_url": "https://cdn.darkerdb.com/codex/ba3a15ea5e0fa24f173f489bf33b03ca382050b4bab8e4d1ae995e310d0d0cb2",
+    "abilities": [],
+    "description": "When attacking a target from behind, gain 30% backstab power.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.back_attack",
+      "physical_backstab_power": 300
+     }
+    ],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.creep",
+    "name": "Creep",
+    "perk_tag": null,
+    "icon": "8e97f862e36fdd28a2e1b7f53b89bde969e78f48fd4986a27db899c061171821",
+    "icon_url": "https://cdn.darkerdb.com/codex/8e97f862e36fdd28a2e1b7f53b89bde969e78f48fd4986a27db899c061171821",
+    "abilities": [],
+    "description": "While crouch walking, reduce the volume of footsteps significantly and gain 10% move speed bonus. While crouched, reduce monster detection radius by 5%.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.creep"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.dagger_mastery",
+    "name": "Dagger Mastery",
+    "perk_tag": null,
+    "icon": "f5e2bc242ed30748f6bc89737eb1941cbcd2c1cb22fd30e50d695399ad5508cb",
+    "icon_url": "https://cdn.darkerdb.com/codex/f5e2bc242ed30748f6bc89737eb1941cbcd2c1cb22fd30e50d695399ad5508cb",
+    "abilities": [],
+    "description": "While using a dagger or throwing knives, gain 15% physical damage bonus and 1 true physical damage.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.dagger_mastery_melee",
+      "physical_damage_mod": 150,
+      "physical_damage_true": 1
+     },
+     {
+      "id": "id.actor_status_effect.dagger_mastery_ranged",
+      "physical_damage_mod": 150,
+      "physical_damage_true": 1
+     }
+    ],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.double_jump",
+    "name": "Double Jump",
+    "perk_tag": null,
+    "icon": "4112439f41a9883d4afed7bc7e7d1e6c02557c70e4364f14b2d7f713fd518924",
+    "icon_url": "https://cdn.darkerdb.com/codex/4112439f41a9883d4afed7bc7e7d1e6c02557c70e4364f14b2d7f713fd518924",
+    "abilities": [],
+    "description": "You gain the ability to jump an additional time in the air.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.double_jump"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.hand_crossbow_mastery",
+    "name": "Hand Crossbow Mastery",
+    "perk_tag": null,
+    "icon": "4405f694517ebbdac99a6dd4d7cae6aec1a41231b76f14cb4585cace4623bbcd",
+    "icon_url": "https://cdn.darkerdb.com/codex/4405f694517ebbdac99a6dd4d7cae6aec1a41231b76f14cb4585cace4623bbcd",
+    "abilities": [],
+    "description": "Gain the ability to equip the Hand Crossbow, while using it gain + weapon damage.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.hand_crossbow_mastery",
+      "physical_damage_weapon": 2
+     }
+    ],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.hide_mastery",
+    "name": "Hide Mastery",
+    "perk_tag": null,
+    "icon": "39660adf97e0b429012ea4bc92b56279870b877ef567c4db403f580b10aa832c",
+    "icon_url": "https://cdn.darkerdb.com/codex/39660adf97e0b429012ea4bc92b56279870b877ef567c4db403f580b10aa832c",
+    "abilities": [],
+    "description": "Increases the duration of the hide skill by 1.5 times and reduces its cooldown time by 93%.",
+    "effects": [
+     {
+      "id": "id.perk_effect.hide_mastery"
+     },
+     {
+      "id": "id.actor_status_effect.hide_mastery"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
     "id": "id.perk.jokester",
     "name": "Jokester",
     "perk_tag": null,
     "icon": "1a27a6f2a9492416e735b313f5ae8f8af87f046ba0a096a84b56563051df295d",
     "icon_url": "https://cdn.darkerdb.com/codex/1a27a6f2a9492416e735b313f5ae8f8af87f046ba0a096a84b56563051df295d",
-    "abilities": [
-     {
-      "id": "id.perk_ability.jokester",
-      "effects": [
-       {
-        "target_type": "EGameplayEffectTargetType::EventData"
-       }
-      ]
-     },
-     {
-      "id": "id.perk_ability.jokester_granted",
-      "effects": [
-       {
-        "will_base": 2,
-        "vigor_base": 2,
-        "agility_base": 2,
-        "strength_base": 2,
-        "dexterity_base": 2,
-        "knowledge_base": 2,
-        "resourcefulness_base": 2
-       }
-      ]
-     }
-    ],
+    "abilities": [],
     "description": "Give all party members all attributes.",
     "effects": [
      {
@@ -1832,7 +3716,73 @@
     "allowed_classes": [
      "id.class.rogue",
      "id.class.grand_master_rogue"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.lethal_mark",
+    "name": "Lethal Mark",
+    "perk_tag": null,
+    "icon": "4145e067d0bc6cb8806e0b7d2c0c4e1dc1875946e9fb9dcfa757ed2a5130c2ba",
+    "icon_url": "https://cdn.darkerdb.com/codex/4145e067d0bc6cb8806e0b7d2c0c4e1dc1875946e9fb9dcfa757ed2a5130c2ba",
+    "abilities": [],
+    "description": "A target hit by a throwing knife loses 30% physical damage reduction for 8 seconds. This effect does not stack on the same target.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.lethal_mark"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.pickpocket",
+    "name": "Pickpocket",
+    "perk_tag": null,
+    "icon": "4ab84dd4bf962d16c61bfba581481f456cc320d4d8bc9cd4c5c795b1338402ec",
+    "icon_url": "https://cdn.darkerdb.com/codex/4ab84dd4bf962d16c61bfba581481f456cc320d4d8bc9cd4c5c795b1338402ec",
+    "abilities": [],
+    "description": "Steal items from nearby enemies. Additionally, your hide will not be revealed when you are bumped into. Items worn in utility slots do not appear on the waist.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.pickpocket"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.poisoned_weapon",
+    "name": "Poisoned Weapon",
+    "perk_tag": null,
+    "icon": "50c96b6adea4d4f20ca6d1ac43dbda628231a7e6dc17d1828935ccc9076aad93",
+    "icon_url": "https://cdn.darkerdb.com/codex/50c96b6adea4d4f20ca6d1ac43dbda628231a7e6dc17d1828935ccc9076aad93",
+    "abilities": [],
+    "description": "A successful attack applies poison that deals 4(0.5) magical damage and reduces their incoming physical healing by 10% and incoming magical healing by 10% over 4 seconds. The poison can stack up to 5 times.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.poisoned_weapon"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.perk.stealth",
@@ -1840,74 +3790,120 @@
     "perk_tag": null,
     "icon": "3c6b58c678f3052100ae446df83b28e8b3b8bf19ffa08ae60349fd9baae806ad",
     "icon_url": "https://cdn.darkerdb.com/codex/3c6b58c678f3052100ae446df83b28e8b3b8bf19ffa08ae60349fd9baae806ad",
-    "abilities": [
-     {
-      "id": "id.perk_ability.stealth",
-      "effects": [
-       {
-        "move_speed_add": 3
-       }
-      ]
-     }
-    ],
-    "description": "While hiding, gain the ability to move 10 steps while crouching or slow walking. Also gain additional move speed per remaining step.",
-    "effects": [],
-    "allowed_classes": [
-     "id.class.rogue",
-     "id.class.grand_master_rogue"
-    ]
-   },
-   {
-    "id": "id.perk.ambush",
-    "name": "Ambush",
-    "perk_tag": null,
-    "icon": "0afd36c7989c9bfdaf0d21ac33a6a256fc2d8ea770c2c0a34636c544a5d8a770",
-    "icon_url": "https://cdn.darkerdb.com/codex/0afd36c7989c9bfdaf0d21ac33a6a256fc2d8ea770c2c0a34636c544a5d8a770",
-    "abilities": [
-     {
-      "id": "id.perk_ability.ambush",
-      "effects": [
-       {
-        "duration": 3000,
-        "move_speed_mod": 100
-       },
-       {
-        "physical_damage_mod": 250
-       }
-      ]
-     }
-    ],
-    "description": "When coming out of hide, you gain an additional move speed bonus and physical damage bonus for seconds. If the melee attack is successful, the effect disappears.",
-    "effects": [],
-    "allowed_classes": [
-     "id.class.rogue",
-     "id.class.grand_master_rogue"
-    ]
-   },
-   {
-    "id": "id.perk.dagger_mastery",
-    "name": "Dagger Mastery",
-    "perk_tag": null,
-    "icon": "f5e2bc242ed30748f6bc89737eb1941cbcd2c1cb22fd30e50d695399ad5508cb",
-    "icon_url": "https://cdn.darkerdb.com/codex/f5e2bc242ed30748f6bc89737eb1941cbcd2c1cb22fd30e50d695399ad5508cb",
     "abilities": [],
-    "description": "While using a dagger or throwing knives, gain physical damage bonus and true physical damage.",
+    "description": "While hiding, gain the ability to move 10 steps while crouching or slow walking. Also gain 3 additional move speed per remaining step.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.thrust",
+    "name": "Thrust",
+    "perk_tag": null,
+    "icon": "b3a85a27fe6ab5ecd943edfa1ac7df3e471bed4b68400ac1e890cd3a07f08105",
+    "icon_url": "https://cdn.darkerdb.com/codex/b3a85a27fe6ab5ecd943edfa1ac7df3e471bed4b68400ac1e890cd3a07f08105",
+    "abilities": [],
+    "description": "While using dagger, gain an additional 15% armor penetration.",
     "effects": [
      {
-      "id": "id.actor_status_effect.dagger_mastery_melee",
-      "physical_damage_mod": 100,
-      "physical_damage_true": 1
-     },
-     {
-      "id": "id.actor_status_effect.dagger_mastery_ranged",
-      "physical_damage_mod": 100,
-      "physical_damage_true": 1
+      "id": "id.actor_status_effect.thrust",
+      "armor_penetration": 150
      }
     ],
     "allowed_classes": [
      "id.class.rogue",
      "id.class.grand_master_rogue"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.traps_and_locks",
+    "name": "Traps and Locks",
+    "perk_tag": null,
+    "icon": "3533308ed3a6334c75b54cdce893e93d23770e7e816bc65ce99db64d96cccdbb",
+    "icon_url": "https://cdn.darkerdb.com/codex/3533308ed3a6334c75b54cdce893e93d23770e7e816bc65ce99db64d96cccdbb",
+    "abilities": [],
+    "description": "You can unlock locked locks without a lockpick and detect traps within a certain range to disarm them.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.traps_and_locks"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.trickster",
+    "name": "Trickster",
+    "perk_tag": null,
+    "icon": "8b4c64db658cb31bce6b1957107cf593497672345e05c05f0fcb77e1e6e79948",
+    "icon_url": "https://cdn.darkerdb.com/codex/8b4c64db658cb31bce6b1957107cf593497672345e05c05f0fcb77e1e6e79948",
+    "abilities": [],
+    "description": "While using throwing weapons, gain 30% action speed and 10% move speed bonus. Increased 50% item equip speed.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.trickster",
+      "action_speed": 300,
+      "move_speed_mod": 100
+     },
+     {
+      "id": "id.actor_status_effect.trickster_item_equip_speed",
+      "item_equip_speed": 500
+     }
+    ],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.veil_of_shadows",
+    "name": "Veil of Shadows",
+    "perk_tag": null,
+    "icon": "aba617c19389e2849678798c6a6006715eca669d7e218db137044d724d099d35",
+    "icon_url": "https://cdn.darkerdb.com/codex/aba617c19389e2849678798c6a6006715eca669d7e218db137044d724d099d35",
+    "abilities": [],
+    "description": "When health falls below 3%, you immediately enter stealth for 6 seconds and gain a 10% move speed bonus. Cooldown: 48 seconds",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.wall_ride",
+    "name": "Wall Ride",
+    "perk_tag": null,
+    "icon": "c35953deea63833348ca82d4925b4a024ff7a16edf456f7dc6f7027c210d3812",
+    "icon_url": "https://cdn.darkerdb.com/codex/c35953deea63833348ca82d4925b4a024ff7a16edf456f7dc6f7027c210d3812",
+    "abilities": [],
+    "description": "Allows you to climb along walls for up to 10 steps and perform an additional jump by kicking off a wall. You will automatically fall after hanging on a wall for 16 seconds.",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
    }
   ],
   "icon": "d5dda4d03df7ae05d060ad0f4b1467ac9dae61abfc4cae5a1002c3724406e6bd",
@@ -1940,7 +3936,10 @@
       ]
      }
     ],
-    "description": "Drops Caltrops at your feet that deal physical damage and slows the move speed bonus by of anything that steps on them for seconds. Cooldown: seconds"
+    "description": "Drops Caltrops at your feet that deal 10(1.0) physical damage and slows the move speed bonus by 50% of anything that steps on them for 3 seconds. Cooldown: 28 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.cut_throat",
@@ -1962,7 +3961,10 @@
       ]
      }
     ],
-    "description": "When you successfully hit a target, silence them for seconds, disabling the targets skills spells performance abilities. Cooldown: seconds"
+    "description": "When you successfully hit a target, silence them for 2 seconds, disabling the targets skills spells performance abilities. Cooldown: 18 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.dual_strike",
@@ -1983,7 +3985,10 @@
       "effects": []
      }
     ],
-    "description": "Strike simultaneously with both daggers, delivering a powerful blow that combines the damage of both weapons. Cooldown: seconds"
+    "description": "Strike simultaneously with both daggers, delivering a powerful blow that combines the damage of both weapons. Cooldown: 18 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.hide",
@@ -2000,11 +4005,38 @@
       "effects": [
        {
         "duration": 8000
+       },
+       {
+        "duration": 3000,
+        "physical_damage_mod": -300
        }
       ]
      }
     ],
-    "description": "Become invisible for seconds. It is possible to change your equipment in this state. You are revealed when you attempt an action, such as moving, attacking, or using a skill. Cooldown: seconds"
+    "description": "Become invisible for 8 seconds. It is possible to change your equipment in this state. You are revealed when you attempt an action, such as moving, attacking, or using a skill. After being revealed, you suffer a 30% physical damage bonus penalty for 3 seconds. Cooldown: 32 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.skill.play_dead",
+    "name": "Play Dead",
+    "allowed_classes": [
+     "id.class.rogue",
+     "id.class.grand_master_rogue"
+    ],
+    "icon": "abc21831111c239afaf0713e1fe3f191b0d27fd7772de42503d4283aeb6a41bb",
+    "icon_url": "https://cdn.darkerdb.com/codex/abc21831111c239afaf0713e1fe3f191b0d27fd7772de42503d4283aeb6a41bb",
+    "abilities": [
+     {
+      "id": "id.skill_ability.play_dead",
+      "effects": []
+     }
+    ],
+    "description": "Play dead and lie down like a corpse. Cooldown: 6 seconds",
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
    },
    {
     "id": "id.skill.rupture",
@@ -2022,13 +4054,16 @@
        {
         "duration": 5000,
         "target_type": "EGameplayEffectTargetType::EventData",
-        "exec_physical_damage_base": 20,
-        "exec_attribute_bonus_ratio": 500
+        "exec_physical_damage_base": 15,
+        "exec_attribute_bonus_ratio": 750
        }
       ]
      }
     ],
-    "description": "The next successful attack causes the target to bleed for physical damage over seconds. The buff is consumed when an attack hits an object or target. Cooldown: seconds"
+    "description": "The next successful attack causes the target to bleed for 15(0.75) physical damage over 5 seconds. The buff is consumed when an attack hits an object or target. Cooldown: 24 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.shadowstep",
@@ -2042,10 +4077,17 @@
     "abilities": [
      {
       "id": "id.skill_ability.shadowstep",
-      "effects": []
+      "effects": [
+       {
+        "duration": 12000
+       }
+      ]
      }
     ],
-    "description": "While using a dagger or throwing knives, your next attack instantly moves you behind the target on hit. Cooldown: seconds"
+    "description": "While using a dagger or throwing knives, your next attack instantly moves you behind the target on hit within 12 seconds. Cooldown: 24 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.smoke_pot",
@@ -2067,7 +4109,10 @@
       ]
      }
     ],
-    "description": "A smoke pot is deployed creating a smoke screen. The smoke screen lasts seconds and covers a 6m area.When an enemy target enters the smoke screen, reduces their move speed bonus by."
+    "description": "A smoke pot is deployed creating a smoke screen. The smoke screen lasts 8 seconds and covers a 6m area.When an enemy target enters the smoke screen, reduces their move speed bonus by 5%. Cooldown: 60 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.sneak_attack",
@@ -2084,16 +4129,19 @@
       "effects": [
        {
         "target_type": "EGameplayEffectTargetType::EventData",
-        "exec_physical_damage_base": 10
+        "exec_physical_damage_base": 15
        },
        {
         "target_type": "EGameplayEffectTargetType::EventData",
-        "exec_physical_damage_base": 20
+        "exec_physical_damage_base": 10
        }
       ]
      }
     ],
-    "description": "Your next melee attack deals an additional physical damage. If the target is not in combat, it deals an additional physical damage. Cooldown: seconds"
+    "description": "Your next melee attack deals an additional 15 physical damage. If the target is not in combat, it deals an additional 10 physical damage. Cooldown: 24 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.tumbling",
@@ -2110,7 +4158,10 @@
       "effects": []
      }
     ],
-    "description": "When used, backtumbles in the opposite direction the player is facing. Cooldown: seconds"
+    "description": "When used, backtumbles in the opposite direction the player is facing. Cooldown: 0.5 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.weakpoint_attack",
@@ -2128,12 +4179,15 @@
        {
         "duration": 3000,
         "target_type": "EGameplayEffectTargetType::EventData",
-        "item_armor_rating_mod": -400
+        "item_armor_rating_mod": -300
        }
       ]
      }
     ],
-    "description": "When you successfully hit a target, reduce their armor rating bonus by for seconds. Only when melee attacking. Cooldown: seconds"
+    "description": "When you successfully hit a target, reduce their armor rating bonus by 30% for 3 seconds. Only when melee attacking. Cooldown: 24 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "stats": {
@@ -2144,9 +4198,11 @@
    "dexterity": 20,
    "knowledge": 10,
    "move_speed": 300,
-   "max_health_add": 25,
    "resourcefulness": 25
   },
+  "patch": "0.16.138.8712",
+  "patch_name": "Hotfix 115",
+  "is_new": false,
   "spell_count": 0,
   "song_count": 0,
   "shapeshift_count": 0
@@ -2156,22 +4212,128 @@
   "name": "Sorcerer",
   "perks": [
    {
+    "id": "id.perk.air_mastery",
+    "name": "Air Mastery",
+    "perk_tag": null,
+    "icon": "003ec38d6220ecd5b97d164d1222311493a4f4df3bbd03649a134c6778ab57a4",
+    "icon_url": "https://cdn.darkerdb.com/codex/003ec38d6220ecd5b97d164d1222311493a4f4df3bbd03649a134c6778ab57a4",
+    "abilities": [],
+    "description": "Gain 15% air magic knockback power bonus and 50% air magical damage bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.air_mastery",
+      "magical_air_damage_mod": 500,
+      "magical_air_knockback_mod": 150
+     }
+    ],
+    "allowed_classes": [
+     "id.class.sorcerer"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.apex_of_sorcery",
+    "name": "Apex of Sorcery",
+    "perk_tag": null,
+    "icon": "29373c54aef1099ac0cf134a64234230b283a4710e1853a53746bce4657ee782",
+    "icon_url": "https://cdn.darkerdb.com/codex/29373c54aef1099ac0cf134a64234230b283a4710e1853a53746bce4657ee782",
+    "abilities": [],
+    "description": "While casting spells, reduce movement speed by 99.9%, but gain 50% magical damage bonus and 50% spell casting speed, 25% action speed.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.apex_of_sorcery"
+     },
+     {
+      "id": "id.actor_status_effect.apex_of_sorcery_activated",
+      "action_speed": 250,
+      "magical_damage_mod": 500,
+      "spell_casting_speed": 500
+     }
+    ],
+    "allowed_classes": [
+     "id.class.sorcerer"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.elemental_fury",
+    "name": "Elemental Fury",
+    "perk_tag": null,
+    "icon": "a9218e3c8c9933c6ebbd15af6e8c8f8069a2944cb82dd59eff27b8d8517fc5eb",
+    "icon_url": "https://cdn.darkerdb.com/codex/a9218e3c8c9933c6ebbd15af6e8c8f8069a2944cb82dd59eff27b8d8517fc5eb",
+    "abilities": [],
+    "description": "For every 1% of health lost, gain a 0.5% cooldown reduction bonus and 0.25% magical damage bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.elemental_fury"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.sorcerer"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.innate_talent",
+    "name": "Innate Talent",
+    "perk_tag": null,
+    "icon": "a7d40fda100720f7dfc84e1810bf0c0d8985f8f2f83f8d47a68733a88e55bee6",
+    "icon_url": "https://cdn.darkerdb.com/codex/a7d40fda100720f7dfc84e1810bf0c0d8985f8f2f83f8d47a68733a88e55bee6",
+    "abilities": [],
+    "description": "Grants 5 additional memory capacity. when using magic with bare hands, gain 5 magical power and 10% spell casting speed.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.innate_talent",
+      "memory_capacity_add": 5
+     },
+     {
+      "id": "id.actor_status_effect.innate_talent_activated",
+      "magical_power": 5,
+      "spell_casting_speed": 100
+     }
+    ],
+    "allowed_classes": [
+     "id.class.sorcerer"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.lightning_mastery",
+    "name": "Lightning Mastery",
+    "perk_tag": null,
+    "icon": "b9f9f701007c170a4cb563e6cfe124b6d5a1a62a563389ec1c7a9bf5cac27e0b",
+    "icon_url": "https://cdn.darkerdb.com/codex/b9f9f701007c170a4cb563e6cfe124b6d5a1a62a563389ec1c7a9bf5cac27e0b",
+    "abilities": [],
+    "description": "Gain 25% lightning magical damage bonus. Once every 2 seconds while dealing lightning magical damage, inflict electric shock for 1 seconds, transferring 5 lightning magical damage to the closest target within m of the primary target.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.lightning_mastery",
+      "magical_lightning_damage_mod": 250
+     }
+    ],
+    "allowed_classes": [
+     "id.class.sorcerer"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
     "id": "id.perk.mana_flow",
     "name": "Mana Flow",
     "perk_tag": null,
     "icon": "f9c663b6f17bb0d8e3879c6c7257f15cdb248f608997a5a084a0b35d72d0a3f0",
     "icon_url": "https://cdn.darkerdb.com/codex/f9c663b6f17bb0d8e3879c6c7257f15cdb248f608997a5a084a0b35d72d0a3f0",
-    "abilities": [
-     {
-      "id": "id.perk_ability.mana_flow",
-      "effects": [
-       {
-        "magical_damage_mod": 50
-       }
-      ]
-     }
-    ],
-    "description": "For each successful spell cast, gain magical damage bonus. This effect stacks up to 3 times and resets on the next successful cast.",
+    "abilities": [],
+    "description": "Each successful spell cast within 4 seconds increases your magical damage bonus by 5% and magic penetration by 5%. This effect stacks up to 3 times, and all stacks are removed if the timing window expires.",
     "effects": [
      {
       "id": "id.actor_status_effect.mana_flow"
@@ -2179,7 +4341,10 @@
     ],
     "allowed_classes": [
      "id.class.sorcerer"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.perk.mana_fold",
@@ -2187,13 +4352,8 @@
     "perk_tag": null,
     "icon": "ad32ffd0e0440aa9fa9a0e8d33153740abbc2ddee432387a78b5d92c9997f775",
     "icon_url": "https://cdn.darkerdb.com/codex/ad32ffd0e0440aa9fa9a0e8d33153740abbc2ddee432387a78b5d92c9997f775",
-    "abilities": [
-     {
-      "id": "id.perk_ability.mana_fold",
-      "effects": []
-     }
-    ],
-    "description": "Reduce all spell cooldowns by, but lose spell casting speed.",
+    "abilities": [],
+    "description": "Reduce all spell cooldowns by 92.5%, but lose 15% spell casting speed.",
     "effects": [
      {
       "id": "id.actor_status_effect.mana_fold",
@@ -2202,7 +4362,54 @@
     ],
     "allowed_classes": [
      "id.class.sorcerer"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.merged_might",
+    "name": "Merged Might",
+    "perk_tag": null,
+    "icon": "2d4ecc815ef2b0ac06e9ead01c9b16f5fc7b50a96ead974e9f12a3c8e6250f7b",
+    "icon_url": "https://cdn.darkerdb.com/codex/2d4ecc815ef2b0ac06e9ead01c9b16f5fc7b50a96ead974e9f12a3c8e6250f7b",
+    "abilities": [],
+    "description": "When casting a merge spell, gain 5 magical power. After casting, gain a 5% move speed bonus for 2 seconds.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.merged_might"
+     },
+     {
+      "id": "id.actor_status_effect.merged_might_casting_activated",
+      "magical_power": 5
+     }
+    ],
+    "allowed_classes": [
+     "id.class.sorcerer"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.spell_sculpting",
+    "name": "Spell Sculpting",
+    "perk_tag": null,
+    "icon": "c0e430744575d3c7832e746510902f8237299733e7937d22158f763b443dbe83",
+    "icon_url": "https://cdn.darkerdb.com/codex/c0e430744575d3c7832e746510902f8237299733e7937d22158f763b443dbe83",
+    "abilities": [],
+    "description": "Increases the range of all spells by 12.5% and the area of ​​effect by 12.5%, but increases the cooldown time by 87.5%.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.spell_sculpting"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.sorcerer"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.perk.spell_stride",
@@ -2211,7 +4418,7 @@
     "icon": "98e15b1c5cddce8ec76b30dd3b9c3a5417f874d2b427f308852d34ccce8f5f2a",
     "icon_url": "https://cdn.darkerdb.com/codex/98e15b1c5cddce8ec76b30dd3b9c3a5417f874d2b427f308852d34ccce8f5f2a",
     "abilities": [],
-    "description": "Gain move speed bonus while casting two spells simultaneously.",
+    "description": "Gain 30% move speed bonus while casting two spells simultaneously.",
     "effects": [
      {
       "id": "id.actor_status_effect.spell_stride",
@@ -2220,29 +4427,30 @@
     ],
     "allowed_classes": [
      "id.class.sorcerer"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
-    "id": "id.perk.spell_sculpting",
-    "name": "Spell Sculpting",
+    "id": "id.perk.time_distortion",
+    "name": "Time Distortion",
     "perk_tag": null,
-    "icon": "c0e430744575d3c7832e746510902f8237299733e7937d22158f763b443dbe83",
-    "icon_url": "https://cdn.darkerdb.com/codex/c0e430744575d3c7832e746510902f8237299733e7937d22158f763b443dbe83",
-    "abilities": [
-     {
-      "id": "id.perk_ability.spell_sculpting",
-      "effects": []
-     }
-    ],
-    "description": "Increases the range of all spells by and the area of ​​effect by, but increases the cooldown time by.",
+    "icon": "b16222828ed7221ff9e2a8cbe68cf6b56bbed827df125c6378e35c1e163be717",
+    "icon_url": "https://cdn.darkerdb.com/codex/b16222828ed7221ff9e2a8cbe68cf6b56bbed827df125c6378e35c1e163be717",
+    "abilities": [],
+    "description": "Reduces cast time of all spells by 5%, but increases cooldown time for all spells by 20%.",
     "effects": [
      {
-      "id": "id.actor_status_effect.spell_sculpting"
+      "id": "id.actor_status_effect.time_distortion"
      }
     ],
     "allowed_classes": [
      "id.class.sorcerer"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "icon": "fa8166808b163144facd695504b612a8e6009893d1e94c62423ae5e562f8de7e",
@@ -2271,7 +4479,10 @@
       "effects": []
      }
     ],
-    "description": "Gain the ability to use sorcery in the dungeon."
+    "description": "Gain the ability to use sorcery in the dungeon.",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.sorcery2",
@@ -2295,7 +4506,10 @@
       "effects": []
      }
     ],
-    "description": "Gain the ability to use sorcery in the dungeon."
+    "description": "Gain the ability to use sorcery in the dungeon.",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "stats": {
@@ -2306,9 +4520,11 @@
    "dexterity": 18,
    "knowledge": 20,
    "move_speed": 300,
-   "max_health_add": 25,
    "resourcefulness": 12
   },
+  "patch": "0.16.138.8712",
+  "patch_name": "Hotfix 115",
+  "is_new": false,
   "spell_count": 14,
   "song_count": 0,
   "shapeshift_count": 0
@@ -2318,94 +4534,13 @@
   "name": "Warlock",
   "perks": [
    {
-    "id": "id.perk.torture_mastery",
-    "name": "Torture Mastery",
-    "perk_tag": null,
-    "icon": "45fb50348b72805b3c350e62976ef95e950359d0ec9491ec7fcaa2eb0e3eadcd",
-    "icon_url": "https://cdn.darkerdb.com/codex/45fb50348b72805b3c350e62976ef95e950359d0ec9491ec7fcaa2eb0e3eadcd",
-    "abilities": [
-     {
-      "id": "id.perk_ability.torture_mastery",
-      "effects": [
-       {
-        "exec_recovery_heal_base": 2,
-        "exec_attribute_bonus_ratio": 150
-       }
-      ]
-     }
-    ],
-    "description": "All curses inflicted upon enemies restores recoverable health to the caster with each instance of damage dealt. All Warlock spell costs are doubled when this perk is equipped.",
-    "effects": [
-     {
-      "id": "id.actor_status_effect.torture_mastery"
-     }
-    ],
-    "allowed_classes": [
-     "id.class.warlock",
-     "id.class.grand_master_warlock"
-    ]
-   },
-   {
-    "id": "id.perk.vampirism",
-    "name": "Vampirism",
-    "perk_tag": null,
-    "icon": "4a1c49327dd1976b303996810f8b31d61f1cd511defbcb6e6efb424e024685e0",
-    "icon_url": "https://cdn.darkerdb.com/codex/4a1c49327dd1976b303996810f8b31d61f1cd511defbcb6e6efb424e024685e0",
-    "abilities": [],
-    "description": "Gain magical healing bonus.",
-    "effects": [
-     {
-      "id": "id.actor_status_effect.vampirism",
-      "magical_heal_mod": 200
-     }
-    ],
-    "allowed_classes": [
-     "id.class.warlock",
-     "id.class.grand_master_warlock"
-    ]
-   },
-   {
-    "id": "id.perk.soul_collector",
-    "name": "Soul Collector",
-    "perk_tag": null,
-    "icon": "814ac50169e90d2453582c134c219d9b2c5bc7b4b7e58288708db1aaa975e371",
-    "icon_url": "https://cdn.darkerdb.com/codex/814ac50169e90d2453582c134c219d9b2c5bc7b4b7e58288708db1aaa975e371",
-    "abilities": [
-     {
-      "id": "id.perk_ability.soul_collector",
-      "effects": [
-       {
-        "will_base": 1,
-        "vigor_base": 1,
-        "agility_base": 1,
-        "strength_base": 1,
-        "dexterity_base": 1,
-        "knowledge_base": 1,
-        "resourcefulness_base": 1,
-        "magical_dark_damage_mod": 330
-       }
-      ]
-     }
-    ],
-    "description": "When you deal the final blow to an enemy, one darkness shard is collected. Gain all attributes, dark magical damage bonus for each shard collected, up to a maximum of shards. When you deal dark magic damage, consume all collected shards.",
-    "effects": [
-     {
-      "id": "id.actor_status_effect.soul_collector"
-     }
-    ],
-    "allowed_classes": [
-     "id.class.warlock",
-     "id.class.grand_master_warlock"
-    ]
-   },
-   {
     "id": "id.perk.antimagic",
     "name": "Antimagic",
     "perk_tag": null,
     "icon": "6412df3b7476a7a892e076828ba5d9ce466919bebb3ce624a569cd709d8b0153",
     "icon_url": "https://cdn.darkerdb.com/codex/6412df3b7476a7a892e076828ba5d9ce466919bebb3ce624a569cd709d8b0153",
     "abilities": [],
-    "description": "Gain magical damage reduction except against divine magic.",
+    "description": "Gain 20% magical damage reduction except against divine magic.",
     "effects": [
      {
       "id": "id.actor_status_effect.antimagic",
@@ -2424,7 +4559,248 @@
     "allowed_classes": [
      "id.class.warlock",
      "id.class.grand_master_warlock"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.curse_mastery",
+    "name": "Curse Mastery",
+    "perk_tag": null,
+    "icon": "255b8b80708642fc8ccaa1c0390f2b11af1a99a8595bba80b05f0c81a6414582",
+    "icon_url": "https://cdn.darkerdb.com/codex/255b8b80708642fc8ccaa1c0390f2b11af1a99a8595bba80b05f0c81a6414582",
+    "abilities": [],
+    "description": "Gain 30% duration towards all curses you cast.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.curse_mastery"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.dark_enhancement",
+    "name": "Dark Enhancement",
+    "perk_tag": null,
+    "icon": "29352fee18a55797e0ca1e571a5dc2a06f1451b0c0d992b10751ebf154d7ce65",
+    "icon_url": "https://cdn.darkerdb.com/codex/29352fee18a55797e0ca1e571a5dc2a06f1451b0c0d992b10751ebf154d7ce65",
+    "abilities": [],
+    "description": "Gain 20% dark magical damage bonus towards dark magic spells.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.dark_enhancement",
+      "magical_dark_damage_mod": 200
+     }
+    ],
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.dark_reflection",
+    "name": "Dark Reflection",
+    "perk_tag": null,
+    "icon": "b00ccf5c93bfa23da350868fd987ceb8398671f56c20cbb0bd6d9d76365d1177",
+    "icon_url": "https://cdn.darkerdb.com/codex/b00ccf5c93bfa23da350868fd987ceb8398671f56c20cbb0bd6d9d76365d1177",
+    "abilities": [],
+    "description": "While active, reflect 15(0.25) dark magical damage to the melee attacker. Does not reflect while on cooldown. Cooldown: 15 seconds",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.demon_armor",
+    "name": "Demon Armor",
+    "perk_tag": null,
+    "icon": "9a692015acd527f1c59ec23747e646b53321d433c9a0da9a1a3d605aaa25a4f0",
+    "icon_url": "https://cdn.darkerdb.com/codex/9a692015acd527f1c59ec23747e646b53321d433c9a0da9a1a3d605aaa25a4f0",
+    "abilities": [],
+    "description": "Gain the ability to equip plate armor, but lose 10% spell casting speed.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.demon_armor_buff"
+     },
+     {
+      "id": "id.actor_status_effect.demon_armor_debuff",
+      "spell_casting_speed": -100
+     }
+    ],
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.immortal_lament",
+    "name": "Immortal Lament",
+    "perk_tag": null,
+    "icon": "b4a6d04ee1a7d7b6be2a82001c2d7a1b2e71a4df22c8f5be7e99e5127836b83a",
+    "icon_url": "https://cdn.darkerdb.com/codex/b4a6d04ee1a7d7b6be2a82001c2d7a1b2e71a4df22c8f5be7e99e5127836b83a",
+    "abilities": [],
+    "description": "Casting spells will no longer take you below 1 health. When your health falls below 5%, gain 100% increased magical healing bonus for 5 seconds. Cooldown: 10 seconds",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.immortal_lament"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.infernal_pledge",
+    "name": "Infernal Pledge",
+    "perk_tag": null,
+    "icon": "4cf709db9a5ee41d07d2eeb1383b5c79038bab227d9d2fa3c1e620bdb7ea06fb",
+    "icon_url": "https://cdn.darkerdb.com/codex/4cf709db9a5ee41d07d2eeb1383b5c79038bab227d9d2fa3c1e620bdb7ea06fb",
+    "abilities": [],
+    "description": "Reduces damage taken from Undead and Demons by 10%, and increases damage dealt to Undead and Demons by 15%.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.infernal_pledge",
+      "demon_damage_mod": 150,
+      "undead_damage_mod": 150,
+      "demon_reduction_mod": 100,
+      "undead_reduction_mod": 100
+     }
+    ],
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.malice",
+    "name": "Malice",
+    "perk_tag": null,
+    "icon": "2f61531ecc127e5e3cdf75c4aa93c039d691ae9b73bed081121b8157c4bfa71f",
+    "icon_url": "https://cdn.darkerdb.com/codex/2f61531ecc127e5e3cdf75c4aa93c039d691ae9b73bed081121b8157c4bfa71f",
+    "abilities": [],
+    "description": "Gain 15% will bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.malice",
+      "will_mod": 150
+     }
+    ],
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.shadow_touch",
+    "name": "Shadow Touch",
+    "perk_tag": null,
+    "icon": "4158d024ac55995ca83dbeb50e1a694ce1cb5a808f5142d5021298c1b1b7bf50",
+    "icon_url": "https://cdn.darkerdb.com/codex/4158d024ac55995ca83dbeb50e1a694ce1cb5a808f5142d5021298c1b1b7bf50",
+    "abilities": [],
+    "description": "Dealing physical damage to an enemy with a melee weapon deals 2 true dark magical damage and heals you for 2 health.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.shadow_touch"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.soul_collector",
+    "name": "Soul Collector",
+    "perk_tag": null,
+    "icon": "814ac50169e90d2453582c134c219d9b2c5bc7b4b7e58288708db1aaa975e371",
+    "icon_url": "https://cdn.darkerdb.com/codex/814ac50169e90d2453582c134c219d9b2c5bc7b4b7e58288708db1aaa975e371",
+    "abilities": [],
+    "description": "When you deal the final blow to an enemy, one darkness shard is collected. Gain all attributes, 33% dark magical damage bonus for each shard collected, up to a maximum of 3 shards. When you deal dark magic damage, consume all collected shards.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.soul_collector"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.torture_mastery",
+    "name": "Torture Mastery",
+    "perk_tag": null,
+    "icon": "45fb50348b72805b3c350e62976ef95e950359d0ec9491ec7fcaa2eb0e3eadcd",
+    "icon_url": "https://cdn.darkerdb.com/codex/45fb50348b72805b3c350e62976ef95e950359d0ec9491ec7fcaa2eb0e3eadcd",
+    "abilities": [],
+    "description": "All curses inflicted upon enemies restores 2(0.15) recoverable health to the caster with each instance of damage dealt. All Warlock spell costs are doubled when this perk is equipped.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.torture_mastery"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.vampirism",
+    "name": "Vampirism",
+    "perk_tag": null,
+    "icon": "4a1c49327dd1976b303996810f8b31d61f1cd511defbcb6e6efb424e024685e0",
+    "icon_url": "https://cdn.darkerdb.com/codex/4a1c49327dd1976b303996810f8b31d61f1cd511defbcb6e6efb424e024685e0",
+    "abilities": [],
+    "description": "Gain 20% magical healing bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.vampirism",
+      "magical_heal_mod": 200
+     }
+    ],
+    "allowed_classes": [
+     "id.class.warlock",
+     "id.class.grand_master_warlock"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "icon": "d43388b136b784c7dd48dea23e178d3ae48588df08bc9ef3978a1a80493ccba1",
@@ -2461,12 +4837,15 @@
         "dexterity_base": 1,
         "knowledge_base": 1,
         "resourcefulness_base": 1,
-        "magical_dark_damage_mod": 330
+        "magical_dark_damage_mod": 250
        }
       ]
      }
     ],
-    "description": "Take the form of your contracted demon, gaining an additional max health, armor rating, and magic resistance. Your entire body is covered in Abyssal Flame, taking damage per second and dealing magical damage per second to nearby characters. Once activated, the effect cannot be stopped until the contract is complete. Additionally, by consuming Darkness Shards, you gain all attributes, dark magical damage bonus for each Darkness Shard consumed. When you become a demon your skills change to demon-only skills. Left-Click: Use equipped item. If no item is equipped, then performs bare-handed attack. Perform up to 4 combo attacks using both hands. Right-Click: Use equipped item. If no item is equipped, then fires a bolt of darkness."
+    "description": "Take the form of your contracted demon, gaining an additional 30 max health, 50 armor rating, and 50 magic resistance. Your entire body is covered in Abyssal Flame, taking 1% damage per second and dealing 2(0.25) magical damage per second to nearby characters. Once activated, the effect cannot be stopped until the contract is complete. Additionally, by consuming Darkness Shards, you gain all attributes, 25% dark magical damage bonus for each Darkness Shard consumed. When you become a demon your skills change to demon-only skills. Left-Click: Use equipped item. If no item is equipped, then performs bare-handed attack. Perform up to 4 combo attacks using both hands. Right-Click: Use equipped item. If no item is equipped, then fires a bolt of darkness.",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.blow_of_corruption",
@@ -2498,7 +4877,10 @@
       ]
      }
     ],
-    "description": "Your next physical attack deals evil magical damage to the target and reduces their incoming physical healing by and incoming magical healing by for seconds. Cooldown: seconds"
+    "description": "Your next physical attack deals 12(1.0) evil magical damage to the target and reduces their incoming physical healing by 80% and incoming magical healing by 80% for 12 seconds. Cooldown: 24 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.dark_offering",
@@ -2524,7 +4906,10 @@
       ]
      }
     ],
-    "description": "Channel your mind, sacrificing of your max health per second to gain magical damage bonus and physical damage bonus. This bonus lasts for seconds. Cooldown: seconds"
+    "description": "Channel your mind, sacrificing 10% of your max health per second to gain 5% magical damage bonus and 5% physical damage bonus. This bonus lasts for 60 seconds. Cooldown: 24 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.phantomize",
@@ -2547,7 +4932,10 @@
       ]
      }
     ],
-    "description": "Phase through melee attacks and projectiles for seconds. While active, gain move speed bonus and lose magical damage reduction. During this period you can only move and do not collide with other players or monsters. Cooldown: seconds"
+    "description": "Phase through melee attacks and projectiles for 4 seconds. While active, gain 5% move speed bonus and lose 50% magical damage reduction. During this period you can only move and do not collide with other players or monsters. Cooldown: 28 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.spell_memory1",
@@ -2570,7 +4958,10 @@
       "effects": []
      }
     ],
-    "description": "Gain the ability to memorize spells to use in the dungeon."
+    "description": "Gain the ability to memorize spells to use in the dungeon.",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.spell_memory2",
@@ -2593,7 +4984,10 @@
       "effects": []
      }
     ],
-    "description": "Gain the ability to memorize additional spells to use in the dungeon."
+    "description": "Gain the ability to memorize additional spells to use in the dungeon.",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "stats": {
@@ -2604,9 +4998,11 @@
    "dexterity": 15,
    "knowledge": 15,
    "move_speed": 300,
-   "max_health_add": 25,
    "resourcefulness": 14
   },
+  "patch": "0.16.138.8712",
+  "patch_name": "Hotfix 115",
+  "is_new": false,
   "spell_count": 13,
   "song_count": 0,
   "shapeshift_count": 1
@@ -2616,69 +5012,172 @@
   "name": "Wizard",
   "perks": [
    {
-    "id": "id.perk.sage",
-    "name": "Sage",
+    "id": "id.perk.arcane_feedback",
+    "name": "Arcane Feedback",
     "perk_tag": null,
-    "icon": "173ea09538f50d52d4b55ff7584a37713c634cf316367cd4bec45f52a897d3e3",
-    "icon_url": "https://cdn.darkerdb.com/codex/173ea09538f50d52d4b55ff7584a37713c634cf316367cd4bec45f52a897d3e3",
+    "icon": "187a5c8ed9d30177ba4b8d64cf80fbf9700cdde8bb18a4e28e5f8b152c9d3cd6",
+    "icon_url": "https://cdn.darkerdb.com/codex/187a5c8ed9d30177ba4b8d64cf80fbf9700cdde8bb18a4e28e5f8b152c9d3cd6",
     "abilities": [],
-    "description": "Gain knowledge bonus.",
-    "effects": [
-     {
-      "id": "id.actor_status_effect.sage",
-      "knowledge_mod": 150
-     }
-    ],
-    "allowed_classes": [
-     "id.class.wizard",
-     "id.class.grand_master_wizard"
-    ]
-   },
-   {
-    "id": "id.perk.reactive_shield",
-    "name": "Reactive Shield",
-    "perk_tag": null,
-    "icon": "04ad0b7f4e275158a5267bd8a7306d216300e7afeb93cfbe3aa0e13f54ceee26",
-    "icon_url": "https://cdn.darkerdb.com/codex/04ad0b7f4e275158a5267bd8a7306d216300e7afeb93cfbe3aa0e13f54ceee26",
-    "abilities": [
-     {
-      "id": "id.perk_ability.reactive_shield",
-      "effects": [
-       {
-        "duration": 3000,
-        "max_total_shield": 15
-       },
-       {
-        "duration": 12000
-       }
-      ]
-     }
-    ],
-    "description": "When you take damage, gain an arcane shield that lasts for seconds. The shield can absorb total damage and will only reactivate after a cooldown period. Cooldown: seconds",
+    "description": "When you deal damage with an arcane spell, gain a stacking bonus granting 3% spell casting speed and 3% arcane magical damage bonus per stack for 7 seconds. This skill can stack up to 5 times and the duration resets with each successful stack.",
     "effects": [],
     "allowed_classes": [
      "id.class.wizard",
      "id.class.grand_master_wizard"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
-    "id": "id.perk.quick_chant",
-    "name": "Quick Chant",
+    "id": "id.perk.arcane_mastery",
+    "name": "Arcane Mastery",
     "perk_tag": null,
-    "icon": "11897dd717b54a2b322475bde8848e112c6c0408d437a056f4fe1eff19eb34b9",
-    "icon_url": "https://cdn.darkerdb.com/codex/11897dd717b54a2b322475bde8848e112c6c0408d437a056f4fe1eff19eb34b9",
+    "icon": "af40a3bad67563e82e8424bd8ec333ccca170ace72851858a632bc9e25f0ab8e",
+    "icon_url": "https://cdn.darkerdb.com/codex/af40a3bad67563e82e8424bd8ec333ccca170ace72851858a632bc9e25f0ab8e",
     "abilities": [],
-    "description": "Gain spell casting speed.",
+    "description": "Gain 5% arcane magical damage bonus and reduce the cast time of arcane spells by 0.5 seconds.",
     "effects": [
      {
-      "id": "id.actor_status_effect.quick_chant",
-      "spell_casting_speed": 150
+      "id": "id.actor_status_effect.arcane_mastery",
+      "magical_arcane_damage_mod": 50
      }
     ],
     "allowed_classes": [
      "id.class.wizard",
      "id.class.grand_master_wizard"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.arcane_precision",
+    "name": "Arcane Precision",
+    "perk_tag": null,
+    "icon": "39130ef13882f66f4146ab980c539e2b9d1aaa3dd327cf616ba9c60685615fc6",
+    "icon_url": "https://cdn.darkerdb.com/codex/39130ef13882f66f4146ab980c539e2b9d1aaa3dd327cf616ba9c60685615fc6",
+    "abilities": [],
+    "description": "Deal 88.5% increased magical damage to crowd-controlled targets.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.arcane_precision"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
+   {
+    "id": "id.perk.cold_focus",
+    "name": "Cold Focus",
+    "perk_tag": null,
+    "icon": "1ba3951e0d3b36f385605d69749a6083c3c64c4c26de4b262d688a61ee5586c2",
+    "icon_url": "https://cdn.darkerdb.com/codex/1ba3951e0d3b36f385605d69749a6083c3c64c4c26de4b262d688a61ee5586c2",
+    "abilities": [],
+    "description": "Magical damage dealt to targets affected by frostbite is increased by 88.5%.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.cold_focus"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
+   {
+    "id": "id.perk.fire_mastery",
+    "name": "Fire Mastery",
+    "perk_tag": null,
+    "icon": "41cb55d9840c224c3c792efb8462b993d76eed42176cbfa9e46fccba417a2c3b",
+    "icon_url": "https://cdn.darkerdb.com/codex/41cb55d9840c224c3c792efb8462b993d76eed42176cbfa9e46fccba417a2c3b",
+    "abilities": [],
+    "description": "Gain 5% fire magical damage bonus. The duration of applied burns are increased by 2 seconds, and a burned target reduces incoming physical healing by 50% and incoming magical healing by 50% for 4 seconds.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.fire_mastery",
+      "magical_fire_damage_mod": 50
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.focused_mind",
+    "name": "Focused Mind",
+    "perk_tag": null,
+    "icon": "a0c399c008018bedbca8938cb7e41b985e0895cf0e85724c2c4e6bd446978e13",
+    "icon_url": "https://cdn.darkerdb.com/codex/a0c399c008018bedbca8938cb7e41b985e0895cf0e85724c2c4e6bd446978e13",
+    "abilities": [],
+    "description": "While channeling, physical damage reduction is increased by 15% and magical damage reduction is increased by 15%. If the channeling is not interrupted, magical damage bonus increases by 5% every 0.5 seconds, stacking up to 3 times. This effect lasts for 8 seconds.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.focused_mind"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
+   {
+    "id": "id.perk.glass_cannon",
+    "name": "Glass Cannon",
+    "perk_tag": null,
+    "icon": "75381ef9e4e382c90a8b740f2b3e1818701e633b00e58ef2184df633affc20e5",
+    "icon_url": "https://cdn.darkerdb.com/codex/75381ef9e4e382c90a8b740f2b3e1818701e633b00e58ef2184df633affc20e5",
+    "abilities": [],
+    "description": "Reduces maximum health by 10% but grants a 20 magical power.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.glass_cannon",
+      "magical_power": 20,
+      "max_health_mod": -100
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
+   {
+    "id": "id.perk.ice_mastery",
+    "name": "Ice Mastery",
+    "perk_tag": null,
+    "icon": "3f3a16834a8bafc41dccf2485ecda2715424b4430335f6a43f3af6049f2ca660",
+    "icon_url": "https://cdn.darkerdb.com/codex/3f3a16834a8bafc41dccf2485ecda2715424b4430335f6a43f3af6049f2ca660",
+    "abilities": [],
+    "description": "Dealing damage with ice magic freezes the target's feet and prevents them from moving for 0.5 seconds.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.ice_mastery"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.perk.ice_shield",
@@ -2686,23 +5185,8 @@
     "perk_tag": null,
     "icon": "011ee6e554fcbe7333b60c4081f2104a71e1b76a29d6140990b82b063bc8ef81",
     "icon_url": "https://cdn.darkerdb.com/codex/011ee6e554fcbe7333b60c4081f2104a71e1b76a29d6140990b82b063bc8ef81",
-    "abilities": [
-     {
-      "id": "id.perk_ability.ice_shield",
-      "effects": [
-       {
-        "duration": 5000
-       },
-       {
-        "duration": 500,
-        "target_type": "EGameplayEffectTargetType::EventData",
-        "action_speed": -200,
-        "move_speed_mod": -200
-       }
-      ]
-     }
-    ],
-    "description": "Gain armor rating. Inflict frostbite for seconds on melee attacker. Does not inflict while on cooldown. Frostbite: The target loses move speed bonus and action speed. Cooldown: seconds",
+    "abilities": [],
+    "description": "Gain 20 armor rating. Inflict frostbite for 0.5 seconds on melee attacker. Does not inflict while on cooldown. Frostbite: The target loses 20% move speed bonus and 20% action speed. Cooldown: 5 seconds",
     "effects": [
      {
       "id": "id.actor_status_effect.ice_shield"
@@ -2715,13 +5199,261 @@
     "allowed_classes": [
      "id.class.wizard",
      "id.class.grand_master_wizard"
-    ]
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.lingering_magic",
+    "name": "Lingering Magic",
+    "perk_tag": null,
+    "icon": "34c0e14a4fcccd699b1bff681880311ae70435e4c68a9269ad3ffb18a016a793",
+    "icon_url": "https://cdn.darkerdb.com/codex/34c0e14a4fcccd699b1bff681880311ae70435e4c68a9269ad3ffb18a016a793",
+    "abilities": [],
+    "description": "The duration of beneficial spell effects is increased by 88%.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.lingering_magic"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
+   {
+    "id": "id.perk.mana_surge",
+    "name": "Mana Surge",
+    "perk_tag": null,
+    "icon": "50472282e02a0aa75ea449deec33139a8a33cc3f1185bc823b7371d29341baf7",
+    "icon_url": "https://cdn.darkerdb.com/codex/50472282e02a0aa75ea449deec33139a8a33cc3f1185bc823b7371d29341baf7",
+    "abilities": [],
+    "description": "Gain 10% magical damage bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.mana_surge",
+      "magical_damage_mod": 100
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.melt",
+    "name": "Melt",
+    "perk_tag": null,
+    "icon": "53d47c12a8216b13b9ba5bc9a631ee20c35d567d7615f4e99b8596af254893c2",
+    "icon_url": "https://cdn.darkerdb.com/codex/53d47c12a8216b13b9ba5bc9a631ee20c35d567d7615f4e99b8596af254893c2",
+    "abilities": [],
+    "description": "When you deal magical fire damage to a target, the target loses 15% physical damage reduction and 5% projectile damage reduction for 2 seconds.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.melt"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.quick_chant",
+    "name": "Quick Chant",
+    "perk_tag": null,
+    "icon": "11897dd717b54a2b322475bde8848e112c6c0408d437a056f4fe1eff19eb34b9",
+    "icon_url": "https://cdn.darkerdb.com/codex/11897dd717b54a2b322475bde8848e112c6c0408d437a056f4fe1eff19eb34b9",
+    "abilities": [],
+    "description": "Gain 15% spell casting speed.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.quick_chant",
+      "spell_casting_speed": 150
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.reactive_shield",
+    "name": "Reactive Shield",
+    "perk_tag": null,
+    "icon": "04ad0b7f4e275158a5267bd8a7306d216300e7afeb93cfbe3aa0e13f54ceee26",
+    "icon_url": "https://cdn.darkerdb.com/codex/04ad0b7f4e275158a5267bd8a7306d216300e7afeb93cfbe3aa0e13f54ceee26",
+    "abilities": [],
+    "description": "When you take damage, gain an arcane shield that lasts for 3 seconds. The shield can absorb 15 total damage and will only reactivate after a cooldown period. Cooldown: 12 seconds",
+    "effects": [],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.sage",
+    "name": "Sage",
+    "perk_tag": null,
+    "icon": "173ea09538f50d52d4b55ff7584a37713c634cf316367cd4bec45f52a897d3e3",
+    "icon_url": "https://cdn.darkerdb.com/codex/173ea09538f50d52d4b55ff7584a37713c634cf316367cd4bec45f52a897d3e3",
+    "abilities": [],
+    "description": "Gain 15% knowledge bonus.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.sage",
+      "knowledge_mod": 150
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.spell_overload",
+    "name": "Spell Overload",
+    "perk_tag": null,
+    "icon": "f7aa8f1e1102a2a58db77e8314200dcf5f11941d8832221ceb2a4d8cb74d261d",
+    "icon_url": "https://cdn.darkerdb.com/codex/f7aa8f1e1102a2a58db77e8314200dcf5f11941d8832221ceb2a4d8cb74d261d",
+    "abilities": [],
+    "description": "Reduces knowledge bonus by 20% and increases all spells counts by 60%.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.spell_overload",
+      "knowledge_mod": -200,
+      "max_spell_count_mod": 600
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.staff_mastery",
+    "name": "Staff Mastery",
+    "perk_tag": null,
+    "icon": "0a191d7fd0139c46029dce4a2391879e5166e00e497f79030edc573bbda88e5b",
+    "icon_url": "https://cdn.darkerdb.com/codex/0a191d7fd0139c46029dce4a2391879e5166e00e497f79030edc573bbda88e5b",
+    "abilities": [],
+    "description": "When using a staff-type weapon, you gain magic weapon damage.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.staff_mastery",
+      "magical_damage_weapon": 2
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.perk.static_charge",
+    "name": "Static Charge",
+    "perk_tag": null,
+    "icon": "9e8c75d17de75ad89aeedc13bc8d71379ce28611753bd0ee010a457ae8f4b04e",
+    "icon_url": "https://cdn.darkerdb.com/codex/9e8c75d17de75ad89aeedc13bc8d71379ce28611753bd0ee010a457ae8f4b04e",
+    "abilities": [],
+    "description": "Each lightning spell hit increases the damage of your next lightning spell by 10% lightning magical damage bonus, stacking up to 3 times.",
+    "effects": [
+     {
+      "id": "id.actor_status_effect.static_charge"
+     }
+    ],
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
    }
   ],
   "icon": "1c9d4e81d1e09cc62d8403138d6de52407aeb1dfe2e971f4bac7ea1767478839",
   "icon_url": "https://cdn.darkerdb.com/codex/1c9d4e81d1e09cc62d8403138d6de52407aeb1dfe2e971f4bac7ea1767478839",
   "flavor": "The Wizard calls forth the immense powers of magic to suit his needs. Whether that means summoning a powerful fireball to cast asunder his foes or to temporarily vanishing into thin air, his incantations are a sight to behold.",
   "skills": [
+   {
+    "id": "id.skill.arcane_infusion",
+    "name": "Arcane Infusion",
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "icon": "a5ab13aee1afd1612b883735dd37966d2100518b7fd37debf6623e0aa8b93375",
+    "icon_url": "https://cdn.darkerdb.com/codex/a5ab13aee1afd1612b883735dd37966d2100518b7fd37debf6623e0aa8b93375",
+    "abilities": [
+     {
+      "id": "id.skill_ability.arcane_infusion",
+      "effects": [
+       {
+        "duration": 6000
+       },
+       {
+        "target_type": "EGameplayEffectTargetType::EventData",
+        "exec_magical_damage_base": 7,
+        "exec_attribute_bonus_ratio": 500
+       }
+      ]
+     }
+    ],
+    "description": "For 6 seconds, your melee attacks deal an additional 7(0.5) arcane magical damage to enemies within a 1.75m radius around the target. Cooldown: 18 seconds",
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
+   {
+    "id": "id.skill.arcane_insight",
+    "name": "Arcane Insight",
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "icon": "0d4abbc05318d465a87f9188a4466eeee3cfb7d987aa8baad93351eddc873491",
+    "icon_url": "https://cdn.darkerdb.com/codex/0d4abbc05318d465a87f9188a4466eeee3cfb7d987aa8baad93351eddc873491",
+    "abilities": [
+     {
+      "id": "id.skill_ability.arcane_insight",
+      "effects": [
+       {
+        "duration": 8000,
+        "memory_capacity_mod": 500
+       }
+      ]
+     }
+    ],
+    "description": "For 8 seconds, memory capacity is increased by 50%, and you can move while channeling. Cooldown: 8 seconds",
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
+   },
    {
     "id": "id.skill.arcane_shield",
     "name": "Arcane Shield",
@@ -2748,7 +5480,35 @@
       ]
      }
     ],
-    "description": "Gain a shield around you that absorbs damage from all damage sources for seconds. When the maximum amount of absorb has been reached, the shield unleashes an Arcane Explosion, dealing magical damage to enemy targets in a 2m radius around you. Cooldown: seconds"
+    "description": "Gain a shield around you that absorbs 15 damage from all damage sources for 12 seconds. When the maximum amount of absorb has been reached, the shield unleashes an Arcane Explosion, dealing 5(1.0) magical damage to enemy targets in a 2m radius around you. Cooldown: 25 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
+   },
+   {
+    "id": "id.skill.arcane_surge",
+    "name": "Arcane Surge",
+    "allowed_classes": [
+     "id.class.wizard",
+     "id.class.grand_master_wizard"
+    ],
+    "icon": "a104c2568fa3fe665e27e337519c5d048249b06f066ccfe4d3ab2e126af1fa59",
+    "icon_url": "https://cdn.darkerdb.com/codex/a104c2568fa3fe665e27e337519c5d048249b06f066ccfe4d3ab2e126af1fa59",
+    "abilities": [
+     {
+      "id": "id.skill_ability.arcane_surge",
+      "effects": [
+       {
+        "duration": 12000,
+        "spell_casting_speed": 300
+       }
+      ]
+     }
+    ],
+    "description": "Increases spell casting speed by 30% for 12 seconds. Cooldown: 24 seconds",
+    "patch": "0.17.146.9181",
+    "patch_name": "Early Access Season 10",
+    "is_new": true
    },
    {
     "id": "id.skill.intense_focus",
@@ -2765,7 +5525,10 @@
       "effects": []
      }
     ],
-    "description": "Reduce the cast time of your next spell to seconds. Cooldown: seconds"
+    "description": "Reduce the cast time of your next spell to 0.1 seconds. Cooldown: 18 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.meditation",
@@ -2791,7 +5554,10 @@
       ]
      }
     ],
-    "description": "Enter a meditative state and recover spells at a rate of spells costs over 24 seconds. Cooldown: seconds"
+    "description": "Enter a meditative state and recover spells at a rate of 34 spells costs over 24 seconds. Cooldown: 45 seconds",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.spell_memory1",
@@ -2814,7 +5580,10 @@
       "effects": []
      }
     ],
-    "description": "Gain the ability to memorize spells to use in the dungeon."
+    "description": "Gain the ability to memorize spells to use in the dungeon.",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    },
    {
     "id": "id.skill.spell_memory2",
@@ -2837,7 +5606,10 @@
       "effects": []
      }
     ],
-    "description": "Gain the ability to memorize additional spells to use in the dungeon."
+    "description": "Gain the ability to memorize additional spells to use in the dungeon.",
+    "patch": "0.16.138.8712",
+    "patch_name": "Hotfix 115",
+    "is_new": false
    }
   ],
   "stats": {
@@ -2848,10 +5620,12 @@
    "dexterity": 17,
    "knowledge": 25,
    "move_speed": 300,
-   "max_health_add": 25,
    "resourcefulness": 15
   },
-  "spell_count": 13,
+  "patch": "0.16.138.8712",
+  "patch_name": "Hotfix 115",
+  "is_new": false,
+  "spell_count": 20,
   "song_count": 0,
   "shapeshift_count": 0
  }
